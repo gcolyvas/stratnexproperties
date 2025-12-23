@@ -1,825 +1,522 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>StratNex Properties | Strategic Property Intelligence in Tanzania & East Africa</title>
-<meta name="description" content="StratNex Properties integrates consulting-grade analysis with on-the-ground execution across Land Acquisition, Due Diligence, Valuation, Brokerage, and Mining Rights in Tanzania and East Africa." />
-<meta name="robots" content="index,follow" />
-<meta property="og:title" content="StratNex Properties | Strategic Property Intelligence" />
-<meta property="og:description" content="Precision acquisition and advisory for real estate and mining assets across Tanzania and East Africa." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://stratnexproperties.com" />
-<meta property="og:image" content="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop" />
-<meta name="theme-color" content="#142C40" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stratnex Properties — Get Tailored Listings</title>
+  <meta name="description" content="Tell us your price, location, and asset criteria. Stratnex Properties will send curated listings that match—automatically." />
+  <meta name="theme-color" content="#142C40" />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
-<!-- TailwindCSS (CDN) -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-navy: '#142C40',
-lightgray: '#A6A8AB',
-darkgray: '#595A59',
-brandwhite: '#FFFFFF'
-},
-fontFamily: {
-sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'Arial'],
-serif: ['Playfair Display', 'Georgia', 'serif']
-},
-boxShadow: {
-soft: '0 10px 30px rgba(0,0,0,0.12)'
-}
-}
-}
-};
-</script>
-<style>
-/* Image overlays for readability */
-.image-overlay::after {
-content: '';
-position: absolute;
-inset: 0;
-background: linear-gradient(180deg, rgba(20,44,64,0.68) 0%, rgba(20,44,64,0.58) 45%, rgba(20,44,64,0.76) 100%);
-pointer-events: none;
-}
-.focus-ring {
-outline: none;
-box-shadow: 0 0 0 3px rgba(20,44,64,0.35);
-}
-</style>
+  <style>
+    :root{
+      --navy:
+#142C40;      /* Primary Navy */
+      --acc:
+#A6A8AB;       /* Light Gray Accents */
+      --text:
+#595A59;      /* Body Text */
+      --bg:
+#F5F7FA;
+      --white:
+#ffffff;
+      --radius:14px;
+      --shadow:0 12px 32px 
+rgba(20,44,64,0.12);
+      --shadow-sm:0 6px 18px 
+rgba(20,44,64,0.10);
+      --maxw:1100px;
+      --green:
+#1BA97F;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,
+#f7f9fc, 
+#eef2f6 60%, 
+#e9eef5);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
 
-<!-- Favicon (optional) -->
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=" />
+    /* Header */
+    .header{position:sticky;top:0;z-index:1000;background:
+#fff;border-bottom:1px solid 
+#E6EBF2}
+    .nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:36px;height:36px;border-radius:10px;background:var(--navy);
+      display:grid;place-items:center;color:
+#fff;font-weight:800
+    }
+    .brand h1{font-size:18px;margin:0;color:var(--navy);font-weight:700}
+    .brand small{display:block;font-size:11px;color:var(--acc)}
+    .nav .right{display:flex;gap:14px;align-items:center}
+    .pill-cta{background:
+#142C40;color:
+#fff;padding:10px 14px;border-radius:999px;font-weight:700}
+    .link{color:var(--navy);font-weight:600}
+
+    /* Hero */
+    .hero{
+      padding:48px 20px 20px;
+      background:
+        radial-gradient(900px 360px at 80% -10%, 
+rgba(20,44,64,0.08), 
+transparent 70%),
+        linear-gradient(180deg,
+#ffffff, 
+#f6f9fc 60%, 
+#f1f5fa);
+    }
+    .hero-inner{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start}
+    .eyebrow{color:var(--navy);opacity:.8;letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:700}
+    .hero h2{font-family:"Playfair Display",serif;font-size:40px;line-height:1.15;color:var(--navy);margin:10px 0}
+    .hero p.lead{color:var(--text);font-size:18px;margin:0 0 16px;max-width:640px}
+    .trust{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .trust .b{background:
+#fff;border:1px solid 
+#E6EBF2;border-radius:999px;padding:8px 12px;color:
+#334155;font-size:12px}
+
+    /* Card + Form */
+    .card{background:
+#fff;border:1px solid 
+#E6EBF2;border-radius:16px;box-shadow:var(--shadow-sm)}
+    .lead-card{padding:18px}
+    form{display:grid;gap:12px}
+    label{font-size:13px;font-weight:600;color:var(--navy)}
+    input,select,textarea{
+      width:100%;padding:12px;border-radius:10px;border:1px solid 
+#D8E1EF;background:
+#FBFDFF;font-size:14px;color:var(--text)
+    }
+    textarea{min-height:90px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    .help{font-size:12px;color:var(--acc)}
+    .submit{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      background:var(--navy);color:
+#fff;padding:12px 16px;border-radius:12px;
+      font-weight:800;border:0;cursor:pointer
+    }
+    .btn.secondary{background:
+#fff;border:1px solid 
+#D8E1EF;color:var(--navy)}
+    .consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--text)}
+    .success{display:none;background:
+#E5F7F0;color:
+#0a3d2f;border:1px solid 
+#b7ead6;border-radius:12px;padding:12px;font-weight:600}
+
+    /* Services (Pillars) */
+    .section{padding:40px 20px}
+    .container{max-width:var(--maxw);margin:0 auto}
+    .section h3{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 8px;color:var(--navy)}
+    .section p.lead{color:var(--acc);margin:0 0 22px}
+    .grid{display:grid;gap:16px}
+    .services .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .svc{padding:16px}
+    .chip{display:inline-block;background:
+#EEF2F5;border:1px solid 
+#E3E8EE;color:var(--navy);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;margin-bottom:10px}
+    .svc h4{margin:6px 0 8px;color:var(--navy);font-size:18px}
+    .svc p{margin:0 0 8px;color:var(--text);font-size:14px}
+    .svc ul{margin:0;padding-left:16px;color:var(--text)}
+    .svc li{margin:4px 0}
+
+    /* About (Mission) */
+    .about{background:
+#F4F7FB;border-top:1px solid 
+#E6EBF2;border-bottom:1px solid 
+#E6EBF2}
+    .about .card{padding:18px}
+
+    /* Footer */
+    .footer{background:
+#fff;color:
+#7b8794;border-top:1px solid 
+#E6EBF2;padding:24px 20px}
+    .footer .container{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .copyright{font-size:12px;color:
+#94A3B8}
+
+    /* Mobile */
+    @media (max-width: 990px){
+      .hero-inner{grid-template-columns:1fr}
+      .services .grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .row,.row-3{grid-template-columns:1fr}
+      .services .grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
-<body class="bg-brandwhite text-navy font-sans antialiased">
-<!-- Top Navigation -->
-<header class="sticky top-0 z-[50] bg-brandwhite/90 backdrop-blur-md border-b border-lightgray/40">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between h-16">
-<!-- Responsive Logo -->
-<a href="#" class="flex items-center gap-3 group">
-<!-- Mobile monogram -->
-<div class="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded bg-navy text-brandwhite font-bold tracking-wide">SX</div>
-<!-- Desktop wordmark -->
-<div class="hidden sm:flex items-baseline gap-2">
-<span class="text-2xl font-serif font-semibold tracking-tight">StratNex</span>
-<span class="text-2xl font-serif font-semibold tracking-tight text-darkgray">Properties</span>
-</div>
-<span class="sr-only">StratNex Properties Home</span>
-</a>
+<body>
 
-    <nav class="hidden md:flex items-center gap-8 text-darkgray">
-      <a href="#services" class="hover:text-navy transition">Services</a>
-      <a href="#backend" class="hover:text-navy transition">Backend Advantage</a>
-      <a href="#intake" class="hover:text-navy transition">Intake Portal</a>
-      <a href="#contact" class="hover:text-navy transition">Contact</a>
-    </nav>
-
-    <div class="flex items-center gap-3">
-      <a href="#intake" class="hidden md:inline-flex items-center px-4 py-2 rounded bg-navy text-brandwhite hover:opacity-95 transition shadow-soft">
-        Start Intake
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="https://stratnexconsulting.com" aria-label="Stratnex Consulting (Parent)">
+        <div class="logo" aria-hidden="true">SP</div>
+        <div>
+          <h1>Stratnex Properties</h1>
+          <small>A Stratnex Consulting Division</small>
+        </div>
       </a>
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded border border-lightgray/60 text-navy hover:bg-navy hover:text-brandwhite transition" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" /></svg>
-      </button>
-    </div>
-  </div>
-</div>
-<!-- Mobile Menu -->
-<div id="mobileMenu" class="md:hidden hidden border-t border-lightgray/40 bg-brandwhite">
-  <div class="px-4 py-3 space-y-2">
-    <a href="#services" class="block py-2 text-darkgray hover:text-navy">Services</a>
-    <a href="#backend" class="block py-2 text-darkgray hover:text-navy">Backend Advantage</a>
-    <a href="#intake" class="block py-2 text-darkgray hover:text-navy">Intake Portal</a>
-    <a href="#contact" class="block py-2 text-darkgray hover:text-navy">Contact</a>
-    <a href="#intake" class="mt-2 inline-flex items-center px-4 py-2 rounded bg-navy text-brandwhite">Start Intake</a>
-  </div>
-</div>
-</header>
-
-<!-- Hero Section -->
-<section class="relative">
-<div class="relative h-[72vh] min-h-[520px] image-overlay">
-<img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1920&auto=format&fit=crop" alt="Modern African city skyline" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[20%]" />
-<div class="absolute inset-0"></div>
-<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-<div class="flex flex-col justify-center h-full text-brandwhite">
-<h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight">Strategic Property Intelligence: Precision Acquisition in Tanzania & East Africa.</h1>
-<p class="mt-5 max-w-2xl text-base sm:text-lg text-lightgray">
-A StratNex Consulting division aligning institutional discipline with local execution across land, commercial property, and mining assets.
-</p>
-<div class="mt-8 flex flex-col sm:flex-row gap-3">
-<a href="#services" class="inline-flex items-center px-5 py-3 rounded bg-brandwhite text-navy font-medium hover:opacity-95">
-Explore Services
-</a>
-<a href="#intake" class="inline-flex items-center px-5 py-3 rounded border border-brandwhite/60 text-brandwhite hover:bg-brandwhite/10">
-Start Intake
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Deep Dive: Services -->
-<section id="services" class="py-20 bg-brandwhite">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="max-w-3xl">
-<h2 class="font-serif text-3xl sm:text-4xl text-navy">Capabilities Grounded in Real Assets</h2>
-<p class="mt-4 text-darkgray">
-Drawing from StratNex Consulting’s real estate and mining competence, we bring due diligence, market intelligence, and operational execution into a single, accountable workflow.
-</p>
-</div>
-
-  <div class="mt-10 grid gap-8 md:grid-cols-2">
-    <!-- Card 1: Land Acquisition & Due Diligence -->
-    <article class="relative overflow-hidden rounded-xl border border-lightgray/50 bg-brandwhite shadow-soft">
-      <div class="relative h-56 image-overlay">
-        <img src="https://images.unsplash.com/photo-1531884070720-875c7622d4b4?q=80&w=1600&auto=format&fit=crop" alt="Prime undeveloped land in East Africa" class="absolute inset-0 w-full h-full object-cover grayscale" />
+      <div class="right">
+        <a class="link" href="#lead">Get Listings</a>
+        <a class="pill-cta" href="#lead">Request matches</a>
       </div>
-      <div class="p-6">
-        <h3 class="font-serif text-2xl text-navy">Land Acquisition & Due Diligence</h3>
-        <p class="mt-3 text-darkgray">
-          Title verification, land registry checks, encumbrance review, zoning and planning alignment, access rights, and community considerations—completed before capital is at risk. We align target parcels to investment thesis and timeline.
-        </p>
-        <ul class="mt-4 text-sm text-darkgray list-disc pl-5 space-y-1">
-          <li>Ownership, title, and cadastral checks</li>
-          <li>Zoning, environmental, and easement screening</li>
-          <li>Transaction structuring and risk flags</li>
-        </ul>
-      </div>
-    </article>
+    </nav>
+  </header>
 
-    <!-- Card 2: Property Valuation & Analysis -->
-    <article class="relative overflow-hidden rounded-xl border border-lightgray/50 bg-brandwhite shadow-soft">
-      <div class="relative h-56 image-overlay">
-        <img src="https://images.unsplash.com/photo-1516912940688-2032882f7610?q=80&w=1600&auto=format&fit=crop" alt="Architectural blueprints and valuation analysis" class="absolute inset-0 w-full h-full object-cover grayscale" />
-      </div>
-      <div class="p-6">
-        <h3 class="font-serif text-2xl text-navy">Property Valuation & Analysis</h3>
-        <p class="mt-3 text-darkgray">
-          Data-led valuation combining comparable analysis, yield assumptions, replacement cost, and on-site inspection. We produce decision-grade models that withstand institutional scrutiny.
-        </p>
-        <ul class="mt-4 text-sm text-darkgray list-disc pl-5 space-y-1">
-          <li>Market comps and income capitalization approaches</li>
-          <li>Scenario modeling and sensitivity testing</li>
-          <li>Independent reporting for lenders and investors</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- Card 3: Real Estate Brokerage -->
-    <article class="relative overflow-hidden rounded-xl border border-lightgray/50 bg-brandwhite shadow-soft">
-      <div class="relative h-56 image-overlay">
-        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1600&auto=format&fit=crop" alt="High-end commercial architecture in East Africa" class="absolute inset-0 w-full h-full object-cover grayscale" />
-      </div>
-      <div class="p-6">
-        <h3 class="font-serif text-2xl text-navy">Real Estate Brokerage</h3>
-        <p class="mt-3 text-darkgray">
-          Mandated sales and acquisitions executed by specialists with local reach and institutional process. We curate deal flow and manage negotiations through to closing.
-        </p>
-        <ul class="mt-4 text-sm text-darkgray list-disc pl-5 space-y-1">
-          <li>Buy- and sell-side mandates</li>
-          <li>Commercial, residential, and mixed-use assets</li>
-          <li>Negotiation management and closing coordination</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- Card 4: Mining Rights Consultation -->
-    <article class="relative overflow-hidden rounded-xl border border-lightgray/50 bg-brandwhite shadow-soft">
-      <div class="relative h-56 image-overlay">
-        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop" alt="Industrial mining site and mineral analysis" class="absolute inset-0 w-full h-full object-cover grayscale" />
-      </div>
-      <div class="p-6">
-        <h3 class="font-serif text-2xl text-navy">Mining Rights Consultation</h3>
-        <p class="mt-3 text-darkgray">
-          Advisory on prospecting licenses, retention, transfers, and compliance—integrated with geospatial assessment and community frameworks for responsible development.
-        </p>
-        <ul class="mt-4 text-sm text-darkgray list-disc pl-5 space-y-1">
-          <li>Licensing pathways and regulatory compliance</li>
-          <li>Mining cadastre intelligence and risk screening</li>
-          <li>Stakeholder and ESG considerations</li>
-        </ul>
-      </div>
-    </article>
-  </div>
-</div>
-</section>
-
-<!-- Backend Advantage -->
-<section id="backend" class="relative py-20 bg-navy">
-<div class="absolute inset-0 opacity-20">
-<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1920&auto=format&fit=crop" alt="Abstract data background" class="w-full h-full object-cover" />
-</div>
-<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-brandwhite">
-<div class="max-w-3xl">
-<h2 class="font-serif text-3xl sm:text-4xl">The Backend Advantage</h2>
-<p class="mt-4 text-lightgray">
-We automate the bridge between consulting strategy and on-the-ground property matches. Our backend normalizes disparate data—from land registries and planning schemes to mining cadastres and satellite layers—so opportunities are scored against your mandate in real time.
-</p>
-</div>
-
-  <div class="mt-10 grid gap-8 md:grid-cols-3">
-    <div class="p-6 rounded-xl bg-brandwhite/5 border border-brandwhite/10">
-      <h3 class="font-serif text-xl">Normalized Datasets</h3>
-      <p class="mt-2 text-lightgray">Titles, zoning, rights-of-way, environmental buffers, mineral licenses, and market comps consolidated for comparability.</p>
-    </div>
-    <div class="p-6 rounded-xl bg-brandwhite/5 border border-brandwhite/10">
-      <h3 class="font-serif text-xl">Scoring & Risk Flags</h3>
-      <p class="mt-2 text-lightgray">Automated suitability scoring, red flag triggers, and compliance checkpoints for institutional approval flows.</p>
-    </div>
-    <div class="p-6 rounded-xl bg-brandwhite/5 border border-brandwhite/10">
-      <h3 class="font-serif text-xl">Execution Rails</h3>
-      <p class="mt-2 text-lightgray">Broker network, site inspections, valuation templates, and legal workflows—linked so strategy translates to deeds.</p>
-    </div>
-  </div>
-
-  <!-- Visual pipeline -->
-  <div class="mt-12 rounded-xl border border-brandwhite/10 bg-brandwhite/5 p-6">
-    <div class="text-sm text-lightgray">Data Pipeline</div>
-    <div class="mt-4 grid gap-4 md:grid-cols-6 items-stretch">
-      <div class="p-4 rounded bg-brandwhite/10">Land Registry</div>
-      <div class="p-4 rounded bg-brandwhite/10">Planning & Zoning</div>
-      <div class="p-4 rounded bg-brandwhite/10">Mining Cadastre</div>
-      <div class="p-4 rounded bg-brandwhite/10">Satellite & GIS</div>
-      <div class="p-4 rounded bg-brandwhite/10">Market Comps</div>
-      <div class="p-4 rounded bg-brandwhite/10">Scoring Engine</div>
-    </div>
-    <p class="mt-4 text-lightgray text-sm">
-      Output: Prioritized shortlist with due diligence packets and valuation notes, ready for offers and stakeholder engagement.
-    </p>
-  </div>
-</div>
-</section>
-
-<!-- Mining Division Feature -->
-<section class="relative">
-<div class="relative h-[420px] image-overlay">
-<img src="https://images.unsplash.com/photo-1466854076813-4aa9ac0fc347?q=80&w=1920&auto=format&fit=crop" alt="Aerial view of mining operations" class="absolute inset-0 w-full h-full object-cover grayscale-[30%]" />
-<div class="absolute inset-0"></div>
-<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-<div class="max-w-3xl text-brandwhite">
-<h3 class="font-serif text-3xl">Mining Rights, Market Discipline</h3>
-<p class="mt-3 text-lightgray">
-We align prospecting and retention strategies with regulatory cadence, technical work programs, and community frameworks. From license screening to transfer structuring, we deliver governance that stands up to investor due diligence.
-</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Valuation Feature -->
-<section class="py-16 bg-brandwhite">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-10 md:grid-cols-2 items-center">
-<div class="relative rounded-xl overflow-hidden shadow-soft">
-<div class="relative h-[360px] image-overlay">
-<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop" alt="Professional office and valuation work" class="absolute inset-0 w-full h-full object-cover grayscale" />
-</div>
-</div>
-<div>
-<h3 class="font-serif text-3xl text-navy">Institutional Valuation, Local Insight</h3>
-<p class="mt-4 text-darkgray">
-Our valuation integrates comparable transactions, income analysis, and site-specific realities—access, utilities, buildability, and regulatory context—so your pricing is defensible in credit committee and boardrooms.
-</p>
-<ul class="mt-5 list-disc pl-5 text-darkgray space-y-2">
-<li>Comparable sales and yield benchmarking</li>
-<li>Development economics and feasibility</li>
-<li>Independent reporting for lenders/investors</li>
-</ul>
-</div>
-</div>
-</section>
-
-<!-- Intake Portal -->
-<section id="intake" class="py-20 bg-gray-50">
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="max-w-3xl">
-<h2 class="font-serif text-3xl sm:text-4xl text-navy">Start Your Mandate</h2>
-<p class="mt-3 text-darkgray">
-A 3-step intake captures your parameters and routes them to our backend scoring engine and advisory team. Expect a response within one business day.
-</p>
-</div>
-
-  <div class="mt-10 rounded-xl bg-brandwhite border border-lightgray/50 shadow-soft overflow-hidden">
-    <!-- Progress -->
-    <div class="w-full bg-lightgray/20 h-1.5">
-      <div id="progressBar" class="h-1.5 bg-navy w-1/3 transition-all"></div>
-    </div>
-
-    <form id="intakeForm" class="p-6 sm:p-8" novalidate>
-      <!-- Step 1 -->
-      <div class="form-step" data-step="1">
-        <h3 class="font-serif text-2xl text-navy">1) Contact & Organization</h3>
-        <div class="mt-6 grid gap-6 sm:grid-cols-2">
-          <div>
-            <label class="block text-sm text-darkgray mb-1">Full Name *</label>
-            <input type="text" name="fullName" required class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring" placeholder="Jane Doe" />
-          </div>
-          <div>
-            <label class="block text-sm text-darkgray mb-1">Work Email *</label>
-            <input type="email" name="email" required class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring" placeholder="jane@company.com" />
-          </div>
-          <div>
-            <label class="block text-sm text-darkgray mb-1">Phone *</label>
-            <input type="tel" name="phone" required class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring" placeholder="+255 700 000 000" />
-          </div>
-          <div>
-            <label class="block text-sm text-darkgray mb-1">Organization</label>
-            <input type="text" name="organization" class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring" placeholder="Company / Fund" />
-          </div>
+  <!-- Hero + Lead Form -->
+  <section class="hero" id="lead">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Tailored listings, zero browsing</div>
+        <h2>Tell us your budget and location. We’ll send the best-matched assets automatically.</h2>
+        <p class="lead">Focus on your criteria—price, area, and property type. We’ll route curated opportunities to your inbox and WhatsApp once configured.</p>
+        <div class="trust">
+          <div class="b">Data-driven filters</div>
+          <div class="b">Dar • Zanzibar • Bagamoyo</div>
+          <div class="b">Owner-first, compliance-forward</div>
         </div>
       </div>
 
-      <!-- Step 2 -->
-      <div class="form-step hidden" data-step="2">
-        <h3 class="font-serif text-2xl text-navy">2) Mandate & Geography</h3>
-        <div class="mt-6 grid gap-6 sm:grid-cols-2">
-          <div class="sm:col-span-2">
-            <label class="block text-sm text-darkgray mb-1">Service Interest *</label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <label class="inline-flex items-center gap-2 text-sm text-darkgray">
-                <input type="checkbox" name="services" value="Land Acquisition & Due Diligence" class="rounded border-lightgray/70">
-                <span>Land Acquisition & Due Diligence</span>
-              </label>
-              <label class="inline-flex items-center gap-2 text-sm text-darkgray">
-                <input type="checkbox" name="services" value="Property Valuation & Analysis" class="rounded border-lightgray/70">
-                <span>Property Valuation & Analysis</span>
-              </label>
-              <label class="inline-flex items-center gap-2 text-sm text-darkgray">
-                <input type="checkbox" name="services" value="Real Estate Brokerage" class="rounded border-lightgray/70">
-                <span>Real Estate Brokerage</span>
-              </label>
-              <label class="inline-flex items-center gap-2 text-sm text-darkgray">
-                <input type="checkbox" name="services" value="Mining Rights Consultation" class="rounded border-lightgray/70">
-                <span>Mining Rights Consultation</span>
-              </label>
+      <div class="card lead-card" aria-labelledby="leadFormTitle">
+        <h3 id="leadFormTitle" style="margin:0 0 6px;color:var(--navy)">Get your curated listings</h3>
+        <p class="help" style="margin:0 0 12px">Complete the form—your matches will be sent based on price and location preferences.</p>
+
+        <div id="success" class="success">Thank you! Your preferences are received. We’ll send matching listings shortly.</div>
+
+        <form id="leadForm" novalidate>
+          <!-- Contact -->
+          <div class="row">
+            <div>
+              <label for="fullName">Full name *</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Jane Doe" required />
+            </div>
+            <div>
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" placeholder="jane@company.com" required />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="phone">Phone (WhatsApp preferred)</label>
+              <input id="phone" name="phone" type="tel" placeholder="+255 712 345 678" />
+            </div>
+            <div>
+              <label for="contactPref">Preferred contact</label>
+              <select id="contactPref" name="contactPref">
+                <option>Email</option>
+                <option>WhatsApp</option>
+                <option>Phone</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Preferences -->
+          <div>
+            <label for="intent">Looking to *</label>
+            <select id="intent" name="intent" required>
+              <option value="">Select</option>
+              <option value="buy">Buy</option>
+              <option value="rent">Rent</option>
+              <option value="lease">Commercial Lease</option>
+              <option value="invest">Invest (Development/Portfolio)</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="location">Preferred location *</label>
+              <select id="location" name="location" required>
+                <option value="">Select area</option>
+                <option>Dar es Salaam — CBD</option>
+                <option>Dar es Salaam — Masaki</option>
+                <option>Dar es Salaam — Oysterbay</option>
+                <option>Dar es Salaam — Mikocheni</option>
+                <option>Zanzibar — Stone Town</option>
+                <option>Zanzibar — Nungwi/Kendwa</option>
+                <option>Bagamoyo</option>
+                <option value="other">Other (specify)</option>
+              </select>
+            </div>
+            <div>
+              <label for="locationOther">Other location</label>
+              <input id="locationOther" name="locationOther" type="text" placeholder="Area / Ward / Coordinates" />
+            </div>
+          </div>
+
+          <div class="row-3">
+            <div>
+              <label for="currency">Currency</label>
+              <select id="currency" name="currency">
+                <option value="TZS">TZS</option>
+                <option value="USD">USD</option>
+              </select>
+            </div>
+            <div>
+              <label for="minPrice">Min price *</label>
+              <input id="minPrice" name="minPrice" type="number" min="0" placeholder="e.g., 200,000,000" required />
+            </div>
+            <div>
+              <label for="maxPrice">Max price *</label>
+              <input id="maxPrice" name="maxPrice" type="number" min="0" placeholder="e.g., 1,200,000,000" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="propertyType">Property type *</label>
+              <select id="propertyType" name="propertyType" required>
+                <option value="">Select</option>
+                <option>Residential (Apartment)</option>
+                <option>Residential (House)</option>
+                <option>Commercial (Office/Retail)</option>
+                <option>Land (Residential)</option>
+                <option>Land (Commercial/Industrial)</option>
+              </select>
+            </div>
+            <div>
+              <label for="bedrooms">Bedrooms</label>
+              <select id="bedrooms" name="bedrooms">
+                <option>Studio</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="timeline">Timeline</label>
+              <select id="timeline" name="timeline">
+                <option>ASAP</option>
+                <option>0–3 months</option>
+                <option>3–6 months</option>
+                <option>6+ months</option>
+              </select>
+            </div>
+            <div>
+              <label for="purpose">Purpose</label>
+              <select id="purpose" name="purpose">
+                <option>Owner-occupier</option>
+                <option>Investment (Yield)</option>
+                <option>Development</option>
+                <option>Second home</option>
+              </select>
             </div>
           </div>
 
           <div>
-            <label class="block text-sm text-darkgray mb-1">Target Locations *</label>
-            <input type="text" name="locations" required class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring" placeholder="e.g., Dar es Salaam, Arusha, Coastal, East Africa" />
-          </div>
-          <div>
-            <label class="block text-sm text-darkgray mb-1">Budget Range (USD or TZS) *</label>
-            <input type="text" name="budget" required class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring" placeholder="e.g., $1.5M–$4M" />
-          </div>
-          <div>
-            <label class="block text-sm text-darkgray mb-1">Timeline *</label>
-            <select name="timeline" required class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring">
-              <option value="">Select</option>
-              <option>Immediate (0–3 months)</option>
-              <option>Near Term (3–6 months)</option>
-              <option>Mid Term (6–12 months)</option>
-              <option>Longer (12+ months)</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm text-darkgray mb-1">How did you hear about us?</label>
-            <select name="referrer" class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring">
-              <option value="">Select</option>
-              <option>Referral</option>
-              <option>Search</option>
-              <option>Industry Event</option>
-              <option>Social</option>
-              <option>Other</option>
-            </select>
+            <label for="notes">Additional requirements</label>
+            <textarea id="notes" name="notes" placeholder="Views, parking, HSE needs, title preferences (CCRO/Right of Occupancy), etc."></textarea>
           </div>
 
-          <div class="sm:col-span-2">
-            <label class="block text-sm text-darkgray mb-1">Additional Details</label>
-            <textarea name="details" rows="4" class="w-full px-3 py-2 rounded border border-lightgray/70 focus:focus-ring" placeholder="Briefly outline objectives, constraints, or specific asset criteria."></textarea>
+          <!-- Consent + UTM -->
+          <div class="consent">
+            <input id="consent" name="consent" type="checkbox" required />
+            <label for="consent">I agree to be contacted by Stratnex Properties regarding property matches and understand my data will be processed according to the Privacy Policy.</label>
           </div>
+
+          <input type="hidden" id="utm_source" name="utm_source" />
+          <input type="hidden" id="utm_medium" name="utm_medium" />
+          <input type="hidden" id="utm_campaign" name="utm_campaign" />
+          <input type="hidden" id="utm_term" name="utm_term" />
+          <input type="hidden" id="utm_content" name="utm_content" />
+
+          <div class="submit">
+            <button class="btn" type="submit">Send me matched listings</button>
+            <button class="btn secondary" type="button" id="whatsappBtn">Or chat via WhatsApp</button>
+          </div>
+          <div class="help">No browsing needed—we’ll email/WhatsApp the best fits once your preferences are matched.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services (Institutional Pillars) -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h3>What we do</h3>
+      <p class="lead">Institutional-grade services across land, mining, valuation, and brokerage.</p>
+      <div class="grid">
+        <div class="card svc">
+          <span class="chip">Land Acquisition & Legal Due Diligence</span>
+          <h4>Risk-Mitigated Land Acquisition</h4>
+          <p>We navigate the complexities of Tanzanian land law to secure unencumbered assets. Our process includes rigorous title verification at the Land Registry, zoning compliance checks, and encumbrance searches to protect your capital.</p>
+          <ul>
+            <li>Title Confirmation</li>
+            <li>Stakeholder Consultation</li>
+            <li>Regulatory Compliance</li>
+          </ul>
+        </div>
+        <div class="card svc">
+          <span class="chip">Mining Rights & Mineral Consultation</span>
+          <h4>Strategic Mineral Asset Management</h4>
+          <p>Facilitating the acquisition of prospecting and mining licenses across East Africa. We provide legal registers and permitting plans for gold, graphite, and gemstone ventures, ensuring compliance from initial exploration to mine closure.</p>
+          <ul>
+            <li>License Application Support</li>
+            <li>HSE Compliance</li>
+            <li>Artisanal Mining Strategy</li>
+          </ul>
+        </div>
+        <div class="card svc">
+          <span class="chip">Institutional Property Valuation</span>
+          <h4>Data-Driven Asset Valuation</h4>
+          <p>Moving beyond simple appraisals, we utilize the Sales Comparison and Income Capitalization approaches to provide defensible market values. Essential for investment analysis, insurance, and audit-ready financial reporting.</p>
+          <ul>
+            <li>Market Trend Analysis</li>
+            <li>Highest & Best Use Studies</li>
+            <li>Portfolio Audits</li>
+          </ul>
+        </div>
+        <div class="card svc">
+          <span class="chip">Real Estate Brokerage & Sourcing</span>
+          <h4>Exclusive Off-Market Brokerage</h4>
+          <p>Connecting institutional investors and private clients with premium commercial and residential opportunities in Dar es Salaam, Zanzibar, and Bagamoyo. We focus on high-yield assets with clear exit strategies.</p>
+          <ul>
+            <li>Buy-Side Mandates</li>
+            <li>Asset Matching</li>
+            <li>Transaction Management</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Step 3 -->
-      <div class="form-step hidden" data-step="3">
-        <h3 class="font-serif text-2xl text-navy">3) Compliance & Submit</h3>
-        <div class="mt-6 space-y-4">
-          <label class="inline-flex items-start gap-3 text-darkgray text-sm">
-            <input type="checkbox" name="consent" required class="mt-1 rounded border-lightgray/70">
-            <span>I consent to the processing of my information for mandate assessment and follow-up.</span>
-          </label>
-          <div class="p-4 rounded border border-lightgray/50 bg-gray-50 text-sm text-darkgray">
-            Upon submission, your brief is routed to our backend for initial screening. A StratNex Properties advisor will reach out to align on scope, fee, and next steps.
-          </div>
+  <!-- About (Mission) -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="card">
+        <h3 style="margin-top:0">Our mission</h3>
+        <p class="lead" style="color:var(--text)">
+          StratNex Properties bridges the gap between high-level consulting strategy and physical market execution. We operationalize the market intelligence of StratNex Consulting to deliver precision-sourced assets in the Tanzanian and wider East African landscape.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">SP</div>
+        <div>
+          <b style="color:var(--navy)">Stratnex Properties</b>
+          <div class="copyright">© <span id="year"></span> Stratnex Properties • A Stratnex Consulting Division</div>
         </div>
       </div>
-
-      <!-- Honeypot & Context -->
-      <input type="text" name="company_website" class="hidden" tabindex="-1" autocomplete="off" />
-      <input type="hidden" name="submittedAt" id="submittedAt" />
-      <input type="hidden" name="pageUrl" id="pageUrl" />
-      <input type="hidden" name="userAgent" id="userAgent" />
-
-      <!-- Controls -->
-      <div class="mt-8 flex items-center justify-between">
-        <button type="button" id="prevBtn" class="inline-flex items-center px-4 py-2 rounded border border-lightgray/70 text-navy hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed">Back</button>
-        <div class="flex items-center gap-3">
-          <button type="button" id="nextBtn" class="inline-flex items-center px-5 py-2.5 rounded bg-navy text-brandwhite hover:opacity-95">Next</button>
-          <button type="submit" id="submitBtn" class="hidden inline-flex items-center gap-2 px-5 py-2.5 rounded bg-navy text-brandwhite hover:opacity-95 disabled:opacity-60">
-            <svg id="submitSpinner" class="hidden h-5 w-5 animate-spin" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="white" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="white" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>
-            Submit Intake
-          </button>
-        </div>
+      <div>
+        <a href="https://stratnexconsulting.com" class="link">Parent: Stratnex Consulting</a>
       </div>
+    </div>
+  </footer>
 
-      <!-- Success / Error states -->
-      <div id="formAlert" class="mt-6 hidden rounded border p-4"></div>
-    </form>
-  </div>
-</div>
-</section>
+  <script>
+    // UTM capture
+    (function captureUTM(){
+      const params = new URLSearchParams(location.search);
+      const utms = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+      utms.forEach(k=>{
+        const v = params.get(k) || sessionStorage.getItem(k);
+        if(v){ document.getElementById(k).value = v; sessionStorage.setItem(k,v); }
+      });
+    })();
 
-<!-- Contact / Footer -->
-<footer id="contact" class="bg-navy text-brandwhite">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-<div class="grid gap-10 md:grid-cols-3">
-<div>
-<div class="flex items-center gap-2">
-<span class="text-xl font-serif font-semibold">StratNex</span>
-<span class="text-xl font-serif font-semibold text-lightgray">Properties</span>
-</div>
-<p class="mt-3 text-lightgray text-sm">
-Precision acquisition and advisory for real estate and mining assets across Tanzania and East Africa.
-</p>
-</div>
-<div>
-<h4 class="font-serif text-lg">Divisions</h4>
-<ul class="mt-3 text-lightgray text-sm space-y-2">
-<li>Real Estate: Acquisition, Due Diligence, Brokerage, Valuation</li>
-<li>Mining: Licensing, Rights, Compliance, Stakeholders</li>
-</ul>
-</div>
-<div>
-<h4 class="font-serif text-lg">Get in Touch</h4>
-<ul class="mt-3 text-lightgray text-sm space-y-2">
-<li>Email: info@stratnexproperties.com</li>
-<li>Region: Tanzania & East Africa</li>
-<li>Start the Intake</li>
-</ul>
-</div>
-</div>
-<div class="mt-10 pt-6 border-t border-brandwhite/10 text-lightgray text-xs flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
-<p>© <span id="year"></span> StratNex Properties. All rights reserved.</p>
-<p>A division of StratNex Consulting.</p>
-</div>
-</div>
-</footer>
+    // Conditional "Other" location
+    const loc = document.getElementById('location');
+    const locOther = document.getElementById('locationOther');
+    function toggleOther(){
+      const show = loc.value === 'other';
+      locOther.style.display = show ? 'block' : 'none';
+      locOther.required = show;
+      if(!show) locOther.value='';
+    }
+    loc.addEventListener('change', toggleOther);
+    toggleOther();
 
-<!-- Vanilla JS: Navigation, Form Steps, Backend Integration -->
-<script type="module">
-// Simple ENV pattern for deployment-time injection (Node or Wrangler can replace these)
-window.ENV = {
-WORKER_ENDPOINT: (window.ENV && window.ENV.WORKER_ENDPOINT) || 'https://YOUR-CF-WORKER.example.workers.dev/intake',
-// If you prefer direct Supabase insert from the browser, you can provide anon key and URL instead (not recommended for PII without RLS).
-SUPABASE_URL: '',
-SUPABASE_ANON_KEY: ''
-};
-
-// Mobile nav
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-mobileMenuBtn?.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-});
-
-// Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Intake form logic
-const form = document.getElementById('intakeForm');
-const steps = Array.from(document.querySelectorAll('.form-step'));
-const progressBar = document.getElementById('progressBar');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const submitBtn = document.getElementById('submitBtn');
-const submitSpinner = document.getElementById('submitSpinner');
-const formAlert = document.getElementById('formAlert');
-
-let currentStep = 0;
-updateUI();
-
-// Populate context
-document.getElementById('submittedAt').value = new Date().toISOString();
-document.getElementById('pageUrl').value = window.location.href;
-document.getElementById('userAgent').value = navigator.userAgent;
-
-prevBtn.addEventListener('click', () => {
-  if (currentStep > 0) {
-    currentStep--;
-    updateUI();
-  }
-});
-
-nextBtn.addEventListener('click', () => {
-  if (validateStep(currentStep)) {
-    currentStep++;
-    updateUI();
-  }
-});
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  if (!validateStep(currentStep)) return;
-
-  const data = formToJSON(new FormData(form));
-  // Basic spam guard
-  if (data.company_website) return; // honeypot
-
-  setLoading(true);
-  clearAlert();
-
-  try {
-    const res = await fetch(window.ENV.WORKER_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        type: 'intake',
-        payload: {
-          ...data,
-          services: normalizeServices(data.services),
-          submittedAt: new Date().toISOString(),
-          pageUrl: window.location.href,
-          userAgent: navigator.userAgent
-        }
-      })
+    // WhatsApp deeplink
+    const waBtn = document.getElementById('whatsappBtn');
+    waBtn.addEventListener('click', ()=>{
+      const phone = (document.getElementById('phone').value || '').replace(/\D/g,'');
+      const name = encodeURIComponent(document.getElementById('fullName').value || '');
+      const intent = encodeURIComponent(document.getElementById('intent').value || '');
+      const area = encodeURIComponent(document.getElementById('location').value || '');
+      const minP = document.getElementById('minPrice').value;
+      const maxP = document.getElementById('maxPrice').value;
+      const cur = document.getElementById('currency').value;
+      const budgetTxt = encodeURIComponent(`${cur} ${minP || '?'} - ${maxP || '?'}`);
+      const msg = `Hello Stratnex Properties,%0AI'm ${name}.%0AIntent: ${intent}%0ALocation: ${area}%0ABudget: ${budgetTxt}`;
+      const companyNumber = '255700000000'; // replace with your WhatsApp number
+      const link = `https://wa.me/${companyNumber}?text=${msg}`;
+      window.open(link,'_blank');
     });
 
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(text || 'Submission failed');
-    }
+    // Form submission
+    const form = document.getElementById('leadForm');
+    const success = document.getElementById('success');
 
-    const result = await res.json().catch(() => ({ ok: true }));
-    showAlert('Thank you. Your intake has been received. Our team will respond within one business day.', 'success');
-    form.reset();
-    currentStep = 0;
-    updateUI();
-  } catch (err) {
-    showAlert('We could not submit your intake at this time. Please try again or email info@stratnexproperties.com', 'error');
-    console.error(err);
-  } finally {
-    setLoading(false);
-  }
-});
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
 
-function normalizeServices(svc) {
-  if (!svc) return [];
-  if (Array.isArray(svc)) return svc;
-  return [svc];
-}
-
-function updateUI() {
-  steps.forEach((step, idx) => {
-    step.classList.toggle('hidden', idx !== currentStep);
-  });
-
-  const progressPct = ((currentStep + 1) / steps.length) * 100;
-  progressBar.style.width = `${progressPct}%`;
-
-  prevBtn.disabled = currentStep === 0;
-  nextBtn.classList.toggle('hidden', currentStep === steps.length - 1);
-  submitBtn.classList.toggle('hidden', currentStep !== steps.length - 1);
-}
-
-function validateStep(idx) {
-  const step = steps[idx];
-  const required = Array.from(step.querySelectorAll('[required]'));
-  let valid = true;
-
-  required.forEach((el) => {
-    if ((el.type === 'checkbox' || el.type === 'radio')) {
-      // At least one services checkbox required on step 2
-      if (el.name === 'services') {
-        const group = step.querySelectorAll('input[name="services"]:checked');
-        if (group.length === 0) valid = false;
-      } else if (!el.checked) {
-        valid = false;
+      // Basic validations
+      const min = Number(document.getElementById('minPrice').value || 0);
+      const max = Number(document.getElementById('maxPrice').value || 0);
+      if (min && max && min > max){
+        alert('Min price cannot be greater than max price.');
+        return;
       }
-    } else if (!el.value || el.value.trim() === '') {
-      valid = false;
-    }
-
-    el.classList.toggle('ring-2', !el.checkValidity());
-    el.classList.toggle('ring-red-400', !el.checkValidity());
-  });
-
-  if (!valid) {
-    showAlert('Please complete the required fields to continue.', 'error', 3000);
-  } else {
-    clearAlert();
-  }
-  return valid;
-}
-
-function formToJSON(formData) {
-  const obj = {};
-  for (const [key, value] of formData.entries()) {
-    if (key === 'services') {
-      if (!obj[key]) obj[key] = [];
-      obj[key].push(value);
-    } else {
-      obj[key] = value;
-    }
-  }
-  return obj;
-}
-
-function setLoading(isLoading) {
-  submitBtn.disabled = isLoading;
-  submitSpinner.classList.toggle('hidden', !isLoading);
-}
-
-function showAlert(message, type = 'info', timeout = 0) {
-  formAlert.classList.remove('hidden');
-  formAlert.textContent = message;
-  formAlert.className = 'mt-6 rounded border p-4';
-  if (type === 'success') {
-    formAlert.classList.add('border-green-200', 'bg-green-50', 'text-green-800');
-  } else if (type === 'error') {
-    formAlert.classList.add('border-red-200', 'bg-red-50', 'text-red-800');
-  } else {
-    formAlert.classList.add('border-lightgray/50', 'bg-gray-50', 'text-darkgray');
-  }
-  if (timeout) {
-    setTimeout(clearAlert, timeout);
-  }
-}
-
-function clearAlert() {
-  formAlert.classList.add('hidden');
-  formAlert.textContent = '';
-}
-</script>
-
-<!-- Integration Notes (Node.js / Cloudflare Worker / Supabase) -->
-<!--
-OPTION A: Cloudflare Worker (recommended)
-----------------------------------------
-1) Deploy a Worker endpoint and set secret env for Supabase.
-wrangler secret put SUPABASE_URL
-wrangler secret put SUPABASE_SERVICE_ROLE
-
-2) worker.js (Node-like edge runtime using web standards)
-
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-
-export default {
-  async fetch(request, env) {
-    if (request.method === 'OPTIONS') {
-      return new Response(null, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type'
-        }
-      });
-    }
-
-    if (request.method !== 'POST') {
-      return new Response('Method Not Allowed', { status: 405 });
-    }
-
-    try {
-      const { type, payload } = await request.json();
-      if (type !== 'intake') {
-        return new Response(JSON.stringify({ error: 'Invalid type' }), { status: 400 });
+      if (!form.reportValidity()){
+        return;
       }
 
-      const supabase = createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE, {
-        auth: { persistSession: false }
-      });
+      // Collect data
+      const data = Object.fromEntries(new FormData(form).entries());
 
-      const { data, error } = await supabase
-        .from('intakes')
-        .insert({
-          full_name: payload.fullName || null,
-          email: payload.email || null,
-          phone: payload.phone || null,
-          organization: payload.organization || null,
-          services: payload.services || [],
-          locations: payload.locations || null,
-          budget: payload.budget || null,
-          timeline: payload.timeline || null,
-          referrer: payload.referrer || null,
-          details: payload.details || null,
-          consent: !!payload.consent,
-          user_agent: payload.userAgent || null,
-          page_url: payload.pageUrl || null,
-          submitted_at: new Date().toISOString()
-        })
-        .select()
-        .single();
+      // Example: POST to your backend endpoint (replace URL)
+      try{
+        const resp = await fetch('https://your-backend.example.com/api/leads', {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json' },
+          body: JSON.stringify({
+            ...data,
+            page: location.href,
+            ts: new Date().toISOString()
+          })
+        });
 
-      if (error) throw error;
-
-      return new Response(JSON.stringify({ ok: true, id: data.id }), {
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
+        if(resp.ok){
+          form.reset();
+          toggleOther();
+          success.style.display = 'block';
+          // optional: scroll to success
+          success.scrollIntoView({behavior:'smooth', block:'center'});
+        } else {
+          alert('We could not submit your request. Please try again or contact us via WhatsApp.');
         }
-      });
-    } catch (err) {
-      return new Response(JSON.stringify({ error: String(err) }), {
-        status: 500,
-        headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' }
-      });
-    }
-  }
-};
+      }catch(err){
+        alert('Network error. Please try again or contact us via WhatsApp.');
+      }
+    });
 
-3) Update window.ENV.WORKER_ENDPOINT above with your deployed Worker URL.
-
-
-OPTION B: Node.js (Express) API
---------------------------------
-npm i express @supabase/supabase-js cors body-parser
-
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const { createClient } = require('@supabase/supabase-js');
-
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
-
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE);
-
-app.post('/intake', async (req, res) => {
-  try {
-    const { type, payload } = req.body;
-    if (type !== 'intake') return res.status(400).json({ error: 'Invalid type' });
-
-    const { data, error } = await supabase.from('intakes').insert({
-      full_name: payload.fullName,
-      email: payload.email,
-      phone: payload.phone,
-      organization: payload.organization,
-      services: payload.services || [],
-      locations: payload.locations,
-      budget: payload.budget,
-      timeline: payload.timeline,
-      referrer: payload.referrer,
-      details: payload.details,
-      consent: !!payload.consent,
-      user_agent: payload.userAgent,
-      page_url: payload.pageUrl,
-      submitted_at: new Date().toISOString()
-    }).select().single();
-
-    if (error) throw error;
-    res.json({ ok: true, id: data.id });
-  } catch (e) {
-    res.status(500).json({ error: String(e) });
-  }
-});
-
-app.listen(8787, () => console.log('API listening on :8787'));
-
-4) Set window.ENV.WORKER_ENDPOINT to your API URL (e.g., https://api.stratnexproperties.com/intake)
-
-
-Supabase Table (SQL)
---------------------
-create table if not exists public.intakes (
-  id uuid primary key default gen_random_uuid(),
-  full_name text,
-  email text,
-  phone text,
-  organization text,
-  services text[],
-  locations text,
-  budget text,
-  timeline text,
-  referrer text,
-  details text,
-  consent boolean default false,
-  user_agent text,
-  page_url text,
-  submitted_at timestamptz default now()
-);
-alter table public.intakes enable row level security;
-
--- For admin or service role only; keep service key secret in server/worker.
--->
-
-<!-- Image credits: Unsplash
-- City skyline: https://unsplash.com/photos/photo-1518684079-3c830dcef090
-- Undeveloped land: https://unsplash.com/photos/photo-1531884070720-875c7622d4b4
-- Mining site: https://unsplash.com/photos/photo-1466854076813-4aa9ac0fc347
-- Blueprints/office: https://unsplash.com/photos/photo-1516912940688-2032882f7610 and https://unsplash.com/photos/photo-1524758631624-e2822e304c36
--->
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
