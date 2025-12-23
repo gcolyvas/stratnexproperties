@@ -1,152 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StratNex Properties | Precision Real Estate Acquisition</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --sn-navy: #142C40;
-            --sn-light-gray: #A6A8AB;
-            --sn-dark-gray: #595A59;
-            --sn-white: #FFFFFF;
-        }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--sn-white); color: var(--sn-dark-gray); }
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .bg-navy { background-color: var(--sn-navy); }
-        .text-navy { color: var(--sn-navy); }
-        .text-light-gray { color: var(--sn-light-gray); }
-        .border-light-gray { border-color: var(--sn-light-gray); }
-        
-        /* Responsive Logo Logic */
-        .logo-full { display: block; }
-        .logo-short { display: none; }
-        @media (max-width: 768px) {
-            .logo-full { display: none; }
-            .logo-short { display: block; }
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>StratNex Properties — Strategic Property Intelligence</title>
 
-        .step-content { display: none; }
-        .step-content.active { display: block; }
-        .hero-overlay { background: linear-gradient(rgba(20, 44, 64, 0.85), rgba(20, 44, 64, 0.95)); }
-    </style>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+:root{
+--navy:#142C40;
+--light-gray:#A6A8AB;
+--dark-gray:#595A59;
+--white:#FFFFFF;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: var(--dark-gray); background: var(--white); }
+.h-serif { font-family: 'Playfair Display', Georgia, Cambria, 'Times New Roman', Times, serif; }
+/* Simple fade/slide for form steps */
+.step-enter { opacity: 0; transform: translateY(8px); }
+.step-enter-active { opacity: 1; transform: translateY(0); transition: all 240ms ease; }
+.step-exit { opacity: 1; transform: translateY(0); }
+.step-exit-active { opacity: 0; transform: translateY(-8px); transition: all 200ms ease; }
+</style>
 </head>
-<body class="overflow-x-hidden">
+<body class="antialiased">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white border-b" style="border-color: var(--light-gray);">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<!-- Brand -->
+<a href="/" class="flex items-center space-x-3 group" aria-label="StratNex Properties Home">
+<!-- Mobile monogram -->
+<div class="md:hidden inline-flex items-center justify-center rounded-sm border text-sm font-semibold px-2 py-1" style="border-color: var(--light-gray); color: var(--navy);">
+SX
+</div>
+<!-- Desktop full logo -->
+<div class="hidden md:flex items-center">
+<span class="h-serif text-xl font-semibold tracking-wide" style="color: var(--navy);">StratNex Properties</span>
+</div>
+</a>
+<!-- External link -->
+<nav class="flex items-center space-x-6">
+<a href="https://stratnexconsulting.com" target="_blank" rel="noopener" class="text-sm font-medium hover:opacity-80" style="color: var(--dark-gray);">
+Visit StratNex Consulting
+</a>
+<a href="#intake" class="hidden sm:inline-flex items-center rounded-md px-4 py-2 text-sm font-semibold" style="background: var(--navy); color: var(--white);">
+Begin Intake
+</a>
+</nav>
+</div>
+</header>
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#A6A8AB]/30 py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="flex items-center">
-            <div class="logo-full font-bold text-xl tracking-tighter text-[#142C40] uppercase">
-                StratNex <span class="font-light text-[#A6A8AB]">Properties</span>
-            </div>
-            <div class="logo-short font-bold text-xl tracking-tighter text-[#142C40] uppercase">
-                S<span class="text-[#A6A8AB]">X</span>
-            </div>
+<!-- Hero -->
+<section class="relative overflow-hidden" style="background: var(--navy);">
+<div class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+<div class="max-w-3xl">
+<h1 class="h-serif text-4xl md:text-6xl leading-tight font-extrabold text-white">
+Strategic Property Intelligence
+</h1>
+<p class="mt-6 text-lg md:text-xl text-white/85">
+Precision Acquisition for Private & Institutional Portfolios
+</p>
+<div class="mt-10 flex items-center gap-4">
+<a href="#intake" class="inline-flex items-center rounded-md px-6 py-3 text-sm font-semibold" style="background: var(--white); color: var(--navy);">
+Start Your Mandate
+</a>
+<a href="#capabilities" class="inline-flex items-center rounded-md px-6 py-3 text-sm font-semibold border" style="border-color: var(--light-gray); color: var(--white);">
+Explore Capabilities
+</a>
+</div>
+</div>
+</div>
+<!-- Subtle diagonal overlay -->
+<div class="pointer-events-none absolute inset-y-0 right-0 w-2/5 opacity-[0.07] hidden md:block" aria-hidden="true">
+<div class="w-full h-full" style="background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 60%);"></div>
+</div>
+</section>
+
+<!-- Capabilities -->
+<section id="capabilities" class="py-20 md:py-28">
+<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-3xl">
+<h2 class="h-serif text-3xl md:text-4xl font-bold" style="color: var(--navy);">Institutional-Grade Capability Set</h2>
+<p class="mt-5 text-base md:text-lg" style="color: var(--dark-gray);">
+We operationalize data, diligence, and sourcing at the level required by sophisticated family offices, operators, and funds. The result: qualified deal flow aligned to mandate, underwritten with consulting rigor, and executed with discretion.
+</p>
+</div>
+
+  <div class="mt-12 grid md:grid-cols-3 gap-8">
+    <!-- Market Intelligence -->
+    <div class="p-6 border rounded-lg" style="border-color: var(--light-gray);">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex p-2 rounded-md" style="background: #F7F7F7;">
+          <!-- Bar chart icon -->
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="10" width="3" height="11" rx="1" fill="#A6A8AB"></rect>
+            <rect x="10.5" y="4" width="3" height="17" rx="1" fill="#A6A8AB"></rect>
+            <rect x="18" y="7" width="3" height="14" rx="1" fill="#A6A8AB"></rect>
+          </svg>
+        </span>
+        <h3 class="h-serif text-xl font-semibold" style="color: var(--navy);">Market Intelligence</h3>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed">
+        Macro-to-micro analytics translating demographic, yield, and rate dynamics into actionable submarket selection. We synthesize proprietary datasets with public records for precise, defensible theses.
+      </p>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          Demand and absorption mapping by asset type
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          Rate sensitivity and cap-rate stress scenarios
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          Permit, pipeline, and supply-side normalization
+        </li>
+      </ul>
+    </div>
+
+    <!-- Off-Market Sourcing -->
+    <div class="p-6 border rounded-lg" style="border-color: var(--light-gray);">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex p-2 rounded-md" style="background: #F7F7F7;">
+          <!-- Key icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M14.5 7.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" stroke="#A6A8AB" stroke-width="1.5"/>
+            <path d="M13 9l7 7-1.5 1.5L17 15l-2 2-1.5-1.5 2-2-1.5-1.5Z" fill="#A6A8AB"/>
+          </svg>
+        </span>
+        <h3 class="h-serif text-xl font-semibold" style="color: var(--navy);">Off-Market Sourcing</h3>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed">
+        Mandate-driven outreach through owners, operators, and specialist brokers. We prioritize discretion, alignment, and speed-to-first-look for proprietary exposure.
+      </p>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          Direct-to-owner dialogues and structured approaches
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          Broker intelligence for niche, specialist asset pockets
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          Proprietary screeners aligning NOI, tenancy, and uplift
+        </li>
+      </ul>
+    </div>
+
+    <!-- Consulting-Grade Due Diligence -->
+    <div class="p-6 border rounded-lg" style="border-color: var(--light-gray);">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex p-2 rounded-md" style="background: #F7F7F7;">
+          <!-- Shield icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3Z" stroke="#A6A8AB" stroke-width="1.5" fill="none"/>
+            <path d="M9.5 12.5l1.8 1.8 3.7-3.7" stroke="#A6A8AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3 class="h-serif text-xl font-semibold" style="color: var(--navy);">Consulting-Grade Due Diligence</h3>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed">
+        Deal-room readiness with underwriting, legal risk triage, and environmental and resilience checks. Built for IC confidence and auditability.
+      </p>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          Rent roll, T-12 normalization, and sensitivity matrices
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          Zoning, title, and covenant risk surfacing
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--light-gray);"></span>
+          ESG/resilience screens aligned to hold strategy
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Advantage: Backend Automation Bridge -->
+<section class="py-20 md:py-28 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div>
+<h2 class="h-serif text-3xl md:text-4xl font-bold" style="color: var(--navy);">The Advantage: Backend Automation</h2>
+<p class="mt-5 text-base md:text-lg">
+StratNex connects consulting strategy to physical asset selection through a controlled automation layer. Your mandate becomes a living filter that continuously screens, scores, and routes opportunities for rapid, defensible decisioning.
+</p>
+<ul class="mt-6 space-y-4">
+<li class="flex items-start gap-3">
+<span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full" style="background: var(--light-gray);"></span>
+<div>
+<p class="font-semibold" style="color: var(--navy);">Mandate Translation</p>
+<p class="text-sm mt-1">From thesis to rules: location, asset class, constraints, return targets, and risk tolerances become machine-readable criteria.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full" style="background: var(--light-gray);"></span>
+<div>
+<p class="font-semibold" style="color: var(--navy);">Automated Matching</p>
+<p class="text-sm mt-1">Listings, owner records, and broker signals pipe into a matching engine that prioritizes deal fit and flags diligence focus areas.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="mt-1 inline-flex h-2.5 w-2.5 rounded-full" style="background: var(--light-gray);"></span>
+<div>
+<p class="font-semibold" style="color: var(--navy);">Closed-Loop Diligence</p>
+<p class="text-sm mt-1">As findings evolve (leases, OPEX, capital plans), the system re-scores to maintain alignment with your return profile.</p>
+</div>
+</li>
+</ul>
+</div>
+
+    <!-- Simple flow visualization -->
+    <div class="lg:pl-8">
+      <div class="p-6 border rounded-lg" style="border-color: var(--light-gray);">
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-md border" style="border-color: var(--light-gray);">
+            <p class="text-xs uppercase tracking-wide" style="color: var(--light-gray);">Input</p>
+            <p class="mt-2 font-semibold" style="color: var(--navy);">Mandate</p>
+            <p class="mt-1 text-xs">Asset class, target geos, budget, timeline, risk</p>
+          </div>
+          <div class="p-4 rounded-md border" style="border-color: var(--light-gray);">
+            <p class="text-xs uppercase tracking-wide" style="color: var(--light-gray);">Engine</p>
+            <p class="mt-2 font-semibold" style="color: var(--navy);">Matching</p>
+            <p class="mt-1 text-xs">Screen, score, route, enrich</p>
+          </div>
+          <div class="p-4 rounded-md border" style="border-color: var(--light-gray);">
+            <p class="text-xs uppercase tracking-wide" style="color: var(--light-gray);">Output</p>
+            <p class="mt-2 font-semibold" style="color: var(--navy);">Curated Deal Flow</p>
+            <p class="mt-1 text-xs">Off-market and qualified on-market</p>
+          </div>
         </div>
-        <div class="flex items-center space-x-6">
-            <a href="https://stratnexconsulting.com" class="text-[10px] font-bold tracking-[0.2em] text-[#595A59] hover:text-[#142C40] transition-colors">STRATNEX CONSULTING</a>
+        <div class="mt-4 p-4 rounded-md" style="background: #F7F7F7;">
+          <p class="text-xs uppercase tracking-wide" style="color: var(--light-gray);">Governance</p>
+          <p class="mt-1 text-sm">Audit trail, IC-ready materials, and versioned assumptions to maintain institutional control.</p>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
-    <section class="relative h-[90vh] flex items-center justify-center text-center text-white px-6 hero-overlay">
-        <div class="max-w-4xl z-10">
-            <h1 class="font-serif text-5xl md:text-7xl mb-6">Strategic Property Intelligence</h1>
-            <p class="text-lg md:text-xl font-light text-[#A6A8AB] mb-10 tracking-wide max-w-2xl mx-auto uppercase">
-                Precision Acquisition for Private & Institutional Portfolios
-            </p>
-            <div class="w-24 h-1 bg-[#A6A8AB] mx-auto mb-10"></div>
-            <a href="#intake" class="inline-block border border-[#A6A8AB] text-white px-10 py-4 text-xs font-bold tracking-[0.3em] hover:bg-white hover:text-[#142C40] transition-all uppercase">Enter Intake Portal</a>
+<!-- Divider -->
+<div class="max-w-7xl mx-auto px-6">
+<hr class="border-t" style="border-color: var(--light-gray);" />
+</div>
+
+<!-- Intake Form -->
+<section id="intake" class="py-20 md:py-28">
+<div class="max-w-3xl mx-auto px-6">
+<div class="text-center">
+<h2 class="h-serif text-3xl md:text-4xl font-bold" style="color: var(--navy);">Property Intake Portal</h2>
+<p class="mt-4 text-base md:text-lg">Submit your acquisition mandate. Our team will align sourcing and diligence, then contact you securely.</p>
+</div>
+
+  <div class="mt-10 p-6 md:p-8 border rounded-lg" style="border-color: var(--light-gray);">
+    <!-- Progress -->
+    <div class="mb-6">
+      <div class="flex items-center justify-between text-xs font-medium" style="color: var(--light-gray);">
+        <span id="progress-label">Step 1 of 3</span>
+        <span id="progress-title">Intent</span>
+      </div>
+      <div class="mt-2 h-2 w-full rounded-full overflow-hidden" style="background: #EEEEEE;">
+        <div id="progress-bar" class="h-2 rounded-full" style="background: var(--light-gray); width: 33%;"></div>
+      </div>
+    </div>
+
+    <form id="intake-form" novalidate>
+      <!-- Step 1: Intent -->
+      <div class="form-step" data-step="1">
+        <h3 class="h-serif text-xl font-semibold" style="color: var(--navy);">Intent</h3>
+        <p class="mt-2 text-sm">Tell us what and where you’re targeting.</p>
+
+        <div class="mt-6 grid gap-6">
+          <!-- Asset Class -->
+          <div>
+            <label class="block text-sm font-medium mb-2" for="assetClass" style="color: var(--dark-gray);">Asset Class</label>
+            <div class="grid sm:grid-cols-3 gap-3" role="radiogroup" aria-labelledby="assetClass">
+              <label class="flex items-center justify-between gap-3 border rounded-md px-3 py-3 cursor-pointer hover:bg-[#FAFAFA]" style="border-color: var(--light-gray);">
+                <span class="text-sm">Commercial</span>
+                <input type="radio" name="assetClass" value="Commercial" class="h-4 w-4" aria-label="Commercial">
+              </label>
+              <label class="flex items-center justify-between gap-3 border rounded-md px-3 py-3 cursor-pointer hover:bg-[#FAFAFA]" style="border-color: var(--light-gray);">
+                <span class="text-sm">Luxury</span>
+                <input type="radio" name="assetClass" value="Luxury" class="h-4 w-4" aria-label="Luxury">
+              </label>
+              <label class="flex items-center justify-between gap-3 border rounded-md px-3 py-3 cursor-pointer hover:bg-[#FAFAFA]" style="border-color: var(--light-gray);">
+                <span class="text-sm">Industrial</span>
+                <input type="radio" name="assetClass" value="Industrial" class="h-4 w-4" aria-label="Industrial">
+              </label>
+            </div>
+          </div>
+
+          <!-- Target Location -->
+          <div>
+            <label for="location" class="block text-sm font-medium mb-2" style="color: var(--dark-gray);">Target Location</label>
+            <input id="location" name="location" type="text" required placeholder="City, State or Region"
+              class="w-full rounded-md border px-3 py-2 text-sm outline-none focus:ring-2"
+              style="border-color: var(--light-gray); caret-color: var(--navy); --tw-ring-color: var(--light-gray);">
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-            <div>
-                <h2 class="font-serif text-4xl text-[#142C40] mb-8">Institutional Grade Real Estate Services</h2>
-                <p class="text-[#595A59] mb-8 leading-relaxed text-lg">
-                    StratNex Properties operates at the intersection of high-level financial consulting and physical asset acquisition. We provide an automated bridge for clients transitioning from strategic planning on <a href="https://stratnexconsulting.com" class="text-[#142C40] font-bold underline">StratNex Consulting</a> to tangible market execution.
-                </p>
-                
-                <div class="space-y-12">
-                    <div class="border-l-4 border-[#A6A8AB] pl-6">
-                        <h3 class="font-bold text-[#142C40] uppercase tracking-widest mb-2">Market Intelligence</h3>
-                        <p class="text-sm text-[#595A59]">Proprietary data scraping of off-market assets ensuring first-mover advantage in distressed and premium markets.</p>
-                    </div>
-                    <div class="border-l-4 border-[#142C40] pl-6">
-                        <h3 class="font-bold text-[#142C40] uppercase tracking-widest mb-2">Backend Automation</h3>
-                        <p class="text-sm text-[#595A59]">Our algorithm matches your financial consulting profile against thousands of listings, delivering only the top 1% of matches.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-[#F4F4F4] p-2">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069" alt="Office" class="grayscale hover:grayscale-0 transition-all duration-700">
-            </div>
+      <!-- Step 2: Financials -->
+      <div class="form-step hidden" data-step="2">
+        <h3 class="h-serif text-xl font-semibold" style="color: var(--navy);">Financials</h3>
+        <p class="mt-2 text-sm">Budget and timing help us prioritize your pipeline.</p>
+
+        <div class="mt-6 grid gap-6 sm:grid-cols-2">
+          <!-- Budget -->
+          <div class="sm:col-span-2">
+            <label for="budget" class="block text-sm font-medium mb-2" style="color: var(--dark-gray);">Budget Range (USD)</label>
+            <select id="budget" name="budget" required
+              class="w-full rounded-md border px-3 py-2 text-sm outline-none focus:ring-2"
+              style="border-color: var(--light-gray); --tw-ring-color: var(--light-gray);">
+              <option value="">Select a range</option>
+              <option value="1–5M">$1M–$5M</option>
+              <option value="5–20M">$5M–$20M</option>
+              <option value="20–50M">$20M–$50M</option>
+              <option value="50–100M">$50M–$100M</option>
+              <option value="100M+">$100M+</option>
+            </select>
+          </div>
+
+          <!-- Timeline -->
+          <div>
+            <label for="timeline" class="block text-sm font-medium mb-2" style="color: var(--dark-gray);">Acquisition Timeline</label>
+            <select id="timeline" name="timeline" required
+              class="w-full rounded-md border px-3 py-2 text-sm outline-none focus:ring-2"
+              style="border-color: var(--light-gray); --tw-ring-color: var(--light-gray);">
+              <option value="">Select a timeline</option>
+              <option value="Immediate">Immediate</option>
+              <option value="30–60 days">30–60 days</option>
+              <option value="60–120 days">60–120 days</option>
+              <option value="6–12 months">6–12 months</option>
+            </select>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="intake" class="bg-[#142C40] py-24 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-serif text-4xl text-white mb-4">Property Acquisition Intake</h2>
-                <div class="h-1 w-20 bg-[#A6A8AB] mx-auto mb-6"></div>
-                <p class="text-[#A6A8AB] uppercase tracking-[0.3em] text-[10px]">Step-by-Step Requirement Analysis</p>
-            </div>
+      <!-- Step 3: Verification -->
+      <div class="form-step hidden" data-step="3">
+        <h3 class="h-serif text-xl font-semibold" style="color: var(--navy);">Verification</h3>
+        <p class="mt-2 text-sm">Secure contact details for follow-up. We do not sell or share your data.</p>
 
-            <div class="bg-white p-8 md:p-16 shadow-2xl">
-                <div class="flex justify-between mb-12 text-[10px] font-bold tracking-widest uppercase text-[#A6A8AB]">
-                    <span id="p-step1" class="text-[#142C40]">01. Intent</span>
-                    <span id="p-step2">02. Financials</span>
-                    <span id="p-step3">03. Verification</span>
-                </div>
+        <div class="mt-6 grid gap-6">
+          <!-- Name / Entity -->
+          <div>
+            <label for="fullName" class="block text-sm font-medium mb-2" style="color: var(--dark-gray);">Full Name or Entity</label>
+            <input id="fullName" name="fullName" type="text" required placeholder="e.g., A. Morgan or Morgan Capital LLC"
+              class="w-full rounded-md border px-3 py-2 text-sm outline-none focus:ring-2"
+              style="border-color: var(--light-gray); caret-color: var(--navy); --tw-ring-color: var(--light-gray);">
+          </div>
 
-                <form id="propertyForm">
-                    <div id="step1" class="step-content active">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                            <div class="flex flex-col">
-                                <label class="text-[10px] font-bold uppercase mb-2 text-[#595A59]">Asset Interest</label>
-                                <select class="border-b border-[#A6A8AB] py-3 outline-none focus:border-[#142C40]">
-                                    <option>Commercial Portfolio</option>
-                                    <option>Residential/Luxury</option>
-                                    <option>Industrial Assets</option>
-                                </select>
-                            </div>
-                            <div class="flex flex-col">
-                                <label class="text-[10px] font-bold uppercase mb-2 text-[#595A59]">Target Location</label>
-                                <input type="text" placeholder="Global or Specific Region" class="border-b border-[#A6A8AB] py-3 outline-none focus:border-[#142C40]">
-                            </div>
-                        </div>
-                        <div class="mt-12 text-right">
-                            <button type="button" onclick="nextStep(2)" class="bg-[#142C40] text-white px-12 py-4 text-[10px] font-bold tracking-widest uppercase hover:bg-[#595A59] transition-all">Next Stage</button>
-                        </div>
-                    </div>
-
-                    </form>
-
-                <div id="successMessage" class="hidden text-center py-10">
-                    <h2 class="font-serif text-3xl text-[#142C40] mb-4">Criteria Logged</h2>
-                    <p class="text-[#595A59] mb-8">The backend is now generating your specialized HTML property listing.</p>
-                    <a href="https://stratnexconsulting.com" class="text-[10px] font-bold tracking-widest uppercase border-b-2 border-[#142C40] pb-1">Return to Consulting</a>
-                </div>
-            </div>
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium mb-2" style="color: var(--dark-gray);">Secure Email Address</label>
+            <input id="email" name="email" type="email" required placeholder="name@firm.com"
+              class="w-full rounded-md border px-3 py-2 text-sm outline-none focus:ring-2"
+              style="border-color: var(--light-gray); caret-color: var(--navy); --tw-ring-color: var(--light-gray);">
+            <p class="mt-2 text-xs" style="color: var(--light-gray);">We’ll use this for encrypted communications regarding your mandate.</p>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <footer class="bg-white py-12 border-t border-[#A6A8AB]/20 text-center">
-        <p class="text-[#A6A8AB] text-[9px] tracking-[0.5em] uppercase italic">
-            Institutional Real Estate Standards — StratNex Properties © 2025
-        </p>
-    </footer>
+      <!-- Errors -->
+      <div id="form-errors" class="mt-4 text-sm" style="color: #a94442;" aria-live="polite"></div>
 
-    <script>
-        function nextStep(step) {
-            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
-            document.getElementById('step' + step).classList.add('active');
-            
-            // Update indicator colors
-            document.getElementById('p-step' + step).classList.add('text-[#142C40]');
-        }
-        // Success logic here...
-    </script>
+      <!-- Actions -->
+      <div class="mt-8 flex items-center justify-between">
+        <button type="button" id="prevBtn"
+          class="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold border disabled:opacity-50"
+          style="border-color: var(--light-gray); color: var(--dark-gray);" disabled>
+          Back
+        </button>
+        <div class="flex gap-3">
+          <button type="button" id="nextBtn"
+            class="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold disabled:opacity-50"
+            style="background: var(--navy); color: var(--white);">
+            Next
+          </button>
+          <button type="submit" id="submitBtn"
+            class="hidden inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold"
+            style="background: var(--navy); color: var(--white);">
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Success state -->
+    <div id="success-state" class="hidden mt-8 rounded-md border p-6" style="border-color: var(--light-gray);">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex p-2 rounded-md" style="background: #F7F7F7;">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="#A6A8AB" stroke-width="1.5"></circle>
+            <path d="M8.5 12.5l2.2 2.2 4.8-4.8" stroke="#A6A8AB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <p class="h-serif text-lg font-semibold" style="color: var(--navy);">Submission received</p>
+      </div>
+      <p class="mt-2 text-sm">Your intake has been submitted. A StratNex Properties specialist will reach out via the secure email you provided.</p>
+    </div>
+
+    <!-- Privacy -->
+    <p class="mt-6 text-xs" style="color: var(--light-gray);">
+      By submitting, you acknowledge StratNex Properties may store and process your information to service your intake. We maintain strict confidentiality and institutional data handling standards.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="py-10">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-xs" style="color: var(--light-gray);">
+© <span id="year"></span> StratNex Properties. All rights reserved.
+</p>
+<a href="https://stratnexconsulting.com" target="_blank" rel="noopener" class="text-xs underline hover:opacity-80" style="color: var(--dark-gray);">
+stratnexconsulting.com
+</a>
+</div>
+</footer>
+
+<script>
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Form logic
+const form = document.getElementById('intake-form');
+const steps = Array.from(document.querySelectorAll('.form-step'));
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const submitBtn = document.getElementById('submitBtn');
+const progressBar = document.getElementById('progress-bar');
+const progressLabel = document.getElementById('progress-label');
+const progressTitle = document.getElementById('progress-title');
+const errorBox = document.getElementById('form-errors');
+const successState = document.getElementById('success-state');
+
+let currentStep = 1;
+
+function titlesForStep(step) {
+  switch(step){
+    case 1: return 'Intent';
+    case 2: return 'Financials';
+    case 3: return 'Verification';
+    default: return '';
+  }
+}
+
+function updateProgress(step) {
+  const widths = {1:'33%', 2:'66%', 3:'100%'};
+  progressBar.style.width = widths[step];
+  progressLabel.textContent = `Step ${step} of 3`;
+  progressTitle.textContent = titlesForStep(step);
+}
+
+function showStep(step) {
+  // basic fade animation classes
+  steps.forEach(s => {
+    const isTarget = Number(s.dataset.step) === step;
+    if (isTarget) {
+      s.classList.remove('hidden', 'step-exit', 'step-exit-active');
+      s.classList.add('step-enter');
+      // force reflow
+      void s.offsetWidth;
+      s.classList.add('step-enter-active');
+      setTimeout(() => {
+        s.classList.remove('step-enter', 'step-enter-active');
+      }, 250);
+    } else {
+      if (!s.classList.contains('hidden')) {
+        s.classList.add('step-exit');
+        // force reflow
+        void s.offsetWidth;
+        s.classList.add('step-exit-active');
+        setTimeout(() => {
+          s.classList.remove('step-exit', 'step-exit-active');
+          s.classList.add('hidden');
+        }, 210);
+      }
+    }
+  });
+
+  prevBtn.disabled = step === 1;
+  nextBtn.classList.toggle('hidden', step === 3);
+  submitBtn.classList.toggle('hidden', step !== 3);
+  updateProgress(step);
+  errorBox.textContent = '';
+}
+
+function validateStep(step) {
+  // clear errors
+  errorBox.textContent = '';
+
+  if (step === 1) {
+    const assetClass = form.querySelector('input[name="assetClass"]:checked');
+    const location = form.location.value.trim();
+    if (!assetClass) {
+      errorBox.textContent = 'Please select an asset class.';
+      return false;
+    }
+    if (!location) {
+      errorBox.textContent = 'Please provide a target location.';
+      return false;
+    }
+  }
+
+  if (step === 2) {
+    const budget = form.budget.value;
+    const timeline = form.timeline.value;
+    if (!budget) {
+      errorBox.textContent = 'Please select a budget range.';
+      return false;
+    }
+    if (!timeline) {
+      errorBox.textContent = 'Please select an acquisition timeline.';
+      return false;
+    }
+  }
+
+  if (step === 3) {
+    const fullName = form.fullName.value.trim();
+    const email = form.email.value.trim();
+    if (!fullName) {
+      errorBox.textContent = 'Please provide your full name or entity.';
+      return false;
+    }
+    const emailOk = /^[^\s@]+@[^\s@]+.[^\s@]+$/.test(email);
+    if (!emailOk) {
+      errorBox.textContent = 'Please provide a valid email address.';
+      return false;
+    }
+  }
+
+  return true;
+}
+
+nextBtn.addEventListener('click', () => {
+  if (!validateStep(currentStep)) return;
+  currentStep = Math.min(3, currentStep + 1);
+  showStep(currentStep);
+});
+
+prevBtn.addEventListener('click', () => {
+  currentStep = Math.max(1, currentStep - 1);
+  showStep(currentStep);
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!validateStep(3)) return;
+
+  // Gather data (could be sent to endpoint)
+  const payload = {
+    assetClass: form.querySelector('input[name="assetClass"]:checked')?.value || '',
+    location: form.location.value.trim(),
+    budget: form.budget.value,
+    timeline: form.timeline.value,
+    fullName: form.fullName.value.trim(),
+    email: form.email.value.trim()
+  };
+
+  // For this static page, we simulate submission.
+  console.log('Intake submission:', payload);
+
+  form.classList.add('hidden');
+  successState.classList.remove('hidden');
+  updateProgress(3);
+});
+
+// Initial
+showStep(currentStep);
+</script>
 </body>
 </html>
