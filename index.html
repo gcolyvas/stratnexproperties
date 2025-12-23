@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StratNex Properties | Specialized Acquisition & Listings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        :root {
+            --brand-deep: #0A192F; /* Deep Professional Blue */
+            --brand-gold: #C4A47C; /* Elite Accent Gold */
+        }
+        .bg-brand-deep { background-color: var(--brand-deep); }
+        .text-brand-gold { color: var(--brand-gold); }
+        .border-brand-gold { border-color: var(--brand-gold); }
+        .step-content { display: none; }
+        .step-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+
+    <nav class="bg-white border-b border-slate-100 py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-brand-deep rounded-sm"></div>
+            <span class="text-xl font-bold tracking-tighter text-brand-deep uppercase">StratNex <span class="font-light text-slate-400">Properties</span></span>
+        </div>
+        <a href="https://stratnexconsulting.com" class="text-xs font-bold tracking-widest text-slate-500 hover:text-brand-gold transition-colors">BACK TO CONSULTING</a>
+    </nav>
+
+    <header class="bg-brand-deep text-white py-20 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Strategic Property Intelligence</h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light max-w-2xl mx-auto">
+                Move beyond public listings. Our automated backend matches your specific investment profile with off-market and premium opportunities.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 -mt-12 mb-24">
+        
+        <div class="bg-white rounded-xl shadow-2xl overflow-hidden border border-slate-100">
+            
+            <div class="bg-slate-100 h-2 flex">
+                <div id="progress" class="bg-brand-gold h-full transition-all duration-500" style="width: 33%"></div>
+            </div>
+
+            <form id="propertyForm" class="p-8 md:p-12">
+                
+                <div id="step1" class="step-content active">
+                    <h2 class="text-2xl font-bold mb-2">Step 1: Core Criteria</h2>
+                    <p class="text-slate-500 mb-8 font-light">Tell us what you are looking for to trigger the matching engine.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Investment Type</label>
+                            <select class="w-full border-b-2 border-slate-200 py-3 focus:border-brand-gold outline-none transition-colors bg-transparent">
+                                <option>Residential Portfolio</option>
+                                <option>Commercial Assets</option>
+                                <option>Industrial / Warehouse</option>
+                                <option>Luxury Estate</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Primary Location</label>
+                            <input type="text" placeholder="City or Region" class="w-full border-b-2 border-slate-200 py-3 focus:border-brand-gold outline-none transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="mt-12 flex justify-end">
+                        <button type="button" onclick="nextStep(2)" class="bg-brand-deep text-white px-10 py-4 rounded-sm font-bold text-sm tracking-widest hover:bg-slate-800 transition-all">NEXT: DETAILS</button>
+                    </div>
+                </div>
+
+                <div id="step2" class="step-content">
+                    <h2 class="text-2xl font-bold mb-2">Step 2: Specifications</h2>
+                    <p class="text-slate-500 mb-8 font-light">Precision data allows our backend to filter non-relevant listings.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Budget Cap (USD)</label>
+                            <input type="number" placeholder="e.g. 2,000,000" class="w-full border-b-2 border-slate-200 py-3 focus:border-brand-gold outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Timeline for Acquisition</label>
+                            <select class="w-full border-b-2 border-slate-200 py-3 focus:border-brand-gold outline-none transition-colors bg-transparent">
+                                <option>Immediate (Under 30 days)</option>
+                                <option>Next 3-6 Months</option>
+                                <option>Strategic Planning (6+ Months)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 flex justify-between items-center">
+                        <button type="button" onclick="nextStep(1)" class="text-slate-400 font-bold text-xs tracking-widest hover:text-brand-deep">BACK</button>
+                        <button type="button" onclick="nextStep(3)" class="bg-brand-deep text-white px-10 py-4 rounded-sm font-bold text-sm tracking-widest hover:bg-slate-800 transition-all">NEXT: CONTACT</button>
+                    </div>
+                </div>
+
+                <div id="step3" class="step-content">
+                    <h2 class="text-2xl font-bold mb-2">Step 3: Receipt Information</h2>
+                    <p class="text-slate-500 mb-8 font-light">Where should we send your matched HTML property listings?</p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Full Name</label>
+                            <input type="text" placeholder="John Doe" class="w-full border-b-2 border-slate-200 py-3 focus:border-brand-gold outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Corporate Email Address</label>
+                            <input type="email" placeholder="john@company.com" class="w-full border-b-2 border-slate-200 py-3 focus:border-brand-gold outline-none transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="mt-12 flex justify-between items-center">
+                        <button type="button" onclick="nextStep(2)" class="text-slate-400 font-bold text-xs tracking-widest hover:text-brand-deep">BACK</button>
+                        <button type="submit" class="bg-brand-gold text-white px-10 py-4 rounded-sm font-bold text-sm tracking-widest hover:opacity-90 transition-all">FINALIZE & MATCH</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="successMessage" class="hidden p-12 text-center">
+                <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-brand-deep mb-4">Request Received</h2>
+                <p class="text-slate-500 max-w-md mx-auto">Our backend is now processing your criteria. You will receive an email with curated property listings shortly.</p>
+                <div class="mt-8">
+                    <a href="https://stratnexconsulting.com" class="text-brand-gold font-bold tracking-widest text-sm underline">RETURN TO STRATNEX CONSULTING</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-center">
+            <div>
+                <h3 class="font-bold text-brand-deep mb-2 uppercase tracking-tighter">Automated Sourcing</h3>
+                <p class="text-sm text-slate-500">Real-time data synchronization with elite property databases.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-brand-deep mb-2 uppercase tracking-tighter">Tailored Analysis</h3>
+                <p class="text-sm text-slate-500">Every listing is scored against your specific consulting profile.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-brand-deep mb-2 uppercase tracking-tighter">Verified Visits</h3>
+                <p class="text-sm text-slate-500">Seamlessly schedule site visits directly from your match email.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-100 py-12 text-center text-slate-400 text-xs tracking-widest">
+        <p>© 2025 STRATNEX PROPERTIES. ALL RIGHTS RESERVED. POWERED BY STRATNEX CONSULTING.</p>
+    </footer>
+
+    <script>
+        function nextStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            // Show requested step
+            document.getElementById('step' + step).classList.add('active');
+            
+            // Update Progress Bar
+            const progress = (step / 3) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        document.getElementById('propertyForm').onsubmit = function(e) {
+            e.preventDefault();
+            // Hide form and show success message
+            this.classList.add('hidden');
+            document.getElementById('successMessage').classList.remove('hidden');
+            document.getElementById('progress').style.width = '100%';
+        };
+    </script>
+</body>
+</html>
