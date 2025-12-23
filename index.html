@@ -7,183 +7,464 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
     <style>
-        :root { --navy: #142C40; --acc: #A6A8AB; --text: #595A59; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background-color: #FFFFFF; }
+        :root { --navy: 
+#142C40; --acc: 
+#A6A8AB; --text: 
+#595A59; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background-color: 
+#FFFFFF; }
         .font-serif { font-family: 'Playfair Display', serif; }
-        
-        /* Consistent Header styling with parent site */
-        .header-border { border-bottom: 1px solid rgba(166, 168, 171, 0.2); }
-        
-        /* Intake Portal Background */
-        .portal-bg { background-color: #F8FAFC; border: 1px solid #E2E8F0; }
-        
-        /* Modern Button - Navy & Gray */
-        .btn-primary { background-color: var(--navy); color: white; transition: all 0.3s ease; }
-        .btn-primary:hover { background-color: #1a3a54; transform: translateY(-1px); }
-        
-        .input-field { border: 1px solid #D1D5DB; border-radius: 8px; padding: 12px; width: 100%; font-size: 14px; }
+        .header-border { border-bottom: 1px solid 
+rgba(166, 168, 171, 0.2); }
+        .portal-bg { background-color: 
+#F8FAFC; border: 1px solid 
+#E2E8F0; }
+        .btn-primary { background-color: var(--navy); color: 
+white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: 
+#1a3a54; transform: translateY(-1px); }
+        .input-field { border: 1px solid 
+#D1D5DB; border-radius: 8px; padding: 12px; width: 100%; font-size: 14px; }
         .input-field:focus { border-color: var(--navy); outline: none; ring: 1px solid var(--navy); }
+        .label { display:block; font-size:10px; font-weight:800; color:
+#142C40; text-transform:uppercase; margin-bottom:8px }
+        .fieldset { border:1px dashed 
+#E2E8F0; border-radius:12px; padding:16px }
+        .hint { font-size:11px; color:
+#9AA3AF }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="header-border sticky top-0 bg-white z-50 py-4 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="https://stratnexconsulting.com" class="flex items-center gap-4">
-            <div class="flex items-center gap-3">
-                <img id="main-logo" 
-                     src="logo.png" 
-                     alt="StratNex Logo" 
-                     class="h-12 w-auto object-contain"
-                     onerror="tryNextLogo(this)">
-                
-                <div id="logo-fallback" class="hidden flex items-center justify-center w-10 h-10 bg-[#142C40] rounded-lg shadow-sm">
-                    <span class="text-white font-bold text-xl">S</span>
-                </div>
-            </div>
-
-            <div class="border-l border-gray-300 pl-4">
-                <h1 class="text-[#142C40] font-bold text-lg leading-none uppercase tracking-tight">Properties</h1>
-                <p class="text-[10px] text-[#A6A8AB] font-bold tracking-[0.2em] mt-1 uppercase">A StratNex Consulting Division</p>
-            </div>
-        </a>
-    </div>
+<header class="header-border sticky top-0 bg-white z-50 py-4 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <a href="https://stratnexconsulting.com" class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
+        <img id="main-logo"
+             src="logo.png"
+             alt="StratNex Logo"
+             class="h-12 w-auto object-contain"
+             onerror="tryNextLogo(this)">
+        <div id="logo-fallback" class="hidden flex items-center justify-center w-10 h-10 bg-[#142C40] rounded-lg shadow-sm">
+          <span class="text-white font-bold text-xl">S</span>
+        </div>
+      </div>
+      <div class="border-l border-gray-300 pl-4">
+        <h1 class="text-[#142C40] font-bold text-lg leading-none uppercase tracking-tight">Properties</h1>
+        <p class="text-[10px] text-[#A6A8AB] font-bold tracking-[0.2em] mt-1 uppercase">A StratNex Consulting Division</p>
+      </div>
+    </a>
+  </div>
 </header>
 
 <script>
-    // This script tries different filename variations if the first one fails
-    let attempts = 0;
-    const variations = ["Logo.png", "logo.PNG", "LOGO.PNG"];
+  // Robust logo capture: tries multiple names, extensions, and common paths.
+  // Also supports ?logo=/path/to/logo.svg override for deployments/CDNs.
+  const logoParam = new URLSearchParams(location.search).get('logo');
+  const logoVariations = logoParam ? [logoParam] : [
+    "logo.png","Logo.png","logo.PNG","LOGO.PNG",
+    "logo.svg","Logo.svg","logo.SVG","LOGO.SVG",
+    "logo.webp","Logo.webp","logo.WEBP","LOGO.WEBP",
+    "images/logo.png","images/logo.svg","images/logo.webp",
+    "assets/logo.png","assets/logo.svg","assets/logo.webp",
+    "/logo.png","/logo.svg","/logo.webp"
+  ];
 
-    function tryNextLogo(imgElement) {
-        if (attempts < variations.length) {
-            imgElement.src = variations[attempts];
-            attempts++;
-        } else {
-            // If all variations fail, hide image and show the 'S'
-            imgElement.style.display = 'none';
-            document.getElementById('logo-fallback').classList.remove('hidden');
-        }
+  let logoAttempt = 0;
+  function tryNextLogo(imgElement) {
+    logoAttempt++;
+    if (logoAttempt < logoVariations.length) {
+      imgElement.src = logoVariations[logoAttempt];
+    } else {
+      imgElement.style.display = 'none';
+      document.getElementById('logo-fallback').classList.remove('hidden');
     }
+  }
 </script>
 
-    <section class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-[#A6A8AB] text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Institutional Acquisition</span>
-                <h2 class="font-serif text-5xl text-[#142C40] leading-tight mb-8">Operationalizing Market Intelligence.</h2>
-                <p class="text-lg text-[#595A59] leading-relaxed mb-6">
-                    Welcome to the StratNex Properties intake portal. This platform is designed to transition your high-level strategy into physical asset acquisition. 
-                </p>
-                <div class="space-y-4">
-                    <div class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded bg-[#F1F5F9] flex items-center justify-center text-[#142C40] text-[10px] font-bold">01</div>
-                        <p class="text-sm"><strong>Secure Mandate:</strong> Your parameters are logged in our encrypted backend.</p>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded bg-[#F1F5F9] flex items-center justify-center text-[#142C40] text-[10px] font-bold">02</div>
-                        <p class="text-sm"><strong>Strategic Search:</strong> We scan off-market land, commercial, and mineral assets.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portal-bg p-8 md:p-12 rounded-2xl shadow-sm">
-                <h3 class="text-[#142C40] font-bold text-xl mb-2">Initiate Acquisition Mandate</h3>
-                <p class="text-xs text-[#A6A8AB] font-bold uppercase tracking-widest mb-8">Confidential Intake for Verified Clients</p>
-                
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Full Name / Entity</label>
-                            <input type="text" class="input-field" placeholder="Client Name">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Corporate Email</label>
-                            <input type="email" class="input-field" placeholder="email@entity.com">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Primary Asset Class</label>
-                        <select id="assetType" onchange="updateFields()" class="input-field appearance-none bg-white">
-                            <option value="realestate">Land & Real Estate Acquisition</option>
-                            <option value="mining">Mining Rights & Mineral Consultation</option>
-                        </select>
-                    </div>
-
-                    <div id="dynamicFields" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Target Region</label>
-                                <input type="text" class="input-field" placeholder="e.g. Dar es Salaam / Geita">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Investment Range (USD)</label>
-                                <input type="text" class="input-field" placeholder="e.g. $500k - $2M">
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-primary w-full py-4 rounded-lg font-bold text-[11px] uppercase tracking-[0.2em]">
-                        Submit Mandate to Consulting Team
-                    </button>
-                    <p class="text-center text-[10px] text-[#A6A8AB] italic mt-4">
-                        By submitting, you authorize StratNex to process your data under institutional confidentiality standards.
-                    </p>
-                </form>
-            </div>
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <span class="text-[#A6A8AB] text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Institutional Acquisition</span>
+      <h2 class="font-serif text-5xl text-[#142C40] leading-tight mb-8">Operationalizing Market Intelligence.</h2>
+      <p class="text-lg text-[#595A59] leading-relaxed mb-6">
+        Welcome to the StratNex Properties intake portal. This platform is designed to transition your high-level strategy into physical asset acquisition.
+      </p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <div class="w-6 h-6 rounded bg-[#F1F5F9] flex items-center justify-center text-[#142C40] text-[10px] font-bold">01</div>
+          <p class="text-sm"><strong>Secure Mandate:</strong> Your parameters are logged in our encrypted backend.</p>
         </div>
-    </section>
-
-    <footer class="py-12 border-t border-gray-100 text-center">
-        <p class="text-[10px] text-[#A6A8AB] font-bold uppercase tracking-[0.3em]">StratNex Properties — A StratNex Consulting Division</p>
-        <div class="mt-4 flex justify-center gap-6 text-[10px] font-bold uppercase text-[#142C40] tracking-widest">
-            <a href="https://stratnexconsulting.com">Main Office</a>
-            <a href="https://stratnexconsulting.com/contact">Global Support</a>
+        <div class="flex items-start gap-4">
+          <div class="w-6 h-6 rounded bg-[#F1F5F9] flex items-center justify-center text-[#142C40] text-[10px] font-bold">02</div>
+          <p class="text-sm"><strong>Strategic Search:</strong> We scan off-market land, commercial, and mineral assets.</p>
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <script>
-        function updateFields() {
-            const type = document.getElementById('assetType').value;
-            const container = document.getElementById('dynamicFields');
-            
-            if (type === 'mining') {
-                container.innerHTML = `
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Mineral Interest</label>
-                            <select class="input-field bg-white">
-                                <option>Gold</option>
-                                <option>Graphite</option>
-                                <option>Gemstones</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">License Stage</label>
-                            <select class="input-field bg-white">
-                                <option>Prospecting</option>
-                                <option>Active Mining</option>
-                                <option>JV Opportunity</option>
-                            </select>
-                        </div>
-                    </div>
-                `;
-            } else {
-                container.innerHTML = `
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Target Region</label>
-                            <input type="text" class="input-field" placeholder="e.g. Dar es Salaam / Zanzibar">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Investment Range (USD)</label>
-                            <input type="text" class="input-field" placeholder="e.g. $500k - $2M">
-                        </div>
-                    </div>
-                `;
-            }
-        }
-    </script>
+    <div class="portal-bg p-8 md:p-12 rounded-2xl shadow-sm">
+      <h3 class="text-[#142C40] font-bold text-xl mb-2">Initiate Acquisition Mandate</h3>
+      <p class="text-xs text-[#A6A8AB] font-bold uppercase tracking-widest mb-8">Confidential Intake for Verified Clients</p>
+
+      <form class="space-y-6" id="mandateForm">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="label">Full Name / Entity</label>
+            <input type="text" name="clientName" class="input-field" placeholder="Client Name" required>
+          </div>
+          <div>
+            <label class="label">Corporate Email</label>
+            <input type="email" name="email" class="input-field" placeholder="email@entity.com" required>
+          </div>
+        </div>
+
+        <div>
+          <label class="label">Primary Asset Class</label>
+          <select id="assetType" name="assetType" class="input-field appearance-none bg-white" required>
+            <option value="">Select Asset Class</option>
+            <option value="realestate">Land & Real Estate Acquisition</option>
+            <option value="mining">Mining Rights & Mineral Consultation</option>
+          </select>
+          <p class="hint mt-1">Choose Real Estate to see industry-specific options (Residential, Commercial, Industrial, Agricultural, Mixed-Use).</p>
+        </div>
+
+        <div id="dynamicFields" class="space-y-6">
+          <!-- Populated by JS -->
+        </div>
+
+        <button type="submit" class="btn-primary w-full py-4 rounded-lg font-bold text-[11px] uppercase tracking-[0.2em]">
+          Submit Mandate to Consulting Team
+        </button>
+        <p class="text-center text-[10px] text-[#A6A8AB] italic mt-4">
+          By submitting, you authorize StratNex to process your data under institutional confidentiality standards.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="py-12 border-t border-gray-100 text-center">
+  <p class="text-[10px] text-[#A6A8AB] font-bold uppercase tracking-[0.3em]">StratNex Properties — A StratNex Consulting Division</p>
+  <div class="mt-4 flex justify-center gap-6 text-[10px] font-bold uppercase text-[#142C40] tracking-widest">
+    <a href="https://stratnexconsulting.com">Main Office</a>
+    <a href="https://stratnexconsulting.com/contact">Global Support</a>
+  </div>
+</footer>
+
+<script>
+  function el(tag, attrs={}, html="") {
+    const d = document.createElement(tag);
+    Object.entries(attrs).forEach(([k,v]) => d.setAttribute(k,v));
+    d.innerHTML = html;
+    return d;
+  }
+
+  function realEstateFields() {
+    return `
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="label">Industry Segment</label>
+          <select name="re_segment" id="re_segment" class="input-field bg-white" required>
+            <option value="">Select Segment</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+            <option value="industrial">Industrial Land</option>
+            <option value="agricultural">Agricultural Land</option>
+            <option value="mixeduse">Mixed-Use Development</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Target Region</label>
+          <input type="text" name="region" class="input-field" placeholder="e.g. Dar es Salaam / Zanzibar / Arusha" required>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="label">Investment Range (USD)</label>
+          <input type="text" name="budget" class="input-field" placeholder="e.g. $500k - $10M" required>
+        </div>
+        <div>
+          <label class="label">Development Stage</label>
+          <select name="developmentStage" class="input-field bg-white" required>
+            <option value="">Select Stage</option>
+            <option value="raw">Raw / Virgin Land</option>
+            <option value="serviced">Serviced Plots</option>
+            <option value="underdev">Under Development</option>
+            <option value="completed">Completed Buildings</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="re_subgroup" class="fieldset space-y-4">
+        <div class="text-xs uppercase font-bold text-[#142C40]">Segment Details</div>
+        <div id="re_subgroup_fields" class="grid md:grid-cols-2 gap-4"></div>
+      </div>
+    `;
+  }
+
+  function setRESubgroup(segment) {
+    const box = document.getElementById('re_subgroup_fields');
+    if (!box) return;
+    let html = '';
+
+    if (segment === 'residential') {
+      html = `
+        <div>
+          <label class="label">Property Form</label>
+          <select name="res_form" class="input-field bg-white" required>
+            <option value="">Select</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House/Villa</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="plot">Residential Plot</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Bedrooms</label>
+          <select name="bedrooms" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option>Studio</option><option>1</option><option>2</option><option>3</option><option>4+</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Bathrooms</label>
+          <select name="bathrooms" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option>1</option><option>2</option><option>3+</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Furnishing</label>
+          <select name="furnishing" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="furnished">Furnished</option>
+            <option value="semi">Semi-furnished</option>
+            <option value="unfurnished">Unfurnished</option>
+          </select>
+        </div>
+      `;
+    } else if (segment === 'commercial') {
+      html = `
+        <div>
+          <label class="label">Use / Zoning</label>
+          <select name="comm_use" class="input-field bg-white" required>
+            <option value="">Select</option>
+            <option value="office">Office</option>
+            <option value="retail">Retail</option>
+            <option value="hospitality">Hospitality</option>
+            <option value="industrial">Light Industrial</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Required Floor Area (m²)</label>
+          <input type="number" name="floorArea" class="input-field" min="0" placeholder="e.g. 150">
+        </div>
+        <div>
+          <label class="label">Occupancy</label>
+          <select name="occupancy" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="shell">Shell & core</option>
+            <option value="fitted">Fitted</option>
+            <option value="serviced">Serviced</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Lease Terms</label>
+          <select name="leaseTerms" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="short">≤ 2 years</option>
+            <option value="standard">3–5 years</option>
+            <option value="long">5+ years</option>
+          </select>
+        </div>
+      `;
+    } else if (segment === 'industrial') {
+      html = `
+        <div>
+          <label class="label">Plot Size (m²)</label>
+          <input type="number" name="plotSize" class="input-field" min="0" placeholder="e.g. 5,000">
+        </div>
+        <div>
+          <label class="label">Power Access</label>
+          <select name="power" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="3phase">3-Phase Nearby</option>
+            <option value="substation">Substation Access</option>
+            <option value="generator">Generator Onsite</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Road Access</label>
+          <select name="road" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="tarmac">Tarmac</option>
+            <option value="gravel">Gravel</option>
+            <option value="port">Port Proximity</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Title / Tenure</label>
+          <select name="tenure" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="ccro">CCRO</option>
+            <option value="ro">Right of Occupancy</option>
+            <option value="gro">Granted Right of Occupancy</option>
+          </select>
+        </div>
+      `;
+    } else if (segment === 'agricultural') {
+      html = `
+        <div>
+          <label class="label">Acreage (acres)</label>
+          <input type="number" name="acreage" class="input-field" min="0" placeholder="e.g. 50">
+        </div>
+        <div>
+          <label class="label">Water Source</label>
+          <select name="water" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="river">River</option>
+            <option value="borehole">Borehole</option>
+            <option value="rainfed">Rain-fed</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Current Use</label>
+          <select name="agri_use" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="grazing">Grazing</option>
+            <option value="crop">Crop Production</option>
+            <option value="mixed">Mixed Farming</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Title / Tenure</label>
+          <select name="tenure" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="ccro">CCRO</option>
+            <option value="ro">Right of Occupancy</option>
+            <option value="gro">Granted Right of Occupancy</option>
+          </select>
+        </div>
+      `;
+    } else if (segment === 'mixeduse') {
+      html = `
+        <div>
+          <label class="label">Plot Size (m²)</label>
+          <input type="number" name="plotSize" class="input-field" min="0" placeholder="e.g. 2,500">
+        </div>
+        <div>
+          <label class="label">FAR / Density Target</label>
+          <input type="text" name="far" class="input-field" placeholder="e.g. FAR 3.5">
+        </div>
+        <div>
+          <label class="label">Components</label>
+          <select name="components" class="input-field bg-white" multiple>
+            <option value="residential">Residential</option>
+            <option value="retail">Retail</option>
+            <option value="office">Office</option>
+            <option value="hospitality">Hospitality</option>
+          </select>
+          <p class="hint mt-1">Hold Ctrl/Cmd to select multiple</p>
+        </div>
+        <div>
+          <label class="label">Title / Tenure</label>
+          <select name="tenure" class="input-field bg-white">
+            <option value="">No preference</option>
+            <option value="ccro">CCRO</option>
+            <option value="ro">Right of Occupancy</option>
+            <option value="gro">Granted Right of Occupancy</option>
+          </select>
+        </div>
+      `;
+    } else {
+      html = `<div class="text-sm text-gray-500">Select an industry segment to continue.</div>`;
+    }
+
+    box.innerHTML = html;
+  }
+
+  function miningFields() {
+    return `
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="label">Mineral Interest</label>
+          <select name="mineralType" class="input-field bg-white" required>
+            <option value="">Select Mineral</option>
+            <option value="gold">Gold</option>
+            <option value="graphite">Graphite</option>
+            <option value="gemstones">Gemstones</option>
+            <option value="nickel">Nickel</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">License Stage</label>
+          <select name="licenseStage" class="input-field bg-white" required>
+            <option value="">Select Stage</option>
+            <option value="prospecting">Prospecting</option>
+            <option value="exploration">Exploration</option>
+            <option value="active">Active Mining</option>
+            <option value="jv">JV Opportunity</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="label">Target Region</label>
+          <input type="text" name="region" class="input-field" placeholder="e.g. Geita / Kahama" required>
+        </div>
+        <div>
+          <label class="label">Investment Range (USD)</label>
+          <input type="text" name="budget" class="input-field" placeholder="e.g. $1M - $5M" required>
+        </div>
+      </div>
+    `;
+  }
+
+  function updateFields() {
+    const type = document.getElementById('assetType').value;
+    const container = document.getElementById('dynamicFields');
+
+    if (type === 'mining') {
+      container.innerHTML = miningFields();
+    } else if (type === 'realestate') {
+      container.innerHTML = realEstateFields();
+      // Attach listener for RE segment-specific subgroup
+      const seg = document.getElementById('re_segment');
+      seg.addEventListener('change', () => setRESubgroup(seg.value));
+      setRESubgroup(seg.value);
+    } else {
+      container.innerHTML = `
+        <div class="text-center py-8 text-[#A6A8AB] text-sm italic">
+          Please select an asset class to continue
+        </div>
+      `;
+    }
+  }
+
+  // Submission
+  document.getElementById('mandateForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fd = new FormData(this);
+    const data = Object.fromEntries(fd);
+
+    if (!data.assetType) {
+      alert('Please select an Asset Class');
+      return;
+    }
+
+    // Example submission (replace with your endpoint)
+    // fetch('/api/mandate', { method:'POST', body: fd });
+    console.log('Mandate submitted:', data);
+    alert('Thank you! Your acquisition mandate has been submitted to the StratNex Consulting Team. You will receive a response within 24 hours.');
+    this.reset();
+    updateFields();
+  });
+
+  // Initialize on load
+  document.addEventListener('DOMContentLoaded', updateFields);
+</script>
+
 </body>
 </html>
