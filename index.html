@@ -3,267 +3,165 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Stratnex Properties | Institutional Real Estate & Mining</title>
+    <title>StratNex Properties | Precision Asset Acquisition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
     <style>
-        :root {
-            --navy: #142C40;
-            --acc: #A6A8AB;
-            --text: #595A59;
-            --soft-bg: #F8FAFC;
-        }
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            color: var(--text);
-            background-color: #FFFFFF;
-        }
+        :root { --navy: #142C40; --acc: #A6A8AB; --text: #595A59; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background-color: #FFFFFF; scroll-behavior: smooth; }
         .font-serif { font-family: 'Playfair Display', serif; }
-        
-        /* Glassmorphism Navigation */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(166, 168, 171, 0.2);
-        }
-
-        /* Premium Hero Section */
-        .hero-gradient {
-            background: linear-gradient(135deg, #142C40 0%, #1a3a54 100%);
-        }
-
-        /* Modern Form Styling */
-        .input-premium {
-            border: 1px solid rgba(166, 168, 171, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .input-premium:focus {
-            border-color: var(--navy);
-            box-shadow: 0 0 0 4px rgba(20, 44, 64, 0.05);
-            outline: none;
-        }
-
-        /* Card Hover Effects */
-        .card-modern {
-            transition: all 0.4s ease;
-            border: 1px solid rgba(166, 168, 171, 0.1);
-        }
-        .card-modern:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(20, 44, 64, 0.08);
-        }
-        
-        /* Animated Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(166, 168, 171, 0.2); }
+        .input-premium { border: 1px solid rgba(166, 168, 171, 0.3); transition: all 0.3s ease; }
+        .input-premium:focus { border-color: var(--navy); box-shadow: 0 0 0 4px rgba(20, 44, 64, 0.05); outline: none; }
+        .card-modern { transition: all 0.4s ease; border: 1px solid rgba(166, 168, 171, 0.1); }
+        .card-modern:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(20, 44, 64, 0.08); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .mining-gradient { background: linear-gradient(135deg, #142C40 0%, #2a4a66 100%); }
     </style>
 </head>
 <body>
 
     <nav class="glass-nav fixed w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-[#142C40] rounded-xl flex items-center justify-center shadow-lg">
-                <span class="text-white font-bold text-lg">S</span>
-            </div>
-            <div>
-                <h1 class="text-[#142C40] font-bold tracking-tight leading-none uppercase text-sm md:text-base">Stratnex <span class="font-light text-[#A6A8AB]">Properties</span></h1>
-                <p class="text-[9px] text-[#A6A8AB] tracking-[0.2em] uppercase mt-1">Institutional Division</p>
-            </div>
+            <a href="https://stratnexconsulting.com" class="flex items-center gap-3">
+                <img src="logo.png" alt="StratNex Logo" class="h-10 w-auto object-contain" 
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"w-10 h-10 bg-[#142C40] rounded-xl flex items-center justify-center shadow-lg\"><span class=\"text-white font-bold\">S</span></div>';">
+                <div class="hidden sm:block">
+                    <h1 class="text-[#142C40] font-bold tracking-tight leading-none uppercase text-sm md:text-base">StratNex <span class="font-light text-[#A6A8AB]">Properties</span></h1>
+                    <p class="text-[9px] text-[#A6A8AB] tracking-[0.2em] uppercase mt-1">Institutional Division</p>
+                </div>
+            </a>
         </div>
-        <div class="hidden md:flex gap-8 items-center text-[11px] font-bold tracking-widest text-[#142C40] uppercase">
-            <a href="#services" class="hover:text-[#A6A8AB] transition-colors">Services</a>
-            <a href="#about" class="hover:text-[#A6A8AB] transition-colors">Mission</a>
-            <a href="https://stratnexconsulting.com" class="bg-[#142C40] text-white px-5 py-2.5 rounded-full hover:bg-opacity-90 transition-all">Consulting Site</a>
+        <div class="flex gap-6 items-center">
+            <a href="https://stratnexconsulting.com" class="hidden lg:block text-[10px] font-bold tracking-widest text-[#142C40] uppercase hover:text-[#A6A8AB] transition-colors">StratNex Consulting</a>
+            <a href="#intake" class="bg-[#142C40] text-white text-[10px] font-bold tracking-widest uppercase px-6 py-3 rounded-full hover:shadow-xl transition-all">Get Matches</a>
         </div>
     </nav>
 
-    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
+    <section class="relative pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal active">
-                <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-[#142C40] text-[10px] font-bold tracking-widest uppercase mb-6">Automated Matching Engine</span>
-                <h2 class="font-serif text-5xl md:text-7xl text-[#142C40] leading-[1.1] mb-8 italic">Tailored listings, <br><span class="not-italic">zero browsing.</span></h2>
-                <p class="text-lg text-[#595A59] leading-relaxed mb-10 max-w-lg">
-                    Focus on your mandate—price, area, and asset class. We route curated institutional opportunities to your inbox once configured.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <div class="flex items-center gap-2 text-xs font-semibold text-[#142C40]">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#A6A8AB]"></div> Dar Es Salaam
-                    </div>
-                    <div class="flex items-center gap-2 text-xs font-semibold text-[#142C40]">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#A6A8AB]"></div> Zanzibar
-                    </div>
-                    <div class="flex items-center gap-2 text-xs font-semibold text-[#142C40]">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#A6A8AB]"></div> Bagamoyo
-                    </div>
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-[#142C40] text-[10px] font-bold tracking-widest uppercase mb-6">Automated Asset Matching</span>
+                <h2 class="font-serif text-5xl md:text-7xl text-[#142C40] leading-[1.1] mb-8 italic">Precision mandates, <br><span class="not-italic text-slate-800">unrivaled access.</span></h2>
+                <p class="text-lg text-[#595A59] leading-relaxed mb-10 max-w-lg">Define your acquisition criteria for Real Estate or Mineral Assets. Our backend engine routes the most compatible opportunities directly to your desk.</p>
+                <div class="flex gap-4">
+                    <div class="px-4 py-2 border border-gray-100 rounded-lg text-[10px] font-bold text-[#A6A8AB] uppercase">Mining Licenses</div>
+                    <div class="px-4 py-2 border border-gray-100 rounded-lg text-[10px] font-bold text-[#A6A8AB] uppercase">Commercial Land</div>
                 </div>
             </div>
 
-            <div class="reveal active relative">
-                <div class="absolute -inset-4 bg-[#F8FAFC] rounded-[40px] -z-10 rotate-2"></div>
-                <div class="bg-white p-8 md:p-12 rounded-[32px] shadow-2xl border border-gray-100">
-                    <h3 class="text-2xl font-bold text-[#142C40] mb-2">Configure Mandate</h3>
-                    <p class="text-xs text-[#A6A8AB] mb-8 uppercase tracking-widest font-semibold">Step 1: Define Parameters</p>
+            <div id="intake" class="reveal active relative">
+                <div class="bg-white p-8 md:p-12 rounded-[40px] shadow-2xl border border-gray-50">
+                    <h3 class="text-2xl font-bold text-[#142C40] mb-2">Acquisition Intake</h3>
+                    <p class="text-[10px] text-[#A6A8AB] uppercase tracking-widest font-bold mb-8 italic">Confidential mandate submission</p>
                     
-                    <form class="space-y-6">
+                    <form id="mandateForm" class="space-y-5">
                         <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="text-[10px] uppercase font-bold text-[#A6A8AB] mb-2 block">Full Name</label>
-                                <input type="text" placeholder="John Doe" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm">
-                            </div>
-                            <div>
-                                <label class="text-[10px] uppercase font-bold text-[#A6A8AB] mb-2 block">Email</label>
-                                <input type="email" placeholder="john@company.com" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm">
-                            </div>
+                            <input type="text" placeholder="Full Name / Entity" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm" required>
+                            <input type="email" placeholder="Secure Email" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm" required>
                         </div>
 
                         <div>
-                            <label class="text-[10px] uppercase font-bold text-[#A6A8AB] mb-2 block">Asset Interest</label>
-                            <select class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm appearance-none">
-                                <option>Land Acquisition</option>
-                                <option>Commercial Real Estate</option>
-                                <option>Mining Rights</option>
-                                <option>Luxury Residential</option>
+                            <label class="text-[9px] uppercase font-bold text-[#A6A8AB] ml-2 mb-2 block">Asset Interest</label>
+                            <select id="assetClass" onchange="toggleFormLogic()" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm appearance-none">
+                                <option value="realestate">Real Estate (Land/Commercial/Luxury)</option>
+                                <option value="mining">Mining Rights & Mineral Consultation</option>
                             </select>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="text-[10px] uppercase font-bold text-[#A6A8AB] mb-2 block">Location Focus</label>
-                                <input type="text" placeholder="e.g., Masaki" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm">
-                            </div>
-                            <div>
-                                <label class="text-[10px] uppercase font-bold text-[#A6A8AB] mb-2 block">Budget Cap</label>
-                                <input type="text" placeholder="USD" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm">
-                            </div>
+                        <div id="realEstateFields" class="grid grid-cols-2 gap-4 animate-fadeIn">
+                            <input type="text" placeholder="Preferred Location" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm">
+                            <input type="text" placeholder="Budget Cap (USD/TZS)" class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm">
                         </div>
 
-                        <button class="w-full py-5 bg-[#142C40] text-white rounded-2xl font-bold tracking-widest uppercase text-xs hover:shadow-xl hover:-translate-y-1 transition-all">
-                            Send Matched Listings
+                        <div id="miningFields" class="hidden grid grid-cols-2 gap-4 animate-fadeIn">
+                            <select class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm">
+                                <option>Gold Interest</option>
+                                <option>Graphite / Critical Minerals</option>
+                                <option>Gemstones / Other</option>
+                            </select>
+                            <select class="w-full p-4 rounded-2xl bg-gray-50 input-premium text-sm">
+                                <option>Prospecting License</option>
+                                <option>Mining License (ML)</option>
+                                <option>Joint Venture / Equity</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full py-5 bg-[#142C40] text-white rounded-2xl font-bold tracking-widest uppercase text-[10px] hover:shadow-2xl hover:bg-slate-800 transition-all">
+                            Submit Mandate for Matching
                         </button>
                     </form>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section id="services" class="py-32 bg-[#F8FAFC]">
+    <section class="py-32 bg-[#F8FAFC]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="mb-20">
-                <h3 class="font-serif text-4xl md:text-5xl text-[#142C40] mb-4">Core Strategic Pillars</h3>
-                <p class="text-[#A6A8AB] uppercase tracking-[0.3em] text-[11px] font-bold italic">Institutional Standards for Tanzanian Markets</p>
+                <h3 class="font-serif text-4xl md:text-5xl text-[#142C40] mb-4">Strategic Pillars</h3>
+                <p class="text-[#A6A8AB] uppercase tracking-[0.3em] text-[11px] font-bold">Bridging Consulting with Execution</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card-modern bg-white p-8 rounded-3xl group">
-                    <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#142C40] transition-colors">
-                        <span class="text-[#142C40] group-hover:text-white transition-colors font-bold uppercase text-[10px]">LA</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-[#142C40] mb-4">Land & Due Diligence</h4>
-                    <p class="text-sm leading-relaxed text-[#595A59] mb-6">Title verification and regulatory compliance for unencumbered assets.</p>
-                    <ul class="text-[11px] font-bold text-[#A6A8AB] space-y-2 uppercase tracking-tighter">
-                        <li>• Title Confirmation</li>
-                        <li>• Regulatory Triage</li>
-                    </ul>
+                <div class="card-modern bg-white p-8 rounded-[32px]">
+                    <div class="w-10 h-10 bg-blue-50 rounded-xl mb-6 flex items-center justify-center"><span class="text-[#142C40] font-bold">01</span></div>
+                    <h4 class="font-bold text-[#142C40] mb-3">Due Diligence</h4>
+                    <p class="text-xs text-[#595A59] leading-relaxed">Verification of titles and encumbrances at the Land Registry to secure capital.</p>
                 </div>
-
-                <div class="card-modern bg-white p-8 rounded-3xl group">
-                    <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#142C40] transition-colors">
-                        <span class="text-[#142C40] group-hover:text-white transition-colors font-bold uppercase text-[10px]">MN</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-[#142C40] mb-4">Mining Consultation</h4>
-                    <p class="text-sm leading-relaxed text-[#595A59] mb-6">Strategic permit plans for gold, graphite, and gemstone ventures.</p>
-                    <ul class="text-[11px] font-bold text-[#A6A8AB] space-y-2 uppercase tracking-tighter">
-                        <li>• License Facilitation</li>
-                        <li>• HSE Compliance</li>
-                    </ul>
+                <div class="card-modern bg-white p-8 rounded-[32px]">
+                    <div class="w-10 h-10 bg-blue-50 rounded-xl mb-6 flex items-center justify-center"><span class="text-[#142C40] font-bold">02</span></div>
+                    <h4 class="font-bold text-[#142C40] mb-3">Mining Rights</h4>
+                    <p class="text-xs text-[#595A59] leading-relaxed">Facilitating license acquisition and legal registers for mineral ventures.</p>
                 </div>
-
-                <div class="card-modern bg-white p-8 rounded-3xl group">
-                    <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#142C40] transition-colors">
-                        <span class="text-[#142C40] group-hover:text-white transition-colors font-bold uppercase text-[10px]">VL</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-[#142C40] mb-4">Asset Valuation</h4>
-                    <p class="text-sm leading-relaxed text-[#595A59] mb-6">Defensible market appraisals essential for investment audits.</p>
-                    <ul class="text-[11px] font-bold text-[#A6A8AB] space-y-2 uppercase tracking-tighter">
-                        <li>• Market Trend Reports</li>
-                        <li>• Highest & Best Use</li>
-                    </ul>
+                <div class="card-modern bg-white p-8 rounded-[32px]">
+                    <div class="w-10 h-10 bg-blue-50 rounded-xl mb-6 flex items-center justify-center"><span class="text-[#142C40] font-bold">03</span></div>
+                    <h4 class="font-bold text-[#142C40] mb-3">Valuation</h4>
+                    <p class="text-xs text-[#595A59] leading-relaxed">Defensible appraisals essential for investment analysis and audits.</p>
                 </div>
-
-                <div class="card-modern bg-white p-8 rounded-3xl group">
-                    <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#142C40] transition-colors">
-                        <span class="text-[#142C40] group-hover:text-white transition-colors font-bold uppercase text-[10px]">BK</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-[#142C40] mb-4">Off-Market Brokerage</h4>
-                    <p class="text-sm leading-relaxed text-[#595A59] mb-6">Connecting institutional mandates to exclusive East African inventory.</p>
-                    <ul class="text-[11px] font-bold text-[#A6A8AB] space-y-2 uppercase tracking-tighter">
-                        <li>• Buy-Side Mandates</li>
-                        <li>• Asset Matching</li>
-                    </ul>
+                <div class="card-modern bg-white p-8 rounded-[32px]">
+                    <div class="w-10 h-10 bg-blue-50 rounded-xl mb-6 flex items-center justify-center"><span class="text-[#142C40] font-bold">04</span></div>
+                    <h4 class="font-bold text-[#142C40] mb-3">Brokerage</h4>
+                    <p class="text-xs text-[#595A59] leading-relaxed">Exclusive off-market sourcing for institutional and private portfolios.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="h-96 w-full relative overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover grayscale opacity-20" alt="Architecture">
-    </div>
-
-    <section id="about" class="py-32 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h3 class="font-serif text-3xl md:text-5xl text-[#142C40] mb-10 leading-tight">Bridging consulting strategy with physical market execution.</h3>
-            <p class="text-[#595A59] text-lg leading-relaxed italic">
-                StratNex Properties operationalizes the market intelligence of StratNex Consulting to deliver precision-sourced assets across the Tanzanian landscape.
-            </p>
-            <div class="mt-16 pt-10 border-t border-gray-100 flex justify-center gap-12">
-                <div class="text-center">
-                    <p class="text-2xl font-bold text-[#142C40]">100%</p>
-                    <p class="text-[10px] uppercase font-bold text-[#A6A8AB] tracking-widest mt-1">Due Diligence</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-2xl font-bold text-[#142C40]">Direct</p>
-                    <p class="text-[10px] uppercase font-bold text-[#A6A8AB] tracking-widest mt-1">Owner Contact</p>
-                </div>
+    <footer class="py-20 px-6 border-t border-gray-100 text-center">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-[10px] text-[#A6A8AB] uppercase tracking-[0.4em] mb-4">© 2025 A StratNex Consulting Division</p>
+            <div class="flex justify-center gap-8">
+                <a href="https://stratnexconsulting.com" class="text-[11px] font-bold text-[#142C40] hover:text-[#A6A8AB] transition-colors uppercase tracking-widest">Parent Site</a>
             </div>
-        </div>
-    </section>
-
-    <footer class="bg-white py-16 px-6 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-3 opacity-50">
-                <div class="w-8 h-8 bg-[#142C40] rounded flex items-center justify-center">
-                    <span class="text-white font-bold text-xs">S</span>
-                </div>
-                <span class="text-[10px] font-bold tracking-widest text-[#142C40] uppercase">Stratnex Properties</span>
-            </div>
-            <p class="text-[10px] text-[#A6A8AB] uppercase tracking-[0.4em]">© 2025 A Stratnex Consulting Division</p>
-            <a href="https://stratnexconsulting.com" class="text-[10px] font-bold text-[#142C40] hover:text-[#A6A8AB] transition-colors uppercase tracking-widest">Parent Entity</a>
         </div>
     </footer>
 
     <script>
-        // Reveal animation trigger
-        window.addEventListener('scroll', function() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var revealPoint = 150;
-                if (revealTop < windowHeight - revealPoint) {
-                    reveals[i].classList.add('active');
-                }
+        // Form Logic: Switches fields based on selection
+        function toggleFormLogic() {
+            const assetClass = document.getElementById('assetClass').value;
+            const reFields = document.getElementById('realEstateFields');
+            const miningFields = document.getElementById('miningFields');
+
+            if (assetClass === 'mining') {
+                reFields.classList.add('hidden');
+                miningFields.classList.remove('hidden');
+            } else {
+                reFields.classList.remove('hidden');
+                miningFields.classList.add('hidden');
             }
-        });
+        }
+
+        // Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(reveal => observer.observe(reveal));
     </script>
 </body>
 </html>
