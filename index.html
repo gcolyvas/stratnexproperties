@@ -30,14 +30,25 @@
     <header class="header-border sticky top-0 bg-white z-50 py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="https://stratnexconsulting.com" class="flex items-center gap-4">
-                <img src="logo.png" alt="StratNex Logo" class="h-12 w-auto object-contain">
+                <div class="flex items-center gap-3">
+                    <img src="./logo.png" 
+                         alt="StratNex Logo" 
+                         class="h-12 w-auto object-contain"
+                         onerror="this.style.display='none'; document.getElementById('logo-fallback').classList.remove('hidden');">
+                    
+                    <div id="logo-fallback" class="hidden flex items-center justify-center w-10 h-10 bg-[#142C40] rounded-lg shadow-sm">
+                        <span class="text-white font-bold text-xl">S</span>
+                    </div>
+                </div>
+
                 <div class="border-l border-gray-300 pl-4">
                     <h1 class="text-[#142C40] font-bold text-lg leading-none uppercase tracking-tight">Properties</h1>
-                    <p class="text-[10px] text-[#A6A8AB] font-bold tracking-[0.2em] mt-1">A STRATNEX CONSULTING DIVISION</p>
+                    <p class="text-[10px] text-[#A6A8AB] font-bold tracking-[0.2em] mt-1 uppercase">A StratNex Consulting Division</p>
                 </div>
             </a>
+            
             <div class="hidden md:flex gap-8 text-[11px] font-bold tracking-widest text-[#142C40] uppercase">
-                <a href="https://stratnexconsulting.com" class="hover:text-[#A6A8AB]">Back to Consulting</a>
+                <a href="https://stratnexconsulting.com" class="hover:text-[#A6A8AB] transition-colors">StratNex Consulting</a>
             </div>
         </div>
     </header>
