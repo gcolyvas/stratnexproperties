@@ -50,26 +50,32 @@ rgba(0,0,0,.15); z-index: 60; }
 <body class="antialiased">
 
   <header class="header-border sticky top-0 bg-white/95 backdrop-blur z-50 py-6 px-8 md:px-16" role="banner">
-    <nav class="max-w-7xl mx-auto flex justify-between items-center" aria-label="Main Navigation">
-      <a href="https://stratnexconsulting.com" class="flex items-center gap-6" title="StratNex Consulting Home">
-        <div class="flex items-center">
-          <img id="logo-img" src="https://stratnexproperties.com/logo.png" alt="StratNex Logo" class="header-logo object-contain" onerror="tryNextLogo(this)">
-          <div id="fallback-svg" class="hidden flex items-center gap-2">
-            <div class="w-8 h-8 bg-[#142C40] flex items-center justify-center text-white font-bold">S</div>
-            <span class="text-[#142C40] font-bold text-xl tracking-tighter">STRATNEX</span>
-          </div>
+  <nav class="max-w-7xl mx-auto flex justify-between items-center" aria-label="Main Navigation">
+    <a href="https://stratnexconsulting.com" class="flex items-center gap-6" title="StratNex Consulting Home">
+      <div class="flex items-center">
+        <img 
+          id="logo-img" 
+          src="https://stratnexproperties.com/logo.png" 
+          alt="StratNex Logo" 
+          class="header-logo w-12 h-12 md:w-14 md:h-14 object-contain transition-opacity duration-200" 
+          onerror="this.style.opacity='0'; this.nextElementSibling.classList.remove('hidden');"
+        />
+        <div id="fallback-svg" class="hidden flex items-center gap-2 ml-[-12px] md:ml-[-14px]">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-[#142C40] flex items-center justify-center text-white font-bold text-lg md:text-xl rounded">S</div>
+          <span class="text-[#142C40] font-bold text-xl md:text-2xl tracking-tighter">STRATNEX</span>
         </div>
-        <div class="border-l border-gray-200 pl-6">
-          <span class="text-[#142C40] font-bold text-xl uppercase tracking-tighter leading-none block">Properties</span>
-          <span class="text-[9px] text-[#A6A8AB] font-bold tracking-[0.35em] mt-2 uppercase block">A StratNex Consulting Division</span>
-        </div>
-      </a>
-      <div class="hidden lg:flex gap-12">
-        <a href="https://stratnexconsulting.com/services/stratnex-agri" class="text-[10px] font-bold uppercase tracking-widest text-[#142C40] hover:text-[#A6A8AB]">StratNex Agri</a>
-        <a href="https://stratnexconsulting.com" class="text-[10px] font-bold uppercase tracking-widest text-[#A6A8AB] hover:text-[#142C40]">Parent Site</a>
       </div>
-    </nav>
-  </header>
+      <div class="border-l border-gray-200 pl-6">
+        <span class="text-[#142C40] font-bold text-xl uppercase tracking-tighter leading-none block">Properties</span>
+        <span class="text-[9px] text-[#A6A8AB] font-bold tracking-[0.35em] mt-2 uppercase block">A StratNex Consulting Division</span>
+      </div>
+    </a>
+    <div class="hidden lg:flex gap-12">
+      <a href="https://stratnexconsulting.com/services/stratnex-agri" class="text-[10px] font-bold uppercase tracking-widest text-[#142C40] hover:text-[#A6A8AB]">StratNex Agri</a>
+      <a href="https://stratnexconsulting.com" class="text-[10px] font-bold uppercase tracking-widest text-[#A6A8AB] hover:text-[#142C40]">Parent Site</a>
+    </div>
+  </nav>
+</header>
 
   <main>
     <article class="py-24 px-8 md:px-16 max-w-7xl mx-auto border-b border-gray-50">
