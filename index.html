@@ -29,7 +29,15 @@
             <a href="https://stratnexconsulting.com" class="flex items-center gap-6">
                 <div class="flex items-center">
                     <img src="logo.png" alt="StratNex" class="h-10 w-auto object-contain" 
-                         onerror="this.src='./logo.png';">
+                         onerror="this.style.display='none'; document.getElementById('fallback-svg').classList.remove('hidden');">
+                    
+                    <div id="fallback-svg" class="hidden flex items-center gap-2">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" fill="#142C40"/>
+                            <path d="M12 28V12H18L28 22V12" stroke="white" stroke-width="3"/>
+                        </svg>
+                        <span class="text-[#142C40] font-bold text-xl tracking-tighter">STRATNEX</span>
+                    </div>
                 </div>
                 
                 <div class="border-l border-gray-200 pl-6">
@@ -51,13 +59,9 @@
                 <span class="section-tag">Strategic Assets</span>
                 <h2 class="font-luxury text-5xl text-[#142C40] leading-[1.15] mb-10">Operationalizing market intelligence through physical assets.</h2>
                 
-                <p class="text-sm leading-relaxed text-gray-600 mb-12 max-w-md">
-                    Welcome to the Properties Intake Portal. Our mandate is to transition high-level strategy into physical reality. We coordinate with the group's Agri and Mining divisions to ensure every acquisition is technically sound and strategically aligned.
-                </p>
-
                 <div class="bg-slate-50 p-10 border-t-2 border-[#142C40]">
                     <h4 class="font-luxury text-xl text-[#142C40] mb-4">Direct Engagement</h4>
-                    <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-6">For Asset Owners & Sellers</p>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-6">For Asset Owners & Sellers</p>
                     <p class="text-sm text-gray-600 mb-8 leading-relaxed">If you wish to liquidate prime assets or explore a Joint Venture, skip the configuration and request an advisory consultation.</p>
                     <a href="https://stratnexconsulting.com/contact" class="inline-block w-full py-4 border border-[#142C40] text-[#142C40] text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#142C40] hover:text-white transition-all">Direct Consultation</a>
                 </div>
@@ -65,7 +69,7 @@
 
             <div class="lg:col-span-7">
                 <div class="bg-white">
-                    <span class="section-tag text-right lg:text-left">Mandate Configuration</span>
+                    <span class="section-tag">Mandate Configuration</span>
                     <h3 class="font-luxury text-3xl text-[#142C40] mb-12">Asset Parameters</h3>
 
                     <form class="space-y-10">
@@ -109,30 +113,27 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
                 <div>
-                    <img src="logo.png" alt="StratNex" class="h-8 w-auto mb-10 grayscale opacity-70">
+                    <img src="logo.png" alt="StratNex" class="h-8 w-auto mb-10 grayscale opacity-70" onerror="this.src='./logo.png';">
                     <p class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.3em]">Operationalizing Strategy</p>
                 </div>
                 <div>
-                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Properties</h5>
-                    <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] transition-colors uppercase tracking-widest">Mandate Desk</a>
-                    <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] transition-colors uppercase tracking-widest">Asset Management</a>
+                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Properties Division</h5>
+                    <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">Mandate Desk</a>
+                    <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">Asset Management</a>
                 </div>
                 <div>
                     <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Ecosystem</h5>
-                    <a href="https://stratnexconsulting.com/services/stratnex-agri" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] transition-colors uppercase tracking-widest">StratNex Agri</a>
-                    <a href="https://stratnexconsulting.com/services/stratnex-digital" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] transition-colors uppercase tracking-widest">StratNex Digital</a>
+                    <a href="https://stratnexconsulting.com/services/stratnex-agri" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">StratNex Agri</a>
+                    <a href="https://stratnexconsulting.com/services/stratnex-digital" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">StratNex Digital</a>
                 </div>
                 <div>
-                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Consultation</h5>
-                    <a href="https://stratnexconsulting.com/contact" class="block text-xs font-bold text-[#142C40] uppercase tracking-widest underline decoration-2 underline-offset-8">Request Proposal</a>
+                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Contact</h5>
+                    <a href="mailto:info@stratnexconsulting.com" class="block text-xs text-gray-500 mb-4 lowercase">info@stratnexconsulting.com</a>
+                    <a href="https://stratnexconsulting.com/contact" class="block text-xs font-bold text-[#142C40] uppercase tracking-widest underline decoration-2 underline-offset-8">Request Consultation</a>
                 </div>
             </div>
             <div class="pt-10 border-t border-gray-50 flex flex-col lg:flex-row justify-between items-center gap-6">
                 <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.4em]">© 2025 StratNex Properties | A StratNex Consulting Division</p>
-                <div class="flex gap-10">
-                    <a href="https://stratnexconsulting.com/privacy" class="text-[9px] text-gray-400 font-bold uppercase hover:text-[#142C40]">Privacy</a>
-                    <a href="https://stratnexconsulting.com/terms" class="text-[9px] text-gray-400 font-bold uppercase hover:text-[#142C40]">Terms</a>
-                </div>
             </div>
         </div>
     </footer>
