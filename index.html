@@ -3,187 +3,151 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>StratNex Properties | Precision Asset Mandate</title>
+    <title>StratNex Properties | Acquisition Mandate</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet" />
     <style>
-        :root { --navy: #142C40; --acc: #A6A8AB; --text: #595A59; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background-color: #FFFFFF; }
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .header-border { border-bottom: 1px solid rgba(166, 168, 171, 0.2); }
-        .input-premium { border: 1px solid #D1D5DB; border-radius: 4px; padding: 12px; width: 100%; font-size: 13px; background: #FFFFFF; transition: all 0.2s; }
-        .input-premium:focus { border-color: var(--navy); outline: none; box-shadow: 0 0 0 2px rgba(20, 44, 64, 0.05); }
-        .btn-navy { background-color: var(--navy); color: white; font-weight: 700; letter-spacing: 0.15em; transition: all 0.3s ease; }
-        .btn-outline { border: 1.5px solid var(--navy); color: var(--navy); font-weight: 700; letter-spacing: 0.1em; transition: all 0.3s ease; }
-        .btn-outline:hover { background-color: var(--navy); color: white; }
+        :root { --navy: #142C40; --acc: #A6A8AB; --text: #4A4A4A; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text); background-color: #FFFFFF; letter-spacing: -0.01em; }
+        .font-luxury { font-family: 'Playfair Display', serif; }
+        
+        /* Premium Header Styling */
+        .header-border { border-bottom: 1px solid rgba(20, 44, 64, 0.08); }
+        .nav-link { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--navy); transition: all 0.3s; }
+        .nav-link:hover { color: var(--acc); }
+
+        /* Form Aesthetics */
+        .input-mandate { border: 1px solid #E2E8F0; border-radius: 2px; padding: 14px; width: 100%; font-size: 13px; background: #FBFDFF; transition: all 0.3s; }
+        .input-mandate:focus { border-color: var(--navy); outline: none; background: #FFFFFF; }
+        
+        .btn-institutional { background-color: var(--navy); color: white; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.4s; border-radius: 2px; }
+        .btn-institutional:hover { background-color: #1a3a54; transform: translateY(-1px); box-shadow: 0 10px 20px rgba(20, 44, 64, 0.1); }
+        
+        .seller-box { border: 1px solid #F1F5F9; background: #FAFBFC; transition: all 0.3s; }
+        .seller-box:hover { border-color: var(--acc); }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="header-border sticky top-0 bg-white z-50 py-5 px-6 md:px-12">
+    <header class="header-border sticky top-0 bg-white z-50 py-6 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="https://stratnexconsulting.com" class="flex items-center gap-4">
-                <img src="logo.png" alt="StratNex" class="h-10 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('text-logo').classList.remove('hidden');">
-                <div id="text-logo" class="hidden font-bold text-xl text-[#142C40] tracking-tighter italic">STRATNEX</div>
-                <div class="border-l border-gray-200 pl-4">
-                    <h1 class="text-[#142C40] font-bold text-lg leading-none uppercase tracking-tight">Properties</h1>
-                    <p class="text-[9px] text-[#A6A8AB] font-bold tracking-[0.2em] mt-1 uppercase">Institutional Division</p>
+            <a href="https://stratnexconsulting.com" class="flex items-center gap-5">
+                <img src="logo.png" alt="StratNex" class="h-11 w-auto object-contain block" id="main-logo" onerror="this.src='./logo.png';">
+                
+                <div class="border-l border-gray-200 pl-5">
+                    <h1 class="text-[#142C40] font-bold text-xl leading-none uppercase tracking-tighter">Properties</h1>
+                    <p class="text-[9px] text-[#A6A8AB] font-bold tracking-[0.3em] mt-1.5 uppercase">A StratNex Consulting Division</p>
                 </div>
             </a>
-            <div class="flex gap-6">
-                 <a href="https://stratnexconsulting.com/services/stratnex-agri" class="hidden lg:block text-[10px] font-bold uppercase tracking-widest text-[#A6A8AB] hover:text-[#142C40]">Agri-Business</a>
-                 <a href="https://stratnexconsulting.com" class="text-[10px] font-bold uppercase tracking-widest text-[#142C40]">Main Site</a>
+            <div class="hidden md:flex gap-10">
+                 <a href="https://stratnexconsulting.com/services/stratnex-agri" class="nav-link">Agri-Business</a>
+                 <a href="https://stratnexconsulting.com" class="nav-link px-4 py-2 border border-slate-100 rounded">Group Site</a>
             </div>
         </div>
     </header>
 
-    <section class="py-12 md:py-20 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-16 items-start">
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-20 items-start">
             
             <div class="lg:col-span-5">
-                <div class="border-l-4 border-[#142C40] bg-slate-50 p-8 mb-10">
-                    <p class="font-serif italic text-xl text-[#142C40] mb-6 leading-relaxed">
-                        "In the high-end market, timing and precision are the only currencies that matter. We connect institutional capital with off-market assets through a rigorous consulting lens."
+                <div class="mb-12">
+                    <h2 class="font-luxury text-5xl text-[#142C40] leading-tight mb-8">Asset Acquisition <br><span class="italic font-normal text-slate-500">defined by precision.</span></h2>
+                    <p class="text-sm leading-relaxed text-gray-500 max-w-md">
+                        Our property division operates as a private mandate desk. We leverage the group's consulting intelligence to identify, verify, and secure high-value assets for institutional and private portfolios.
                     </p>
-                    <p class="text-xs font-bold text-[#A6A8AB] uppercase tracking-widest">Management Mandate</p>
                 </div>
 
-                <div class="bg-white border border-gray-100 p-8 rounded-lg shadow-sm">
-                    <h4 class="text-sm font-bold text-[#142C40] uppercase tracking-widest mb-4">Are you a Seller / Asset Owner?</h4>
-                    <p class="text-xs leading-relaxed text-gray-500 mb-6">If you wish to liquidate an asset or engage our advisory for a Joint Venture, skip the form and initiate a direct consultation.</p>
-                    <a href="https://stratnexconsulting.com/contact" class="btn-outline inline-block w-full py-4 text-center text-[10px] rounded uppercase">Direct Engagement</a>
+                <div class="seller-box p-10">
+                    <h4 class="font-luxury text-2xl text-[#142C40] mb-3 italic">For Asset Owners</h4>
+                    <p class="text-xs leading-relaxed text-gray-500 mb-8 uppercase tracking-widest font-semibold">Strategic Divestment & Advisory</p>
+                    <p class="text-sm text-gray-600 mb-8">Seeking to liquidate prime assets or explore Joint Venture developments? Engage our consultants directly for a private valuation.</p>
+                    <a href="https://stratnexconsulting.com/contact" class="inline-block w-full py-4 border-2 border-[#142C40] text-[#142C40] text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#142C40] hover:text-white transition-all">Direct Consultation</a>
                 </div>
             </div>
 
-            <div class="lg:col-span-7 bg-white border border-gray-100 p-8 md:p-12 rounded shadow-sm">
-                <h3 class="text-[#142C40] font-bold text-2xl mb-1 font-serif italic">Asset Configuration</h3>
-                <p class="text-[10px] text-[#A6A8AB] font-bold uppercase tracking-widest mb-10">Define your acquisition or partnership parameters</p>
+            <div class="lg:col-span-7 bg-white p-2 md:p-6">
+                <div class="border border-slate-100 p-8 md:p-12 shadow-2xl shadow-slate-200/50">
+                    <h3 class="font-luxury text-3xl text-[#142C40] mb-2 italic">Mandate Configuration</h3>
+                    <p class="text-[10px] text-[#A6A8AB] font-bold uppercase tracking-[0.2em] mb-12">Confidential Intake Portal</p>
 
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Corporate Entity</label>
-                            <input type="text" class="input-premium" placeholder="Entity or Individual Name">
+                    <form class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-widest mb-3">Entity / Client Name</label>
+                                <input type="text" class="input-mandate" placeholder="Corporate or Individual">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-widest mb-3">Purpose</label>
+                                <select class="input-mandate bg-white font-semibold">
+                                    <option>Direct Acquisition / Buy</option>
+                                    <option>Joint Venture (JV) Partnership</option>
+                                </select>
+                            </div>
                         </div>
+
                         <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Primary Interest</label>
-                            <select id="mainPurpose" class="input-premium bg-white font-bold text-[#142C40]">
-                                <option value="buy">Acquisition / Buy</option>
-                                <option value="jv">Joint Venture (JV)</option>
+                            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-widest mb-3">Asset Classification</label>
+                            <select id="assetClass" onchange="updateSubFields()" class="input-mandate bg-white font-bold text-slate-800">
+                                <option value="">Select Asset Class...</option>
+                                <option value="industrial">Industrial (Godowns & Lands)</option>
+                                <option value="commercial">Commercial (Land & Offices)</option>
+                                <option value="residential">Residential (Stand-alone & Apartments)</option>
+                                <option value="mining">Mining Rights & Permits</option>
                             </select>
                         </div>
-                    </div>
 
-                    <div>
-                        <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Asset Classification</label>
-                        <select id="assetCategory" onchange="updateSubCategories()" class="input-premium bg-white">
-                            <option value="">Select Category...</option>
-                            <option value="industrial">Industrial (Godowns / Lands)</option>
-                            <option value="commercial">Commercial (Land / Offices)</option>
-                            <option value="residential">Residential (Stand-alone / Apartments)</option>
-                            <option value="mining">Mining Rights & Permits</option>
-                        </select>
-                    </div>
+                        <div id="dynamicArea" class="space-y-8"></div>
 
-                    <div id="subCategoryArea" class="space-y-6"></div>
-
-                    <div>
-                        <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Strategic Notes (Confidential)</label>
-                        <textarea class="input-premium h-24" placeholder="Specific requirements, preferred regions, or Agri-integration needs..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-navy w-full py-5 rounded uppercase text-[10px]">
-                        Submit Mandate for Verification
-                    </button>
-                </form>
+                        <button type="submit" class="btn-institutional w-full py-5 text-[11px]">
+                            Initiate Mandate
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white border-t border-gray-100 pt-16 pb-10 px-6 md:px-12">
+    <footer class="bg-white border-t border-gray-100 pt-24 pb-12 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16 mb-20">
                 <div>
-                    <h5 class="text-[#142C40] font-bold text-[11px] uppercase tracking-widest mb-6">Ecosystem</h5>
-                    <a href="https://stratnexconsulting.com/services/stratnex-agri" class="block text-sm text-gray-500 mb-3 hover:text-[#142C40]">StratNex Agri</a>
-                    <a href="https://stratnexconsulting.com/services/stratnex-digital" class="block text-sm text-gray-500 mb-3 hover:text-[#142C40]">StratNex Digital</a>
-                    <a href="https://stratnexconsulting.com/services/mining-rights" class="block text-sm text-gray-500 mb-3 hover:text-[#142C40]">Mining & Minerals</a>
+                    <img src="logo.png" alt="StratNex" class="h-8 w-auto mb-8 opacity-60 grayscale hover:grayscale-0 transition-all">
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Operationalizing Strategy Across East Africa.</p>
                 </div>
                 <div>
-                    <h5 class="text-[#142C40] font-bold text-[11px] uppercase tracking-widest mb-6">Properties</h5>
-                    <a href="https://stratnexconsulting.com/services/land-acquisition" class="block text-sm text-gray-500 mb-3 hover:text-[#142C40]">Industrial Land</a>
-                    <a href="https://stratnexconsulting.com/services/real-estate" class="block text-sm text-gray-500 mb-3 hover:text-[#142C40]">Commercial Brokerage</a>
+                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Properties</h5>
+                    <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40]">Industrial & Land</a>
+                    <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40]">Commercial & Residential</a>
                 </div>
                 <div>
-                    <h5 class="text-[#142C40] font-bold text-[11px] uppercase tracking-widest mb-6">Group</h5>
-                    <a href="https://stratnexconsulting.com/about" class="block text-sm text-gray-500 mb-3 hover:text-[#142C40]">Corporate Profile</a>
-                    <a href="https://stratnexconsulting.com/contact" class="block text-sm text-gray-500 mb-3 font-bold text-[#142C40]">Mandate Desk</a>
+                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Ecosystem</h5>
+                    <a href="https://stratnexconsulting.com/services/stratnex-agri" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40]">StratNex Agri</a>
+                    <a href="https://stratnexconsulting.com/services/stratnex-digital" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40]">StratNex Digital</a>
+                </div>
+                <div>
+                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Engage</h5>
+                    <a href="https://stratnexconsulting.com/contact" class="block text-xs font-bold text-[#142C40] uppercase tracking-widest">Request Mandate</a>
                 </div>
             </div>
-            <div class="pt-8 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">© 2025 StratNex Properties | A StratNex Consulting Division</p>
-                <div class="flex gap-6">
-                    <a href="https://stratnexconsulting.com/privacy" class="text-[9px] text-gray-400 font-bold uppercase">Privacy</a>
-                    <a href="https://stratnexconsulting.com/terms" class="text-[9px] text-gray-400 font-bold uppercase">Terms</a>
-                </div>
+            <div class="pt-10 border-t border-slate-50 text-center">
+                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.4em]">© 2025 StratNex Properties | A StratNex Consulting Division</p>
             </div>
         </div>
     </footer>
 
     <script>
-        function updateSubCategories() {
-            const cat = document.getElementById('assetCategory').value;
-            const area = document.getElementById('subCategoryArea');
-            
-            if (cat === 'industrial') {
-                area.innerHTML = `
-                    <div>
-                        <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Industrial Spec</label>
-                        <select class="input-premium bg-white">
-                            <option>Industrial Land (Greenfield)</option>
-                            <option>Godowns / Warehousing (Complete)</option>
-                            <option>Manufacturing Shells</option>
-                        </select>
-                    </div>
-                `;
-            } else if (cat === 'commercial') {
-                area.innerHTML = `
-                    <div>
-                        <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Commercial Spec</label>
-                        <select class="input-premium bg-white">
-                            <option>Commercial Land (Prime Grade)</option>
-                            <option>Grade-A Office Space</option>
-                            <option>Retail Complex / Hospitality</option>
-                        </select>
-                    </div>
-                `;
-            } else if (cat === 'residential') {
-                area.innerHTML = `
-                    <div>
-                        <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Residential Spec</label>
-                        <select class="input-premium bg-white">
-                            <option>Executive Stand-alone Villa</option>
-                            <option>Luxury Apartment / Penthouse</option>
-                            <option>Residential Estate Land</option>
-                        </select>
-                    </div>
-                `;
-            } else if (cat === 'mining') {
-                area.innerHTML = `
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">Mineral Focus</label>
-                            <select class="input-premium bg-white"><option>Gold</option><option>Graphite</option><option>Gemstones</option></select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase mb-2">License Type</label>
-                            <select class="input-premium bg-white"><option>Prospecting (PL)</option><option>Mining (ML)</option></select>
-                        </div>
-                    </div>
-                `;
-            } else {
-                area.innerHTML = '';
-            }
+        function updateSubFields() {
+            const val = document.getElementById('assetClass').value;
+            const area = document.getElementById('dynamicArea');
+            if (val === 'industrial') {
+                area.innerHTML = `<div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-widest mb-3">Specification</label><select class="input-mandate bg-white"><option>Godowns / Warehousing</option><option>Industrial Zoned Land</option></select></div>`;
+            } else if (val === 'commercial') {
+                area.innerHTML = `<div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-widest mb-3">Specification</label><select class="input-mandate bg-white"><option>Commercial Land (Prime)</option><option>Grade-A Office Space</option></select></div>`;
+            } else if (val === 'residential') {
+                area.innerHTML = `<div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-widest mb-3">Specification</label><select class="input-mandate bg-white"><option>Executive Stand-alone Villa</option><option>Luxury Apartment / Penthouse</option></select></div>`;
+            } else if (val === 'mining') {
+                area.innerHTML = `<div class="grid grid-cols-2 gap-4"><div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-widest mb-3">Mineral</label><select class="input-mandate bg-white"><option>Gold</option><option>Graphite</option></select></div><div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-widest mb-3">License</label><select class="input-mandate bg-white"><option>Prospecting (PL)</option><option>Mining (ML)</option></select></div></div>`;
+            } else { area.innerHTML = ''; }
         }
     </script>
 </body>
