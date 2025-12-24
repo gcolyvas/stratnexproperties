@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>StratNex Properties | Private Mandate Desk</title>
-  <meta name="description" content="Submit a private acquisition mandate for land, real estate, and mining assets. StratNex Properties—A StratNex Consulting Division." />
-  <meta name="theme-color" content="#142C40" />
-  <meta property="og:title" content="StratNex Properties | Private Mandate Desk" />
-  <meta property="og:description" content="Institutional-grade mandate intake for land, real estate, and mining assets." />
+
+  <title>StratNex Properties | High-End Real Estate & Industrial Acquisition</title>
+  <meta name="description" content="StratNex Properties provides professional acquisition and JV mandates for Industrial Godowns, Commercial Land, and Luxury Residential assets across East Africa." />
+  <meta name="keywords" content="Industrial land, Godowns, Commercial offices, Luxury apartments Tanzania, StratNex Consulting, Joint Venture Real Estate" />
+  <link rel="canonical" href="https://stratnexproperties.com/" />
+  <meta property="og:title" content="StratNex Properties | Precision Asset Mandate" />
+  <meta property="og:description" content="Institutional-grade property acquisition and advisory services." />
+  <meta property="og:url" content="https://stratnexproperties.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.jpg" />
-  <link rel="icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#142C40" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <style>
@@ -19,103 +22,107 @@
 #A6A8AB; --text: 
 #333333; }
     body { font-family: 'Montserrat', sans-serif; color: var(--text); background-color: 
-#FFFFFF; letter-spacing: 0.02em; }
+#FFFFFF; letter-spacing: 0.02em; line-height: 1.6; }
     .font-luxury { font-family: 'Playfair Display', serif; }
     .header-border { border-bottom: 1px solid 
 #F1F5F9; }
     .input-premium { border: 1px solid 
-#E2E8F0; border-radius: 0px; padding: 16px; width: 100%; font-size: 13px; background: 
+#E2E8F0; border-radius: 0; padding: 16px; width: 100%; font-size: 13px; background: 
 #FFFFFF; transition: border-color 0.3s; }
     .input-premium:focus { border-color: var(--navy); outline: none; }
     .btn-navy { background-color: var(--navy); color: 
-white; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; transition: all 0.3s; border-radius: 0px; }
+white; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; transition: all 0.3s; border-radius: 0; cursor: pointer; }
     .btn-navy:hover { background-color: 
-#0d1e2c; box-shadow: 0 10px 30px 
-rgba(20, 44, 64, 0.1); }
+#0d1e2c; }
     .section-tag { font-size: 10px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 1rem; display: block; }
-    .footer-navy { border-top: 1px solid 
-#F1F5F9; padding-top: 80px; padding-bottom: 40px; }
     .hint { font-size: 11px; color: 
 #9AA3AF; }
     .toast { position: fixed; right: 16px; bottom: 16px; background: 
 #0F766E; color: 
-#fff; padding: 12px 14px; border-radius: 8px; display: none; box-shadow: 0 10px 25px 
-rgba(0,0,0,.15); }
-    .error { background: 
+#fff; padding: 10px 12px; border-radius: 8px; display: none; box-shadow: 0 10px 25px 
+rgba(0,0,0,.15); z-index: 60; }
+    .toast.error { background: 
 #B91C1C; }
   </style>
 </head>
 <body class="antialiased">
 
-  <!-- Header -->
-  <header class="header-border sticky top-0 bg-white/95 backdrop-blur z-50 py-6 px-8 md:px-16">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <a href="https://stratnexconsulting.com" class="flex items-center gap-6" aria-label="StratNex Consulting">
+  <header class="header-border sticky top-0 bg-white/95 backdrop-blur z-50 py-6 px-8 md:px-16" role="banner">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center" aria-label="Main Navigation">
+      <a href="https://stratnexconsulting.com" class="flex items-center gap-6" title="StratNex Consulting Home">
         <div class="flex items-center">
-          <img id="logo-img" src="logo.png" alt="StratNex" class="h-10 w-auto object-contain"
-               onerror="tryNextLogo(this)">
+          <img id="logo-img" src="https://stratnexproperties.com/logo.png" alt="StratNex Logo" class="h-10 w-auto object-contain" onerror="tryNextLogo(this)">
           <div id="fallback-svg" class="hidden flex items-center gap-2">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="40" height="40" fill="#142C40"/>
-              <path d="M12 28V12H18L28 22V12" stroke="white" stroke-width="3"/>
-            </svg>
+            <div class="w-8 h-8 bg-[#142C40] flex items-center justify-center text-white font-bold">S</div>
             <span class="text-[#142C40] font-bold text-xl tracking-tighter">STRATNEX</span>
           </div>
         </div>
         <div class="border-l border-gray-200 pl-6">
-          <h1 class="text-[#142C40] font-bold text-xl uppercase tracking-tighter leading-none">Properties</h1>
-          <p class="text-[9px] text-[#A6A8AB] font-bold tracking-[0.35em] mt-2 uppercase">A StratNex Consulting Division</p>
+          <span class="text-[#142C40] font-bold text-xl uppercase tracking-tighter leading-none block">Properties</span>
+          <span class="text-[9px] text-[#A6A8AB] font-bold tracking-[0.35em] mt-2 uppercase block">Institutional Division</span>
         </div>
       </a>
       <div class="hidden lg:flex gap-12">
-        <a href="https://stratnexconsulting.com/services/stratnex-agri" class="text-[10px] font-bold uppercase tracking-widest text-[#142C40]">StratNex Agri</a>
+        <a href="https://stratnexconsulting.com/services/stratnex-agri" class="text-[10px] font-bold uppercase tracking-widest text-[#142C40] hover:text-[#A6A8AB]">StratNex Agri</a>
         <a href="https://stratnexconsulting.com" class="text-[10px] font-bold uppercase tracking-widest text-[#A6A8AB] hover:text-[#142C40]">Parent Site</a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <!-- Hero + Form -->
-  <section class="py-24 px-8 md:px-16 max-w-7xl mx-auto">
-    <div class="grid lg:grid-cols-12 gap-24">
-      <!-- Copy -->
-      <div class="lg:col-span-5">
-        <span class="section-tag">Strategic Assets</span>
-        <h2 class="font-luxury text-5xl text-[#142C40] leading-[1.15] mb-8">Operationalizing market intelligence through physical assets.</h2>
-        <p class="text-sm text-gray-600 mb-10 leading-relaxed">Submit your private mandate for land, real estate, or mining assets. We’ll confirm details, then surface opportunities aligned to your parameters.</p>
-
-        <div class="bg-slate-50 p-10 border-t-2 border-[#142C40] rounded-sm">
-          <h4 class="font-luxury text-xl text-[#142C40] mb-4">Direct Engagement</h4>
-          <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-6">For Asset Owners & Sellers</p>
-          <p class="text-sm text-gray-600 mb-8 leading-relaxed">If you wish to liquidate prime assets or explore a Joint Venture, skip the configuration and request an advisory consultation.</p>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <a href="https://stratnexconsulting.com/contact" class="inline-block w-full py-4 border border-[#142C40] text-[#142C40] text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#142C40] hover:text-white transition-all">Direct Consultation</a>
-            <a id="waBtn" href="#" class="inline-block w-full py-4 border border-[#142C40] bg-[#142C40] text-white text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#0d1e2c] transition-all">WhatsApp</a>
-          </div>
+  <main>
+    <article class="py-24 px-8 md:px-16 max-w-7xl mx-auto border-b border-gray-50">
+      <div class="max-w-3xl">
+        <span class="section-tag">Value Proposition</span>
+        <h2 class="font-luxury text-4xl md:text-5xl text-[#142C40] leading-tight mb-8">
+          We bridge the gap between investment capital and secured physical assets.
+        </h2>
+        <div class="text-gray-600 space-y-6 text-sm md:text-base leading-relaxed">
+          <p>
+            At StratNex Properties, we don't just facilitate transactions; we provide <strong>strategic asset placement</strong>. Whether you are seeking <strong>industrial godowns</strong> for logistics, <strong>prime commercial land</strong> for office development, or <strong>luxury residential apartments</strong>, our approach is rooted in the consulting rigor of the StratNex Group.
+          </p>
+          <p>
+            By integrating with our <a href="https://stratnexconsulting.com/services/stratnex-agri" class="text-[#142C40] font-semibold underline decoration-1">Agri-Business</a> and Mining divisions, we offer a specialized perspective on land use and regulatory compliance that standard brokerages cannot match.
+          </p>
         </div>
       </div>
+    </article>
 
-      <!-- Form -->
-      <div class="lg:col-span-7">
-        <div class="bg-white">
-          <span class="section-tag">Mandate Configuration</span>
-          <h3 class="font-luxury text-3xl text-[#142C40] mb-6">Asset Parameters</h3>
+    <section class="py-24 px-8 md:px-16 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-24">
+        <div class="lg:col-span-5">
+          <span class="section-tag">Direct Access</span>
+          <h3 class="font-luxury text-3xl text-[#142C40] mb-8">Sell or Partner with Us</h3>
+          <p class="text-sm text-gray-600 mb-10 leading-relaxed">
+            Are you an asset owner looking to liquidate or engage in a <strong>Joint Venture (JV)</strong>? Our advisory team works directly with sellers to ensure assets are presented to high-net-worth and institutional buyers within the StratNex ecosystem.
+          </p>
+          <div class="bg-slate-50 p-10">
+            <p class="text-xs font-bold text-[#142C40] uppercase tracking-widest mb-6">Owner Consultation</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <a href="https://stratnexconsulting.com/contact" class="inline-block w-full py-4 border border-[#142C40] text-[#142C40] text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#142C40] hover:text-white transition-all">Request Direct Call</a>
+              <a id="whatsappBtn" href="#" class="inline-block w-full py-4 border border-[#142C40] bg-[#142C40] text-white text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#0d1e2c] transition-all">WhatsApp</a>
+            </div>
+          </div>
+        </div>
 
-          <form id="mandateForm" class="space-y-10" novalidate>
-            <!-- Contact -->
+        <div class="lg:col-span-7" id="mandate">
+          <span class="section-tag">Acquisition Desk</span>
+          <h3 class="font-luxury text-3xl text-[#142C40] mb-12">Configure Mandate</h3>
+
+          <form id="mandateForm" class="space-y-10" method="POST" novalidate>
             <div class="grid md:grid-cols-2 gap-10">
               <div>
-                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="entity">Entity Name</label>
-                <input id="entity" name="entity" type="text" class="input-premium" placeholder="CORPORATE OR INDIVIDUAL" required>
+                <label for="entity" class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Entity Name</label>
+                <input type="text" id="entity" name="entity" class="input-premium" placeholder="CORPORATE OR INDIVIDUAL" required>
               </div>
               <div>
-                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="email">Corporate Email</label>
-                <input id="email" name="email" type="email" class="input-premium" placeholder="email@entity.com" required>
+                <label for="email" class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Corporate Email</label>
+                <input type="email" id="email" name="email" class="input-premium" placeholder="email@entity.com" required>
               </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10">
               <div>
-                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="purpose">Engagement Purpose</label>
+                <label for="purpose" class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Intent</label>
                 <select id="purpose" name="purpose" class="input-premium bg-white" required>
                   <option value="">SELECT...</option>
                   <option>DIRECT ACQUISITION</option>
@@ -123,17 +130,16 @@ rgba(0,0,0,.15); }
                 </select>
               </div>
               <div>
-                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="phone">Phone / WhatsApp</label>
-                <input id="phone" name="phone" type="tel" class="input-premium" placeholder="+255 712 345 678">
+                <label for="phone" class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" class="input-premium" placeholder="+255 7XX XXX XXX">
                 <p class="hint mt-1">WhatsApp preferred for faster coordination.</p>
               </div>
             </div>
 
-            <!-- Asset category -->
             <div>
-              <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="cat">Asset Category</label>
-              <select id="cat" name="category" class="input-premium bg-white font-semibold" required>
-                <option value="">SELECT CLASSIFICATION...</option>
+              <label for="category" class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Asset Classification</label>
+              <select id="category" name="category" class="input-premium bg-white font-semibold" required>
+                <option value="">SELECT CATEGORY...</option>
                 <option value="industrial">INDUSTRIAL (GODOWNS & LAND)</option>
                 <option value="commercial">COMMERCIAL (OFFICES & LAND)</option>
                 <option value="residential">RESIDENTIAL (STAND-ALONE & APARTMENTS)</option>
@@ -142,34 +148,29 @@ rgba(0,0,0,.15); }
               <p class="hint mt-2">Category determines the next set of fields.</p>
             </div>
 
-            <!-- Dynamic fields -->
-            <div id="subUI" class="space-y-10"></div>
+            <div id="dynamicFields" class="space-y-10"></div>
 
-            <!-- Budget + Region -->
             <div class="grid md:grid-cols-2 gap-10">
               <div>
-                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="region">Target Region</label>
-                <input id="region" name="region" type="text" class="input-premium" placeholder="Dar es Salaam / Zanzibar / Geita" required>
+                <label for="region" class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Target Region</label>
+                <input type="text" id="region" name="region" class="input-premium" placeholder="Dar es Salaam / Zanzibar / Geita" required>
               </div>
               <div>
-                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="budget">Investment Range (USD)</label>
-                <input id="budget" name="budget" type="text" class="input-premium" placeholder="$500k - $10M" required>
+                <label for="budget" class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Investment Range (USD)</label>
+                <input type="text" id="budget" name="budget" class="input-premium" placeholder="$500k - $10M" required>
               </div>
             </div>
 
-            <!-- Notes -->
             <div>
-              <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="notes">Additional Notes</label>
+              <label for="notes" class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Additional Notes</label>
               <textarea id="notes" name="notes" class="input-premium min-h-[120px]" placeholder="Title preferences, FAR, access/servicing, timeline, JV specifics, etc."></textarea>
             </div>
 
-            <!-- Consent -->
             <div class="flex items-start gap-3">
               <input id="consent" name="consent" type="checkbox" class="mt-1" required>
               <label for="consent" class="text-xs text-gray-600">I authorize StratNex Properties to process my data under institutional confidentiality standards.</label>
             </div>
 
-            <!-- Hidden UTM fields -->
             <input type="hidden" id="utm_source" name="utm_source">
             <input type="hidden" id="utm_medium" name="utm_medium">
             <input type="hidden" id="utm_campaign" name="utm_campaign">
@@ -177,84 +178,96 @@ rgba(0,0,0,.15); }
             <input type="hidden" id="utm_content" name="utm_content">
             <input type="hidden" id="page" name="page">
 
-            <!-- Submit -->
             <button id="submitBtn" type="submit" class="btn-navy w-full py-6 text-[11px] disabled:opacity-60 disabled:cursor-not-allowed">
-              Submit Mandate
+              Initiate Private Mandate
             </button>
             <p id="formMsg" class="hidden text-sm"></p>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="footer-navy px-8 md:px-16">
+  <footer class="px-8 md:px-16" role="contentinfo">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
         <div>
-          <img id="footer-logo" src="logo.png" alt="StratNex" class="h-8 w-auto mb-10 grayscale opacity-70" onerror="tryNextFooterLogo(this)">
-          <p class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.3em]">Operationalizing Strategy</p>
+          <img id="footer-logo" src="https://stratnexproperties.com/logo.png" alt="StratNex Footer Logo" class="h-8 w-auto mb-10 grayscale opacity-70" onerror="tryNextFooterLogo(this)">
+          <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">Connecting Strategy to Assets</p>
         </div>
         <div>
-          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Properties Division</h5>
-          <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">Mandate Desk</a>
-          <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">Asset Management</a>
+          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Real Estate Services</h5>
+          <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest transition-colors">Industrial Land</a>
+          <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest transition-colors">Commercial Offices</a>
         </div>
         <div>
-          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Ecosystem</h5>
-          <a href="https://stratnexconsulting.com/services/stratnex-agri" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">StratNex Agri</a>
-          <a href="https://stratnexconsulting.com/services/stratnex-digital" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">StratNex Digital</a>
+          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Group Ecosystem</h5>
+          <a href="https://stratnexconsulting.com/services/stratnex-agri" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest transition-colors">StratNex Agri</a>
+          <a href="https://stratnexconsulting.com/services/stratnex-digital" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest transition-colors">StratNex Digital</a>
         </div>
         <div>
-          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Contact</h5>
+          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Consultation</h5>
           <a href="mailto:info@stratnexconsulting.com" class="block text-xs text-gray-500 mb-4 lowercase">info@stratnexconsulting.com</a>
-          <a href="https://stratnexconsulting.com/contact" class="block text-xs font-bold text-[#142C40] uppercase tracking-widest underline decoration-2 underline-offset-8">Request Consultation</a>
+          <a href="https://stratnexconsulting.com/contact" class="block text-xs font-bold text-[#142C40] uppercase tracking-widest underline decoration-2 underline-offset-8">Contact Advisory</a>
         </div>
       </div>
-      <div class="pt-10 border-t border-gray-50 flex flex-col lg:flex-row justify-between items-center gap-6">
+      <div class="pt-10 border-t border-gray-50 text-center lg:text-left flex flex-col lg:flex-row justify-between items-center gap-6">
         <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.4em]">© <span id="year"></span> StratNex Properties | A StratNex Consulting Division</p>
+        <div class="flex gap-8">
+          <a href="https://stratnexconsulting.com/privacy" class="text-[9px] text-gray-400 font-bold uppercase hover:text-[#142C40]">Privacy</a>
+          <a href="https://stratnexconsulting.com/terms" class="text-[9px] text-gray-400 font-bold uppercase hover:text-[#142C40]">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Toast -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
-    // ---- Logo Loader (header + footer) ----
-    const queryLogo = new URLSearchParams(location.search).get('logo');
-    const logoCandidates = queryLogo ? [queryLogo] : [
-      'logo.png','Logo.png','logo.svg','Logo.svg','logo.webp','Logo.webp',
-      '/logo.png','/logo.svg','/logo.webp',
-      'images/logo.png','images/logo.svg','images/logo.webp',
-      'assets/logo.png','assets/logo.svg','assets/logo.webp'
-    ];
+    // Contact configuration
+    const CONTACTS = {
+      whatsappNumber: '255744400200', // no "+" for wa.me
+      emails: [
+        'info@stratnexproperties.com',
+        'info@stratnexconsulting.com',
+        'properties@stratnexconsulting.com'
+      ],
+      webhookUrl: '' // optional: set when backend automation is ready
+    };
 
-    let logoIndex = 0;
+    // Logo loader with fallback
+    const logoParam = new URLSearchParams(location.search).get('logo');
+    const logoCandidates = logoParam ? [logoParam] : [
+      'https://stratnexproperties.com/logo.png',
+      '/logo.png', 'logo.png', 'Logo.png',
+      '/logo.svg', 'logo.svg', 'Logo.svg',
+      '/logo.webp', 'logo.webp', 'Logo.webp',
+      'images/logo.png', 'images/logo.svg', 'images/logo.webp',
+      'assets/logo.png', 'assets/logo.svg', 'assets/logo.webp'
+    ];
+    let headerLogoIdx = 0;
     function tryNextLogo(img) {
-      logoIndex++;
-      if (logoIndex < logoCandidates.length) {
-        img.src = logoCandidates[logoIndex];
+      headerLogoIdx++;
+      if (headerLogoIdx < logoCandidates.length) {
+        img.src = logoCandidates[headerLogoIdx];
       } else {
         img.style.display = 'none';
         document.getElementById('fallback-svg').classList.remove('hidden');
       }
     }
-
-    let footerLogoIndex = 0;
+    let footerLogoIdx = 0;
     function tryNextFooterLogo(img) {
-      footerLogoIndex++;
-      if (footerLogoIndex < logoCandidates.length) {
-        img.src = logoCandidates[footerLogoIndex];
+      footerLogoIdx++;
+      if (footerLogoIdx < logoCandidates.length) {
+        img.src = logoCandidates[footerLogoIdx];
       } else {
-        img.remove(); // silent fail in footer
+        img.remove();
       }
     }
 
-    // ---- Dynamic UI per category ----
-    const subUI = document.getElementById('subUI');
-    const catSel = document.getElementById('cat');
+    // Dynamic fields per category
+    const category = document.getElementById('category');
+    const dynamic = document.getElementById('dynamicFields');
 
     function uiIndustrial() {
       return `
@@ -262,8 +275,8 @@ rgba(0,0,0,.15); }
           <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Industrial Specification</label>
           <select name="industrial_spec" class="input-premium bg-white" required>
             <option value="">SELECT...</option>
-            <option value="warehousing">GODOWNS / WAREHOUSING</option>
-            <option value="industrial_land">INDUSTRIAL LAND (DEVELOPMENT)</option>
+            <option>GODOWNS / WAREHOUSING</option>
+            <option>INDUSTRIAL LAND (DEVELOPMENT)</option>
           </select>
         </div>
         <div class="grid md:grid-cols-2 gap-10">
@@ -283,17 +296,16 @@ rgba(0,0,0,.15); }
         </div>
       `;
     }
-
     function uiCommercial() {
       return `
         <div>
           <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Commercial Specification</label>
           <select name="commercial_spec" class="input-premium bg-white" required>
             <option value="">SELECT...</option>
-            <option value="prime_land">PRIME COMMERCIAL LAND</option>
-            <option value="grade_a_office">GRADE-A OFFICE SPACE</option>
-            <option value="retail">RETAIL</option>
-            <option value="hospitality">HOSPITALITY</option>
+            <option>PRIME COMMERCIAL LAND</option>
+            <option>GRADE-A OFFICE SPACE</option>
+            <option>RETAIL</option>
+            <option>HOSPITALITY</option>
           </select>
         </div>
         <div class="grid md:grid-cols-2 gap-10">
@@ -313,7 +325,6 @@ rgba(0,0,0,.15); }
         </div>
       `;
     }
-
     function uiResidential() {
       return `
         <div>
@@ -343,12 +354,11 @@ rgba(0,0,0,.15); }
         </div>
       `;
     }
-
     function uiMining() {
       return `
         <div class="grid md:grid-cols-2 gap-10">
           <div>
-            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Focus</label>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Mineral</label>
             <select name="mineral" class="input-premium bg-white" required>
               <option value="">SELECT...</option>
               <option>GOLD</option>
@@ -361,40 +371,51 @@ rgba(0,0,0,.15); }
             <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">License</label>
             <select name="license" class="input-premium bg-white" required>
               <option value="">SELECT...</option>
-              <option>PROSPECTING</option>
+              <option>PROSPECTING (PL)</option>
               <option>EXPLORATION</option>
-              <option>MINING</option>
+              <option>MINING (ML)</option>
               <option>JV OPPORTUNITY</option>
             </select>
           </div>
         </div>
       `;
     }
-
     function renderDynamic(val) {
-      if (val === 'industrial') subUI.innerHTML = uiIndustrial();
-      else if (val === 'commercial') subUI.innerHTML = uiCommercial();
-      else if (val === 'residential') subUI.innerHTML = uiResidential();
-      else if (val === 'mining') subUI.innerHTML = uiMining();
-      else subUI.innerHTML = '';
+      if (val === 'industrial') dynamic.innerHTML = uiIndustrial();
+      else if (val === 'commercial') dynamic.innerHTML = uiCommercial();
+      else if (val === 'residential') dynamic.innerHTML = uiResidential();
+      else if (val === 'mining') dynamic.innerHTML = uiMining();
+      else dynamic.innerHTML = '';
     }
+    category.addEventListener('change', () => renderDynamic(category.value));
 
-    catSel.addEventListener('change', () => renderDynamic(catSel.value));
-
-    // ---- WhatsApp CTA ----
-    document.getElementById('waBtn').addEventListener('click', (e) => {
+    // WhatsApp CTA (side button)
+    document.getElementById('whatsappBtn')?.addEventListener('click', (e) => {
       e.preventDefault();
-      const name = encodeURIComponent(document.getElementById('entity').value || '');
-      const cat = encodeURIComponent(document.getElementById('cat').value || '');
+      const name = encodeURIComponent(document.getElementById('entity')?.value || '');
+      const cat  = encodeURIComponent(document.getElementById('category')?.value || '');
       const region = encodeURIComponent(document.getElementById('region')?.value || '');
       const budget = encodeURIComponent(document.getElementById('budget')?.value || '');
-      const msg = `Hello StratNex Properties,%0AName: ${name}%0ACategory: ${cat}%0ARegion: ${region}%0ABudget: ${budget}`;
-      const number = '255700000000'; // replace with your WhatsApp number (no +)
-      window.open(`https://wa.me/${number}?text=${msg}`, '_blank');
+      const email = encodeURIComponent(document.getElementById('email')?.value || '');
+      const phone = encodeURIComponent(document.getElementById('phone')?.value || '');
+      const notes = encodeURIComponent(document.getElementById('notes')?.value || '');
+
+      const msg = [
+        'Hello StratNex Properties,',
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Category: ${cat}`,
+        `Region: ${region}`,
+        `Budget: ${budget}`,
+        notes ? `Notes: ${notes}` : ''
+      ].filter(Boolean).join('%0A');
+
+      window.open(`https://wa.me/${CONTACTS.whatsappNumber}?text=${msg}`, '_blank');
     });
 
-    // ---- UTM capture ----
-    (function utmCapture(){
+    // UTM capture
+    (function utm() {
       const params = new URLSearchParams(location.search);
       const keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
       keys.forEach(k => {
@@ -407,7 +428,7 @@ rgba(0,0,0,.15); }
       document.getElementById('page').value = location.href;
     })();
 
-    // ---- Submission ----
+    // Submission behavior: WhatsApp + Email (immediate), optional webhook
     const form = document.getElementById('mandateForm');
     const submitBtn = document.getElementById('submitBtn');
     const toast = document.getElementById('toast');
@@ -417,7 +438,74 @@ rgba(0,0,0,.15); }
       toast.textContent = text;
       toast.classList.toggle('error', isError);
       toast.style.display = 'block';
-      setTimeout(()=> toast.style.display='none', 4200);
+      setTimeout(() => { toast.style.display = 'none'; }, 4200);
+    }
+
+    function buildPayload() {
+      const fd = new FormData(form);
+      return Object.fromEntries(fd.entries());
+    }
+
+    function toWhatsAppText(data) {
+      const lines = [
+        'New Acquisition Mandate',
+        `Entity: ${data.entity || ''}`,
+        `Email: ${data.email || ''}`,
+        `Phone: ${data.phone || ''}`,
+        `Intent: ${data.purpose || ''}`,
+        `Category: ${data.category || ''}`,
+        `Region: ${data.region || ''}`,
+        `Budget: ${data.budget || ''}`,
+        data.notes ? `Notes: ${data.notes}` : '',
+        data.utm_source ? `utm_source: ${data.utm_source}` : '',
+        data.utm_medium ? `utm_medium: ${data.utm_medium}` : '',
+        data.utm_campaign ? `utm_campaign: ${data.utm_campaign}` : ''
+      ].filter(Boolean);
+      return encodeURIComponent(lines.join('\n'));
+    }
+
+    function openWhatsAppWith(data) {
+      const text = toWhatsAppText(data);
+      window.open(`https://wa.me/${CONTACTS.whatsappNumber}?text=${text}`, '_blank');
+    }
+
+    function openMailtoWith(data) {
+      const to = encodeURIComponent(CONTACTS.emails.join(','));
+      const subject = encodeURIComponent('New Acquisition Mandate — StratNex Properties');
+      const bodyLines = [
+        'New Acquisition Mandate',
+        '-----------------------',
+        `Entity: ${data.entity || ''}`,
+        `Email: ${data.email || ''}`,
+        `Phone: ${data.phone || ''}`,
+        `Intent: ${data.purpose || ''}`,
+        `Category: ${data.category || ''}`,
+        `Region: ${data.region || ''}`,
+        `Budget: ${data.budget || ''}`,
+        data.notes ? `Notes: ${data.notes}` : '',
+        '',
+        'UTM / Meta',
+        `utm_source: ${data.utm_source || ''}`,
+        `utm_medium: ${data.utm_medium || ''}`,
+        `utm_campaign: ${data.utm_campaign || ''}`,
+        `utm_term: ${data.utm_term || ''}`,
+        `utm_content: ${data.utm_content || ''}`,
+        `page: ${data.page || location.href}`
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+      const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+    }
+
+    async function sendToWebhookIfConfigured(data) {
+      if (!CONTACTS.webhookUrl) return;
+      try {
+        await fetch(CONTACTS.webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+      } catch (_) { /* no-op */ }
     }
 
     form.addEventListener('submit', async (e) => {
@@ -428,51 +516,31 @@ rgba(0,0,0,.15); }
       const original = submitBtn.textContent;
       submitBtn.textContent = 'Submitting...';
 
-      const data = Object.fromEntries(new FormData(form).entries());
+      const data = buildPayload();
 
-      try {
-        // Option A: Formspree (replace YOUR_FORMSPREE_ID)
-        const endpoint = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
-        // Option B: Your webhook (Cloudflare Workers, Apps Script, etc.)
-        // const endpoint = 'https://YOUR_WEBHOOK_URL';
+      // Optional: webhook (when you set CONTACTS.webhookUrl)
+      await sendToWebhookIfConfigured(data);
 
-        const resp = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: new FormData(form)
-        });
+      // Always: WhatsApp + Email draft
+      openWhatsAppWith(data);
+      openMailtoWith(data);
 
-        if (resp.ok) {
-          form.reset();
-          renderDynamic(''); // reset dynamic UI
-          showToast('Mandate submitted. We will revert within 24 hours.');
-          formMsg.classList.remove('hidden');
-          formMsg.classList.remove('text-red-600');
-          formMsg.classList.add('text-emerald-700');
-          formMsg.textContent = 'Thank you! Your mandate has been received.';
-        } else {
-          showToast('Submission failed. Please try again or contact us.', true);
-          formMsg.classList.remove('hidden');
-          formMsg.classList.remove('text-emerald-700');
-          formMsg.classList.add('text-red-600');
-          formMsg.textContent = 'We could not submit your request. Please try again or use WhatsApp.';
-        }
-      } catch (err) {
-        showToast('Network error. Please try again or use WhatsApp.', true);
-        formMsg.classList.remove('hidden');
-        formMsg.classList.remove('text-emerald-700');
-        formMsg.classList.add('text-red-600');
-        formMsg.textContent = 'Network error. Please try again or use WhatsApp.';
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = original;
-      }
+      // UX feedback
+      showToast('WhatsApp and Email draft prepared.');
+      formMsg.classList.remove('hidden');
+      formMsg.classList.remove('text-red-600');
+      formMsg.classList.add('text-emerald-700');
+      formMsg.textContent = 'Thank you! A WhatsApp message and email draft have been prepared.';
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = original;
+      form.reset();
+      renderDynamic('');
     });
 
-    // Initialize year and default UI
+    // Init
     document.getElementById('year').textContent = new Date().getFullYear();
-    renderDynamic(catSel.value);
-
+    renderDynamic(category.value);
   </script>
 </body>
 </html>
