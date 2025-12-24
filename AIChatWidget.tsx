@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Loader2, Building } from 'lucide-react';
 
-import { createRealEstateChat, sendMessageToGemini } from './src/services/geminiService';
-import type { ChatMessage, ChatSession } from './src/types';
+import { createRealEstateChat, sendMessageToGemini } from '../services/geminiService';
+import type { ChatMessage, ChatSession } from '../types';
 
 export const AIChatWidget: React.FC = () => {
 const [isOpen, setIsOpen] = useState(false);
@@ -106,7 +106,10 @@ File: src/services/geminiService.ts
 import { GoogleGenerativeAI } from '@google/genai';
 import type { ChatSession } from '../types';
 
-const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY || '';
+const apiKey =
+(import.meta as any).env?.VITE_GEMINI_API_KEY ||
+process.env.VITE_GEMINI_API_KEY ||
+'';
 
 let singletonChat: ChatSession | null = null;
 
@@ -116,7 +119,6 @@ if (singletonChat) return singletonChat;
 const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-// Seed with a short system-style instruction via initial history
 const chat = model.startChat({
 history: [
 {
@@ -126,14 +128,12 @@ parts: [{ text: 'You are Nex, a helpful real estate portfolio assistant.' }]
 ]
 });
 
-// Cast to our minimal ChatSession interface
 singletonChat = chat as unknown as ChatSession;
 return singletonChat!;
 }
 
 export async function sendMessageToGemini(chat: ChatSession, content: string): Promise {
 const result = await chat.sendMessage(content);
-// SDK returns { response: { text(): string } }
 const text = result?.response?.text?.() ?? '';
 return text;
 }
@@ -148,7 +148,6 @@ text: string;
 timestamp: Date;
 }
 
-// Minimal shape that our service uses from the SDK
 export interface ChatSession {
 sendMessage: (content: string) => Promise<{
 response: { text: () => string };
