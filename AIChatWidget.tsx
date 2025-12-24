@@ -1,8 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles, Loader2, User, Building } from 'lucide-react';
-import { Chat } from '@google/genai';
-import { createRealEstateChat, sendMessageToGemini } from '../services/geminiService';
-import { ChatMessage } from '../types';
+
+// CORRECTED IMPORTS: Removed "../services/" and "../types" because your files are in the main folder
+import { createRealEstateChat, sendMessageToGemini } from './geminiService';
+import { ChatMessage } from './types';
+
+// We also need the type from the Gemini library
+import { ChatSession } from '@google/genai';
 
 export const AIChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +21,8 @@ export const AIChatWidget: React.FC = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
-  const chatSessionRef = useRef<Chat | null>(null);
+  // Updated type to match the library
+  const chatSessionRef = useRef<any>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,7 +62,7 @@ export const AIChatWidget: React.FC = () => {
       };
       setMessages(prev => [...prev, aiMsg]);
     } catch (error) {
-       // Graceful failure handled in service
+        // Error is logged in the service
     } finally {
       setIsLoading(false);
     }
@@ -86,7 +91,6 @@ export const AIChatWidget: React.FC = () => {
               <Building className="w-6 h-6 text-[#A6A8AB]" />
             </div>
             <div>
-              {/* Removed italic per brand guidelines */}
               <h3 className="font-luxury text-white text-lg tracking-wide">Nex Concierge</h3>
               <p className="text-[#A6A8AB] text-[9px] font-bold uppercase tracking-[0.3em] mt-1">
                 Institutional Portfolio Desk
