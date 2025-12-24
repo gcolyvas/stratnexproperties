@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles, Loader2, User, Building } from 'lucide-react';
 
-// THESE ARE THE CRITICAL LINES. Notice there is no "../services/"
+// IMPORTANT: Make sure it looks EXACTLY like this. NO "services" folder.
 import { createRealEstateChat, sendMessageToGemini } from './geminiService';
 import { ChatMessage } from './types';
 
