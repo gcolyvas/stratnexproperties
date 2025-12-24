@@ -43,6 +43,8 @@ white; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; tran
 rgba(0,0,0,.15); z-index: 60; }
     .toast.error { background: 
 #B91C1C; }
+    /* Ensure header logo shows at consistent size */
+    .header-logo { display: block; max-width: 240px; height: auto; }
   </style>
 </head>
 <body class="antialiased">
@@ -51,7 +53,7 @@ rgba(0,0,0,.15); z-index: 60; }
     <nav class="max-w-7xl mx-auto flex justify-between items-center" aria-label="Main Navigation">
       <a href="https://stratnexconsulting.com" class="flex items-center gap-6" title="StratNex Consulting Home">
         <div class="flex items-center">
-          <img id="logo-img" src="https://stratnexproperties.com/logo.png" alt="StratNex Logo" class="h-10 w-auto object-contain" onerror="tryNextLogo(this)">
+          <img id="logo-img" src="https://stratnexproperties.com/logo.png" alt="StratNex Logo" class="header-logo object-contain" onerror="tryNextLogo(this)">
           <div id="fallback-svg" class="hidden flex items-center gap-2">
             <div class="w-8 h-8 bg-[#142C40] flex items-center justify-center text-white font-bold">S</div>
             <span class="text-[#142C40] font-bold text-xl tracking-tighter">STRATNEX</span>
@@ -192,7 +194,8 @@ rgba(0,0,0,.15); z-index: 60; }
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
         <div>
-          <img id="footer-logo" src="https://stratnexproperties.com/logo.png" alt="StratNex Footer Logo" class="h-8 w-auto mb-10 grayscale opacity-70" onerror="tryNextFooterLogo(this)">
+          <!-- Footer logo enlarged -->
+          <img id="footer-logo" src="https://stratnexproperties.com/logo.png" alt="StratNex Footer Logo" class="w-[250px] h-auto mb-10 grayscale opacity-70" onerror="tryNextFooterLogo(this)">
           <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">Connecting Strategy to Assets</p>
         </div>
         <div>
@@ -224,18 +227,15 @@ rgba(0,0,0,.15); z-index: 60; }
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
-    // Contact configuration
-    const CONTACTS = {
-      whatsappNumber: '255744400200', // no "+" for wa.me
-      emails: [
-        'info@stratnexproperties.com',
-        'info@stratnexconsulting.com',
-        'properties@stratnexconsulting.com'
-      ],
-      webhookUrl: '' // optional: set when backend automation is ready
+    // Contact and routing configuration
+    const CONFIG = {
+      whatsappNumber: '255744400200',     // for future automation (no popup used now)
+      // Replace the endpoint below with your serverless handler or Formspree form ID
+      submissionEndpoint: 'https://formspree.io/f/YOUR_FORMSPREE_ID',
+      parentRedirect: 'https://stratnexconsulting.com' // redirect after successful submit
     };
 
-    // Logo loader with fallback
+    // Logo loader with fallback and multiple path candidates
     const logoParam = new URLSearchParams(location.search).get('logo');
     const logoCandidates = logoParam ? [logoParam] : [
       'https://stratnexproperties.com/logo.png',
@@ -389,7 +389,7 @@ rgba(0,0,0,.15); z-index: 60; }
     }
     category.addEventListener('change', () => renderDynamic(category.value));
 
-    // WhatsApp CTA (side button)
+    // WhatsApp quick CTA (kept; does not auto-open on submit)
     document.getElementById('whatsappBtn')?.addEventListener('click', (e) => {
       e.preventDefault();
       const name = encodeURIComponent(document.getElementById('entity')?.value || '');
@@ -411,7 +411,7 @@ rgba(0,0,0,.15); z-index: 60; }
         notes ? `Notes: ${notes}` : ''
       ].filter(Boolean).join('%0A');
 
-      window.open(`https://wa.me/${CONTACTS.whatsappNumber}?text=${msg}`, '_blank');
+      window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${msg}`, '_blank');
     });
 
     // UTM capture
@@ -428,7 +428,7 @@ rgba(0,0,0,.15); z-index: 60; }
       document.getElementById('page').value = location.href;
     })();
 
-    // Submission behavior: WhatsApp + Email (immediate), optional webhook
+    // Submission: silent backend post + redirect to parent website (no mail/WhatsApp popups)
     const form = document.getElementById('mandateForm');
     const submitBtn = document.getElementById('submitBtn');
     const toast = document.getElementById('toast');
@@ -438,7 +438,7 @@ rgba(0,0,0,.15); z-index: 60; }
       toast.textContent = text;
       toast.classList.toggle('error', isError);
       toast.style.display = 'block';
-      setTimeout(() => { toast.style.display = 'none'; }, 4200);
+      setTimeout(() => { toast.style.display = 'none'; }, 3200);
     }
 
     function buildPayload() {
@@ -446,66 +446,18 @@ rgba(0,0,0,.15); z-index: 60; }
       return Object.fromEntries(fd.entries());
     }
 
-    function toWhatsAppText(data) {
-      const lines = [
-        'New Acquisition Mandate',
-        `Entity: ${data.entity || ''}`,
-        `Email: ${data.email || ''}`,
-        `Phone: ${data.phone || ''}`,
-        `Intent: ${data.purpose || ''}`,
-        `Category: ${data.category || ''}`,
-        `Region: ${data.region || ''}`,
-        `Budget: ${data.budget || ''}`,
-        data.notes ? `Notes: ${data.notes}` : '',
-        data.utm_source ? `utm_source: ${data.utm_source}` : '',
-        data.utm_medium ? `utm_medium: ${data.utm_medium}` : '',
-        data.utm_campaign ? `utm_campaign: ${data.utm_campaign}` : ''
-      ].filter(Boolean);
-      return encodeURIComponent(lines.join('\n'));
-    }
+    async function submitSilently(data) {
+      // Adjust for your service. Example uses Formspree JSON or multipart.
+      // If using Formspree form ID, FormData is fine; Accept: application/json returns 200/OK.
+      const headers = { 'Accept': 'application/json' };
+      const body = new FormData(form); // keep files/fields if any
 
-    function openWhatsAppWith(data) {
-      const text = toWhatsAppText(data);
-      window.open(`https://wa.me/${CONTACTS.whatsappNumber}?text=${text}`, '_blank');
-    }
-
-    function openMailtoWith(data) {
-      const to = encodeURIComponent(CONTACTS.emails.join(','));
-      const subject = encodeURIComponent('New Acquisition Mandate — StratNex Properties');
-      const bodyLines = [
-        'New Acquisition Mandate',
-        '-----------------------',
-        `Entity: ${data.entity || ''}`,
-        `Email: ${data.email || ''}`,
-        `Phone: ${data.phone || ''}`,
-        `Intent: ${data.purpose || ''}`,
-        `Category: ${data.category || ''}`,
-        `Region: ${data.region || ''}`,
-        `Budget: ${data.budget || ''}`,
-        data.notes ? `Notes: ${data.notes}` : '',
-        '',
-        'UTM / Meta',
-        `utm_source: ${data.utm_source || ''}`,
-        `utm_medium: ${data.utm_medium || ''}`,
-        `utm_campaign: ${data.utm_campaign || ''}`,
-        `utm_term: ${data.utm_term || ''}`,
-        `utm_content: ${data.utm_content || ''}`,
-        `page: ${data.page || location.href}`
-      ];
-      const body = encodeURIComponent(bodyLines.join('\n'));
-      const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
-      window.location.href = mailto;
-    }
-
-    async function sendToWebhookIfConfigured(data) {
-      if (!CONTACTS.webhookUrl) return;
-      try {
-        await fetch(CONTACTS.webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-      } catch (_) { /* no-op */ }
+      const resp = await fetch(CONFIG.submissionEndpoint, {
+        method: 'POST',
+        headers,
+        body
+      });
+      return resp.ok;
     }
 
     form.addEventListener('submit', async (e) => {
@@ -518,24 +470,25 @@ rgba(0,0,0,.15); z-index: 60; }
 
       const data = buildPayload();
 
-      // Optional: webhook (when you set CONTACTS.webhookUrl)
-      await sendToWebhookIfConfigured(data);
-
-      // Always: WhatsApp + Email draft
-      openWhatsAppWith(data);
-      openMailtoWith(data);
-
-      // UX feedback
-      showToast('WhatsApp and Email draft prepared.');
-      formMsg.classList.remove('hidden');
-      formMsg.classList.remove('text-red-600');
-      formMsg.classList.add('text-emerald-700');
-      formMsg.textContent = 'Thank you! A WhatsApp message and email draft have been prepared.';
-
-      submitBtn.disabled = false;
-      submitBtn.textContent = original;
-      form.reset();
-      renderDynamic('');
+      try {
+        const ok = await submitSilently(data);
+        if (ok) {
+          // Optional brief toast, then redirect
+          showToast('Submitted. Redirecting...');
+          // Small delay to let the user see feedback
+          setTimeout(() => { window.location.href = CONFIG.parentRedirect; }, 600);
+          formMsg.classList.add('hidden'); // keep it quiet
+          form.reset();
+          renderDynamic('');
+        } else {
+          showToast('Submission failed. Please try again.', true);
+        }
+      } catch (err) {
+        showToast('Network error. Please try again.', true);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = original;
+      }
     });
 
     // Init
