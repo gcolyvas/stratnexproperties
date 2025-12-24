@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface FooterProps {
@@ -22,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ onMandateClick }) => {
                       StratNex
                     </span>
                     <span className="text-[9px] font-bold text-grey tracking-[0.3em] mt-1 uppercase">
-                      Properties Division
+                      StratNex Consulting Division
                     </span>
                  </div>
                </div>

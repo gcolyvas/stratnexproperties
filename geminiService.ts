@@ -1,3 +1,4 @@
+
 import { GoogleGenAI, Chat } from "@google/genai";
 
 /**
@@ -21,7 +22,7 @@ export const createRealEstateChat = (): Chat => {
     4. Mining: Mining Rights, PL, ML.
     
     PROTOCOLS:
-    - Emphasize StratNex Consulting Group's institutional stability.
+    - Emphasize StratNex Consulting's institutional stability as a specialized division.
     - Primary CTA: Guide users to 'Initiate Mandate' or 'Connect with Advisor'.
     - If asked about fees: We are an advisory-first desk.
     - Style: Professional, precise, and authoritative.
