@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+mport { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Loader2, Building } from 'lucide-react';
 
-import { createRealEstateChat, sendMessageToGemini } from '../services/geminiService';
-import { ChatMessage, ChatSession } from '../types';
+import { createRealEstateChat, sendMessageToGemini } from './src/services/geminiService';
+import { ChatMessage, ChatSession } from './src/types';
 
 export const AIChatWidget: React.FC = () => {
 const [isOpen, setIsOpen] = useState(false);
