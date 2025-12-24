@@ -1,87 +1,104 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO AUTHORITY -->
-    <title>StratNex Properties | Institutional Asset Acquisition & Mining Mandates Tanzania</title>
-    <meta name="description" content="StratNex Properties: The authoritative advisory desk for Industrial Godowns, Prime Commercial Land, and Mining Rights in Tanzania. A StratNex Consulting Division providing institutional-grade due diligence.">
-    <meta name="keywords" content="Industrial Godowns Tanzania, Warehouse Acquisition, Mining Licenses Tanzania, PL ML Rights, Grade-A Office Dar es Salaam, Real Estate Acquisition Mandate, StratNex Properties">
-    <meta name="author" content="StratNex Consulting">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="StratNex Properties | Institutional Asset Advisory">
-    <meta property="og:description" content="Connecting institutional capital to verified Tanzanian assets through professional mandates. A StratNex Consulting Division.">
-    <meta property="og:image" content="https://stratnexproperties.com/logo.png">
-    <meta property="og:url" content="https://stratnexproperties.com">
-    <meta name="twitter:card" content="summary_large_image">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>StratNex Properties | Institutional Real Estate & Strategic Asset Sourcing in Tanzania</title>
+    <meta
+      name="description"
+      content="StratNex Properties specializes in institutional real estate and strategic asset sourcing in Tanzania. Industrial godowns, TIC-approved commercial land, mining license advisory (Gold, Graphite, Tanzanite), and luxury residential in Masaki/Oysterbay."
+    />
+    <link rel="canonical" href="https://stratnexconsulting.com/" />
+    <meta property="og:title" content="StratNex Properties | Institutional Real Estate & Strategic Asset Sourcing in Tanzania" />
+    <meta property="og:description" content="Institutional-grade sourcing in Tanzania: industrial godowns, commercial land, mining licenses, and luxury residential. Concierge advisory for funds, developers, and HNWIs." />
+    <meta property="og:url" content="https://stratnexconsulting.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/Logo.png" />
+    <meta name="theme-color" content="#142c40" />
 
-    <!-- Structured Data (Schema.org) -->
+    <!-- Tailwind CSS via CDN (mobile-first) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: '#142c40',
+              slateLux: '#334155',
+              goldLux: '#d4af37',
+              silverLux: '#c0c0c0',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji'],
+            },
+            boxShadow: {
+              lux: '0 10px 30px rgba(20,44,64,0.25)',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- JSON-LD Schema: RealEstateAgent + ProfessionalService -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      "name": "StratNex Properties",
-      "url": "https://stratnexproperties.com",
-      "logo": "https://stratnexproperties.com/logo.png",
-      "description": "Institutional asset acquisition desk and property advisory division of StratNex Consulting.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dar es Salaam",
-        "addressCountry": "TZ"
-      },
-      "areaServed": "Tanzania",
-      "serviceType": ["Industrial Asset Sourcing", "Mining Rights Advisory", "Commercial Land Mandates"]
-    }
-    </script>
-
-    <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
-
-    <!-- TAILWIND & CUSTOM STYLE -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#142C40',
-                        grey: '#A6A8AB',
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        luxury: ['Playfair Display', 'serif'],
-                    },
-                },
-            },
+      "@graph": [
+        {
+          "@type": "RealEstateAgent",
+          "@id": "https://stratnexconsulting.com/#org",
+          "name": "StratNex Properties",
+          "url": "https://stratnexconsulting.com/",
+          "logo": "https://stratnexconsulting.com/Logo.png",
+          "image": "https://stratnexconsulting.com/Logo.png",
+          "telephone": "+255-XXX-XXX-XXX",
+          "email": "advisory@stratnexconsulting.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Toure Drive, Masaki",
+            "addressLocality": "Dar es Salaam",
+            "addressRegion": "DSM",
+            "postalCode": "14111",
+            "addressCountry": "TZ"
+          },
+          "areaServed": [
+            { "@type": "Country", "name": "Tanzania" }
+          ],
+          "description": "Institutional real estate and strategic asset sourcing in Tanzania, specializing in industrial godowns, TIC-approved commercial land, luxury residential, and mining license advisory (Gold, Graphite, Tanzanite).",
+          "foundingDate": "2020",
+          "sameAs": [
+            "https://www.linkedin.com/company/stratnex-properties"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "Mining License Advisory",
+          "serviceType": "Prospecting License (PL) and Mining License (ML) advisory for Gold, Graphite, and Tanzanite",
+          "provider": { "@id": "https://stratnexconsulting.com/#org" },
+          "areaServed": "Tanzania",
+          "url": "https://stratnexconsulting.com/#mining"
         }
-    </script>
-    <style>
-        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-        .font-luxury { font-family: 'Playfair Display', serif; }
-        * { border-radius: 0px !important; } /* Strict Brand Requirement */
-        .mandate-focus:hover { border-color: #A6A8AB; }
-        .selection-navy::selection { background-color: #142C40; color: white; }
-    </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "react-dom": "https://esm.sh/react-dom@^19.2.3",
-        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
-      }
+      ]
     }
     </script>
-<link rel="stylesheet" href="/index.css">
-</head>
-<body class="bg-white text-navy selection-navy">
+  </head>
+  <body class="bg-white text-slateLux antialiased">
     <div id="root"></div>
-    <script type="module" src="index.tsx"></script>
-<script type="module" src="/index.tsx"></script>
-</body>
+
+    <!-- Vite module entry: render App.tsx -->
+    <script type="module">
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+      import App from './App.tsx';
+      const root = createRoot(document.getElementById('root'));
+      root.render(React.createElement(App));
+    </script>
+  </body>
 </html>
