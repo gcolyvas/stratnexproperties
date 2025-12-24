@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles, Loader2, User, Building } from 'lucide-react';
 
-// CORRECTED IMPORTS: Removed "../services/" and "../types" because your files are in the main folder
-import { createRealEstateChat, sendMessageToGemini } from './geminiService';
-import { ChatMessage } from './types';
+// Added .ts and .ts to ensure Vite finds them in the root
+import { createRealEstateChat, sendMessageToGemini } from './geminiService.ts';
+import { ChatMessage } from './types.ts';
 
-// We also need the type from the Gemini library
 import { ChatSession } from '@google/genai';
 
 export const AIChatWidget: React.FC = () => {
