@@ -1,157 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>StratNex Properties | Private Mandate Desk</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-        :root { --navy: #142C40; --gray: #A6A8AB; --text: #333333; }
-        body { font-family: 'Montserrat', sans-serif; color: var(--text); background-color: #FFFFFF; letter-spacing: 0.02em; }
-        .font-luxury { font-family: 'Playfair Display', serif; }
-        
-        .header-border { border-bottom: 1px solid #F1F5F9; }
-        .input-premium { border: 1px solid #E2E8F0; border-radius: 0px; padding: 16px; width: 100%; font-size: 13px; background: #FFFFFF; transition: border-color 0.3s; }
-        .input-premium:focus { border-color: var(--navy); outline: none; }
-        
-        .btn-navy { background-color: var(--navy); color: white; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; transition: all 0.3s; border-radius: 0px; }
-        .btn-navy:hover { background-color: #0d1e2c; box-shadow: 0 10px 30px rgba(20, 44, 64, 0.1); }
-        
-        .section-tag { font-size: 10px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 1rem; display: block; }
-        .footer-navy { border-top: 1px solid #F1F5F9; padding-top: 80px; padding-bottom: 40px; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StratNex Properties | Private Mandate Desk</title>
+  <meta name="description" content="Submit a private acquisition mandate for land, real estate, and mining assets. StratNex Properties—A StratNex Consulting Division." />
+  <meta name="theme-color" content="#142C40" />
+  <meta property="og:title" content="StratNex Properties | Private Mandate Desk" />
+  <meta property="og:description" content="Institutional-grade mandate intake for land, real estate, and mining assets." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --navy: 
+#142C40; --gray: 
+#A6A8AB; --text: 
+#333333; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text); background-color: 
+#FFFFFF; letter-spacing: 0.02em; }
+    .font-luxury { font-family: 'Playfair Display', serif; }
+    .header-border { border-bottom: 1px solid 
+#F1F5F9; }
+    .input-premium { border: 1px solid 
+#E2E8F0; border-radius: 0px; padding: 16px; width: 100%; font-size: 13px; background: 
+#FFFFFF; transition: border-color 0.3s; }
+    .input-premium:focus { border-color: var(--navy); outline: none; }
+    .btn-navy { background-color: var(--navy); color: 
+white; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; transition: all 0.3s; border-radius: 0px; }
+    .btn-navy:hover { background-color: 
+#0d1e2c; box-shadow: 0 10px 30px 
+rgba(20, 44, 64, 0.1); }
+    .section-tag { font-size: 10px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 1rem; display: block; }
+    .footer-navy { border-top: 1px solid 
+#F1F5F9; padding-top: 80px; padding-bottom: 40px; }
+    .hint { font-size: 11px; color: 
+#9AA3AF; }
+    .toast { position: fixed; right: 16px; bottom: 16px; background: 
+#0F766E; color: 
+#fff; padding: 12px 14px; border-radius: 8px; display: none; box-shadow: 0 10px 25px 
+rgba(0,0,0,.15); }
+    .error { background: 
+#B91C1C; }
+  </style>
 </head>
 <body class="antialiased">
 
-    <header class="header-border sticky top-0 bg-white z-50 py-6 px-8 md:px-16">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="https://stratnexconsulting.com" class="flex items-center gap-6">
-                <div class="flex items-center">
-                    <img src="logo.png" alt="StratNex" class="h-10 w-auto object-contain" 
-                         onerror="this.style.display='none'; document.getElementById('fallback-svg').classList.remove('hidden');">
-                    
-                    <div id="fallback-svg" class="hidden flex items-center gap-2">
-                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="40" height="40" fill="#142C40"/>
-                            <path d="M12 28V12H18L28 22V12" stroke="white" stroke-width="3"/>
-                        </svg>
-                        <span class="text-[#142C40] font-bold text-xl tracking-tighter">STRATNEX</span>
-                    </div>
-                </div>
-                
-                <div class="border-l border-gray-200 pl-6">
-                    <h1 class="text-[#142C40] font-bold text-xl uppercase tracking-tighter leading-none">Properties</h1>
-                    <p class="text-[9px] text-[#A6A8AB] font-bold tracking-[0.35em] mt-2 uppercase">A StratNex Consulting Division</p>
-                </div>
-            </a>
-            <div class="hidden lg:flex gap-12">
-                <a href="https://stratnexconsulting.com/services/stratnex-agri" class="text-[10px] font-bold uppercase tracking-widest text-[#142C40]">StratNex Agri</a>
-                <a href="https://stratnexconsulting.com" class="text-[10px] font-bold uppercase tracking-widest text-[#A6A8AB] hover:text-[#142C40]">Parent Site</a>
-            </div>
+  <!-- Header -->
+  <header class="header-border sticky top-0 bg-white/95 backdrop-blur z-50 py-6 px-8 md:px-16">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="https://stratnexconsulting.com" class="flex items-center gap-6" aria-label="StratNex Consulting">
+        <div class="flex items-center">
+          <img id="logo-img" src="logo.png" alt="StratNex" class="h-10 w-auto object-contain"
+               onerror="tryNextLogo(this)">
+          <div id="fallback-svg" class="hidden flex items-center gap-2">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="40" height="40" fill="#142C40"/>
+              <path d="M12 28V12H18L28 22V12" stroke="white" stroke-width="3"/>
+            </svg>
+            <span class="text-[#142C40] font-bold text-xl tracking-tighter">STRATNEX</span>
+          </div>
         </div>
-    </header>
-
-    <section class="py-24 px-8 md:px-16 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-24">
-            
-            <div class="lg:col-span-5">
-                <span class="section-tag">Strategic Assets</span>
-                <h2 class="font-luxury text-5xl text-[#142C40] leading-[1.15] mb-10">Operationalizing market intelligence through physical assets.</h2>
-                
-                <div class="bg-slate-50 p-10 border-t-2 border-[#142C40]">
-                    <h4 class="font-luxury text-xl text-[#142C40] mb-4">Direct Engagement</h4>
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-6">For Asset Owners & Sellers</p>
-                    <p class="text-sm text-gray-600 mb-8 leading-relaxed">If you wish to liquidate prime assets or explore a Joint Venture, skip the configuration and request an advisory consultation.</p>
-                    <a href="https://stratnexconsulting.com/contact" class="inline-block w-full py-4 border border-[#142C40] text-[#142C40] text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#142C40] hover:text-white transition-all">Direct Consultation</a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-7">
-                <div class="bg-white">
-                    <span class="section-tag">Mandate Configuration</span>
-                    <h3 class="font-luxury text-3xl text-[#142C40] mb-12">Asset Parameters</h3>
-
-                    <form class="space-y-10">
-                        <div class="grid md:grid-cols-2 gap-10">
-                            <div>
-                                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Entity Name</label>
-                                <input type="text" class="input-premium" placeholder="CORPORATE OR INDIVIDUAL">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Engagement Purpose</label>
-                                <select class="input-premium bg-white">
-                                    <option>DIRECT ACQUISITION</option>
-                                    <option>JOINT VENTURE (JV)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Asset Category</label>
-                            <select id="cat" onchange="updateUI()" class="input-premium bg-white font-semibold">
-                                <option value="">SELECT CLASSIFICATION...</option>
-                                <option value="industrial">INDUSTRIAL (GODOWNS & LAND)</option>
-                                <option value="commercial">COMMERCIAL (OFFICES & LAND)</option>
-                                <option value="residential">RESIDENTIAL (STAND-ALONE & APARTMENTS)</option>
-                                <option value="mining">MINING (RIGHTS & PERMITS)</option>
-                            </select>
-                        </div>
-
-                        <div id="subUI" class="space-y-10"></div>
-
-                        <button type="submit" class="btn-navy w-full py-6 text-[11px]">
-                            Submit Mandate
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <div class="border-l border-gray-200 pl-6">
+          <h1 class="text-[#142C40] font-bold text-xl uppercase tracking-tighter leading-none">Properties</h1>
+          <p class="text-[9px] text-[#A6A8AB] font-bold tracking-[0.35em] mt-2 uppercase">A StratNex Consulting Division</p>
         </div>
-    </section>
+      </a>
+      <div class="hidden lg:flex gap-12">
+        <a href="https://stratnexconsulting.com/services/stratnex-agri" class="text-[10px] font-bold uppercase tracking-widest text-[#142C40]">StratNex Agri</a>
+        <a href="https://stratnexconsulting.com" class="text-[10px] font-bold uppercase tracking-widest text-[#A6A8AB] hover:text-[#142C40]">Parent Site</a>
+      </div>
+    </div>
+  </header>
 
-    <footer class="footer-navy px-8 md:px-16">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-                <div>
-                    <img src="logo.png" alt="StratNex" class="h-8 w-auto mb-10 grayscale opacity-70" onerror="this.src='./logo.png';">
-                    <p class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.3em]">Operationalizing Strategy</p>
-                </div>
-                <div>
-                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Properties Division</h5>
-                    <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">Mandate Desk</a>
-                    <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">Asset Management</a>
-                </div>
-                <div>
-                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Ecosystem</h5>
-                    <a href="https://stratnexconsulting.com/services/stratnex-agri" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">StratNex Agri</a>
-                    <a href="https://stratnexconsulting.com/services/stratnex-digital" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">StratNex Digital</a>
-                </div>
-                <div>
-                    <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Contact</h5>
-                    <a href="mailto:info@stratnexconsulting.com" class="block text-xs text-gray-500 mb-4 lowercase">info@stratnexconsulting.com</a>
-                    <a href="https://stratnexconsulting.com/contact" class="block text-xs font-bold text-[#142C40] uppercase tracking-widest underline decoration-2 underline-offset-8">Request Consultation</a>
-                </div>
-            </div>
-            <div class="pt-10 border-t border-gray-50 flex flex-col lg:flex-row justify-between items-center gap-6">
-                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.4em]">© 2025 StratNex Properties | A StratNex Consulting Division</p>
-            </div>
+  <!-- Hero + Form -->
+  <section class="py-24 px-8 md:px-16 max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-12 gap-24">
+      <!-- Copy -->
+      <div class="lg:col-span-5">
+        <span class="section-tag">Strategic Assets</span>
+        <h2 class="font-luxury text-5xl text-[#142C40] leading-[1.15] mb-8">Operationalizing market intelligence through physical assets.</h2>
+        <p class="text-sm text-gray-600 mb-10 leading-relaxed">Submit your private mandate for land, real estate, or mining assets. We’ll confirm details, then surface opportunities aligned to your parameters.</p>
+
+        <div class="bg-slate-50 p-10 border-t-2 border-[#142C40] rounded-sm">
+          <h4 class="font-luxury text-xl text-[#142C40] mb-4">Direct Engagement</h4>
+          <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-6">For Asset Owners & Sellers</p>
+          <p class="text-sm text-gray-600 mb-8 leading-relaxed">If you wish to liquidate prime assets or explore a Joint Venture, skip the configuration and request an advisory consultation.</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <a href="https://stratnexconsulting.com/contact" class="inline-block w-full py-4 border border-[#142C40] text-[#142C40] text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#142C40] hover:text-white transition-all">Direct Consultation</a>
+            <a id="waBtn" href="#" class="inline-block w-full py-4 border border-[#142C40] bg-[#142C40] text-white text-center text-[10px] font-bold uppercase tracking-widest hover:bg-[#0d1e2c] transition-all">WhatsApp</a>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        function updateUI() {
-            const val = document.getElementById('cat').value;
-            const area = document.getElementById('subUI');
-            if(val === 'industrial') {
-                area.innerHTML = `<div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Industrial Specification</label><select class="input-premium bg-white"><option>GODOWNS / WAREHOUSING</option><option>INDUSTRIAL LAND (DEVELOPMENT)</option></select></div>`;
-            } else if(val === 'commercial') {
-                area.innerHTML = `<div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Commercial Specification</label><select class="input-premium bg-white"><option>PRIME COMMERCIAL LAND</option><option>GRADE-A OFFICE SPACE</option></select></div>`;
-            } else if(val === 'residential') {
-                area.innerHTML = `<div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Residential Specification</label><select class="input-premium bg-white"><option>EXECUTIVE STAND-ALONE VILLA</option><option>LUXURY APARTMENT / PENTHOUSE</option></select></div>`;
-            } else if(val === 'mining') {
-                area.innerHTML = `<div class="grid grid-cols-2 gap-10"><div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Focus</label><select class="input-premium bg-white"><option>GOLD</option><option>GRAPHITE</option></select></div><div><label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">License</label><select class="input-premium bg-white"><option>PROSPECTING</option><option>MINING</option></select></div></div>`;
-            } else { area.innerHTML = ''; }
+      <!-- Form -->
+      <div class="lg:col-span-7">
+        <div class="bg-white">
+          <span class="section-tag">Mandate Configuration</span>
+          <h3 class="font-luxury text-3xl text-[#142C40] mb-6">Asset Parameters</h3>
+
+          <form id="mandateForm" class="space-y-10" novalidate>
+            <!-- Contact -->
+            <div class="grid md:grid-cols-2 gap-10">
+              <div>
+                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="entity">Entity Name</label>
+                <input id="entity" name="entity" type="text" class="input-premium" placeholder="CORPORATE OR INDIVIDUAL" required>
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="email">Corporate Email</label>
+                <input id="email" name="email" type="email" class="input-premium" placeholder="email@entity.com" required>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+              <div>
+                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="purpose">Engagement Purpose</label>
+                <select id="purpose" name="purpose" class="input-premium bg-white" required>
+                  <option value="">SELECT...</option>
+                  <option>DIRECT ACQUISITION</option>
+                  <option>JOINT VENTURE (JV)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="phone">Phone / WhatsApp</label>
+                <input id="phone" name="phone" type="tel" class="input-premium" placeholder="+255 712 345 678">
+                <p class="hint mt-1">WhatsApp preferred for faster coordination.</p>
+              </div>
+            </div>
+
+            <!-- Asset category -->
+            <div>
+              <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="cat">Asset Category</label>
+              <select id="cat" name="category" class="input-premium bg-white font-semibold" required>
+                <option value="">SELECT CLASSIFICATION...</option>
+                <option value="industrial">INDUSTRIAL (GODOWNS & LAND)</option>
+                <option value="commercial">COMMERCIAL (OFFICES & LAND)</option>
+                <option value="residential">RESIDENTIAL (STAND-ALONE & APARTMENTS)</option>
+                <option value="mining">MINING (RIGHTS & PERMITS)</option>
+              </select>
+              <p class="hint mt-2">Category determines the next set of fields.</p>
+            </div>
+
+            <!-- Dynamic fields -->
+            <div id="subUI" class="space-y-10"></div>
+
+            <!-- Budget + Region -->
+            <div class="grid md:grid-cols-2 gap-10">
+              <div>
+                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="region">Target Region</label>
+                <input id="region" name="region" type="text" class="input-premium" placeholder="Dar es Salaam / Zanzibar / Geita" required>
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="budget">Investment Range (USD)</label>
+                <input id="budget" name="budget" type="text" class="input-premium" placeholder="$500k - $10M" required>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div>
+              <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4" for="notes">Additional Notes</label>
+              <textarea id="notes" name="notes" class="input-premium min-h-[120px]" placeholder="Title preferences, FAR, access/servicing, timeline, JV specifics, etc."></textarea>
+            </div>
+
+            <!-- Consent -->
+            <div class="flex items-start gap-3">
+              <input id="consent" name="consent" type="checkbox" class="mt-1" required>
+              <label for="consent" class="text-xs text-gray-600">I authorize StratNex Properties to process my data under institutional confidentiality standards.</label>
+            </div>
+
+            <!-- Hidden UTM fields -->
+            <input type="hidden" id="utm_source" name="utm_source">
+            <input type="hidden" id="utm_medium" name="utm_medium">
+            <input type="hidden" id="utm_campaign" name="utm_campaign">
+            <input type="hidden" id="utm_term" name="utm_term">
+            <input type="hidden" id="utm_content" name="utm_content">
+            <input type="hidden" id="page" name="page">
+
+            <!-- Submit -->
+            <button id="submitBtn" type="submit" class="btn-navy w-full py-6 text-[11px] disabled:opacity-60 disabled:cursor-not-allowed">
+              Submit Mandate
+            </button>
+            <p id="formMsg" class="hidden text-sm"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-navy px-8 md:px-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+        <div>
+          <img id="footer-logo" src="logo.png" alt="StratNex" class="h-8 w-auto mb-10 grayscale opacity-70" onerror="tryNextFooterLogo(this)">
+          <p class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.3em]">Operationalizing Strategy</p>
+        </div>
+        <div>
+          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Properties Division</h5>
+          <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">Mandate Desk</a>
+          <a href="https://stratnexconsulting.com/services/stratnex-properties" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">Asset Management</a>
+        </div>
+        <div>
+          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Ecosystem</h5>
+          <a href="https://stratnexconsulting.com/services/stratnex-agri" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">StratNex Agri</a>
+          <a href="https://stratnexconsulting.com/services/stratnex-digital" class="block text-xs text-gray-500 mb-4 hover:text-[#142C40] uppercase tracking-widest">StratNex Digital</a>
+        </div>
+        <div>
+          <h5 class="text-[#142C40] font-bold text-[10px] uppercase tracking-widest mb-8">Contact</h5>
+          <a href="mailto:info@stratnexconsulting.com" class="block text-xs text-gray-500 mb-4 lowercase">info@stratnexconsulting.com</a>
+          <a href="https://stratnexconsulting.com/contact" class="block text-xs font-bold text-[#142C40] uppercase tracking-widest underline decoration-2 underline-offset-8">Request Consultation</a>
+        </div>
+      </div>
+      <div class="pt-10 border-t border-gray-50 flex flex-col lg:flex-row justify-between items-center gap-6">
+        <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.4em]">© <span id="year"></span> StratNex Properties | A StratNex Consulting Division</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // ---- Logo Loader (header + footer) ----
+    const queryLogo = new URLSearchParams(location.search).get('logo');
+    const logoCandidates = queryLogo ? [queryLogo] : [
+      'logo.png','Logo.png','logo.svg','Logo.svg','logo.webp','Logo.webp',
+      '/logo.png','/logo.svg','/logo.webp',
+      'images/logo.png','images/logo.svg','images/logo.webp',
+      'assets/logo.png','assets/logo.svg','assets/logo.webp'
+    ];
+
+    let logoIndex = 0;
+    function tryNextLogo(img) {
+      logoIndex++;
+      if (logoIndex < logoCandidates.length) {
+        img.src = logoCandidates[logoIndex];
+      } else {
+        img.style.display = 'none';
+        document.getElementById('fallback-svg').classList.remove('hidden');
+      }
+    }
+
+    let footerLogoIndex = 0;
+    function tryNextFooterLogo(img) {
+      footerLogoIndex++;
+      if (footerLogoIndex < logoCandidates.length) {
+        img.src = logoCandidates[footerLogoIndex];
+      } else {
+        img.remove(); // silent fail in footer
+      }
+    }
+
+    // ---- Dynamic UI per category ----
+    const subUI = document.getElementById('subUI');
+    const catSel = document.getElementById('cat');
+
+    function uiIndustrial() {
+      return `
+        <div>
+          <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Industrial Specification</label>
+          <select name="industrial_spec" class="input-premium bg-white" required>
+            <option value="">SELECT...</option>
+            <option value="warehousing">GODOWNS / WAREHOUSING</option>
+            <option value="industrial_land">INDUSTRIAL LAND (DEVELOPMENT)</option>
+          </select>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10">
+          <div>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Plot or Area (m²)</label>
+            <input name="area_m2" type="number" min="0" class="input-premium" placeholder="e.g. 5,000">
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Power Access</label>
+            <select name="power" class="input-premium bg-white">
+              <option value="">No preference</option>
+              <option>3-Phase Nearby</option>
+              <option>Substation Access</option>
+              <option>Generator Onsite</option>
+            </select>
+          </div>
+        </div>
+      `;
+    }
+
+    function uiCommercial() {
+      return `
+        <div>
+          <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Commercial Specification</label>
+          <select name="commercial_spec" class="input-premium bg-white" required>
+            <option value="">SELECT...</option>
+            <option value="prime_land">PRIME COMMERCIAL LAND</option>
+            <option value="grade_a_office">GRADE-A OFFICE SPACE</option>
+            <option value="retail">RETAIL</option>
+            <option value="hospitality">HOSPITALITY</option>
+          </select>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10">
+          <div>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Required Floor Area (m²)</label>
+            <input name="floor_area" type="number" min="0" class="input-premium" placeholder="e.g. 150">
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Occupancy</label>
+            <select name="occupancy" class="input-premium bg-white">
+              <option value="">No preference</option>
+              <option>Shell & Core</option>
+              <option>Fitted</option>
+              <option>Serviced</option>
+            </select>
+          </div>
+        </div>
+      `;
+    }
+
+    function uiResidential() {
+      return `
+        <div>
+          <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Residential Specification</label>
+          <select name="residential_spec" class="input-premium bg-white" required>
+            <option value="">SELECT...</option>
+            <option>EXECUTIVE STAND-ALONE VILLA</option>
+            <option>LUXURY APARTMENT / PENTHOUSE</option>
+            <option>RESIDENTIAL PLOT</option>
+          </select>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10">
+          <div>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Bedrooms</label>
+            <select name="bedrooms" class="input-premium bg-white">
+              <option value="">No preference</option>
+              <option>Studio</option><option>1</option><option>2</option><option>3</option><option>4+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Furnishing</label>
+            <select name="furnishing" class="input-premium bg-white">
+              <option value="">No preference</option>
+              <option>Furnished</option><option>Semi-furnished</option><option>Unfurnished</option>
+            </select>
+          </div>
+        </div>
+      `;
+    }
+
+    function uiMining() {
+      return `
+        <div class="grid md:grid-cols-2 gap-10">
+          <div>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">Focus</label>
+            <select name="mineral" class="input-premium bg-white" required>
+              <option value="">SELECT...</option>
+              <option>GOLD</option>
+              <option>GRAPHITE</option>
+              <option>GEMSTONES</option>
+              <option>NICKEL</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-[#142C40] uppercase tracking-[0.2em] mb-4">License</label>
+            <select name="license" class="input-premium bg-white" required>
+              <option value="">SELECT...</option>
+              <option>PROSPECTING</option>
+              <option>EXPLORATION</option>
+              <option>MINING</option>
+              <option>JV OPPORTUNITY</option>
+            </select>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderDynamic(val) {
+      if (val === 'industrial') subUI.innerHTML = uiIndustrial();
+      else if (val === 'commercial') subUI.innerHTML = uiCommercial();
+      else if (val === 'residential') subUI.innerHTML = uiResidential();
+      else if (val === 'mining') subUI.innerHTML = uiMining();
+      else subUI.innerHTML = '';
+    }
+
+    catSel.addEventListener('change', () => renderDynamic(catSel.value));
+
+    // ---- WhatsApp CTA ----
+    document.getElementById('waBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('entity').value || '');
+      const cat = encodeURIComponent(document.getElementById('cat').value || '');
+      const region = encodeURIComponent(document.getElementById('region')?.value || '');
+      const budget = encodeURIComponent(document.getElementById('budget')?.value || '');
+      const msg = `Hello StratNex Properties,%0AName: ${name}%0ACategory: ${cat}%0ARegion: ${region}%0ABudget: ${budget}`;
+      const number = '255700000000'; // replace with your WhatsApp number (no +)
+      window.open(`https://wa.me/${number}?text=${msg}`, '_blank');
+    });
+
+    // ---- UTM capture ----
+    (function utmCapture(){
+      const params = new URLSearchParams(location.search);
+      const keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+      keys.forEach(k => {
+        const v = params.get(k) || sessionStorage.getItem(k);
+        if (v) {
+          document.getElementById(k).value = v;
+          sessionStorage.setItem(k, v);
         }
-    </script>
+      });
+      document.getElementById('page').value = location.href;
+    })();
+
+    // ---- Submission ----
+    const form = document.getElementById('mandateForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const toast = document.getElementById('toast');
+    const formMsg = document.getElementById('formMsg');
+
+    function showToast(text, isError=false) {
+      toast.textContent = text;
+      toast.classList.toggle('error', isError);
+      toast.style.display = 'block';
+      setTimeout(()=> toast.style.display='none', 4200);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      submitBtn.disabled = true;
+      const original = submitBtn.textContent;
+      submitBtn.textContent = 'Submitting...';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        // Option A: Formspree (replace YOUR_FORMSPREE_ID)
+        const endpoint = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
+        // Option B: Your webhook (Cloudflare Workers, Apps Script, etc.)
+        // const endpoint = 'https://YOUR_WEBHOOK_URL';
+
+        const resp = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+
+        if (resp.ok) {
+          form.reset();
+          renderDynamic(''); // reset dynamic UI
+          showToast('Mandate submitted. We will revert within 24 hours.');
+          formMsg.classList.remove('hidden');
+          formMsg.classList.remove('text-red-600');
+          formMsg.classList.add('text-emerald-700');
+          formMsg.textContent = 'Thank you! Your mandate has been received.';
+        } else {
+          showToast('Submission failed. Please try again or contact us.', true);
+          formMsg.classList.remove('hidden');
+          formMsg.classList.remove('text-emerald-700');
+          formMsg.classList.add('text-red-600');
+          formMsg.textContent = 'We could not submit your request. Please try again or use WhatsApp.';
+        }
+      } catch (err) {
+        showToast('Network error. Please try again or use WhatsApp.', true);
+        formMsg.classList.remove('hidden');
+        formMsg.classList.remove('text-emerald-700');
+        formMsg.classList.add('text-red-600');
+        formMsg.textContent = 'Network error. Please try again or use WhatsApp.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = original;
+      }
+    });
+
+    // Initialize year and default UI
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderDynamic(catSel.value);
+
+  </script>
 </body>
 </html>
