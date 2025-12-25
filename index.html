@@ -9,7 +9,7 @@
   <meta property="og:description" content="Confidential, curated, and compliant real estate advisory for executives, embassies, and global investors." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://stratnexconsulting.com/service/stratnex-properties" />
-  <meta property="og:image" content="https://placehold.co/1200x630/142C40/FFFFFF?text=StratNex+Properties" />
+  <meta property="og:image" content="assets/logo.png" />
   <style>
     :root {
       --color-deep-navy: #142C40;
@@ -28,6 +28,7 @@
       line-height: 1.6;
       color: var(--color-deep-navy);
       background-color: var(--color-pure-white);
+      overflow-x: hidden;
     }
 
     h1,
@@ -61,6 +62,8 @@
       text-align: center;
       cursor: pointer;
       transition: all 0.3s ease;
+      border: none;
+      font-size: 1rem;
     }
 
     .btn-primary {
@@ -70,6 +73,8 @@
 
     .btn-primary:hover {
       background-color: var(--color-cool-slate);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(20, 44, 64, 0.2);
     }
 
     .btn-secondary {
@@ -81,6 +86,7 @@
     .btn-secondary:hover {
       background-color: var(--color-deep-navy);
       color: var(--color-pure-white);
+      transform: translateY(-2px);
     }
 
     .btn-inverted {
@@ -91,10 +97,19 @@
     .btn-inverted:hover {
       background-color: var(--color-cool-slate);
       color: var(--color-pure-white);
+      transform: translateY(-2px);
     }
 
     section {
       padding: 60px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     @media (min-width: 768px) {
@@ -103,82 +118,59 @@
       }
     }
 
-    /* Navigation */
-    .navbar {
-      background-color: var(--color-pure-white);
-      border-bottom: 1px solid var(--color-cool-slate);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      padding: 16px 0;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-pure-white) 100%);
+      padding: 20px 0;
+      text-align: center;
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--color-deep-navy);
-      letter-spacing: -0.5px;
+      max-height: 60px;
+      width: auto;
     }
 
     /* Hero Section */
     .hero {
-      background-color: var(--color-pure-white);
-      padding-top: 140px;
+      background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-pure-white) 100%);
+      color: var(--color-pure-white);
+      padding-top: 100px;
       padding-bottom: 100px;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+      text-align: center;
     }
 
     .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 16px;
-      color: var(--color-deep-navy);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero p.subheadline {
       font-size: 1.25rem;
       color: var(--color-cool-slate);
       margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-cta {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      justify-content: center;
+      align-items: center;
     }
 
     @media (min-width: 768px) {
-      .hero-content {
-        flex-direction: row;
-        align-items: center;
-      }
-
-      .hero-text {
-        flex: 1;
-      }
-
-      .hero-visual {
-        flex: 1;
-        height: 300px;
-        background-color: var(--color-cool-slate);
-        opacity: 0.1;
-        border-radius: 8px;
+      .hero h1 {
+        font-size: 3rem;
       }
 
       .hero-cta {
         flex-direction: row;
-        align-items: center;
       }
     }
 
@@ -202,8 +194,14 @@
     .client-item {
       padding: 16px;
       border: 1px solid var(--color-cool-slate);
-      border-radius: 4px;
+      border-radius: 8px;
       background: rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .client-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(20, 44, 64, 0.1);
     }
 
     @media (min-width: 768px) {
@@ -237,14 +235,15 @@
     .service-card {
       padding: 24px;
       border: 1px solid var(--color-cool-slate);
-      border-radius: 8px;
+      border-radius: 12px;
       background-color: var(--color-pure-white);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
     }
 
     .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(20, 44, 64, 0.08);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(20, 44, 64, 0.15);
     }
 
     .service-card h3 {
@@ -284,8 +283,13 @@
     .why-item {
       padding: 16px;
       border: 1px solid var(--color-cool-slate);
-      border-radius: 4px;
+      border-radius: 8px;
       background: rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .why-item:hover {
+      transform: translateX(8px);
     }
 
     /* Process */
@@ -299,19 +303,64 @@
       font-size: 2rem;
     }
 
-    .process-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
+    .process-timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 0;
     }
 
-    .step {
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: var(--color-cool-slate);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    .timeline-step {
       display: flex;
-      gap: 24px;
+      margin-bottom: 40px;
+      position: relative;
+      width: 100%;
+    }
+
+    .timeline-step:nth-child(odd) {
+      justify-content: flex-end;
+    }
+
+    .timeline-step:nth-child(even) {
+      justify-content: flex-start;
+    }
+
+    .step-content {
+      width: calc(50% - 40px);
+      padding: 20px;
+      background: var(--color-pure-white);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(20, 44, 64, 0.08);
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-step:nth-child(odd) .step-content {
+      margin-right: 40px;
+    }
+
+    .timeline-step:nth-child(even) .step-content {
+      margin-left: 40px;
+    }
+
+    .timeline-step:hover .step-content {
+      transform: translateY(-4px);
     }
 
     .step-number {
-      flex-shrink: 0;
+      position: absolute;
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -321,40 +370,44 @@
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-
-    .step:hover .step-number {
-      transform: scale(1.1);
+      z-index: 3;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20px;
     }
 
     .step-content h3 {
       margin-bottom: 8px;
+      color: var(--color-deep-navy);
     }
 
-    @media (min-width: 768px) {
-      .process-steps {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 16px;
+    @media (max-width: 767px) {
+      .process-timeline::before {
+        left: 20px;
       }
 
-      .step {
+      .timeline-step {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        flex: 1;
-        min-width: 150px;
+        align-items: flex-start;
+        margin-bottom: 60px;
+      }
+
+      .timeline-step:nth-child(odd),
+      .timeline-step:nth-child(even) {
+        justify-content: flex-start;
+      }
+
+      .timeline-step:nth-child(odd) .step-content,
+      .timeline-step:nth-child(even) .step-content {
+        width: calc(100% - 40px);
+        margin-left: 40px !important;
+        margin-right: 0 !important;
       }
 
       .step-number {
-        width: 60px;
-        height: 60px;
-        font-size: 1.25rem;
-      }
-
-      .step-content {
-        text-align: center;
+        left: 20px;
+        top: 0;
+        transform: none;
       }
     }
 
@@ -379,11 +432,12 @@
       padding: 16px;
       border-left: 4px solid var(--color-deep-navy);
       background: var(--color-pure-white);
+      border-radius: 0 8px 8px 0;
       transition: transform 0.3s ease;
     }
 
     .insight-item:hover {
-      transform: translateX(4px);
+      transform: translateX(8px);
     }
 
     /* Testimonials */
@@ -397,48 +451,80 @@
       font-size: 2rem;
     }
 
-    .testimonial-grid {
-      display: grid;
-      gap: 24px;
+    .testimonial-carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .testimonial-slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 24px;
+      text-align: center;
     }
 
     .testimonial-card {
-      padding: 24px;
+      padding: 32px;
       border: 1px solid var(--color-cool-slate);
-      border-radius: 8px;
+      border-radius: 16px;
       position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(20, 44, 64, 0.08);
+      background: var(--color-pure-white);
+      box-shadow: 0 8px 32px rgba(20, 44, 64, 0.08);
     }
 
     .testimonial-card::before {
       content: """;
       position: absolute;
-      top: 16px;
-      left: 16px;
-      font-size: 4rem;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 6rem;
       color: var(--color-cool-slate);
-      opacity: 0.2;
+      opacity: 0.15;
       font-family: serif;
+      line-height: 1;
     }
 
     .testimonial-text {
-      margin-bottom: 16px;
+      margin-bottom: 24px;
       font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
     }
 
     .testimonial-author {
       font-weight: 600;
+      color: var(--color-deep-navy);
+      position: relative;
+      z-index: 2;
     }
 
-    @media (min-width: 768px) {
-      .testimonial-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+      gap: 12px;
+    }
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--color-cool-slate);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .carousel-dot.active {
+      background-color: var(--color-deep-navy);
     }
 
     /* Final CTA */
@@ -499,20 +585,14 @@
       }
     }
 
-    /* Enhanced Form Styles */
+    /* Form Styles */
     .form-container {
       max-width: 600px;
       margin: 0 auto;
       background: var(--color-pure-white);
       padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(20, 44, 64, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .form-container:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(20, 44, 64, 0.15);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(20, 44, 64, 0.1);
     }
 
     .form-header {
@@ -548,7 +628,7 @@
       width: 100%;
       padding: 12px 16px;
       border: 1px solid var(--color-cool-slate);
-      border-radius: 6px;
+      border-radius: 8px;
       background-color: var(--color-pure-white);
       font-family: inherit;
       font-size: 1rem;
@@ -575,7 +655,7 @@
     .form-message {
       margin-top: 20px;
       padding: 16px;
-      border-radius: 6px;
+      border-radius: 8px;
       display: none;
       text-align: center;
       font-weight: 500;
@@ -588,51 +668,41 @@
       display: block;
     }
 
-    /* Mobile Menu Toggle (Hidden as requested) */
-    .mobile-menu-toggle {
-      display: none;
-    }
-
-    /* Logo Styling */
-    .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--color-deep-navy);
-      letter-spacing: -0.5px;
-      font-family: 'Arial', sans-serif;
-    }
-
     @media (max-width: 767px) {
-      .logo {
-        font-size: 1.5rem;
-      }
-      
       .form-container {
         padding: 24px;
       }
     }
+
+    /* Animation for CTA buttons in hero */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .hero .btn-primary {
+      animation: pulse 2s infinite;
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="https://stratnexconsulting.com" class="logo">StratNex</a>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <img src="assets/logo.png" alt="StratNex Properties Logo" class="logo" />
     </div>
-  </nav>
+  </header>
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Strategic Real Estate Advisory for Executives, Embassies & Global Investors</h1>
-        <p class="subheadline">Confidential. Curated. Compliant.</p>
-        <div class="hero-cta">
-          <button class="btn btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Request a Private Consultation</button>
-          <a href="#process" class="btn btn-secondary">Learn About Our Process</a>
-        </div>
+    <div class="container">
+      <h1>Strategic Real Estate Advisory for Executives, Embassies & Global Investors</h1>
+      <p class="subheadline">Confidential. Curated. Compliant.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Request a Private Consultation</a>
+        <a href="#process" class="btn btn-secondary">Learn About Our Process</a>
       </div>
-      <div class="hero-visual" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -702,36 +772,36 @@
   <section id="process" class="process">
     <div class="container">
       <h2 class="section-title">Our Process</h2>
-      <div class="process-steps">
-        <div class="step">
+      <div class="process-timeline">
+        <div class="timeline-step">
           <div class="step-number">1</div>
           <div class="step-content">
             <h3>Initial Consultation</h3>
             <p>Understand your objectives, timeline, and requirements.</p>
           </div>
         </div>
-        <div class="step">
+        <div class="timeline-step">
           <div class="step-number">2</div>
           <div class="step-content">
             <h3>Market Intelligence & Shortlist</h3>
             <p>Curate options based on verified data and strategic fit.</p>
           </div>
         </div>
-        <div class="step">
+        <div class="timeline-step">
           <div class="step-number">3</div>
           <div class="step-content">
             <h3>Due Diligence & Compliance</h3>
             <p>Validate titles, zoning, and legal standing of properties.</p>
           </div>
         </div>
-        <div class="step">
+        <div class="timeline-step">
           <div class="step-number">4</div>
           <div class="step-content">
             <h3>Negotiation & Transaction Support</h3>
             <p>Secure optimal terms and manage documentation.</p>
           </div>
         </div>
-        <div class="step">
+        <div class="timeline-step">
           <div class="step-number">5</div>
           <div class="step-content">
             <h3>Post-Transaction Support</h3>
@@ -763,52 +833,70 @@
   <section class="testimonials">
     <div class="container">
       <h2 class="section-title">Client Experiences</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-text">StratNex delivered a seamless relocation for our embassy staff, handling every detail with utmost discretion and professionalism.</p>
-          <p class="testimonial-author">— Senior Diplomat, European Embassy</p>
+      <div class="testimonial-carousel">
+        <div class="testimonial-slides" id="testimonialSlides">
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <p class="testimonial-text">StratNex delivered a seamless relocation for our embassy staff, handling every detail with utmost discretion and professionalism.</p>
+              <p class="testimonial-author">— Senior Diplomat, European Embassy</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <p class="testimonial-text">Their market intelligence and due diligence prevented a potential legal issue that would have cost us millions. Highly recommended for international investors.</p>
+              <p class="testimonial-author">— CEO, Global Mining Corporation</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <p class="testimonial-text">The level of confidentiality and strategic insight provided by StratNex was exceptional. They understood our unique requirements as an NGO operating in sensitive regions.</p>
+              <p class="testimonial-author">— Regional Director, International Development Organization</p>
+            </div>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">Their market intelligence and due diligence prevented a potential legal issue that would have cost us millions. Highly recommended for international investors.</p>
-          <p class="testimonial-author">— CEO, Global Mining Corporation</p>
+        <div class="carousel-nav" id="carouselNav">
+          <div class="carousel-dot active" data-slide="0"></div>
+          <div class="carousel-dot" data-slide="1"></div>
+          <div class="carousel-dot" data-slide="2"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section id="contact" class="final-cta">
+  <section id="final-cta" class="final-cta">
     <div class="container">
       <h2 class="section-title">Let’s Secure Your Next Strategic Property Opportunity</h2>
       <p>Trusted by global leaders for confidential, compliant, and curated real estate solutions.</p>
-      <button class="btn btn-inverted" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Request a Private Consultation</button>
+      <a href="#contact" class="btn btn-inverted">Request a Private Consultation</a>
     </div>
   </section>
 
-  <!-- Enhanced Contact Form -->
-  <section class="hero" style="padding-top: 20px; padding-bottom: 60px; background-color: var(--color-pure-white);">
+  <!-- Contact Form -->
+  <section id="contact" class="hero" style="padding-top: 20px; padding-bottom: 60px; background-color: var(--color-pure-white);">
     <div class="container">
-      <div class="form-container" id="contact-form">
+      <div class="form-container">
         <div class="form-header">
           <h3>Begin Your Confidential Consultation</h3>
           <p>We understand the importance of discretion and strategic alignment in your real estate decisions.</p>
         </div>
-        <form id="consultation-form">
+        <form name="stratnex-properties-inquiry" method="POST" action="/__forms/submit" data-netlify="true">
+          <input type="hidden" name="form-name" value="stratnex-properties-inquiry" />
           <div class="form-group">
             <label for="name">Full Name</label>
-            <input type="text" id="name" required placeholder="Enter your full name" />
+            <input type="text" id="name" name="name" required placeholder="Enter your full name" />
           </div>
           <div class="form-group">
             <label for="email">Professional Email</label>
-            <input type="email" id="email" required placeholder="Enter your professional email" />
+            <input type="email" id="email" name="email" required placeholder="Enter your professional email" />
           </div>
           <div class="form-group">
             <label for="organization">Organization</label>
-            <input type="text" id="organization" required placeholder="Your organization or embassy" />
+            <input type="text" id="organization" name="organization" required placeholder="Your organization or embassy" />
           </div>
           <div class="form-group">
             <label for="service">Primary Interest</label>
-            <select id="service" required>
+            <select id="service" name="service" required>
               <option value="">Select your primary area of interest</option>
               <option value="land">Land Acquisition & Due Diligence</option>
               <option value="valuation">Property Valuation & Market Intelligence</option>
@@ -820,12 +908,11 @@
           </div>
           <div class="form-group">
             <label for="message">Your Strategic Objective</label>
-            <textarea id="message" required placeholder="Briefly describe your real estate objectives, timeline, and any specific requirements..."></textarea>
+            <textarea id="message" name="message" required placeholder="Briefly describe your real estate objectives, timeline, and any specific requirements..."></textarea>
           </div>
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">Submit Consultation Request</button>
           </div>
-          <div id="form-message" class="form-message success">Thank you! Your consultation request has been received. We will contact you within 24 business hours to schedule your confidential consultation.</div>
         </form>
       </div>
     </div>
@@ -851,44 +938,101 @@
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
+          const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
           window.scrollTo({
-            top: target.offsetTop - 80,
+            top: offsetTop,
             behavior: 'smooth'
           });
         }
       });
     });
 
-    // Form handling with enhanced messaging
-    const form = document.getElementById('consultation-form');
-    const message = document.getElementById('form-message');
-    if (form) {
+    // Fade-in animations on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Testimonial carousel
+    const slides = document.querySelectorAll('#testimonialSlides .testimonial-slide');
+    const dots = document.querySelectorAll('#carouselNav .carousel-dot');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      if (index >= totalSlides) index = 0;
+      if (index < 0) index = totalSlides - 1;
+      
+      const offset = -index * 100;
+      document.getElementById('testimonialSlides').style.transform = `translateX(${offset}%)`;
+      
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      
+      currentSlide = index;
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto-rotate carousel
+    setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000);
+
+    // Form handling for Cloudflare Forms compatibility
+    // Note: Cloudflare Forms will handle actual form submission
+    // This script provides basic client-side validation and user feedback
+    const forms = document.querySelectorAll('form[data-netlify="true"]');
+    forms.forEach(form => {
       form.addEventListener('submit', function(e) {
-        e.preventDefault();
+        // Let Cloudflare handle the actual submission
+        // This is just for user experience feedback
         
-        // Add a subtle loading effect
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Processing...';
+        submitBtn.textContent = 'Submitting...';
         submitBtn.disabled = true;
         
-        // Simulate form processing
+        // Show success message after brief delay (simulating submission)
         setTimeout(() => {
-          // Show success message
-          message.style.display = 'block';
-          form.reset();
+          const message = document.createElement('div');
+          message.className = 'form-message success';
+          message.textContent = 'Thank you! Your consultation request has been received. We will contact you within 24 business hours.';
+          form.appendChild(message);
           
-          // Reset button
+          form.reset();
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
           
+          // Scroll to message
+          message.scrollIntoView({ behavior: 'smooth' });
+          
           // Hide message after 8 seconds
           setTimeout(() => {
-            message.style.display = 'none';
+            if (message.parentNode) {
+              message.parentNode.removeChild(message);
+            }
           }, 8000);
-        }, 1500);
+        }, 1000);
       });
-    }
+    });
   </script>
 </body>
 </html>
