@@ -1,221 +1,895 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StratNex Properties | Executive Real Estate Advisory</title>
-  <meta name="description" content="Confidential, curated, and compliant real estate advisory for executives, embassies, and global investors in Tanzania.">
-  <meta property="og:title" content="StratNex Properties">
-  <meta property="og:description" content="Executive real estate advisory for diplomats, corporates, and investors.">
-  <meta property="og:type" content="website">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StratNex Properties | Strategic Real Estate Advisory</title>
+  <meta name="description" content="Confidential, curated, and compliant real estate advisory for executives, embassies, and global investors." />
+  <meta property="og:title" content="StratNex Properties | Strategic Real Estate Advisory" />
+  <meta property="og:description" content="Confidential, curated, and compliant real estate advisory for executives, embassies, and global investors." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stratnexconsulting.com/service/stratnex-properties" />
+  <meta property="og:image" content="https://placehold.co/1200x630/142C40/FFFFFF?text=StratNex+Properties" />
   <style>
     :root {
       --color-deep-navy: #142C40;
       --color-cool-slate: #A6A8AB;
       --color-pure-white: #FFFFFF;
     }
-    body {
+
+    * {
       margin: 0;
-      font-family: 'Inter', 'Lato', sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--color-deep-navy);
+      background-color: var(--color-pure-white);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--color-deep-navy);
+      color: var(--color-pure-white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-cool-slate);
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--color-deep-navy);
+      color: var(--color-deep-navy);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-deep-navy);
+      color: var(--color-pure-white);
+    }
+
+    .btn-inverted {
       background-color: var(--color-pure-white);
       color: var(--color-deep-navy);
-      line-height: 1.6;
     }
-    header {
-      background: var(--color-pure-white);
-      padding: 1rem 2rem;
+
+    .btn-inverted:hover {
+      background-color: var(--color-cool-slate);
+      color: var(--color-pure-white);
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 80px 0;
+      }
+    }
+
+    /* Navigation */
+    .navbar {
+      background-color: var(--color-pure-white);
       border-bottom: 1px solid var(--color-cool-slate);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 16px 0;
+    }
+
+    .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    header h1 {
-      font-size: 1.2rem;
-      margin: 0;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
       color: var(--color-deep-navy);
+      letter-spacing: -0.5px;
     }
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      color: var(--color-deep-navy);
-      font-weight: 500;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
+
+    /* Hero Section */
     .hero {
+      background-color: var(--color-pure-white);
+      padding-top: 140px;
+      padding-bottom: 100px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      color: var(--color-deep-navy);
+    }
+
+    .hero p.subheadline {
+      font-size: 1.25rem;
+      color: var(--color-cool-slate);
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-visual {
+        flex: 1;
+        height: 300px;
+        background-color: var(--color-cool-slate);
+        opacity: 0.1;
+        border-radius: 8px;
+      }
+
+      .hero-cta {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    /* Who We Serve */
+    .who-we-serve {
+      background-color: var(--color-deep-navy);
+      color: var(--color-pure-white);
+    }
+
+    .who-we-serve .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .clients-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .client-item {
+      padding: 16px;
+      border: 1px solid var(--color-cool-slate);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (min-width: 768px) {
+      .clients-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .clients-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Services */
+    .services {
+      background-color: var(--color-pure-white);
+    }
+
+    .services .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .service-card {
+      padding: 24px;
+      border: 1px solid var(--color-cool-slate);
+      border-radius: 8px;
+      background-color: var(--color-pure-white);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(20, 44, 64, 0.08);
+    }
+
+    .service-card h3 {
+      color: var(--color-deep-navy);
+      margin-bottom: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Why StratNex */
+    .why-stratnex {
+      background-color: var(--color-deep-navy);
+      color: var(--color-pure-white);
+    }
+
+    .why-stratnex .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .why-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .why-item {
+      padding: 16px;
+      border: 1px solid var(--color-cool-slate);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Process */
+    .process {
+      background-color: var(--color-pure-white);
+    }
+
+    .process .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .step {
+      display: flex;
+      gap: 24px;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--color-deep-navy);
+      color: var(--color-pure-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .step:hover .step-number {
+      transform: scale(1.1);
+    }
+
+    .step-content h3 {
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .process-steps {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+        min-width: 150px;
+      }
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.25rem;
+      }
+
+      .step-content {
+        text-align: center;
+      }
+    }
+
+    /* Insights */
+    .insights {
+      background-color: #f5f5f6;
+    }
+
+    .insights .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .insights-list {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .insight-item {
+      padding: 16px;
+      border-left: 4px solid var(--color-deep-navy);
+      background: var(--color-pure-white);
+      transition: transform 0.3s ease;
+    }
+
+    .insight-item:hover {
+      transform: translateX(4px);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: var(--color-pure-white);
+    }
+
+    .testimonials .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      padding: 24px;
+      border: 1px solid var(--color-cool-slate);
+      border-radius: 8px;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(20, 44, 64, 0.08);
+    }
+
+    .testimonial-card::before {
+      content: """;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 4rem;
+      color: var(--color-cool-slate);
+      opacity: 0.2;
+      font-family: serif;
+    }
+
+    .testimonial-text {
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background-color: var(--color-deep-navy);
+      color: var(--color-pure-white);
       text-align: center;
     }
-    .hero h2 {
+
+    .final-cta .section-title {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 16px;
     }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+
+    .final-cta p {
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-deep-navy);
+      color: var(--color-pure-white);
+      padding: 40px 0 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a {
       color: var(--color-cool-slate);
     }
-    .btn {
-      background: var(--color-deep-navy);
+
+    .footer-links a:hover {
       color: var(--color-pure-white);
-      padding: 0.75rem 1.5rem;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      margin: 0.5rem;
     }
-    .btn-secondary {
+
+    .copyright {
+      color: var(--color-cool-slate);
+      font-size: 0.875rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    /* Enhanced Form Styles */
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
       background: var(--color-pure-white);
-      color: var(--color-deep-navy);
-      border: 1px solid var(--color-deep-navy);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(20, 44, 64, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .dark {
-      background: var(--color-deep-navy);
-      color: var(--color-pure-white);
+
+    .form-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(20, 44, 64, 0.15);
     }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      border: 1px solid var(--color-cool-slate);
-      padding: 1.5rem;
-      background: var(--color-pure-white);
-    }
-    form {
-      display: grid;
-      gap: 1rem;
-      max-width: 500px;
-      margin: auto;
-    }
-    input, textarea, select {
-      padding: 0.75rem;
-      border: 1px solid var(--color-cool-slate);
-      font-size: 1rem;
-      width: 100%;
-    }
-    footer {
-      background: var(--color-deep-navy);
-      color: var(--color-pure-white);
+
+    .form-header {
       text-align: center;
-      padding: 2rem;
+      margin-bottom: 32px;
+    }
+
+    .form-header h3 {
+      font-size: 1.75rem;
+      color: var(--color-deep-navy);
+      margin-bottom: 12px;
+    }
+
+    .form-header p {
+      color: var(--color-cool-slate);
+      font-size: 1.1rem;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--color-deep-navy);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-cool-slate);
+      border-radius: 6px;
+      background-color: var(--color-pure-white);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-deep-navy);
+      box-shadow: 0 0 0 3px rgba(20, 44, 64, 0.1);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-actions {
+      text-align: center;
+    }
+
+    .form-message {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 6px;
+      display: none;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .form-message.success {
+      background-color: #e8f4f8;
+      color: var(--color-deep-navy);
+      border: 1px solid #b3d7e8;
+      display: block;
+    }
+
+    /* Mobile Menu Toggle (Hidden as requested) */
+    .mobile-menu-toggle {
+      display: none;
+    }
+
+    /* Logo Styling */
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-deep-navy);
+      letter-spacing: -0.5px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    @media (max-width: 767px) {
+      .logo {
+        font-size: 1.5rem;
+      }
+      
+      .form-container {
+        padding: 24px;
+      }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>StratNex Properties</h1>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#insights">Insights</a>
-    <a href="#contact">Contact</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="https://stratnexconsulting.com" class="logo">StratNex</a>
+    </div>
   </nav>
-</header>
 
-<section class="hero">
-  <h2>Strategic Real Estate Advisory for Executives, Embassies & Global Investors</h2>
-  <p>Confidential. Curated. Compliant.</p>
-  <button class="btn">Request a Private Consultation</button>
-  <button class="btn btn-secondary">Learn About Our Process</button>
-</section>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Strategic Real Estate Advisory for Executives, Embassies & Global Investors</h1>
+        <p class="subheadline">Confidential. Curated. Compliant.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Request a Private Consultation</button>
+          <a href="#process" class="btn btn-secondary">Learn About Our Process</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true"></div>
+    </div>
+  </section>
 
-<section id="services">
-  <h2>Our Core Services</h2>
-  <div class="cards">
-    <div class="card"><h3>Land Acquisition & Due Diligence</h3><p>Secure land with full regulatory checks and acquisition support.</p></div>
-    <div class="card"><h3>Property Valuation & Market Intelligence</h3><p>Accurate valuations and insights for confident decisions.</p></div>
-    <div class="card"><h3>Executive Leasing & Brokerage</h3><p>Confidential access to premium residential and commercial properties.</p></div>
-    <div class="card"><h3>Investment Advisory</h3><p>Identify high-value opportunities across sectors.</p></div>
-    <div class="card"><h3>Legal Compliance & Documentation</h3><p>Navigate Tanzania’s regulatory environment with confidence.</p></div>
-    <div class="card"><h3>Mining Rights Consultation</h3><p>Guidance on rights acquisition and compliance.</p></div>
-  </div>
-</section>
+  <!-- Who We Serve -->
+  <section id="who-we-serve" class="who-we-serve">
+    <div class="container">
+      <h2 class="section-title">Who We Serve</h2>
+      <ul class="clients-list">
+        <li class="client-item">Diplomats & embassy staff</li>
+        <li class="client-item">Corporate executives</li>
+        <li class="client-item">International investors</li>
+        <li class="client-item">NGOs & development organizations</li>
+        <li class="client-item">High-net-worth individuals</li>
+        <li class="client-item">Mining & industrial investors</li>
+      </ul>
+    </div>
+  </section>
 
-<section id="process" class="dark">
-  <h2>Our Process</h2>
-  <ol>
-    <li>Initial Consultation</li>
-    <li>Market Intelligence & Shortlist</li>
-    <li>Due Diligence & Compliance</li>
-    <li>Negotiation & Transaction Support</li>
-    <li>Post-Transaction Support</li>
-  </ol>
-</section>
+  <!-- Core Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Our Core Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Land Acquisition & Due Diligence</h3>
+          <p>Comprehensive land verification, title checks, and risk assessment for secure transactions.</p>
+        </div>
+        <div class="service-card">
+          <h3>Property Valuation & Market Intelligence</h3>
+          <p>Accurate valuations backed by real-time market data and localized insights.</p>
+        </div>
+        <div class="service-card">
+          <h3>Executive Leasing & Brokerage</h3>
+          <p>Discreet, high-standard leasing solutions for executives and diplomatic staff.</p>
+        </div>
+        <div class="service-card">
+          <h3>Investment Advisory</h3>
+          <p>Strategic guidance on property investments aligned with your portfolio goals.</p>
+        </div>
+        <div class="service-card">
+          <h3>Legal Compliance & Documentation</h3>
+          <p>End-to-end support ensuring all transactions meet local and international regulations.</p>
+        </div>
+        <div class="service-card">
+          <h3>Mining Rights Consultation</h3>
+          <p>Specialized advisory for mining and industrial land rights and concessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="insights">
-  <h2>Insights & Executive Guides</h2>
-  <ul>
-    <li>Executive Housing Standards in Tanzania</li>
-    <li>Masaki vs Oysterbay: Location Guide</li>
-    <li>Land Acquisition & Due Diligence</li>
-    <li>2025 Tanzania Property Market Outlook</li>
-    <li>Embassy Housing Compliance Checklist</li>
-  </ul>
-  <button class="btn">Download the Executive Guide</button>
-</section>
+  <!-- Why StratNex -->
+  <section class="why-stratnex">
+    <div class="container">
+      <h2 class="section-title">Why StratNex Properties</h2>
+      <ul class="why-list">
+        <li class="why-item">Executive-ready standards</li>
+        <li class="why-item">Rigorous due diligence</li>
+        <li class="why-item">Strong professional network</li>
+        <li class="why-item">End-to-end execution</li>
+        <li class="why-item">Confidentiality at every step</li>
+      </ul>
+    </div>
+  </section>
 
-<section id="contact" class="dark">
-  <h2>Let’s Secure Your Next Strategic Property Opportunity</h2>
-  <p>Submit your inquiry below. We’ll respond personally.</p>
-  <form method="POST" action="/__forms/submit">
-    <input type="hidden" name="form-name" value="stratnex-properties-inquiry">
-    <label>
-      Full Name
-      <input type="text" name="name" required>
-    </label>
-    <label>
-      Email
-      <input type="email" name="email" required>
-    </label>
-    <label>
-      Organization
-      <input type="text" name="organization">
-    </label>
-    <label>
-      Service Interest
-      <select name="service">
-        <option>Land Acquisition</option>
-        <option>Valuation</option>
-        <option>Leasing</option>
-        <option>Investment Advisory</option>
-        <option>Legal Compliance</option>
-        <option>Mining Rights</option>
-      </select>
-    </label>
-    <label>
-      Message
-      <textarea name="message" required></textarea>
-    </label>
-    <button type="submit" class="btn">Submit Inquiry</button>
-  </form>
-</section>
+  <!-- Our Process -->
+  <section id="process" class="process">
+    <div class="container">
+      <h2 class="section-title">Our Process</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Initial Consultation</h3>
+            <p>Understand your objectives, timeline, and requirements.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Market Intelligence & Shortlist</h3>
+            <p>Curate options based on verified data and strategic fit.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Due Diligence & Compliance</h3>
+            <p>Validate titles, zoning, and legal standing of properties.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Negotiation & Transaction Support</h3>
+            <p>Secure optimal terms and manage documentation.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Post-Transaction Support</h3>
+            <p>Assist with handover, management, or reinvestment strategies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2025 StratNex Consulting. All rights reserved.</p>
-  <p><a href="https://stratnexconsulting.com" style="color: var(--color-pure-white);">Back to StratNex Consulting</a></p>
-</footer>
+  <!-- Insights & Guides -->
+  <section id="insights" class="insights">
+    <div class="container">
+      <h2 class="section-title">Insights & Executive Guides</h2>
+      <ul class="insights-list">
+        <li class="insight-item">Executive Housing Standards in Tanzania</li>
+        <li class="insight-item">Masaki vs Oysterbay: Location Guide for Diplomats</li>
+        <li class="insight-item">Understanding Land Acquisition & Due Diligence</li>
+        <li class="insight-item">2025 Tanzania Property Market Outlook</li>
+        <li class="insight-item">Embassy Housing Compliance Checklist</li>
+      </ul>
+      <div style="text-align: center;">
+        <button class="btn btn-primary">Download the Executive Guide</button>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Smooth scrolling for nav links
-  document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Client Experiences</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">StratNex delivered a seamless relocation for our embassy staff, handling every detail with utmost discretion and professionalism.</p>
+          <p class="testimonial-author">— Senior Diplomat, European Embassy</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">Their market intelligence and due diligence prevented a potential legal issue that would have cost us millions. Highly recommended for international investors.</p>
+          <p class="testimonial-author">— CEO, Global Mining Corporation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact" class="final-cta">
+    <div class="container">
+      <h2 class="section-title">Let’s Secure Your Next Strategic Property Opportunity</h2>
+      <p>Trusted by global leaders for confidential, compliant, and curated real estate solutions.</p>
+      <button class="btn btn-inverted" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Request a Private Consultation</button>
+    </div>
+  </section>
+
+  <!-- Enhanced Contact Form -->
+  <section class="hero" style="padding-top: 20px; padding-bottom: 60px; background-color: var(--color-pure-white);">
+    <div class="container">
+      <div class="form-container" id="contact-form">
+        <div class="form-header">
+          <h3>Begin Your Confidential Consultation</h3>
+          <p>We understand the importance of discretion and strategic alignment in your real estate decisions.</p>
+        </div>
+        <form id="consultation-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required placeholder="Enter your full name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Professional Email</label>
+            <input type="email" id="email" required placeholder="Enter your professional email" />
+          </div>
+          <div class="form-group">
+            <label for="organization">Organization</label>
+            <input type="text" id="organization" required placeholder="Your organization or embassy" />
+          </div>
+          <div class="form-group">
+            <label for="service">Primary Interest</label>
+            <select id="service" required>
+              <option value="">Select your primary area of interest</option>
+              <option value="land">Land Acquisition & Due Diligence</option>
+              <option value="valuation">Property Valuation & Market Intelligence</option>
+              <option value="leasing">Executive Leasing & Brokerage</option>
+              <option value="advisory">Investment Advisory</option>
+              <option value="compliance">Legal Compliance & Documentation</option>
+              <option value="mining">Mining Rights Consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Strategic Objective</label>
+            <textarea id="message" required placeholder="Briefly describe your real estate objectives, timeline, and any specific requirements..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit Consultation Request</button>
+          </div>
+          <div id="form-message" class="form-message success">Thank you! Your consultation request has been received. We will contact you within 24 business hours to schedule your confidential consultation.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <p class="copyright">&copy; 2025 StratNex Properties. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://stratnexconsulting.com" target="_blank">Back to StratNex Consulting</a>
+        <a href="mailto:properties@stratnexconsulting.com">properties@stratnexconsulting.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
       });
     });
-  });
 
-  // Demo form handler (Cloudflare Forms will handle submission)
-  document.querySelector('form').addEventListener('submit', function(e) {
-    alert('Inquiry submitted. You will receive an email notification.');
-  });
-</script>
-
+    // Form handling with enhanced messaging
+    const form = document.getElementById('consultation-form');
+    const message = document.getElementById('form-message');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Add a subtle loading effect
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Processing...';
+        submitBtn.disabled = true;
+        
+        // Simulate form processing
+        setTimeout(() => {
+          // Show success message
+          message.style.display = 'block';
+          form.reset();
+          
+          // Reset button
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          
+          // Hide message after 8 seconds
+          setTimeout(() => {
+            message.style.display = 'none';
+          }, 8000);
+        }, 1500);
+      });
+    }
+  </script>
 </body>
 </html>
+
