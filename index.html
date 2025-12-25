@@ -1,104 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <title>StratNex Properties | Institutional Real Estate & Strategic Asset Sourcing in Tanzania</title>
-    <meta
-      name="description"
-      content="StratNex Properties specializes in institutional real estate and strategic asset sourcing in Tanzania. Industrial godowns, TIC-approved commercial land, mining license advisory (Gold, Graphite, Tanzanite), and luxury residential in Masaki/Oysterbay."
-    />
-    <link rel="canonical" href="https://stratnexconsulting.com/" />
-    <meta property="og:title" content="StratNex Properties | Institutional Real Estate & Strategic Asset Sourcing in Tanzania" />
-    <meta property="og:description" content="Institutional-grade sourcing in Tanzania: industrial godowns, commercial land, mining licenses, and luxury residential. Concierge advisory for funds, developers, and HNWIs." />
-    <meta property="og:url" content="https://stratnexconsulting.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/Logo.png" />
-    <meta name="theme-color" content="#142c40" />
-
-    <!-- Tailwind CSS via CDN (mobile-first) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              navy: '#142c40',
-              slateLux: '#334155',
-              goldLux: '#d4af37',
-              silverLux: '#c0c0c0',
-            },
-            fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji'],
-            },
-            boxShadow: {
-              lux: '0 10px 30px rgba(20,44,64,0.25)',
-            }
-          }
-        }
-      }
-    </script>
-
-    <!-- JSON-LD Schema: RealEstateAgent + ProfessionalService -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "RealEstateAgent",
-          "@id": "https://stratnexconsulting.com/#org",
-          "name": "StratNex Properties",
-          "url": "https://stratnexconsulting.com/",
-          "logo": "https://stratnexconsulting.com/Logo.png",
-          "image": "https://stratnexconsulting.com/Logo.png",
-          "telephone": "+255-XXX-XXX-XXX",
-          "email": "advisory@stratnexconsulting.com",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Toure Drive, Masaki",
-            "addressLocality": "Dar es Salaam",
-            "addressRegion": "DSM",
-            "postalCode": "14111",
-            "addressCountry": "TZ"
-          },
-          "areaServed": [
-            { "@type": "Country", "name": "Tanzania" }
-          ],
-          "description": "Institutional real estate and strategic asset sourcing in Tanzania, specializing in industrial godowns, TIC-approved commercial land, luxury residential, and mining license advisory (Gold, Graphite, Tanzanite).",
-          "foundingDate": "2020",
-          "sameAs": [
-            "https://www.linkedin.com/company/stratnex-properties"
-          ]
-        },
-        {
-          "@type": "ProfessionalService",
-          "name": "Mining License Advisory",
-          "serviceType": "Prospecting License (PL) and Mining License (ML) advisory for Gold, Graphite, and Tanzanite",
-          "provider": { "@id": "https://stratnexconsulting.com/#org" },
-          "areaServed": "Tanzania",
-          "url": "https://stratnexconsulting.com/#mining"
-        }
-      ]
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StratNex Properties | Executive Real Estate Advisory</title>
+  <meta name="description" content="Confidential, curated, and compliant real estate advisory for executives, embassies, and global investors in Tanzania.">
+  <meta property="og:title" content="StratNex Properties">
+  <meta property="og:description" content="Executive real estate advisory for diplomats, corporates, and investors.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --color-deep-navy: #142C40;
+      --color-cool-slate: #A6A8AB;
+      --color-pure-white: #FFFFFF;
     }
-    </script>
-  </head>
-  <body class="bg-white text-slateLux antialiased">
-    <div id="root"></div>
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Lato', sans-serif;
+      background-color: var(--color-pure-white);
+      color: var(--color-deep-navy);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--color-pure-white);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--color-cool-slate);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.2rem;
+      margin: 0;
+      color: var(--color-deep-navy);
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--color-deep-navy);
+      font-weight: 500;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--color-cool-slate);
+    }
+    .btn {
+      background: var(--color-deep-navy);
+      color: var(--color-pure-white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+    .btn-secondary {
+      background: var(--color-pure-white);
+      color: var(--color-deep-navy);
+      border: 1px solid var(--color-deep-navy);
+    }
+    .dark {
+      background: var(--color-deep-navy);
+      color: var(--color-pure-white);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      border: 1px solid var(--color-cool-slate);
+      padding: 1.5rem;
+      background: var(--color-pure-white);
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea, select {
+      padding: 0.75rem;
+      border: 1px solid var(--color-cool-slate);
+      font-size: 1rem;
+      width: 100%;
+    }
+    footer {
+      background: var(--color-deep-navy);
+      color: var(--color-pure-white);
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
 
-    <!-- Vite module entry: render App.tsx -->
-    <script type="module">
-      import React from 'react';
-      import { createRoot } from 'react-dom/client';
-      import App from './App.tsx';
-      const root = createRoot(document.getElementById('root'));
-      root.render(React.createElement(App));
-    </script>
-  </body>
+<header>
+  <h1>StratNex Properties</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#insights">Insights</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Strategic Real Estate Advisory for Executives, Embassies & Global Investors</h2>
+  <p>Confidential. Curated. Compliant.</p>
+  <button class="btn">Request a Private Consultation</button>
+  <button class="btn btn-secondary">Learn About Our Process</button>
+</section>
+
+<section id="services">
+  <h2>Our Core Services</h2>
+  <div class="cards">
+    <div class="card"><h3>Land Acquisition & Due Diligence</h3><p>Secure land with full regulatory checks and acquisition support.</p></div>
+    <div class="card"><h3>Property Valuation & Market Intelligence</h3><p>Accurate valuations and insights for confident decisions.</p></div>
+    <div class="card"><h3>Executive Leasing & Brokerage</h3><p>Confidential access to premium residential and commercial properties.</p></div>
+    <div class="card"><h3>Investment Advisory</h3><p>Identify high-value opportunities across sectors.</p></div>
+    <div class="card"><h3>Legal Compliance & Documentation</h3><p>Navigate Tanzania’s regulatory environment with confidence.</p></div>
+    <div class="card"><h3>Mining Rights Consultation</h3><p>Guidance on rights acquisition and compliance.</p></div>
+  </div>
+</section>
+
+<section id="process" class="dark">
+  <h2>Our Process</h2>
+  <ol>
+    <li>Initial Consultation</li>
+    <li>Market Intelligence & Shortlist</li>
+    <li>Due Diligence & Compliance</li>
+    <li>Negotiation & Transaction Support</li>
+    <li>Post-Transaction Support</li>
+  </ol>
+</section>
+
+<section id="insights">
+  <h2>Insights & Executive Guides</h2>
+  <ul>
+    <li>Executive Housing Standards in Tanzania</li>
+    <li>Masaki vs Oysterbay: Location Guide</li>
+    <li>Land Acquisition & Due Diligence</li>
+    <li>2025 Tanzania Property Market Outlook</li>
+    <li>Embassy Housing Compliance Checklist</li>
+  </ul>
+  <button class="btn">Download the Executive Guide</button>
+</section>
+
+<section id="contact" class="dark">
+  <h2>Let’s Secure Your Next Strategic Property Opportunity</h2>
+  <p>Submit your inquiry below. We’ll respond personally.</p>
+  <form method="POST" action="/__forms/submit">
+    <input type="hidden" name="form-name" value="stratnex-properties-inquiry">
+    <label>
+      Full Name
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Email
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Organization
+      <input type="text" name="organization">
+    </label>
+    <label>
+      Service Interest
+      <select name="service">
+        <option>Land Acquisition</option>
+        <option>Valuation</option>
+        <option>Leasing</option>
+        <option>Investment Advisory</option>
+        <option>Legal Compliance</option>
+        <option>Mining Rights</option>
+      </select>
+    </label>
+    <label>
+      Message
+      <textarea name="message" required></textarea>
+    </label>
+    <button type="submit" class="btn">Submit Inquiry</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 StratNex Consulting. All rights reserved.</p>
+  <p><a href="https://stratnexconsulting.com" style="color: var(--color-pure-white);">Back to StratNex Consulting</a></p>
+</footer>
+
+<script>
+  // Smooth scrolling for nav links
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Demo form handler (Cloudflare Forms will handle submission)
+  document.querySelector('form').addEventListener('submit', function(e) {
+    alert('Inquiry submitted. You will receive an email notification.');
+  });
+</script>
+
+</body>
 </html>
