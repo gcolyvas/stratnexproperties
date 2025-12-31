@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StratNex Properties | Institutional Real Estate Advisory in Tanzania</title>
-    <meta name="description" content="Expert real estate services covering land acquisition, property development, mining rights, and investment advisory in Tanzania's dynamic property market.">
+    <title>StratNex Properties | Premier Institutional Real Estate Advisory in Tanzania | TIC Approved Investment</title>
+    <meta name="description" content="Tanzania's premier institutional real estate advisory. Access off-market industrial godowns, TIC-approved commercial land, mining licenses for gold, graphite & tanzanite, and luxury diplomatic housing in Masaki, Oysterbay & Dar es Salaam.">
+    <meta name="keywords" content="Tanzania real estate, institutional investment Tanzania, Dar es Salaam property, mining licenses Tanzania, commercial land Tanzania, luxury homes Masaki, TIC approved investment, EPZ warehousing Tanzania, industrial godowns Dar es Salaam, diplomatic housing Tanzania, off-market properties Tanzania, Oysterbay real estate, Bagamoyo Road development, Tanzania Investment Centre, gold mining license Tanzania, graphite mining Tanzania, tanzanite investment, Grade-A office Tanzania, port logistics Dar es Salaam">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://stratnexconsulting.com/services/stratnex-properties">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="StratNex Properties | Institutional Real Estate Advisory Tanzania">
+    <meta property="og:description" content="Access exclusive industrial, commercial, mining, and luxury residential opportunities in East Africa's fastest-growing economy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stratnexconsulting.com/services/stratnex-properties">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StratNex Properties | Institutional Real Estate Tanzania">
+    <meta name="twitter:description" content="Tanzania's premier institutional real estate advisory for discerning investors.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -15,12 +30,19 @@
         "@type": "RealEstateAgent",
         "name": "StratNex Properties",
         "url": "https://stratnexconsulting.com/services/stratnex-properties",
-        "description": "Expert real estate services covering land acquisition, property development, and mining opportunities in Tanzania.",
+        "description": "Tanzania's premier institutional real estate advisory specializing in industrial godowns, commercial land, mining licenses, and luxury residential properties.",
+        "telephone": "+255744400200",
+        "email": "properties@stratnexconsulting.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dar es Salaam",
+            "addressCountry": "Tanzania"
+        },
         "areaServed": {
             "@type": "Country",
             "name": "Tanzania"
         },
-        "serviceType": ["Land Acquisition", "Property Valuation", "Real Estate Brokerage", "Mining Rights Consultation", "Investment Advisory", "Legal Compliance"]
+        "serviceType": ["Industrial Godowns", "Commercial Land Acquisition", "Mining License Advisory", "Luxury Residential", "TIC Investment Compliance", "Yield Analysis", "Capital Alignment"]
     }
     </script>
     
@@ -29,6 +51,7 @@
             --navy: #142C40;
             --navy-light: #1a3a52;
             --navy-dark: #0d1f2d;
+            --navy-deeper: #091722;
             --slate: #A6A8AB;
             --slate-light: #c4c6c9;
             --slate-dark: #7d7f82;
@@ -36,8 +59,9 @@
             --cream-dark: #e8e4dc;
             --white: #ffffff;
             --success: #10b981;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --whatsapp: #25D366;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         * {
@@ -54,55 +78,87 @@
             font-family: var(--font-body);
             color: var(--navy);
             background: var(--cream);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
             font-family: var(--font-display);
             font-weight: 600;
             line-height: 1.2;
         }
 
-        /* Navbar */
+        /* Premium Navbar */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1rem 2rem;
+            background: linear-gradient(180deg, rgba(20, 44, 64, 0.98) 0%, rgba(20, 44, 64, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(166, 168, 171, 0.15);
+        }
+
+        .navbar-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(20, 44, 64, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(166, 168, 171, 0.2);
         }
 
         .navbar-logo {
-            height: 40px;
+            height: 44px;
+            filter: brightness(1.1);
         }
 
         .navbar-contact {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
             align-items: center;
         }
 
-        .navbar-contact a {
-            color: var(--cream);
-            text-decoration: none;
-            font-size: 0.875rem;
-            display: flex;
+        .nav-btn {
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: color 0.3s ease;
+            padding: 0.625rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: var(--font-body);
         }
 
-        .navbar-contact a:hover {
-            color: var(--slate-light);
+        .nav-btn-call {
+            background: rgba(166, 168, 171, 0.15);
+            border: 1px solid rgba(166, 168, 171, 0.3);
+            color: var(--cream);
+        }
+
+        .nav-btn-call:hover {
+            background: rgba(166, 168, 171, 0.25);
+            border-color: rgba(166, 168, 171, 0.5);
+        }
+
+        .nav-btn-whatsapp {
+            background: var(--whatsapp);
+            border: 1px solid var(--whatsapp);
+            color: var(--white);
+        }
+
+        .nav-btn-whatsapp:hover {
+            background: #20BD5C;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .nav-btn svg {
+            width: 16px;
+            height: 16px;
         }
 
         /* Hero Section */
@@ -111,10 +167,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 50%, var(--navy) 100%);
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(166, 168, 171, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(166, 168, 171, 0.06) 0%, transparent 50%),
+                linear-gradient(160deg, var(--navy-deeper) 0%, var(--navy-dark) 30%, var(--navy) 60%, var(--navy-light) 100%);
             position: relative;
             overflow: hidden;
-            padding: 6rem 2rem 4rem;
+            padding: 7rem 2rem 5rem;
         }
 
         .hero::before {
@@ -124,9 +183,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(166, 168, 171, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(166, 168, 171, 0.08) 0%, transparent 50%);
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A6A8AB' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             pointer-events: none;
         }
 
@@ -134,95 +191,147 @@
             max-width: 1400px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
             align-items: center;
             position: relative;
             z-index: 1;
         }
 
         .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.75rem, 5vw, 4.5rem);
             color: var(--cream);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             letter-spacing: -0.02em;
         }
 
         .hero-text h1 span {
+            display: block;
             color: var(--slate-light);
+            font-weight: 400;
+            font-style: italic;
         }
 
-        .hero-text p {
-            font-size: 1.125rem;
+        .hero-tagline {
+            font-size: 1.25rem;
             color: var(--slate);
             margin-bottom: 2rem;
-            max-width: 500px;
+            max-width: 540px;
+            line-height: 1.8;
         }
 
         .hero-badges {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(166, 168, 171, 0.15);
-            border: 1px solid rgba(166, 168, 171, 0.3);
+            padding: 0.625rem 1.25rem;
+            background: linear-gradient(135deg, rgba(166, 168, 171, 0.12) 0%, rgba(166, 168, 171, 0.06) 100%);
+            border: 1px solid rgba(166, 168, 171, 0.25);
             border-radius: 100px;
             font-size: 0.75rem;
             color: var(--slate-light);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
+            font-weight: 500;
         }
 
         .badge svg {
             width: 14px;
             height: 14px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(166, 168, 171, 0.2);
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--cream);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.75rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         /* Glassmorphism Form Card */
         .form-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 24px;
-            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 28px;
+            padding: 2.75rem;
             box-shadow: 
-                0 25px 50px -12px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                0 32px 64px -16px rgba(0, 0, 0, 0.5),
+                0 16px 32px -8px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
         }
 
         .form-card h2 {
-            font-size: 1.75rem;
+            font-size: 1.875rem;
             color: var(--cream);
             margin-bottom: 0.5rem;
         }
 
-        .form-card p {
+        .form-card > p {
             color: var(--slate);
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.9375rem;
+            margin-bottom: 1.75rem;
         }
 
         .form-tabs {
             display: flex;
             gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.375rem;
+            border-radius: 14px;
         }
 
         .form-tab {
             flex: 1;
-            padding: 0.75rem 1rem;
-            background: rgba(166, 168, 171, 0.1);
-            border: 1px solid rgba(166, 168, 171, 0.2);
-            border-radius: 12px;
+            padding: 0.875rem 1.25rem;
+            background: transparent;
+            border: none;
+            border-radius: 10px;
             color: var(--slate);
             font-size: 0.875rem;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: var(--font-body);
@@ -231,33 +340,34 @@
         .form-tab.active {
             background: var(--cream);
             color: var(--navy);
-            border-color: var(--cream);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .form-tab:hover:not(.active) {
-            background: rgba(166, 168, 171, 0.2);
+            color: var(--cream);
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.125rem;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.75rem;
+            font-size: 0.6875rem;
             color: var(--slate-light);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            font-weight: 600;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.875rem 1rem;
+            padding: 0.9375rem 1.125rem;
             background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(166, 168, 171, 0.3);
+            border: 1px solid rgba(166, 168, 171, 0.25);
             border-radius: 12px;
             color: var(--cream);
             font-size: 0.9375rem;
@@ -276,6 +386,7 @@
             outline: none;
             border-color: var(--slate-light);
             background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(166, 168, 171, 0.1);
         }
 
         .form-group select {
@@ -299,12 +410,12 @@
 
         .submit-btn {
             width: 100%;
-            padding: 1rem 2rem;
-            background: var(--cream);
+            padding: 1.125rem 2rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
             color: var(--navy);
             border: none;
             border-radius: 12px;
-            font-size: 1rem;
+            font-size: 0.9375rem;
             font-weight: 600;
             font-family: var(--font-body);
             cursor: pointer;
@@ -312,14 +423,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
+            gap: 0.625rem;
+            margin-top: 1.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .submit-btn:hover {
             background: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         }
 
         .submit-btn svg {
@@ -327,31 +440,170 @@
             height: 18px;
         }
 
-        /* Trust Section */
-        .trust-section {
-            padding: 6rem 2rem;
+        /* Asset Classes Section */
+        .assets-section {
+            padding: 7rem 2rem;
             background: var(--white);
         }
 
-        .trust-container {
-            max-width: 1200px;
+        .assets-container {
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        .trust-header {
+        .section-header {
             text-align: center;
             margin-bottom: 4rem;
         }
 
-        .trust-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--navy);
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--slate-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .trust-header p {
+        .section-header h2 {
+            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            color: var(--navy);
+            margin-bottom: 1.25rem;
+        }
+
+        .section-header p {
             color: var(--slate-dark);
-            max-width: 600px;
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.0625rem;
+            line-height: 1.8;
+        }
+
+        .assets-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .asset-card {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .asset-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .asset-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 64px rgba(20, 44, 64, 0.2);
+        }
+
+        .asset-card:hover::before {
+            opacity: 1;
+        }
+
+        .asset-card:hover .asset-icon {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .asset-card:hover .asset-icon svg {
+            color: var(--cream);
+        }
+
+        .asset-card:hover h3,
+        .asset-card:hover p,
+        .asset-card:hover li {
+            color: var(--cream);
+        }
+
+        .asset-card:hover h3 {
+            color: var(--white);
+        }
+
+        .asset-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .asset-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--navy);
+            border: 1px solid var(--navy);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.75rem;
+            transition: all 0.4s ease;
+        }
+
+        .asset-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--cream);
+            transition: color 0.4s ease;
+        }
+
+        .asset-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            transition: color 0.4s ease;
+        }
+
+        .asset-card > p {
+            font-size: 0.9375rem;
+            color: var(--slate-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            transition: color 0.4s ease;
+        }
+
+        .asset-features {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .asset-features li {
+            font-size: 0.75rem;
+            color: var(--navy);
+            padding: 0.5rem 1rem;
+            background: rgba(20, 44, 64, 0.08);
+            border-radius: 100px;
+            font-weight: 500;
+            transition: all 0.4s ease;
+        }
+
+        .asset-card:hover .asset-features li {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 7rem 2rem;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+        }
+
+        .trust-container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -362,72 +614,85 @@
         }
 
         .trust-card {
-            padding: 2rem;
-            background: var(--cream);
-            border-radius: 20px;
+            padding: 2.5rem;
+            background: var(--white);
+            border-radius: 24px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(166, 168, 171, 0.15);
         }
 
         .trust-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(20, 44, 64, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(20, 44, 64, 0.12);
+            border-color: transparent;
         }
 
         .trust-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--navy);
-            border-radius: 16px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1.75rem;
+            box-shadow: 0 8px 24px rgba(20, 44, 64, 0.25);
         }
 
         .trust-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             color: var(--cream);
         }
 
         .trust-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.375rem;
             color: var(--navy);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .trust-card p {
-            font-size: 0.875rem;
+            font-size: 0.9375rem;
             color: var(--slate-dark);
+            line-height: 1.7;
         }
 
         /* Services Section */
         .services-section {
-            padding: 6rem 2rem;
-            background: var(--navy);
+            padding: 7rem 2rem;
+            background: linear-gradient(160deg, var(--navy-deeper) 0%, var(--navy-dark) 50%, var(--navy) 100%);
+            position: relative;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A6A8AB' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
         }
 
         .services-container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .services-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .services-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
+        .services-section .section-header h2 {
             color: var(--cream);
-            margin-bottom: 1rem;
         }
 
-        .services-header p {
+        .services-section .section-header p {
             color: var(--slate);
-            max-width: 600px;
-            margin: 0 auto;
+        }
+
+        .services-section .section-label {
+            color: var(--slate);
         }
 
         .services-grid {
@@ -438,42 +703,116 @@
 
         .service-card {
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(166, 168, 171, 0.2);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+            border: 1px solid rgba(166, 168, 171, 0.15);
             border-radius: 20px;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .service-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(166, 168, 171, 0.4);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(166, 168, 171, 0.3);
             transform: translateY(-4px);
         }
 
         .service-card h3 {
             font-size: 1.125rem;
             color: var(--cream);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.875rem;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.875rem;
         }
 
         .service-card h3 svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             color: var(--slate-light);
+            flex-shrink: 0;
         }
 
         .service-card p {
             font-size: 0.875rem;
             color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            color: var(--slate-dark);
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: var(--font-body);
+        }
+
+        .cta-btn-primary {
+            background: var(--navy);
+            color: var(--cream);
+        }
+
+        .cta-btn-primary:hover {
+            background: var(--navy-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(20, 44, 64, 0.3);
+        }
+
+        .cta-btn-whatsapp {
+            background: var(--whatsapp);
+            color: var(--white);
+        }
+
+        .cta-btn-whatsapp:hover {
+            background: #20BD5C;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
+        }
+
+        .cta-btn svg {
+            width: 20px;
+            height: 20px;
         }
 
         /* Seller Section */
         .seller-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+            padding: 7rem 2rem;
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
         }
 
         .seller-container {
@@ -481,26 +820,14 @@
             margin: 0 auto;
         }
 
-        .seller-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .seller-header h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            color: var(--navy);
-            margin-bottom: 1rem;
-        }
-
-        .seller-header p {
-            color: var(--slate-dark);
-        }
-
         .seller-form-card {
             background: var(--white);
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 60px rgba(20, 44, 64, 0.1);
+            border-radius: 28px;
+            padding: 3rem;
+            box-shadow: 
+                0 24px 64px rgba(20, 44, 64, 0.1),
+                0 8px 24px rgba(20, 44, 64, 0.05);
+            border: 1px solid rgba(166, 168, 171, 0.1);
         }
 
         .seller-form-card .form-group label {
@@ -511,7 +838,7 @@
         .seller-form-card .form-group select,
         .seller-form-card .form-group textarea {
             background: var(--cream);
-            border-color: rgba(166, 168, 171, 0.3);
+            border-color: rgba(166, 168, 171, 0.25);
             color: var(--navy);
         }
 
@@ -525,6 +852,7 @@
         .seller-form-card .form-group textarea:focus {
             border-color: var(--navy);
             background: var(--white);
+            box-shadow: 0 0 0 3px rgba(20, 44, 64, 0.1);
         }
 
         .seller-form-card .form-group select option {
@@ -533,55 +861,161 @@
         }
 
         .seller-form-card .submit-btn {
-            background: var(--navy);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             color: var(--cream);
         }
 
         .seller-form-card .submit-btn:hover {
-            background: var(--navy-light);
+            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
         }
 
         /* Footer */
         .footer {
-            padding: 3rem 2rem;
-            background: var(--navy-dark);
-            text-align: center;
+            padding: 4rem 2rem 2rem;
+            background: var(--navy-deeper);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(166, 168, 171, 0.15);
+        }
+
+        .footer-brand p {
+            color: var(--slate);
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            margin-top: 1.5rem;
+            max-width: 320px;
         }
 
         .footer-logo {
-            height: 36px;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
+            height: 40px;
+            opacity: 0.95;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
+        .footer-column h4 {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
             color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--slate-light);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.9375rem;
+            margin-bottom: 0.875rem;
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
+        .footer-column a:hover {
             color: var(--cream);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--slate);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .footer-contact-item span {
+            color: var(--slate-light);
+            font-size: 0.9375rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .footer-copy {
             color: var(--slate-dark);
-            font-size: 0.75rem;
+            font-size: 0.8125rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(166, 168, 171, 0.1);
+            border-radius: 10px;
+            color: var(--slate);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: rgba(166, 168, 171, 0.2);
+            color: var(--cream);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--whatsapp);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+            color: var(--white);
         }
 
         /* Success Message */
         .success-message {
             display: none;
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
         }
 
         .success-message.show {
@@ -589,15 +1023,15 @@
         }
 
         .success-message svg {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             color: var(--success);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
 
         .success-message h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.625rem;
+            margin-bottom: 0.625rem;
         }
 
         .success-message p {
@@ -609,9 +1043,10 @@
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 3rem;
             }
 
-            .hero-text p {
+            .hero-tagline {
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -620,43 +1055,108 @@
                 justify-content: center;
             }
 
+            .hero-stats {
+                justify-items: center;
+            }
+
+            .hero-stat {
+                text-align: center;
+            }
+
+            .assets-grid {
+                grid-template-columns: 1fr;
+            }
+
             .trust-grid,
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
         }
 
         @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem;
+            .navbar-inner {
+                padding: 0.75rem 1rem;
             }
 
             .navbar-contact {
-                display: none;
+                gap: 0.5rem;
+            }
+
+            .nav-btn {
+                padding: 0.5rem 0.75rem;
+                font-size: 0;
+            }
+
+            .nav-btn svg {
+                width: 18px;
+                height: 18px;
             }
 
             .hero {
-                padding: 5rem 1rem 3rem;
+                padding: 6rem 1rem 4rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .hero-stat-value {
+                font-size: 2rem;
             }
 
             .form-card,
             .seller-form-card {
-                padding: 1.5rem;
+                padding: 1.75rem;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
             }
 
+            .assets-section,
             .trust-section,
             .services-section,
             .seller-section {
-                padding: 4rem 1rem;
+                padding: 5rem 1rem;
             }
 
             .trust-grid,
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 54px;
+                height: 54px;
             }
         }
 
@@ -664,9 +1164,13 @@
             .form-tabs {
                 flex-direction: column;
             }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
 
-        /* Hidden */
         .hidden {
             display: none !important;
         }
@@ -675,16 +1179,18 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <img src="/Logo.png" alt="StratNex Properties" class="navbar-logo">
-        <div class="navbar-contact">
-            <a href="tel:+255677777777">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +255 677 777 777
-            </a>
-            <a href="mailto:properties@stratnexconsulting.com">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                properties@stratnexconsulting.com
-            </a>
+        <div class="navbar-inner">
+            <img src="/Logo.png" alt="StratNex Properties - Institutional Real Estate Advisory Tanzania" class="navbar-logo">
+            <div class="navbar-contact">
+                <a href="tel:+255744400200" class="nav-btn nav-btn-call">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>+255 744 400 200</span>
+                </a>
+                <a href="https://wa.me/255766040606?text=Hello%20StratNex%20Properties%2C%20I%20am%20interested%20in%20your%20real%20estate%20services." target="_blank" class="nav-btn nav-btn-whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -694,20 +1200,35 @@
             <div class="hero-text">
                 <div class="hero-badges">
                     <span class="badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         TIC Compliant
                     </span>
                     <span class="badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m2 12 20 0"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m2 12 20 0"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                         Diplomatic Standards
                     </span>
                     <span class="badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                         Off-Market Access
                     </span>
                 </div>
-                <h1>Institutional <span>Asset Advisory</span> for Tanzania</h1>
-                <p>Strategic capital alignment, comprehensive due diligence, and yield analysis for discerning investors in East Africa's fastest-growing economy.</p>
+                <h1>Institutional <span>Asset Advisory</span></h1>
+                <p class="hero-tagline">Strategic capital alignment, comprehensive due diligence, and yield analysis for discerning institutional investors seeking premium opportunities in East Africa's fastest-growing economy.</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">$500M+</div>
+                        <div class="hero-stat-label">Transaction Value</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">150+</div>
+                        <div class="hero-stat-label">Assets Under Advisory</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">12+</div>
+                        <div class="hero-stat-label">Years Experience</div>
+                    </div>
+                </div>
             </div>
 
             <!-- Inquiry Form -->
@@ -720,7 +1241,7 @@
                     <button type="button" class="form-tab" data-intent="Lease" onclick="setIntent('Lease')">Lease</button>
                 </div>
 
-                <form id="inquiryForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse" method="POST" target="hidden_iframe" onsubmit="handleInquirySubmit()">
+                <form id="inquiryForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse" method="POST" target="hidden_iframe">
                     <input type="hidden" name="entry.1937501189" id="intentField" value="Invest">
 
                     <div class="form-group">
@@ -738,13 +1259,15 @@
                         <label for="location">Preferred Location</label>
                         <select name="entry.1359829254" id="location" required>
                             <option value="">Select location...</option>
-                            <option value="Dar es Salaam">Dar es Salaam</option>
-                            <option value="Masaki/Oysterbay">Masaki/Oysterbay</option>
-                            <option value="Mbagala Industrial">Mbagala Industrial</option>
+                            <option value="Dar es Salaam - Central">Dar es Salaam - Central</option>
+                            <option value="Masaki / Oysterbay">Masaki / Oysterbay</option>
+                            <option value="Mbagala Industrial Zone">Mbagala Industrial Zone</option>
                             <option value="Bagamoyo Road Corridor">Bagamoyo Road Corridor</option>
+                            <option value="Kariakoo Commercial">Kariakoo Commercial</option>
                             <option value="Mwanza Region">Mwanza Region</option>
                             <option value="Arusha Region">Arusha Region</option>
-                            <option value="Other">Other (Specify in notes)</option>
+                            <option value="Dodoma">Dodoma</option>
+                            <option value="Other Region">Other Region</option>
                         </select>
                     </div>
 
@@ -773,15 +1296,84 @@
 
                     <button type="submit" class="submit-btn">
                         Submit Mandate
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </button>
                 </form>
 
                 <div class="success-message" id="inquirySuccess">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
                     <h3 style="color: var(--cream);">Mandate Received</h3>
-                    <p>Our advisory team will contact you within 24 hours with curated opportunities.</p>
+                    <p>Our advisory team will contact you within 24 hours with curated opportunities matching your investment criteria.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Asset Classes Section -->
+    <section class="assets-section" id="asset-classes">
+        <div class="assets-container">
+            <div class="section-header">
+                <span class="section-label">Asset Classes</span>
+                <h2>Premium Investment Opportunities</h2>
+                <p>Access Tanzania's most sought-after real estate assets through our institutional network. From port logistics infrastructure to diplomatic-grade residences, we curate opportunities that deliver exceptional yield and capital appreciation.</p>
+            </div>
+            <div class="assets-grid">
+                <article class="asset-card">
+                    <div class="asset-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>
+                    </div>
+                    <h3>Industrial Godowns & Warehousing</h3>
+                    <p>Strategic logistics infrastructure positioned along Dar es Salaam's port corridor. EPZ-approved facilities with direct access to Tanzania's busiest trade routes, offering 8-12% annual yields with long-term multinational tenancies.</p>
+                    <ul class="asset-features">
+                        <li>Port Proximity</li>
+                        <li>EPZ Certified</li>
+                        <li>Cold Storage</li>
+                        <li>Bonded Facilities</li>
+                        <li>24/7 Security</li>
+                    </ul>
+                </article>
+                <article class="asset-card">
+                    <div class="asset-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M9 16h1"/><path d="M14 8h1"/><path d="M14 12h1"/><path d="M14 16h1"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+                    </div>
+                    <h3>Commercial Land & Office Development</h3>
+                    <p>TIC-approved investment sites for Grade-A office development and mixed-use commercial projects. Prime locations along Bagamoyo Road, Kariakoo, and the emerging Dodoma corridor with verified titles and infrastructure access.</p>
+                    <ul class="asset-features">
+                        <li>TIC Approved</li>
+                        <li>Grade-A Sites</li>
+                        <li>Title Verified</li>
+                        <li>Infrastructure Ready</li>
+                        <li>Mixed-Use Zoning</li>
+                    </ul>
+                </article>
+                <article class="asset-card">
+                    <div class="asset-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h6l3 9 4-18 3 9h4"/></svg>
+                    </div>
+                    <h3>Mining License Advisory</h3>
+                    <p>Expert consultation on Prospecting Licenses (PL) and Mining Licenses (ML) for Tanzania's most valuable mineral deposits. Specializing in gold, graphite, and tanzanite opportunities with full regulatory compliance and geological assessments.</p>
+                    <ul class="asset-features">
+                        <li>Gold Deposits</li>
+                        <li>Graphite Resources</li>
+                        <li>Tanzanite Rights</li>
+                        <li>PL & ML Advisory</li>
+                        <li>Due Diligence</li>
+                    </ul>
+                </article>
+                <article class="asset-card">
+                    <div class="asset-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3>Luxury Residential & Diplomatic Housing</h3>
+                    <p>Exclusive Masaki and Oysterbay residences meeting diplomatic-grade specifications. High-net-worth portfolios featuring ocean views, secure compounds, and premium amenities for embassy housing, corporate executives, and discerning individuals.</p>
+                    <ul class="asset-features">
+                        <li>Masaki Prime</li>
+                        <li>Oysterbay Oceanfront</li>
+                        <li>Embassy Standard</li>
+                        <li>Gated Security</li>
+                        <li>Premium Finishes</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
@@ -789,31 +1381,32 @@
     <!-- Trust Signals Section -->
     <section class="trust-section">
         <div class="trust-container">
-            <div class="trust-header">
-                <h2>Why Institutional Investors Choose StratNex</h2>
-                <p>Decades of market expertise, regulatory mastery, and an unparalleled professional network across Tanzania.</p>
+            <div class="section-header">
+                <span class="section-label">Why Choose Us</span>
+                <h2>Institutional Excellence</h2>
+                <p>Decades of market expertise, regulatory mastery, and an unparalleled professional network across Tanzania and East Africa.</p>
             </div>
             <div class="trust-grid">
                 <div class="trust-card">
                     <div class="trust-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                     </div>
-                    <h3>TIC Compliance</h3>
-                    <p>Full regulatory alignment with Tanzania Investment Centre requirements. Documentary support for seamless foreign investment approval.</p>
+                    <h3>TIC Compliance & Regulatory Mastery</h3>
+                    <p>Full alignment with Tanzania Investment Centre requirements. Documentary support and legal frameworks for seamless foreign direct investment approval and repatriation guarantees.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                     </div>
-                    <h3>Diplomatic Standards</h3>
-                    <p>Properties vetted to diplomatic-grade specifications. Secure locations, verified titles, and premium amenities for discerning clientele.</p>
+                    <h3>Diplomatic-Grade Standards</h3>
+                    <p>Properties vetted to international diplomatic specifications. Secure locations, verified land titles, premium amenities, and compliance with embassy housing requirements.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                     </div>
-                    <h3>Off-Market Access</h3>
-                    <p>Exclusive inventory never listed publicly. First-mover advantage on premium assets through our institutional network.</p>
+                    <h3>Exclusive Off-Market Access</h3>
+                    <p>First-mover advantage on premium assets never publicly listed. Our institutional network provides exclusive inventory access before market exposure.</p>
                 </div>
             </div>
         </div>
@@ -822,53 +1415,72 @@
     <!-- Services Section -->
     <section class="services-section">
         <div class="services-container">
-            <div class="services-header">
+            <div class="section-header">
+                <span class="section-label">Our Services</span>
                 <h2>Comprehensive Asset Advisory</h2>
-                <p>End-to-end services from initial consultation to transaction completion.</p>
+                <p>End-to-end institutional services from initial consultation and yield analysis to transaction completion and portfolio management.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/></svg>
-                        Land Acquisition
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/></svg>
+                        Land Acquisition & Due Diligence
                     </h3>
-                    <p>Comprehensive due diligence, title verification, and acquisition services for institutional investors.</p>
+                    <p>Comprehensive title verification, encumbrance checks, and regulatory compliance for institutional-grade land acquisitions across Tanzania.</p>
                 </div>
                 <div class="service-card">
                     <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-                        Property Valuation
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        Yield Analysis & Valuation
                     </h3>
-                    <p>Professional market analysis and yield projections for accurate capital alignment.</p>
+                    <p>Professional market analysis, comparative valuations, and yield projections for accurate capital alignment and investment returns.</p>
                 </div>
                 <div class="service-card">
                     <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
                         Real Estate Brokerage
                     </h3>
-                    <p>Full-service brokerage for acquisitions, dispositions, and lease negotiations.</p>
+                    <p>Full-service institutional brokerage for acquisitions, dispositions, and lease negotiations with transparent fee structures.</p>
                 </div>
                 <div class="service-card">
                     <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h6l3 9 4-18 3 9h4"/></svg>
-                        Mining Rights
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h6l3 9 4-18 3 9h4"/></svg>
+                        Mining Rights Consultation
                     </h3>
-                    <p>Expert consultation on Prospecting Licenses (PL) and Mining Licenses (ML) for gold, graphite, and tanzanite.</p>
+                    <p>Expert advisory on Prospecting and Mining Licenses for gold, graphite, and tanzanite with geological assessments and compliance support.</p>
                 </div>
                 <div class="service-card">
                     <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        Investment Advisory
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+                        Legal & Regulatory Compliance
                     </h3>
-                    <p>Strategic guidance on portfolio construction, yield optimization, and capital deployment.</p>
+                    <p>Complete documentary support, TIC registration assistance, and regulatory navigation for seamless cross-border transactions.</p>
                 </div>
                 <div class="service-card">
                     <h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
-                        Legal Compliance
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                        Capital Alignment & Structuring
                     </h3>
-                    <p>Complete documentary support and regulatory compliance for seamless transactions.</p>
+                    <p>Strategic guidance on investment structuring, joint ventures, and portfolio optimization for maximum risk-adjusted returns.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Invest in Tanzania?</h2>
+            <p>Connect with our advisory team for personalized guidance on institutional real estate opportunities. Whether you're seeking yield-generating assets, development sites, or strategic acquisitions, we provide the expertise and market access you need.</p>
+            <div class="cta-buttons">
+                <a href="tel:+255744400200" class="cta-btn cta-btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call +255 744 400 200
+                </a>
+                <a href="https://wa.me/255766040606?text=Hello%20StratNex%20Properties%2C%20I%20would%20like%20to%20discuss%20investment%20opportunities%20in%20Tanzania." target="_blank" class="cta-btn cta-btn-whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    WhatsApp Us
+                </a>
             </div>
         </div>
     </section>
@@ -876,13 +1488,14 @@
     <!-- Seller Section -->
     <section class="seller-section" id="list-property">
         <div class="seller-container">
-            <div class="seller-header">
-                <h2>List Your Property</h2>
-                <p>Connect with qualified institutional buyers and high-net-worth individuals seeking premium Tanzanian assets.</p>
+            <div class="section-header">
+                <span class="section-label">List Your Property</span>
+                <h2>Connect With Institutional Buyers</h2>
+                <p>Access our network of qualified institutional investors and high-net-worth individuals actively seeking premium Tanzanian assets.</p>
             </div>
 
             <div class="seller-form-card" id="sellerFormCard">
-                <form id="sellerForm" action="https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSellerSubmit()">
+                <form id="sellerForm" action="https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse" method="POST" target="hidden_iframe">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="sellerName">Full Name</label>
@@ -905,6 +1518,7 @@
                                 <option value="Mining License">Mining License</option>
                                 <option value="Agricultural Land">Agricultural Land</option>
                                 <option value="Office Building">Office Building</option>
+                                <option value="Warehouse">Warehouse</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -915,19 +1529,19 @@
 
                     <div class="form-group">
                         <label for="propertyDescription">Property Description</label>
-                        <textarea name="entry.911131276" id="propertyDescription" rows="4" placeholder="Provide details: size, features, title status, asking price..." required></textarea>
+                        <textarea name="entry.911131276" id="propertyDescription" rows="4" placeholder="Provide details: size, features, title status, asking price, current tenancy..." required></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">
                         Submit Listing
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </button>
                 </form>
 
                 <div class="success-message" id="sellerSuccess">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
                     <h3>Listing Received</h3>
-                    <p>Our team will review your property and contact you within 48 hours.</p>
+                    <p>Our team will review your property and contact you within 48 hours to discuss next steps.</p>
                 </div>
             </div>
         </div>
@@ -935,14 +1549,53 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <img src="/Logo.png" alt="StratNex Properties" class="footer-logo">
-        <div class="footer-links">
-            <a href="https://stratnexconsulting.com" target="_blank">StratNex Consulting</a>
-            <a href="mailto:properties@stratnexconsulting.com">Contact</a>
-            <a href="#list-property">List Property</a>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="/Logo.png" alt="StratNex Properties" class="footer-logo">
+                    <p>Tanzania's premier institutional real estate advisory. Strategic capital alignment and yield optimization for discerning investors in East Africa's fastest-growing economy.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Asset Classes</h4>
+                    <a href="#asset-classes">Industrial Godowns</a>
+                    <a href="#asset-classes">Commercial Land</a>
+                    <a href="#asset-classes">Mining Licenses</a>
+                    <a href="#asset-classes">Luxury Residential</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+255 744 400 200</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span>+255 766 040 606</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <span>properties@stratnexconsulting.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2025 StratNex Consulting Ltd. All rights reserved. | Dar es Salaam, Tanzania</p>
+                <div class="footer-social">
+                    <a href="https://stratnexconsulting.com" target="_blank" title="StratNex Consulting">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </a>
+                    <a href="https://wa.me/255766040606" target="_blank" title="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
-        <p class="footer-copy">&copy; 2025 StratNex Consulting Ltd. All rights reserved. | Dar es Salaam, Tanzania</p>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/255766040606?text=Hello%20StratNex%20Properties%2C%20I%20am%20interested%20in%20your%20real%20estate%20services." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
 
     <!-- Hidden Iframe for Form Submission -->
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
@@ -954,7 +1607,8 @@
             { value: '$500K - $1M', label: '$500K - $1M' },
             { value: '$1M - $5M', label: '$1M - $5M' },
             { value: '$5M - $10M', label: '$5M - $10M' },
-            { value: '$10M+', label: '$10M+' }
+            { value: '$10M - $25M', label: '$10M - $25M' },
+            { value: '$25M+', label: '$25M+' }
         ];
 
         const leaseBudgets = [
@@ -966,54 +1620,62 @@
         ];
 
         // Initialize with Invest options
-        updateBudgetOptions('Invest');
+        document.addEventListener('DOMContentLoaded', function() {
+            updateBudgetOptions('Invest');
+            
+            // Handle inquiry form submission
+            document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+                // Allow form to submit to Google Forms
+                setTimeout(function() {
+                    document.getElementById('inquiryForm').classList.add('hidden');
+                    document.querySelector('.form-tabs').classList.add('hidden');
+                    document.getElementById('inquirySuccess').classList.add('show');
+                }, 500);
+            });
+            
+            // Handle seller form submission
+            document.getElementById('sellerForm').addEventListener('submit', function(e) {
+                setTimeout(function() {
+                    document.getElementById('sellerForm').classList.add('hidden');
+                    document.getElementById('sellerSuccess').classList.add('show');
+                }, 500);
+            });
+        });
 
         function setIntent(intent) {
             // Update hidden field
             document.getElementById('intentField').value = intent;
             
             // Update tab styling
-            document.querySelectorAll('.form-tab').forEach(tab => {
-                tab.classList.toggle('active', tab.dataset.intent === intent);
+            document.querySelectorAll('.form-tab').forEach(function(tab) {
+                if (tab.dataset.intent === intent) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
             });
 
             // Update budget label and options
-            const budgetLabel = document.getElementById('budgetLabel');
+            var budgetLabel = document.getElementById('budgetLabel');
             budgetLabel.textContent = intent === 'Invest' ? 'Investment Budget (USD)' : 'Monthly Budget (USD)';
             
             updateBudgetOptions(intent);
         }
 
         function updateBudgetOptions(intent) {
-            const budgetSelect = document.getElementById('budget');
-            const options = intent === 'Invest' ? investBudgets : leaseBudgets;
+            var budgetSelect = document.getElementById('budget');
+            var options = intent === 'Invest' ? investBudgets : leaseBudgets;
             
             // Clear existing options
             budgetSelect.innerHTML = '<option value="">Select range...</option>';
             
             // Add new options
-            options.forEach(opt => {
-                const option = document.createElement('option');
+            options.forEach(function(opt) {
+                var option = document.createElement('option');
                 option.value = opt.value;
                 option.textContent = opt.label;
                 budgetSelect.appendChild(option);
             });
-        }
-
-        function handleInquirySubmit() {
-            // Show success message after brief delay
-            setTimeout(() => {
-                document.getElementById('inquiryForm').classList.add('hidden');
-                document.getElementById('inquirySuccess').classList.add('show');
-            }, 500);
-        }
-
-        function handleSellerSubmit() {
-            // Show success message after brief delay
-            setTimeout(() => {
-                document.getElementById('sellerForm').classList.add('hidden');
-                document.getElementById('sellerSuccess').classList.add('show');
-            }, 500);
         }
     </script>
 </body>
