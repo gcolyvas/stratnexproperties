@@ -96,7 +96,8 @@
         }
 
         .form-input-group input, 
-        .form-input-group select {
+        .form-input-group select,
+        .form-input-group textarea {
             width: 100%;
             background: transparent;
             border: none;
@@ -110,13 +111,16 @@
         }
 
         .form-input-group input:focus, 
-        .form-input-group select:focus {
+        .form-input-group select:focus,
+        .form-input-group textarea:focus {
             border-bottom: 2px solid #142C40;
         }
 
         .form-input-group input:focus ~ label,
         .form-input-group input:not(:placeholder-shown) ~ label,
-        .form-input-group select:valid ~ label {
+        .form-input-group select:valid ~ label,
+        .form-input-group textarea:focus ~ label,
+        .form-input-group textarea:not(:placeholder-shown) ~ label {
             top: -0.75rem;
             font-size: 0.6rem;
             color: #142C40;
@@ -235,7 +239,7 @@
                         <!-- Shimmer Effect on Hover -->
                         <div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0 pointer-events-none"></div>
 
-                        <form id="inquiryForm" class="relative z-10 space-y-6">
+                        <form id="inquiryForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse" method="POST" target="inquiryIframe" class="relative z-10 space-y-6">
                             <div class="mb-8 pb-4 border-b border-slate/20">
                                 <h3 class="text-2xl font-serif text-navy">Asset Inquiry</h3>
                                 <p class="text-xs text-slate mt-2 uppercase tracking-institutional">Begin Your Acquisition or Lease</p>
@@ -320,6 +324,7 @@
                                 Submit Mandate
                             </button>
                         </form>
+                        <iframe name="inquiryIframe" style="display:none;" onload="inquirySubmitted()"></iframe>
 
                         <div id="inquirySuccess" class="absolute inset-0 bg-white z-20 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 text-center p-8">
                             <h3 class="text-3xl font-serif text-navy mb-4">Mandate Received</h3>
@@ -459,7 +464,7 @@
                     <p class="text-slate text-sm">List your premium asset with our private client desk.</p>
                 </div>
 
-                <form id="sellerForm" class="space-y-8">
+                <form id="sellerForm" action="https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse" method="POST" target="sellerIframe" class="space-y-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="form-input-group">
                             <!-- Owner / Entity Name (entry.2093557451) -->
@@ -496,7 +501,7 @@
 
                     <div class="form-input-group">
                         <!-- Description & Valuation (entry.1717367355) -->
-                        <input type="text" name="entry.1717367355" placeholder=" " required>
+                        <textarea name="entry.1717367355" placeholder=" " required rows="4"></textarea>
                         <label>Asset Description & Valuation Estimate</label>
                     </div>
 
@@ -506,6 +511,7 @@
                         </button>
                     </div>
                 </form>
+                <iframe name="sellerIframe" style="display:none;" onload="sellerSubmitted()"></iframe>
 
                 <div id="sellerSuccess" class="hidden flex-col items-center justify-center text-center py-12">
                     <h3 class="text-3xl font-serif text-navy mb-4">Details Submitted</h3>
@@ -567,18 +573,16 @@
             // 1. Dynamic Asset Lists Mapping
             const assetOptions = {
                 'RENT': [
-                    { val: 'Diplomatic Villa', text: 'Diplomatic Villa (Masaki/Oysterbay)' },
-                    { val: 'Executive Penthouse', text: 'Executive Penthouse' },
-                    { val: 'Grade A Office Space', text: 'Grade A Office Space' },
-                    { val: 'Industrial Warehouse', text: 'Industrial Warehouse' },
-                    { val: 'Serviced Apartment', text: 'Corporate Serviced Apartment' }
+                    { val: 'Luxury Villa', text: 'Luxury Villa' },
+                    { val: 'Diplomatic Penthouse', text: 'Diplomatic Penthouse' },
+                    { val: 'Grade A Office', text: 'Grade A Office' },
+                    { val: 'Executive Apartment', text: 'Executive Apartment' }
                 ],
                 'INVEST': [
+                    { val: 'Industrial Warehouse', text: 'Industrial Warehouse' },
                     { val: 'Mining Concession (PL/ML)', text: 'Mining Concession (PL/ML)' },
-                    { val: 'Hospitality Development', text: 'Hospitality/Resort Development' },
-                    { val: 'Industrial Logistics Hub', text: 'Industrial Logistics Hub' },
-                    { val: 'Commercial Land', text: 'Strategic Commercial Land' },
-                    { val: 'Multi-Family Residential', text: 'Multi-Family Residential Block' }
+                    { val: 'Hospitality Development', text: 'Hospitality Development' },
+                    { val: 'Commercial Land', text: 'Commercial Land' }
                 ]
             };
 
@@ -639,63 +643,26 @@
             // Initialize with RENT
             updateAssetTypes('RENT');
 
-            // 3. Form Submission Handling
-            async function handleFormSubmit(e, formId, successId) {
-                e.preventDefault();
-                const form = document.getElementById(formId);
-                const successOverlay = document.getElementById(successId);
-                const btn = form.querySelector('button[type="submit"]');
-                const originalText = btn.innerText;
+            // 3. Form Submission Handling with Iframe
+            window.inquirySubmitted = function() {
+                const successOverlay = document.getElementById('inquirySuccess');
+                successOverlay.style.opacity = '1';
+                successOverlay.style.pointerEvents = 'auto';
+                document.getElementById('inquiryForm').reset();
+                updateAssetTypes('RENT');
+            };
 
-                btn.innerText = "PROCESSING MANDATE...";
-                btn.disabled = true;
-                btn.style.opacity = "0.7";
-
-                const actionUrl = formId === 'inquiryForm' 
-                    ? 'https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse'
-                    : 'https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse';
-
-                try {
-                    await fetch(actionUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        body: new FormData(form)
-                    });
-                    
-                    // Success handling
-                    console.log(`${formId} submitted successfully`);
-                    if (formId === 'inquiryForm') {
-                         successOverlay.style.opacity = '1';
-                         successOverlay.style.pointerEvents = 'auto';
-                    } else {
-                         // Seller Form
-                         form.style.display = 'none';
-                         successOverlay.classList.remove('hidden');
-                         successOverlay.style.display = 'flex';
-                    }
-                    
-                } catch (error) {
-                    console.error(error);
-                    alert("Submission error. Please check your connection.");
-                } finally {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.opacity = "1";
-                }
-            }
-
-            const inquiryForm = document.getElementById('inquiryForm');
-            if (inquiryForm) inquiryForm.addEventListener('submit', (e) => handleFormSubmit(e, 'inquiryForm', 'inquirySuccess'));
-            
-            const sellerForm = document.getElementById('sellerForm');
-            if (sellerForm) sellerForm.addEventListener('submit', (e) => handleFormSubmit(e, 'sellerForm', 'sellerSuccess'));
+            window.sellerSubmitted = function() {
+                document.getElementById('sellerForm').style.display = 'none';
+                document.getElementById('sellerSuccess').classList.remove('hidden');
+                document.getElementById('sellerSuccess').style.display = 'flex';
+                document.getElementById('sellerForm').reset();
+            };
 
             window.resetInquiry = function() {
-                document.getElementById('inquiryForm').reset();
                 const successOverlay = document.getElementById('inquirySuccess');
                 successOverlay.style.opacity = '0';
                 successOverlay.style.pointerEvents = 'none';
-                updateAssetTypes('RENT');
             };
 
             // 4. Reveal Animations
