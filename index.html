@@ -4,44 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StratNex Properties | Strategic Real Estate Advisory Tanzania</title>
-    <meta name="description" content="Premier real estate advisory in Tanzania. Source luxury villas in Masaki, diplomatic housing, and industrial warehouses with StratNex Properties.">
-    
     <link rel="icon" type="image/png" href="favicon.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        navy: '#142C40',
-                        slate: '#A6A8AB',
-                        white: '#FFFFFF',
-                        offWhite: '#F9FAFB'
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
-                    },
+                    colors: { navy: '#142C40', slate: '#A6A8AB', white: '#FFFFFF', offWhite: '#F9FAFB' },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
                     letterSpacing: { 'luxury': '0.2em' },
-                    animation: {
-                        'subtle-zoom': 'subtle-zoom 30s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'subtle-zoom': {
-                            '0%, 100%': { transform: 'scale(1.05)' },
-                            '50%': { transform: 'scale(1.15)' },
-                        }
-                    }
+                    animation: { 'subtle-zoom': 'subtle-zoom 30s ease-in-out infinite' },
+                    keyframes: { 'subtle-zoom': { '0%, 100%': { transform: 'scale(1.05)' }, '50%': { transform: 'scale(1.15)' } } }
                 }
             }
         }
     </script>
-    
     <style>
         :root { --navy: #142C40; --slate: #A6A8AB; }
         body { font-family: 'Montserrat', sans-serif; background-color: #F9FAFB; color: var(--navy); -webkit-font-smoothing: antialiased; }
@@ -62,12 +42,10 @@
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate/10 h-24 flex items-center">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-4">
-                <img src="Logo.png" alt="StratNex" class="h-12 w-auto object-contain">
-            </a>
+            <a href="#" class="flex items-center gap-4"><img src="Logo.png" alt="StratNex" class="h-12 w-auto object-contain"></a>
             <div class="hidden md:flex items-center gap-10 text-xs font-bold uppercase tracking-widest text-navy">
-                <a href="#locations" class="hover:text-slate transition-colors">Locations</a>
-                <a href="#services" class="hover:text-slate transition-colors">Services</a>
+                <a href="#locations" class="hover:text-slate">Locations</a>
+                <a href="#services" class="hover:text-slate">Services</a>
                 <a href="#seller" class="border border-navy px-6 py-3 hover:bg-navy hover:text-white transition-all">List Property</a>
             </div>
         </div>
@@ -78,41 +56,31 @@
             <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover animate-subtle-zoom">
             <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-transparent"></div>
         </div>
-        
         <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="text-white reveal-up">
                 <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-[1.1]">Strategic Real Estate <br> & Asset Advisory</h1>
-                <p class="text-lg text-white/80 font-light mb-10 max-w-lg leading-relaxed">+255 744 400 200</p>
+                <p class="text-lg text-white/80 font-light mb-10 leading-relaxed">+255 744 400 200</p>
             </div>
-
             <div class="w-full lg:pl-12 reveal-up">
                 <div class="glass-slab p-8 md:p-12 relative overflow-hidden">
                     <form id="mainForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse" method="POST">
-                        <div class="mb-8 border-b border-slate/20 pb-6">
-                            <h3 class="text-2xl font-serif text-navy">Inquire Here</h3>
-                        </div>
-
+                        <div class="mb-8 border-b border-slate/20 pb-6"><h3 class="text-2xl font-serif text-navy">Inquire Here</h3></div>
                         <div class="flex gap-3 mb-6">
-                            <label class="radio-label flex-1"><input type="radio" name="entry.1444158141" value="Rent" class="hidden" checked><div class="radio-card">Rent</div></label>
-                            <label class="radio-label flex-1"><input type="radio" name="entry.1444158141" value="Invest" class="hidden"><div class="radio-card">Invest</div></label>
+                            <label class="radio-label flex-1"><input type="radio" name="entry.1937501189" value="Rent" class="hidden" checked><div class="radio-card">Rent</div></label>
+                            <label class="radio-label flex-1"><input type="radio" name="entry.1937501189" value="Invest / Buy" class="hidden"><div class="radio-card">Invest</div></label>
                         </div>
-
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group"><select name="entry.1118671415" required><option value="Luxury Villa">Luxury Villa</option><option value="Apartment">Apartment</option><option value="Office">Office</option><option value="Industrial">Industrial</option></select><label>Property Type</label></div>
-                            <div class="form-group"><input type="text" name="entry.467406248" placeholder=" " required><label>Location</label></div>
+                            <div class="form-group"><input type="text" name="entry.317833696" placeholder=" " required><label>Property Type</label></div>
+                            <div class="form-group"><input type="text" name="entry.1359829254" placeholder=" " required><label>Location</label></div>
                         </div>
-
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group"><input type="text" name="entry.401140029" placeholder=" " required><label>Budget (USD)</label></div>
-                            <div class="form-group"><input type="text" name="entry.46231908" placeholder=" " required><label>Full Name</label></div>
+                            <div class="form-group"><input type="text" name="entry.1000552527" placeholder=" " required><label>Budget (USD)</label></div>
+                            <div class="form-group"><input type="text" name="entry.2098221746" placeholder=" " required><label>Full Name</label></div>
                         </div>
-
-                        <div class="form-group"><input type="email" name="entry.1221151474" placeholder=" " required><label>Email Address</label></div>
-                        <div class="form-group"><input type="tel" name="entry.1437812165" placeholder=" " required><label>Phone Number</label></div>
-
+                        <div class="form-group"><input type="email" name="entry.603961529" placeholder=" " required><label>Email Address</label></div>
+                        <div class="form-group"><input type="tel" name="entry.598663992" placeholder=" " required><label>Phone Number</label></div>
                         <button type="submit" class="w-full py-4 bg-navy text-white font-bold uppercase tracking-luxury text-xs hover:bg-slate transition-all shadow-lg">Submit Inquiry</button>
                     </form>
-
                     <div id="formSuccess" class="absolute inset-0 bg-white z-20 flex flex-col items-center justify-center p-8 opacity-0 pointer-events-none transition-opacity duration-500 text-center">
                         <div class="w-16 h-16 bg-navy text-white flex items-center justify-center mb-6 rounded-full">✓</div>
                         <h3 class="text-2xl font-serif text-navy">Received</h3>
@@ -124,13 +92,9 @@
         </div>
     </section>
 
-    <section id="seller" class="py-24 bg-white border-t border-slate/10">
+    <section id="seller" class="py-24 bg-white">
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-serif text-navy mb-6">List Your Property</h2>
-                <p class="text-slate mb-8">Direct access to diplomatic missions and industrial capital in Tanzania.</p>
-                <p class="text-navy font-bold">+255 744 400 200</p>
-            </div>
+            <div><h2 class="text-4xl font-serif text-navy mb-6">List Your Property</h2><p class="text-slate mb-8">Access diplomatic missions and industrial capital in Tanzania.</p></div>
             <div class="glass-slab p-8 relative">
                 <form id="sellerForm" action="https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse" method="POST">
                     <div class="form-group"><input type="text" name="entry.2093557451" placeholder=" " required><label>Owner Name</label></div>
@@ -145,68 +109,36 @@
                 <div id="sellerSuccess" class="absolute inset-0 bg-white z-20 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 text-center p-8">
                     <div class="w-12 h-12 bg-navy text-white flex items-center justify-center mb-4 rounded-full mx-auto">✓</div>
                     <h3 class="text-xl font-serif text-navy">Listing Received</h3>
-                    <p class="text-xs text-slate mt-2">Our advisory team will review your submission.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-navy py-16 text-white">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
-            <div>
-                <div class="bg-white p-3 inline-block shadow-sm mb-6">
-                    <img src="Logo.png" alt="StratNex" class="h-8 w-auto">
-                </div>
-                <p class="text-[0.6rem] text-slate uppercase tracking-luxury font-bold">StratNex Properties</p>
-            </div>
-            <div class="text-xs text-slate/80 space-y-2">
-                <p class="text-white uppercase font-bold tracking-widest mb-4">Contact</p>
-                <p>properties@stratnexconsulting.com</p>
-                <p>+255 744 400 200</p>
-            </div>
+    <footer class="bg-navy py-12 text-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="bg-white p-2"><img src="Logo.png" alt="StratNex" class="h-8 w-auto"></div>
+            <p class="text-xs text-slate/60 tracking-widest uppercase">© 2025 StratNex Properties</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/255766040606" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 hover:scale-105 transition-transform">
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.661c1.566.93 3.127 1.395 4.645 1.396 5.44 0 9.866-4.427 9.869-9.866.001-2.63-1.023-5.102-2.885-6.964-1.862-1.861-4.335-2.885-6.963-2.886-5.441 0-9.87 4.43-9.873 9.871 0 1.742.459 3.442 1.326 4.935l-1.003 3.666 3.755-.985z"/></svg>
-        <span class="text-[0.65rem] font-bold uppercase tracking-widest">Connect</span>
-    </a>
+    <a href="https://wa.me/255766040606" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 hover:scale-105 transition-transform"><span class="text-[0.65rem] font-bold uppercase tracking-widest">Connect</span></a>
 
     <script>
-        // Headless Form Submission Logic
         async function handleSubmission(e, successId) {
             e.preventDefault();
             const form = e.target;
             const btn = form.querySelector('button');
-            const originalText = btn.innerText;
-
             btn.innerText = "SENDING...";
             btn.disabled = true;
-
             try {
-                await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    mode: 'no-cors'
-                });
-                const successOverlay = document.getElementById(successId);
-                successOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                successOverlay.classList.add('opacity-100', 'pointer-events-auto');
-            } catch (err) {
-                alert("Connection error. Please try again or use WhatsApp.");
-            } finally {
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }
+                await fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' });
+                document.getElementById(successId).classList.add('opacity-100', 'pointer-events-auto');
+            } catch (err) { alert("Error. Please use WhatsApp."); }
+            finally { btn.innerText = "SUBMITTED"; }
         }
-
         document.getElementById('mainForm').onsubmit = (e) => handleSubmission(e, 'formSuccess');
         document.getElementById('sellerForm').onsubmit = (e) => handleSubmission(e, 'sellerSuccess');
-
-        // Reveal Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible') });
-        }, { threshold: 0.1 });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible') }); }, { threshold: 0.1 });
         document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
     </script>
 </body>
