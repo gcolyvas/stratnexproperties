@@ -4,891 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StratNex Properties | Strategic Real Estate Advisory Tanzania</title>
-    <meta name="description" content="Premier real estate advisory in Tanzania. Source luxury villas in Masaki, diplomatic housing, industrial warehouses, and mining rights (PL/ML) with StratNex Properties.">
-    <meta name="keywords" content="Dar es Salaam Real Estate, Masaki Rentals, Oysterbay Villas, Zanzibar Luxury Apartments, Grade A Office Space, Industrial Warehouse Tanzania, Mining Licenses, TIC Compliance">
     
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        navy: '#142C40',
-                        slate: '#A6A8AB',
-                        white: '#FFFFFF',
-                        offWhite: '#F9FAFB'
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
-                    },
-                    letterSpacing: {
-                        'luxury': '0.2em',
-                    },
-                    animation: {
-                        'subtle-zoom': 'subtle-zoom 30s ease-in-out infinite',
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
-                    },
-                    keyframes: {
-                        'subtle-zoom': {
-                            '0%, 100%': { transform: 'scale(1.05)' },
-                            '50%': { transform: 'scale(1.15)' },
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        }
-                    }
+                    colors: { navy: '#142C40', slate: '#A6A8AB', white: '#FFFFFF', offWhite: '#F9FAFB' },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    letterSpacing: { 'luxury': '0.2em' },
+                    animation: { 'subtle-zoom': 'subtle-zoom 30s ease-in-out infinite', 'fade-in': 'fadeIn 0.5s ease-out forwards' },
+                    keyframes: { 'subtle-zoom': { '0%, 100%': { transform: 'scale(1.05)' }, '50%': { transform: 'scale(1.15)' } }, fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } } }
                 }
             }
         }
     </script>
-    
     <style>
-        :root {
-            --navy: #142C40;
-            --slate: #A6A8AB;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            background-color: #F9FAFB;
-            color: var(--navy);
-        }
-
-        h1, h2, h3, h4, h5, h6, .font-serif {
-            font-family: 'Playfair Display', serif;
-            font-style: normal !important; /* Strict No Italics */
-        }
-
-        /* Glassmorphism Panel */
-        .glass-slab {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Premium Input Styling with Floating Labels */
-        .form-group {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--slate);
-            pointer-events: none;
-            transition: 0.2s ease all;
-        }
-
-        .form-group input:focus ~ label,
-        .form-group select:valid ~ label,
-        .form-group input:not(:placeholder-shown) ~ label {
-            top: -0.8rem;
-            font-size: 0.65rem;
-            color: var(--navy);
-            font-weight: 600;
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #CBD5E1;
-            padding: 1rem 0 0.25rem 0;
-            font-size: 1rem;
-            color: var(--navy);
-            transition: border-color 0.3s ease;
-            outline: none;
-            border-radius: 0;
-            appearance: none;
-            -webkit-appearance: none;
-        }
-
-        /* Custom Select Arrow */
-        .form-group select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23142C40'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 0 center;
-            background-size: 1rem;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            border-bottom: 2px solid var(--navy);
-        }
-
-        /* Radio Toggle Styling */
-        .radio-card {
-            flex: 1;
-            text-align: center;
-            padding: 1rem;
-            border: 1px solid #E5E7EB;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 500;
-            color: var(--slate);
-        }
-        .radio-label input:checked + .radio-card {
-            background-color: var(--navy);
-            color: white;
-            border-color: var(--navy);
-            box-shadow: 0 4px 12px rgba(20, 44, 64, 0.2);
-        }
-        .radio-card:hover {
-            border-color: var(--navy);
-            background-color: #F3F4F6;
-        }
-
-        /* Animations */
-        .reveal-up { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        :root { --navy: #142C40; --slate: #A6A8AB; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #F9FAFB; color: var(--navy); -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Playfair Display', serif; font-style: normal !important; }
+        .glass-slab { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .form-group { position: relative; margin-bottom: 2rem; }
+        .form-group label { position: absolute; top: 0; left: 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--slate); pointer-events: none; transition: 0.2s ease all; }
+        .form-group input:focus ~ label, .form-group select:valid ~ label, .form-group input:not(:placeholder-shown) ~ label { top: -0.8rem; font-size: 0.65rem; color: var(--navy); font-weight: 600; }
+        .form-group input, .form-group select { width: 100%; background: transparent; border: none; border-bottom: 1px solid #CBD5E1; padding: 1rem 0 0.25rem 0; font-size: 1rem; color: var(--navy); outline: none; border-radius: 0; appearance: none; -webkit-appearance: none; }
+        .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23142C40'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0 center; background-size: 1rem; }
+        .form-group input:focus, .form-group select:focus { border-bottom: 2px solid var(--navy); }
+        .radio-label input:checked + .radio-card { background-color: var(--navy); color: white; border-color: var(--navy); }
+        .radio-card { flex: 1; text-align: center; padding: 1rem; border: 1px solid #E5E7EB; cursor: pointer; transition: 0.3s; font-size: 0.85rem; text-transform: uppercase; font-weight: 500; color: var(--slate); }
+        .reveal-up { opacity: 0; transform: translateY(20px); transition: 0.8s ease; }
         .reveal-up.visible { opacity: 1; transform: translateY(0); }
-        
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #F1F1F1; }
-        ::-webkit-scrollbar-thumb { background: var(--navy); }
-        * { font-style: normal !important; }
     </style>
-
-    <!-- Schema.org FAQ Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "Do you offer property management in Dar es Salaam?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, StratNex offers full-service property management for premium rentals in Masaki, Oysterbay, and diplomatic enclaves."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Can foreigners buy land or property in Tanzania?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, with TIC (Tanzania Investment Centre) incentives. StratNex Properties provides advisory services to navigate the legal framework for foreign investors."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Do you facilitate mining license acquisitions?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We specialize in the advisory and sourcing of Prospecting Licenses (PL) and Mining Licenses (ML) for strategic minerals like Gold and Graphite."
-        }
-      }]
-    }
-    </script>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
 </head>
 <body class="overflow-x-hidden selection:bg-navy selection:text-white">
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate/10 transition-all duration-300">
-        <div class="container mx-auto px-6 h-24 flex justify-between items-center">
-            <!-- Logo Left -->
-            <a href="#" class="flex items-center gap-4 group">
-                <img src="Logo.png" alt="StratNex" class="h-12 w-auto object-contain transition-transform group-hover:scale-105 duration-300" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="hidden flex-col">
-                    <span class="text-xl font-serif font-bold text-navy tracking-wide">STRATNEX</span>
-                    <span class="text-[0.6rem] text-slate uppercase tracking-luxury font-bold">Properties</span>
-                </div>
-            </a>
-            
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-10 text-xs font-bold uppercase tracking-widest text-navy">
-                <a href="#locations" class="hover:text-slate transition-colors">Locations</a>
-                <a href="#services" class="hover:text-slate transition-colors">Services</a>
-                <a href="#seller" class="border border-navy px-6 py-3 hover:bg-navy hover:text-white transition-all duration-300">List Property</a>
-            </div>
-
-            <!-- Mobile Menu Icon -->
-            <button class="md:hidden text-navy" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white border-b border-slate/10 p-8 flex flex-col gap-6 text-center shadow-xl">
-            <a href="#locations" class="text-sm font-bold uppercase tracking-luxury text-navy" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Locations</a>
-            <a href="#services" class="text-sm font-bold uppercase tracking-luxury text-navy" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Services</a>
-            <a href="#seller" class="text-sm font-bold uppercase tracking-luxury text-navy" onclick="document.getElementById('mobileMenu').classList.add('hidden')">List Property</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
-        
-        <!-- Background Image -->
+    <section class="relative min-h-screen flex items-center pt-12 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" 
-                 alt="Modern Architecture Tanzania" 
-                 class="w-full h-full object-cover animate-subtle-zoom">
-            <!-- Global Overlay for contrast -->
-            <div class="absolute inset-0 bg-black/20"></div>
-            <!-- Gradient Overlay for text visibility -->
-            <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-transparent"></div>
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover animate-subtle-zoom">
+            <div class="absolute inset-0 bg-navy/80 mix-blend-multiply"></div>
         </div>
         
-        <div class="container mx-auto px-6 relative z-10 w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-center">
-            
-            <!-- Left Content (SEO & Brand) -->
-            <div class="text-white pl-2 reveal-up">
-                <div class="inline-block border-l-4 border-slate/50 pl-6 mb-8">
-                    <p class="text-sm font-bold uppercase tracking-[0.4em] text-slate">Dar es Salaam • Zanzibar</p>
+        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-white reveal-up visible">
+                <div class="bg-white p-4 inline-block mb-8 shadow-xl">
+                    <img src="Logo.png" alt="StratNex" class="h-12 w-auto object-contain">
                 </div>
-                
-                <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-[1.1]">
-                    Strategic Real Estate <br> & Asset Advisory
-                </h1>
-                <p class="text-lg md:text-xl text-white/80 font-light mb-10 max-w-lg leading-relaxed">
-                    Connecting global capital with Tanzania's most secure assets. From diplomatic housing in Masaki to investment-grade industrial logistics.
-                </p>
-                
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-slate shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <div>
-                            <h5 class="text-sm font-bold uppercase tracking-widest text-white">TIC Compliance</h5>
-                            <p class="text-xs text-white/60 mt-1">Full regulatory advisory for foreign investors.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <svg class="w-6 h-6 text-slate shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        <div>
-                            <h5 class="text-sm font-bold uppercase tracking-widest text-white">Verified Inventory</h5>
-                            <p class="text-xs text-white/60 mt-1">Physically vetted properties for executive standards.</p>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-[1.1]">Strategic Real Estate <br> & Asset Advisory</h1>
+                <p class="text-lg text-white/80 font-light max-w-lg mb-8 leading-relaxed">Connecting global capital with Tanzania's most secure assets.</p>
+                <p class="font-bold tracking-widest text-slate uppercase text-sm">+255 744 400 200</p>
             </div>
 
-            <!-- Right Content: Dynamic Search Form -->
-            <div class="w-full lg:pl-12 reveal-up" style="transition-delay: 200ms;">
-                <div class="glass-slab p-8 md:p-12 relative">
-                    
-                    <form id="mainForm" class="space-y-6">
+            <div class="w-full lg:pl-12 reveal-up visible">
+                <div class="glass-slab p-8 md:p-12 relative overflow-hidden">
+                    <form id="mainForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse" method="POST">
+                        <div class="mb-8"><h3 class="text-2xl font-serif text-navy">Inquire Here</h3><p class="text-[0.6rem] text-slate uppercase tracking-luxury">Premium Rentals & Investments</p></div>
                         
-                        <!-- Header -->
-                        <div class="mb-8 border-b border-slate/20 pb-6">
-                            <h3 class="text-2xl font-serif text-navy">Inquire Here</h3>
-                            <p class="text-xs text-slate mt-1 uppercase tracking-widest">Premium Rentals & Investments</p>
+                        <div class="flex gap-3 mb-6">
+                            <label class="radio-label flex-1"><input type="radio" name="entry.1444158141" value="Rent" class="hidden" checked><div class="radio-card">Rent</div></label>
+                            <label class="radio-label flex-1"><input type="radio" name="entry.1444158141" value="Invest" class="hidden"><div class="radio-card">Invest</div></label>
                         </div>
 
-                        <!-- Intent Toggle -->
-                        <div class="flex gap-3">
-                            <label class="radio-label flex-1 cursor-pointer">
-                                <input type="radio" name="entry.1444158141" value="rent" class="hidden" checked>
-                                <div class="radio-card active">Rent</div>
-                            </label>
-                            <label class="radio-label flex-1 cursor-pointer">
-                                <input type="radio" name="entry.1444158141" value="buy" class="hidden">
-                                <div class="radio-card">Invest / Buy</div>
-                            </label>
-                        </div>
-
-                        <!-- Type & Location -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group">
-                                <select id="propertyType" name="entry.1118671415" required></select>
-                                <label>Property Type</label>
-                            </div>
-                            <div class="form-group">
-                                <select name="entry.467406248" required>
-                                    <option value="" disabled selected>Select Area</option>
-                                    <optgroup label="Dar es Salaam">
-                                        <option value="Masaki">Masaki (Diplomatic)</option>
-                                        <option value="Oysterbay">Oysterbay (Executive)</option>
-                                        <option value="Mikocheni">Mikocheni / Msasani</option>
-                                        <option value="City Centre">City Centre (CBD)</option>
-                                        <option value="Kurasini">Kurasini Industrial</option>
-                                    </optgroup>
-                                    <optgroup label="Zanzibar">
-                                        <option value="Stone Town">Stone Town</option>
-                                        <option value="Nungwi">Nungwi / Kendwa</option>
-                                        <option value="Paje">Paje / Jambiani</option>
-                                    </optgroup>
-                                </select>
-                                <label>Select Location</label>
-                            </div>
+                            <div class="form-group"><select name="entry.1118671415" required><option value="Luxury Villa">Luxury Villa</option><option value="Apartment">Apartment</option><option value="Office">Office</option><option value="Warehouse">Warehouse</option></select><label>Property Type</label></div>
+                            <div class="form-group"><input type="text" name="entry.467406248" placeholder=" " required><label>Location</label></div>
                         </div>
 
-                        <!-- Dynamic Config (Bedrooms OR SqM) -->
-                        <div id="dynamicConfig" class="form-group">
-                            <!-- Injected by JS -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group"><input type="text" name="entry.401140029" placeholder=" " required><label>Budget (USD)</label></div>
+                            <div class="form-group"><input type="text" name="entry.46231908" placeholder=" " required><label>Full Name</label></div>
                         </div>
 
-                        <!-- Budget -->
-                        <div class="form-group">
-                            <select id="budget" name="entry.401140029" required></select>
-                            <label>Target Budget (USD)</label>
-                        </div>
+                        <div class="form-group"><input type="email" name="entry.1221151474" placeholder=" " required><label>Email</label></div>
+                        <div class="form-group"><input type="tel" name="entry.1437812165" placeholder=" " required><label>Phone</label></div>
 
-                        <!-- Personal Info -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-slate/10">
-                            <div class="form-group">
-                                <input type="text" name="entry.46231908" placeholder=" " required>
-                                <label>Full Name</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="entry.1221151474" placeholder=" " required>
-                                <label>Email Address</label>
-                            </div>
-                        </div>
-                        
-                        <!-- Phone Number -->
-                        <div class="form-group">
-                            <input type="tel" name="entry.1437812165" placeholder=" " required>
-                            <label>Phone Number</label>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 bg-navy text-white font-bold uppercase tracking-[0.2em] text-xs hover:bg-slate transition-all duration-300 shadow-lg mt-2">
-                            Submit Inquiry
-                        </button>
+                        <button type="submit" class="w-full py-4 bg-navy text-white font-bold uppercase tracking-luxury text-xs hover:bg-slate transition-all">Submit Inquiry</button>
                     </form>
-
-                    <!-- Success Overlay -->
                     <div id="formSuccess" class="absolute inset-0 bg-white z-20 flex flex-col items-center justify-center p-8 opacity-0 pointer-events-none transition-opacity duration-500 text-center">
-                        <div class="w-16 h-16 bg-navy text-white flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <h3 class="text-2xl font-serif text-navy mb-2">Inquiry Received</h3>
-                        <p class="text-sm text-slate text-center max-w-sm">Our advisory team will contact you with matching assets from our portfolio.</p>
-                        <button id="newSearchBtn" class="mt-8 text-xs font-bold uppercase tracking-widest text-navy underline">New Search</button>
+                        <div class="w-16 h-16 bg-navy text-white flex items-center justify-center mb-6">✓</div>
+                        <h3 class="text-2xl font-serif text-navy mb-2">Received</h3>
+                        <p class="text-sm text-slate">Our team will contact you shortly.</p>
+                        <button onclick="location.reload()" class="mt-8 text-xs font-bold underline">New Search</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Intro / Market Analysis (SEO Content) -->
-    <section class="py-24 bg-white border-b border-slate/10">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="text-center mb-16 reveal-up">
-                <h2 class="text-3xl md:text-5xl mb-6 tracking-tight text-navy">The Tanzania Advantage</h2>
-                <div class="h-[1px] w-24 bg-slate mx-auto mb-6"></div>
-                <p class="text-slate max-w-2xl mx-auto leading-relaxed">
-                    Tanzania is East Africa's economic powerhouse. Dar es Salaam serves as the commercial gateway to six landlocked nations, while Zanzibar offers unparalleled luxury tourism potential.
-                </p>
+    <section id="seller" class="py-24 bg-white">
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-serif text-navy mb-6">Are You Selling?</h2>
+                <p class="text-slate mb-8">List your property with StratNex for direct access to high-net-worth investors and diplomatic missions.</p>
+                <p class="text-navy font-bold">+255 744 400 200</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <article class="reveal-up">
-                    <h3 class="text-xl font-serif mb-4 text-navy">Dar es Salaam: Logistics Hub</h3>
-                    <p class="text-sm text-slate leading-relaxed mb-4">
-                        Home to the Port of Dar es Salaam, the city is the heartbeat of regional trade. We secure industrial warehouses and logistics parks in Kurasini and Kigamboni.
-                    </p>
-                    <ul class="text-xs font-bold uppercase tracking-widest text-navy list-disc pl-5 space-y-2">
-                        <li>7%+ Annual GDP Growth</li>
-                        <li>Export Processing Zones</li>
-                        <li>Rapid Urbanization</li>
-                    </ul>
-                </article>
-                <article class="reveal-up" style="transition-delay: 100ms;">
-                    <h3 class="text-xl font-serif mb-4 text-navy">Zanzibar: Luxury Frontier</h3>
-                    <p class="text-sm text-slate leading-relaxed mb-4">
-                        Zanzibar is emerging as a premier destination for high-end tourism. From Stone Town heritage sites to pristine coastlines like Nungwi, opportunities are abundant.
-                    </p>
-                    <ul class="text-xs font-bold uppercase tracking-widest text-navy list-disc pl-5 space-y-2">
-                        <li>Strong Tourism Growth</li>
-                        <li>Heritage Protection</li>
-                        <li>Resort Developments</li>
-                    </ul>
-                </article>
-                <article class="reveal-up" style="transition-delay: 200ms;">
-                    <h3 class="text-xl font-serif mb-4 text-navy">Mining & Resources</h3>
-                    <p class="text-sm text-slate leading-relaxed mb-4">
-                        Tanzania possesses vast mineral wealth. We provide advisory on acquiring Prospecting Licenses (PL) and Mining Licenses (ML) compliant with Ministry of Minerals.
-                    </p>
-                    <ul class="text-xs font-bold uppercase tracking-widest text-navy list-disc pl-5 space-y-2">
-                        <li>Transparent Licensing</li>
-                        <li>Investment Incentives</li>
-                        <li>Strategic Zones</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Strategic Locations (SEO Neighborhood Details) -->
-    <section id="locations" class="py-24 bg-[#F8FAFC]">
-        <div class="container mx-auto px-6">
-            <div class="mb-16 reveal-up">
-                <h2 class="text-3xl md:text-5xl tracking-tight mb-4 text-navy">Strategic Locations</h2>
-                <div class="w-20 h-1 bg-navy mb-6"></div>
-                <p class="text-slate text-sm max-w-xl">
-                    We operate exclusively in high-value zones. Our intelligence covers security protocols, accessibility, and yield potential for every neighborhood.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Masaki -->
-                <div class="bg-white p-10 border-l-4 border-navy shadow-sm reveal-up group hover:shadow-lg transition-all duration-300">
-                    <h3 class="text-2xl font-serif mb-3 text-navy">Masaki, Dar es Salaam</h3>
-                    <p class="text-sm text-slate mb-6 leading-relaxed">The premier diplomatic enclave. Home to embassies, UN headquarters, and expatriate executives. Features luxury villas with high-security protocols and sea-facing apartments.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-navy/5 text-[10px] uppercase font-bold text-navy tracking-widest">Diplomatic</span>
-                        <span class="px-3 py-1 bg-navy/5 text-[10px] uppercase font-bold text-navy tracking-widest">Security</span>
+            <div class="glass-slab p-8 relative">
+                <form id="sellerForm" action="https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse" method="POST">
+                    <div class="form-group"><input type="text" name="entry.2093557451" placeholder=" " required><label>Owner Name</label></div>
+                    <div class="form-group"><input type="tel" name="entry.174063630" placeholder=" " required><label>Phone Number</label></div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="form-group"><input type="text" name="entry.1706680453" placeholder=" " required><label>Property Type</label></div>
+                        <div class="form-group"><input type="text" name="entry.2064103135" placeholder=" " required><label>Location</label></div>
                     </div>
-                </div>
-                <!-- Oysterbay -->
-                <div class="bg-white p-10 border-l-4 border-slate/20 shadow-sm reveal-up group hover:shadow-lg transition-all duration-300" style="transition-delay: 100ms;">
-                    <h3 class="text-2xl font-serif mb-3 text-navy">Oysterbay, Dar es Salaam</h3>
-                    <p class="text-sm text-slate mb-6 leading-relaxed">Adjacent to Masaki, known for quiet, tree-lined streets and modern apartments. Highly sought after by families and senior management of multinational corporations.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-navy/5 text-[10px] uppercase font-bold text-navy tracking-widest">Family Friendly</span>
-                        <span class="px-3 py-1 bg-navy/5 text-[10px] uppercase font-bold text-navy tracking-widest">Modern</span>
-                    </div>
-                </div>
-                <!-- Kurasini -->
-                <div class="bg-white p-10 border-l-4 border-slate/20 shadow-sm reveal-up group hover:shadow-lg transition-all duration-300">
-                    <h3 class="text-2xl font-serif mb-3 text-navy">Kurasini Industrial Zone</h3>
-                    <p class="text-sm text-slate mb-6 leading-relaxed">Direct access to the Port of Dar es Salaam. Prime location for warehousing, logistics hubs, and customs-free zone operations.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-navy/5 text-[10px] uppercase font-bold text-navy tracking-widest">Logistics</span>
-                        <span class="px-3 py-1 bg-navy/5 text-[10px] uppercase font-bold text-navy tracking-widest">Commercial</span>
-                    </div>
-                </div>
-                <!-- Stone Town -->
-                <div class="bg-white p-10 border-l-4 border-slate/20 shadow-sm reveal-up group hover:shadow-lg transition-all duration-300" style="transition-delay: 100ms;">
-                    <h3 class="text-2xl font-serif mb-3 text-navy">Stone Town, Zanzibar</h3>
-                    <p class="text-sm text-slate mb-6 leading-relaxed">UNESCO World Heritage site. A mix of historic culture and modern boutique hotels. Ideal for unique commercial conversions and luxury stays.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-navy/5 text-[10px] uppercase font-bold text-navy tracking-widest">Heritage</span>
-                        <span class="px-3 py-1 bg-navy/5 text-[10px] uppercase font-bold text-navy tracking-widest">Tourism</span>
-                    </div>
+                    <div class="form-group"><input type="text" name="entry.1717367355" placeholder=" " required><label>Brief Description</label></div>
+                    <button type="submit" class="w-full py-4 border border-navy text-navy font-bold uppercase tracking-luxury text-xs hover:bg-navy hover:text-white transition-all">List Property</button>
+                </form>
+                <div id="sellerSuccess" class="absolute inset-0 bg-white z-20 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
+                    <h3 class="text-xl font-serif text-navy">Listing Submitted</h3>
+                    <p class="text-xs text-slate mt-2">We will review and contact you.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Detailed (SEO) -->
-    <section id="services" class="py-24 bg-navy text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-slate/5 -skew-x-12 z-0"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div class="reveal-up">
-                    <h2 class="text-3xl font-serif mb-10">Investment & Sales Advisory</h2>
-                    <div class="space-y-10">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 tracking-wide">Commercial & Industrial Sourcing</h3>
-                            <p class="text-sm text-slate leading-relaxed">
-                                We connect institutional investors with Grade-A office buildings and industrial warehouses. Our vetting process ensures clear titles, structural integrity, and zoning compliance for Kurasini and Industrial Zones.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 tracking-wide">Mining Rights (PL/ML) Advisory</h3>
-                            <p class="text-sm text-slate leading-relaxed">
-                                Identification of strategic mineral concessions. We assist in the application and transfer of Prospecting Licenses (PL) and Mining Licenses (ML), ensuring adherence to the Mining Act 2010.
-                            </p>
-                        </div>
-                    </div>
+    <footer class="bg-navy py-20 text-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
+            <div class="space-y-6">
+                <div class="bg-white p-3 inline-block shadow-sm">
+                    <img src="Logo.png" alt="StratNex" class="h-8 w-auto">
                 </div>
-                <div class="reveal-up" style="transition-delay: 100ms;">
-                    <h2 class="text-3xl font-serif mb-10">Premium Rentals & Management</h2>
-                    <div class="space-y-10">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 tracking-wide">Diplomatic & Executive Housing</h3>
-                            <p class="text-sm text-slate leading-relaxed">
-                                Sourcing stand-alone villas in Masaki and penthouses in Oysterbay. We manage lease negotiations, security upgrades, and relocation services for diplomatic missions and C-suite executives.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 tracking-wide">Property Management</h3>
-                            <p class="text-sm text-slate leading-relaxed">
-                                Protecting asset value through proactive management. We handle tenant vetting, rent collection, maintenance, and legal compliance for landlords investing remotely in Tanzania.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <p class="text-xs text-slate max-w-xs">Serving diplomatic housing and industrial mandates in Tanzania.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section (SEO Rich Snippets) -->
-    <section id="faq" class="py-24 bg-white border-b border-slate/10">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="text-center mb-16 reveal-up">
-                <h2 class="text-3xl md:text-5xl mb-6 tracking-tight text-navy">Client Insights</h2>
-                <p class="text-slate text-sm font-medium tracking-wide">Frequently asked questions about real estate in Tanzania.</p>
-            </div>
-            
-            <div class="space-y-4">
-                <details class="group border-b border-slate/20 pb-4 reveal-up">
-                    <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none text-navy group-hover:text-slate transition-colors">
-                        Can foreigners buy land or property in Tanzania?
-                        <span class="text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
-                    </summary>
-                    <p class="mt-4 text-slate text-sm leading-relaxed pl-4 border-l-2 border-navy">
-                        Yes. Foreigners can acquire land and property under TIC (Tanzania Investment Centre) incentives, which provide guarantees against nationalization and tax holidays. However, land title (Right of Occupancy vs. Leasehold) must be carefully reviewed, a service StratNex provides.
-                    </p>
-                </details>
-                <details class="group border-b border-slate/20 pb-4 reveal-up">
-                    <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none text-navy group-hover:text-slate transition-colors">
-                        How does the rental market work for executives?
-                        <span class="text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
-                    </summary>
-                    <p class="mt-4 text-slate text-sm leading-relaxed pl-4 border-l-2 border-navy">
-                        The executive rental market is dollar-denominated. Leases typically require a security deposit of 2 months rent. StratNex verifies all properties to ensure diplomatic standards of security and proximity to international schools.
-                    </p>
-                </details>
-                <details class="group border-b border-slate/20 pb-4 reveal-up">
-                    <summary class="flex justify-between items-center font-bold text-lg cursor-pointer list-none text-navy group-hover:text-slate transition-colors">
-                        Do you handle mining license acquisitions?
-                        <span class="text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
-                    </summary>
-                    <p class="mt-4 text-slate text-sm leading-relaxed pl-4 border-l-2 border-navy">
-                        We facilitate the sourcing of mining claims and guide investors through the application process for PL (Prospecting) and ML (Mining) licenses. We ensure compliance with the Ministry of Minerals environmental and social requirements.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seller Form -->
-    <section id="seller" class="py-24 bg-[#F8FAFC]">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-white p-12 shadow-xl border-t-4 border-navy reveal-up">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    <div>
-                        <h2 class="text-3xl font-serif mb-6 text-navy">List Your Property</h2>
-                        <p class="text-slate text-sm mb-8 leading-relaxed">
-                            Are you selling or renting? StratNex offers direct access to high-net-worth individuals, embassies, and multinational corporations looking to lease or buy in Tanzania.
-                        </p>
-                        <ul class="space-y-3 text-xs font-bold uppercase tracking-widest text-navy">
-                            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-navy mr-3"></span>Dar es Salaam & Zanzibar Portfolio</li>
-                            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-navy mr-3"></span>Residential & Commercial Assets</li>
-                            <li class="flex items-center"><span class="w-1.5 h-1.5 bg-navy mr-3"></span>Confidential Listings Available</li>
-                        </ul>
-                    </div>
-                    
-                    <form id="sellerForm" class="space-y-6 w-full">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group">
-                                <input type="text" name="entry.2093557451" placeholder=" " required>
-                                <label>Owner Name</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" name="entry.174063630" placeholder=" " required>
-                                <label>Phone Number</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <select name="entry.1706680453" required>
-                                <option value="" disabled selected>Select Type</option>
-                                <option>Apartment</option>
-                                <option>Villa / Stand-alone</option>
-                                <option>Office Space</option>
-                                <option>Warehouse / Industrial</option>
-                                <option>Land</option>
-                            </select>
-                            <label>Property Type</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="entry.2064103135" placeholder=" " required>
-                            <label>Location (e.g. Masaki)</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="entry.1717367355" placeholder=" " required>
-                            <label>Property Description</label>
-                        </div>
-                        <button type="submit" class="w-full py-4 bg-navy text-white font-bold uppercase tracking-[0.2em] text-xs hover:bg-slate transition-colors duration-300 shadow-lg">
-                            List With Us
-                        </button>
-                    </form>
-                    <div id="sellerSuccess" class="hidden text-center py-8 flex flex-col items-center">
-                         <div class="w-16 h-16 bg-navy text-white flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                         <p class="font-serif text-xl text-navy">Mandate Received</p>
-                         <p class="text-sm text-slate mt-2">We will contact you shortly.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-navy text-white pt-20 pb-10 border-t border-white/5">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-                
-                <!-- Brand Column -->
-                <div class="space-y-8">
-                    <div class="flex items-center gap-4">
-                        <img src="assets/Logo.png" 
-     alt="StratNex Properties Logo" 
-     class="h-10 w-auto object-contain" 
-     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                    </div>
-                    <div class="space-y-4">
-                        <p class="text-xs text-slate/60 font-light leading-relaxed">
-                            StratNex Properties serves the discerning client. From diplomatic housing in Masaki to industrial mandates in the Port Zone.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Locations Column -->
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-8">Key Locations</h4>
-                    <ul class="space-y-4 text-xs text-slate/60 font-light">
-                        <li class="hover:text-white transition-colors cursor-pointer">Masaki, Dar es Salaam</li>
-                        <li class="hover:text-white transition-colors cursor-pointer">Oysterbay, Dar es Salaam</li>
-                        <li class="hover:text-white transition-colors cursor-pointer">Stone Town, Zanzibar</li>
-                        <li class="hover:text-white transition-colors cursor-pointer">Kurasini Industrial Zone</li>
-                        <li class="hover:text-white transition-colors cursor-pointer">City Centre (CBD)</li>
-                    </ul>
-                </div>
-
-                <!-- Services Column -->
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-8">Services</h4>
-                    <ul class="space-y-4 text-xs text-slate/60 font-light">
-                        <li class="hover:text-white transition-colors cursor-pointer">Premium Rentals</li>
-                        <li class="hover:text-white transition-colors cursor-pointer">Property Sales</li>
-                        <li class="hover:text-white transition-colors cursor-pointer">Investment Advisory</li>
-                        <li class="hover:text-white transition-colors cursor-pointer">Mining Rights (PL/ML)</li>
-                        <li class="hover:text-white transition-colors cursor-pointer">Property Management</li>
-                    </ul>
-                </div>
-
-                <!-- Contact Column -->
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-8">Contact</h4>
-                    <ul class="space-y-4 text-xs text-slate/60 font-light">
-                        <li>Dar es Salaam, Tanzania</li>
-                        <li>properties@stratnexconsulting.com</li>
-                        <li>+255 744 400 200</li>
-                        <li><a href="https://stratnexconsulting.com" class="text-white underline hover:text-slate">StratNex Consulting HQ</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate/40">
-                    © 2025 StratNex Consulting. All Rights Reserved.
-                </p>
-                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate/60">
-                    <span>Dar es Salaam</span>
-                    <span>•</span>
-                    <span>Zanzibar</span>
-                </div>
+            <div class="text-xs text-slate space-y-2">
+                <p class="font-bold text-white uppercase tracking-widest mb-4">Contact</p>
+                <p>properties@stratnexconsulting.com</p>
+                <p>+255 744 400 200</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/255766040606" target="_blank" class="fixed bottom-6 right-6 z-[100] flex items-center gap-3 bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 font-bold tracking-wide text-sm group">
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Chat with us
+    <a href="https://wa.me/255766040606" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 hover:scale-105 transition-transform">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.661c1.566.93 3.127 1.395 4.645 1.396 5.44 0 9.866-4.427 9.869-9.866.001-2.63-1.023-5.102-2.885-6.964-1.862-1.861-4.335-2.885-6.963-2.886-5.441 0-9.87 4.43-9.873 9.871 0 1.742.459 3.442 1.326 4.935l-1.003 3.666 3.755-.985z"/></svg>
+        <span class="text-xs font-bold uppercase tracking-wider">Chat with us</span>
     </a>
 
-    <!-- JavaScript Logic -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- 1. Data Configuration ---
-            const options = {
-                rent: {
-                    types: ["Residential Apartment", "Stand-alone House", "Luxury Villa", "Office Space (Grade A)", "Industrial Warehouse"],
-                    budgets: ["$2,000 - $3,000", "$3,000 - $5,000", "$5,000 - $7,500", "$7,500 - $10,000", "$10,000+ (Custom)"]
-                },
-                buy: {
-                    types: ["Apartment to Buy", "Commercial Offices", "Strategic Land", "Mining Rights Advisory (PL/ML)", "Agricultural Land", "Industrial Development Site"],
-                    budgets: ["$100,000 - $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 - $5,000,000", "$5,000,000+ (Institutional)"]
-                }
-            };
+        // Headless Google Form Submission Logic
+        const handleSubmission = async (e, successId) => {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
 
-            const bedrooms = {
-                general: ["Studio", "1 Bedroom", "2 Bedrooms", "3 Bedrooms", "4+ Bedrooms"],
-                house: ["3 Bedrooms", "4+ Bedrooms"]
-            };
+            btn.innerText = "SENDING...";
+            btn.disabled = true;
 
-            const sqmRanges = [
-                "Up to 50 sqm",
-                "50 - 100 sqm",
-                "100 - 200 sqm",
-                "200 - 500 sqm",
-                "500+ sqm"
-            ];
-
-            const INQUIRY_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse";
-            const SELLER_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse";
-
-            // --- 2. Elements ---
-            const propTypeSelect = document.getElementById('propertyType');
-            const configDiv = document.getElementById('dynamicConfig');
-            const mainForm = document.getElementById('mainForm');
-            const searchSuccess = document.getElementById('formSuccess');
-            const newSearchBtn = document.getElementById('newSearchBtn');
-            // Select radio inputs by new name attribute
-            const radioInputs = document.querySelectorAll('input[name="entry.1444158141"]');
-
-            // --- 3. Logic Functions ---
-
-            function handleIntentChange(intent) {
-                // Update UI for Tabs
-                document.querySelectorAll('.radio-card').forEach(el => el.classList.remove('active'));
-                const activeInput = document.querySelector(`input[name="entry.1444158141"][value="${intent}"]`);
-                if(activeInput && activeInput.nextElementSibling) {
-                    activeInput.nextElementSibling.classList.add('active');
-                }
-
-                // Update Property Types
-                propTypeSelect.innerHTML = '<option value="" disabled selected>Select Type</option>';
-                options[intent].types.forEach(opt => {
-                    const el = document.createElement('option');
-                    el.value = opt;
-                    el.textContent = opt;
-                    propTypeSelect.appendChild(el);
+            try {
+                await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    mode: 'no-cors'
                 });
-
-                // Update Budget
-                const budgetSelect = document.getElementById('budget');
-                budgetSelect.innerHTML = '<option value="" disabled selected>Select Range</option>';
-                options[intent].budgets.forEach(budget => {
-                    const el = document.createElement('option');
-                    el.value = budget;
-                    el.textContent = budget;
-                    budgetSelect.appendChild(el);
-                });
-
-                // Reset Config
-                configDiv.innerHTML = '';
+                document.getElementById(successId).classList.remove('opacity-0', 'pointer-events-none');
+            } catch (err) {
+                alert("Submission error. Please use WhatsApp.");
+            } finally {
+                btn.innerText = originalText;
+                btn.disabled = false;
             }
+        };
 
-            function handlePropertyTypeChange() {
-                const val = propTypeSelect.value;
-                
-                if (!val) {
-                    configDiv.innerHTML = '';
-                    return;
-                }
+        document.getElementById('mainForm').onsubmit = (e) => handleSubmission(e, 'formSuccess');
+        document.getElementById('sellerForm').onsubmit = (e) => handleSubmission(e, 'sellerSuccess');
 
-                // Logic: Villa/House -> Restricted Beds. Office/Warehouse -> SqM. Else -> General Beds.
-                if(val.includes('Villa') || val.includes('House')) {
-                    renderDropdown('beds', bedrooms.house);
-                } else if (val.includes('Office') || val.includes('Warehouse') || val.includes('Land')) {
-                    renderDropdown('sqm', sqmRanges);
-                } else {
-                    renderDropdown('beds', bedrooms.general);
-                }
-            }
-
-            function renderDropdown(labelKey, dataArray) {
-                const labelText = labelKey === 'beds' ? 'Configuration' : 'Floor Size (Sqm)';
-                
-                // Note: No Google Form entry mapped for this field, but keeping it as requested.
-                configDiv.innerHTML = `
-                    <select name="${labelKey}" required>
-                        ${dataArray.map(item => `<option>${item}</option>`).join('')}
-                    </select>
-                    <label>${labelText}</label>
-                `;
-            }
-
-            function resetForm() {
-                mainForm.reset();
-                searchSuccess.classList.add('opacity-0', 'pointer-events-none');
-                configDiv.innerHTML = '';
-                handleIntentChange('rent'); 
-            }
-
-            async function submitForm(form, actionUrl, successCallback) {
-                const formData = new FormData(form);
-                try {
-                    await fetch(actionUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        body: formData
-                    });
-                    successCallback();
-                } catch (error) {
-                    console.error("Submission error", error);
-                    // In no-cors mode, we can't really read response, so we assume success
-                    // or valid attempt if no network error.
-                    successCallback();
-                }
-            }
-
-            // --- 4. Event Listeners ---
-
-            // Intent Radio Buttons
-            radioInputs.forEach(radio => {
-                radio.addEventListener('change', (e) => {
-                    if (e.target.checked) {
-                        handleIntentChange(e.target.value);
-                    }
-                });
-            });
-
-            // Property Type
-            propTypeSelect.addEventListener('change', handlePropertyTypeChange);
-
-            // Inquiry Form Submit
-            mainForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                submitForm(mainForm, INQUIRY_ACTION, () => {
-                    searchSuccess.classList.remove('opacity-0', 'pointer-events-none');
-                });
-            });
-
-            // New Search Button
-            if (newSearchBtn) {
-                newSearchBtn.addEventListener('click', resetForm);
-            }
-
-            // --- 5. Initial State ---
-            handleIntentChange('rent');
-
-            // --- 6. Animation Observer ---
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
-
-            // --- 7. Seller Form ---
-            const sellerForm = document.getElementById('sellerForm');
-            const sellerSuccess = document.getElementById('sellerSuccess');
-
-            sellerForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                submitForm(sellerForm, SELLER_ACTION, () => {
-                     sellerForm.style.display = 'none';
-                     sellerSuccess.classList.remove('hidden');
-                });
-            });
-        });
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible') });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
