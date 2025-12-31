@@ -706,5 +706,78 @@
             document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Dynamic Asset Lists Logic
+        const assetOptions = {
+            'RENT': [
+                {val:'Diplomatic Villa', text:'Diplomatic Villa'},
+                {val:'Executive Apt', text:'Executive Apartment'},
+                {val:'Grade A Office', text:'Grade A Office Space'}
+            ],
+            'INVEST': [
+                {val:'Mining Concession', text:'Mining Concession (PL/ML)'},
+                {val:'Industrial Hub', text:'Industrial Hub'},
+                {val:'Hospitality Dev', text:'Hospitality/Resort Development'}
+            ]
+        };
+        const budgetOptions = {
+            'RENT': [{val:'2k-5k', text:'$2,000 - $5,000 /mo'}, {val:'5k+', text:'$5,000+ /mo'}],
+            'INVEST': [{val:'500k-2M', text:'$500k - $2M'}, {val:'2M+', text:'$2M+'}]
+        };
+
+        window.updateAssetTypes = function(intent) {
+            const assetSelect = document.getElementById('assetType');
+            const budgetSelect = document.getElementById('budgetSelect');
+            if(!assetSelect || !budgetSelect) return;
+
+            assetSelect.innerHTML = '<option value="" disabled selected></option>';
+            assetOptions[intent].forEach(opt => {
+                const el = document.createElement('option');
+                el.value = opt.val; el.textContent = opt.text;
+                assetSelect.appendChild(el);
+            });
+
+            budgetSelect.innerHTML = '<option value="" disabled selected></option>';
+            budgetOptions[intent].forEach(opt => {
+                const el = document.createElement('option');
+                el.value = opt.val; el.textContent = opt.text;
+                budgetSelect.appendChild(el);
+            });
+        };
+
+        // Initialize lists
+        updateAssetTypes('RENT');
+
+        // 2. The Reliable Submission Method
+        // We use a hidden iframe so the page doesn't refresh, but Google still gets the data.
+        const handleSubmission = (formId, successId) => {
+            const form = document.getElementById(formId);
+            const successOverlay = document.getElementById(successId);
+            
+            form.addEventListener('submit', () => {
+                // Show success UI immediately after click
+                if(formId === 'sellerForm') {
+                    form.classList.add('hidden');
+                    successOverlay.classList.remove('hidden');
+                } else {
+                    successOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                    successOverlay.classList.add('opacity-100', 'pointer-events-auto');
+                }
+            });
+        };
+
+        handleSubmission('inquiryForm', 'inquirySuccess');
+        handleSubmission('sellerForm', 'sellerSuccess');
+
+        // 3. Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    });
+</script>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 </body>
 </html>
