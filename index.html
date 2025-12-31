@@ -200,8 +200,8 @@
 <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
   }
 }
 </script>
@@ -302,11 +302,11 @@
                         <!-- Intent Toggle -->
                         <div class="flex gap-3">
                             <label class="radio-label flex-1 cursor-pointer">
-                                <input type="radio" name="intent" value="rent" class="hidden" checked>
+                                <input type="radio" name="entry.1444158141" value="rent" class="hidden" checked>
                                 <div class="radio-card active">Rent</div>
                             </label>
                             <label class="radio-label flex-1 cursor-pointer">
-                                <input type="radio" name="intent" value="buy" class="hidden">
+                                <input type="radio" name="entry.1444158141" value="buy" class="hidden">
                                 <div class="radio-card">Invest / Buy</div>
                             </label>
                         </div>
@@ -314,11 +314,11 @@
                         <!-- Type & Location -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="form-group">
-                                <select id="propertyType" name="propertyType" required></select>
+                                <select id="propertyType" name="entry.1118671415" required></select>
                                 <label>Property Type</label>
                             </div>
                             <div class="form-group">
-                                <select name="location" required>
+                                <select name="entry.467406248" required>
                                     <option value="" disabled selected>Select Area</option>
                                     <optgroup label="Dar es Salaam">
                                         <option value="Masaki">Masaki (Diplomatic)</option>
@@ -344,25 +344,25 @@
 
                         <!-- Budget -->
                         <div class="form-group">
-                            <select id="budget" name="budget" required></select>
+                            <select id="budget" name="entry.401140029" required></select>
                             <label>Target Budget (USD)</label>
                         </div>
 
                         <!-- Personal Info -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-slate/10">
                             <div class="form-group">
-                                <input type="text" name="name" placeholder=" " required>
+                                <input type="text" name="entry.46231908" placeholder=" " required>
                                 <label>Full Name</label>
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" placeholder=" " required>
+                                <input type="email" name="entry.1221151474" placeholder=" " required>
                                 <label>Email Address</label>
                             </div>
                         </div>
                         
                         <!-- Phone Number -->
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder=" " required>
+                            <input type="tel" name="entry.1437812165" placeholder=" " required>
                             <label>Phone Number</label>
                         </div>
 
@@ -589,16 +589,16 @@
                     <form id="sellerForm" class="space-y-6 w-full">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="form-group">
-                                <input type="text" name="ownerName" placeholder=" " required>
+                                <input type="text" name="entry.2093557451" placeholder=" " required>
                                 <label>Owner Name</label>
                             </div>
                             <div class="form-group">
-                                <input type="tel" name="phone" placeholder=" " required>
+                                <input type="tel" name="entry.174063630" placeholder=" " required>
                                 <label>Phone Number</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <select name="propertyType" required>
+                            <select name="entry.1706680453" required>
                                 <option value="" disabled selected>Select Type</option>
                                 <option>Apartment</option>
                                 <option>Villa / Stand-alone</option>
@@ -609,11 +609,11 @@
                             <label>Property Type</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="location" placeholder=" " required>
+                            <input type="text" name="entry.2064103135" placeholder=" " required>
                             <label>Location (e.g. Masaki)</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="description" placeholder=" " required>
+                            <input type="text" name="entry.1717367355" placeholder=" " required>
                             <label>Property Description</label>
                         </div>
                         <button type="submit" class="w-full py-4 bg-navy text-white font-bold uppercase tracking-[0.2em] text-xs hover:bg-slate transition-colors duration-300 shadow-lg">
@@ -639,34 +639,18 @@
                 
                 <!-- Brand Column -->
                 <div class="space-y-8">
-    <div class="flex items-center gap-5">
-        <div class="bg-white p-2 shadow-sm rounded-sm flex items-center justify-center" style="width: 48px; height: 48px;">
-            <img src="Logo.png" 
-                 alt="StratNex" 
-                 class="w-full h-full object-contain" 
-                 onerror="this.style.display='none';this.parentElement.nextElementSibling.style.display='flex'">
-        </div>
-        
-        <div class="hidden items-center justify-center w-12 h-12 bg-white text-[#142C40] font-serif font-bold text-xl border border-slate/10">
-            S
-        </div>
-
-        <div class="flex flex-col">
-            <span class="text-xl font-serif font-bold tracking-[0.15em] text-[#142C40] leading-none">STRATNEX</span>
-            <span class="text-[0.6rem] text-[#A6A8AB] uppercase tracking-[0.3em] font-bold mt-1">Properties</span>
-        </div>
-    </div>
-    
-    <div class="space-y-4">
-        <p class="text-xs text-slate/80 font-light leading-relaxed max-w-sm">
-            StratNex Properties serves the discerning client. From diplomatic housing in Masaki to industrial mandates in the Port Zone.
-        </p>
-        <div class="flex flex-col gap-2">
-            <a href="tel:+255744400200" class="text-[0.65rem] font-bold text-[#142C40] tracking-luxury hover:text-slate transition-colors">+255 744 400 200</a>
-            <a href="mailto:properties@stratnexconsulting.com" class="text-[0.65rem] font-bold text-[#142C40] tracking-luxury hover:text-slate transition-colors">properties@stratnexconsulting.com</a>
-        </div>
-    </div>
-</div>
+                    <div class="flex items-center gap-4">
+                        <img src="assets/Logo.png" 
+     alt="StratNex Properties Logo" 
+     class="h-10 w-auto object-contain" 
+     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-xs text-slate/60 font-light leading-relaxed">
+                            StratNex Properties serves the discerning client. From diplomatic housing in Masaki to industrial mandates in the Port Zone.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Locations Column -->
                 <div>
@@ -753,20 +737,24 @@
                 "500+ sqm"
             ];
 
+            const INQUIRY_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse";
+            const SELLER_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse";
+
             // --- 2. Elements ---
             const propTypeSelect = document.getElementById('propertyType');
             const configDiv = document.getElementById('dynamicConfig');
             const mainForm = document.getElementById('mainForm');
             const searchSuccess = document.getElementById('formSuccess');
             const newSearchBtn = document.getElementById('newSearchBtn');
-            const radioInputs = document.querySelectorAll('input[name="intent"]');
+            // Select radio inputs by new name attribute
+            const radioInputs = document.querySelectorAll('input[name="entry.1444158141"]');
 
             // --- 3. Logic Functions ---
 
             function handleIntentChange(intent) {
                 // Update UI for Tabs
                 document.querySelectorAll('.radio-card').forEach(el => el.classList.remove('active'));
-                const activeInput = document.querySelector(`input[name="intent"][value="${intent}"]`);
+                const activeInput = document.querySelector(`input[name="entry.1444158141"][value="${intent}"]`);
                 if(activeInput && activeInput.nextElementSibling) {
                     activeInput.nextElementSibling.classList.add('active');
                 }
@@ -815,6 +803,7 @@
             function renderDropdown(labelKey, dataArray) {
                 const labelText = labelKey === 'beds' ? 'Configuration' : 'Floor Size (Sqm)';
                 
+                // Note: No Google Form entry mapped for this field, but keeping it as requested.
                 configDiv.innerHTML = `
                     <select name="${labelKey}" required>
                         ${dataArray.map(item => `<option>${item}</option>`).join('')}
@@ -828,6 +817,23 @@
                 searchSuccess.classList.add('opacity-0', 'pointer-events-none');
                 configDiv.innerHTML = '';
                 handleIntentChange('rent'); 
+            }
+
+            async function submitForm(form, actionUrl, successCallback) {
+                const formData = new FormData(form);
+                try {
+                    await fetch(actionUrl, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: formData
+                    });
+                    successCallback();
+                } catch (error) {
+                    console.error("Submission error", error);
+                    // In no-cors mode, we can't really read response, so we assume success
+                    // or valid attempt if no network error.
+                    successCallback();
+                }
             }
 
             // --- 4. Event Listeners ---
@@ -844,10 +850,12 @@
             // Property Type
             propTypeSelect.addEventListener('change', handlePropertyTypeChange);
 
-            // Form Submit
+            // Inquiry Form Submit
             mainForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                searchSuccess.classList.remove('opacity-0', 'pointer-events-none');
+                submitForm(mainForm, INQUIRY_ACTION, () => {
+                    searchSuccess.classList.remove('opacity-0', 'pointer-events-none');
+                });
             });
 
             // New Search Button
@@ -875,8 +883,10 @@
 
             sellerForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                sellerForm.style.display = 'none';
-                sellerSuccess.classList.remove('hidden');
+                submitForm(sellerForm, SELLER_ACTION, () => {
+                     sellerForm.style.display = 'none';
+                     sellerSuccess.classList.remove('hidden');
+                });
             });
         });
     </script>
