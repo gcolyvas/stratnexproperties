@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StratNex Properties | Institutional Asset Advisory</title>
+    <title>StratNex Properties | Institutional Asset Advisory | Tanzania</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
             --navy: #142C40;
             --slate: #A6A8AB;
             --light-bg: #F8F9FA;
             --white: #FFFFFF;
             --accent: #1E5A8E;
+            --accent-light: #2d6da8;
+            --gold: #d4af37;
+            --gold-dark: #b8860b;
             --text-dark: #1A1A1A;
             --text-light: #555555;
+            --border-light: rgba(20, 44, 64, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -30,54 +42,75 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--text-dark);
             background-color: var(--white);
-            line-height: 1.6;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            overflow-x: hidden;
         }
 
-        /* Typography */
+        /* Typography System */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
-            font-weight: 700;
+            font-weight: 600;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         h1 {
-            font-size: 3.5rem;
-            color: var(--navy);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--white);
             margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 3rem);
             color: var(--navy);
             margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
             color: var(--navy);
             margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.125rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
         }
 
         p {
             font-size: 1rem;
             color: var(--text-light);
             margin-bottom: 1rem;
+            line-height: 1.7;
         }
 
-        /* Header */
+        /* Header - Premium Glassmorphism */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 40px -10px rgba(20, 44, 64, 0.1);
         }
 
         .header-content {
@@ -88,103 +121,224 @@
             align-items: center;
         }
 
+        /* Logo - Using Logo.png */
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--navy);
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            letter-spacing: 1px;
         }
 
+        .logo img {
+            height: 50px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Navigation */
         .nav-links {
             display: flex;
-            gap: 2rem;
             align-items: center;
+            gap: 2rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            font-size: 0.95rem;
+            font-size: 0.875rem;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--accent);
         }
 
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* CTA Button - Premium */
         .cta-button {
             background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
             color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.5rem;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: none;
-            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(20, 44, 64, 0.2);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(20, 44, 64, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(20, 44, 64, 0.3);
         }
 
-        /* Hero Section */
+        /* Hero Section - Ken Burns Effect */
         .hero {
             margin-top: 80px;
             position: relative;
-            height: 600px;
-            overflow: hidden;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 50%, var(--accent) 100%);
+            overflow: hidden;
         }
 
-        .hero-background {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
-            z-index: 1;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
             animation: kenBurns 20s ease-in-out infinite;
         }
 
         @keyframes kenBurns {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(20, 44, 64, 0.4);
-            z-index: 2;
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(1deg); }
         }
 
         .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
             position: relative;
-            z-index: 3;
-            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-text {
             color: var(--white);
-            max-width: 800px;
-            padding: 2rem;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-text .description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .hero-card h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .hero-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
         }
 
         @keyframes fadeInUp {
@@ -198,25 +352,53 @@
             }
         }
 
-        .hero-content h1 {
+        /* Trust Strip */
+        .trust-strip {
+            background: var(--white);
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .trust-strip-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .trust-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--white);
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 0.75rem;
         }
 
-        .hero-content p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        /* Value Proposition Section */
+        .value-prop {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
         }
 
-        /* Services Section */
-        .services {
-            padding: 5rem 2rem;
-            background-color: var(--light-bg);
-        }
-
-        .services-container {
+        .value-prop-container {
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -226,93 +408,253 @@
             margin-bottom: 4rem;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: revealOnScroll 0.6s ease-out forwards;
-        }
-
-        @keyframes revealOnScroll {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
+        .section-header h2 {
             margin-bottom: 1rem;
         }
 
-        .service-card h3 {
-            margin-bottom: 0.75rem;
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
+        .section-header p {
+            font-size: 1.1rem;
             color: var(--text-light);
-        }
-
-        /* Why Choose Section */
-        .why-choose {
-            padding: 5rem 2rem;
-            background-color: var(--white);
-        }
-
-        .why-choose-container {
-            max-width: 1400px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .why-grid {
+        .value-prop-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .why-item {
-            padding: 2rem;
+        .value-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
             border-left: 4px solid var(--accent);
-            background: linear-gradient(to right, rgba(30, 90, 142, 0.05), transparent);
+            opacity: 0;
+            transform: translateY(30px);
         }
 
-        .why-item h4 {
-            color: var(--navy);
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
+        .value-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .why-item p {
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--navy));
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
             color: var(--text-light);
-            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Forms Section */
-        .forms-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
+        .value-highlights {
+            list-style: none;
+        }
+
+        .value-highlights li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .value-highlights li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), var(--navy));
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .service-features li::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Market Insights */
+        .market-insights {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
+            color: var(--white);
+        }
+
+        .market-insights-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .market-insights h2 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .insight-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s ease;
+        }
+
+        .insight-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .insight-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .insight-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        /* Forms Section - Glassmorphism */
+        .forms-section {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
         }
 
         .forms-container {
@@ -320,35 +662,53 @@
             margin: 0 auto;
         }
 
-        .forms-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--white);
-        }
-
-        .forms-header h2 {
-            color: var(--white);
-        }
-
         .forms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .form-wrapper {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 1rem;
             padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .form-wrapper:hover::before {
+            transform: scaleX(1);
+        }
+
+        .form-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         .form-wrapper h3 {
-            color: var(--navy);
             margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            text-align: center;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .form-group {
@@ -358,21 +718,24 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--navy);
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #E0E0E0;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-light);
+            border-radius: 0.5rem;
+            font-family: inherit;
             font-size: 0.95rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
+            background: var(--white);
         }
 
         .form-group input:focus,
@@ -392,100 +755,32 @@
             width: 100%;
             background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
             color: var(--white);
-            padding: 0.875rem;
+            padding: 1rem 1.5rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 0.5rem;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(20, 44, 64, 0.3);
-        }
-
-        .form-submit:active {
-            transform: translateY(0);
-        }
-
-        /* Success Message */
-        .success-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .success-message {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 500px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.4s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .success-message h2 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .success-message p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .success-close {
-            background: var(--navy);
-            color: var(--white);
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .success-close:hover {
-            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(20, 44, 64, 0.3);
         }
 
         /* Footer */
         footer {
             background: var(--navy);
             color: var(--white);
-            padding: 3rem 2rem;
+            padding: 3rem 2rem 2rem;
         }
 
         .footer-content {
@@ -501,14 +796,16 @@
             color: var(--white);
             margin-bottom: 1rem;
             font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .footer-section p,
         .footer-section a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-size: 0.95rem;
             margin-bottom: 0.5rem;
+            display: block;
             transition: color 0.3s ease;
         }
 
@@ -537,11 +834,11 @@
             background: linear-gradient(135deg, #25D366 0%, #1FAE56 100%);
             border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             cursor: pointer;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: 999;
             text-decoration: none;
         }
@@ -552,86 +849,299 @@
         }
 
         .whatsapp-button svg {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             fill: white;
         }
 
-        /* Responsive */
+        /* Success Modal */
+        .success-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-message {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            max-width: 400px;
+            margin: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-light);
+        }
+
+        .success-message h2 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .success-message p {
+            margin-bottom: 1.5rem;
+        }
+
+        .success-close {
+            background: var(--navy);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .success-close:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
             .nav-links {
                 display: none;
             }
 
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .services-grid,
+            .value-prop-grid,
+            .insights-grid,
             .forms-grid {
                 grid-template-columns: 1fr;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
+            .trust-strip-content {
+                flex-direction: column;
+                text-align: center;
             }
 
             .whatsapp-button {
-                bottom: 1.5rem;
-                right: 1.5rem;
+                bottom: 1rem;
+                right: 1rem;
                 width: 50px;
                 height: 50px;
             }
 
             .whatsapp-button svg {
-                width: 28px;
-                height: 28px;
+                width: 24px;
+                height: 24px;
             }
         }
-
-        /* Hidden iframe for form submission */
-        #hidden_iframe {
-            display: none;
-        }
     </style>
+<base target="_blank">
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="header-content">
-            <a href="#" class="logo">StratNex Properties</a>
+            <a href="#" class="logo">
+                <img src="Logo.png" alt="StratNex Properties" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='flex';">
+                <div class="logo-text" style="display: none;">
+                    <span class="logo-main">StratNex</span>
+                    <span class="logo-sub">Properties</span>
+                </div>
+            </a>
             <nav class="nav-links">
+                <a href="#value-prop">Asset Advisory</a>
                 <a href="#services">Services</a>
-                <a href="#forms">Get Started</a>
-                <a href="#contact">Contact</a>
-                <button class="cta-button" onclick="document.getElementById('forms').scrollIntoView()">Inquiry</button>
+                <a href="#market-insights">Market Intelligence</a>
+                <a href="#forms">Mandate</a>
+                <button class="cta-button" onclick="document.getElementById('forms').scrollIntoView()">
+                    <i class="fas fa-phone"></i>
+                    Contact
+                </button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Institutional Asset Advisory</h1>
-            <p>Expert real estate services covering land acquisition, property development, and mining opportunities in Tanzania's dynamic property market.</p>
-            <button class="cta-button" onclick="document.getElementById('forms').scrollIntoView()">Explore Opportunities</button>
+            <div class="hero-text">
+                <h1>Institutional Asset Advisory</h1>
+                <p class="subtitle">Tanzania's Premier Property Investment Partner</p>
+                <p class="description">
+                    Navigate Tanzania's dynamic real estate market with confidence. From diplomatic-standard property sourcing to institutional-grade due diligence, we deliver exceptional value for investors and property owners through strategic capital alignment and yield optimization.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">$50M+</span>
+                        <span class="stat-label">Assets Under Advisory</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Properties Transacted</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+                <button class="cta-button" onclick="document.getElementById('forms').scrollIntoView()">
+                    <i class="fas fa-rocket"></i>
+                    Start Your Investment Journey
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <h3><i class="fas fa-chart-line"></i> Market Advantage</h3>
+                    <p>Access exclusive off-market opportunities and institutional-grade investment analysis tailored for Tanzania's unique property landscape.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                        <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 0.5rem;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--gold);">25%</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">Avg. ROI</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 0.5rem;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--gold);">12%</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">Rental Yield</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust-strip">
+        <div class="trust-strip-content">
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+                <span>TIC COMPLIANCE INTEGRATED</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-certificate"></i></div>
+                <span>DIPLOMATIC STANDARD</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-lock"></i></div>
+                <span>OFF-MARKET EXCLUSIVITY</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-star"></i></div>
+                <span>AAA ASSET GRADING</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-prop" id="value-prop">
+        <div class="value-prop-container">
+            <div class="section-header">
+                <h2>Strategic Asset Advisory Excellence</h2>
+                <p>Tanzania's most trusted real estate advisory, combining local expertise with international standards for optimal capital alignment</p>
+            </div>
+            <div class="value-prop-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Diplomatic Standard Sourcing</h3>
+                    <p>Exclusive access to premium properties meeting international diplomatic standards, ensuring the highest quality investments for institutional clients.</p>
+                    <ul class="value-highlights">
+                        <li>Embassy-grade property selection</li>
+                        <li>International compliance standards</li>
+                        <li>Discreet off-market opportunities</li>
+                        <li>Yield optimization protocols</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Institutional-Grade Due Diligence</h3>
+                    <p>Comprehensive property verification and market analysis backed by professional indemnity and years of expertise in Tanzanian markets.</p>
+                    <ul class="value-highlights">
+                        <li>Complete legal verification</li>
+                        <li>Market intelligence reports</li>
+                        <li>Risk assessment protocols</li>
+                        <li>Capital alignment analysis</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Market-Leading ROI</h3>
+                    <p>Proven track record of delivering superior returns through strategic property selection and optimal market timing for maximum yield.</p>
+                    <ul class="value-highlights">
+                        <li>25% average annual returns</li>
+                        <li>Strategic market timing</li>
+                        <li>Growth-oriented portfolio</li>
+                        <li>Performance benchmarking</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>End-to-End Advisory Support</h3>
+                    <p>Complete transaction support from initial consultation to post-sale management, ensuring seamless investment experiences.</p>
+                    <ul class="value-highlights">
+                        <li>Dedicated advisory team</li>
+                        <li>Transaction management</li>
+                        <li>Post-sale support services</li>
+                        <li>Portfolio optimization</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Deep Local Expertise</h3>
+                    <p>Unparalleled knowledge of Tanzania's property market, regulations, and cultural nuances for strategic advantage.</p>
+                    <ul class="value-highlights">
+                        <li>15+ years market experience</li>
+                        <li>Strong government relations</li>
+                        <li>Cultural market understanding</li>
+                        <li>Regulatory navigation</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>TIC Compliance Integration</h3>
+                    <p>Full integration with Tanzania Investment Centre requirements for seamless investment processes and incentive optimization.</p>
+                    <ul class="value-highlights">
+                        <li>TIC certification assistance</li>
+                        <li>Regulatory compliance</li>
+                        <li>Investment incentives optimization</li>
+                        <li>Documentation management</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -639,64 +1149,116 @@
     <section class="services" id="services">
         <div class="services-container">
             <div class="section-header">
-                <h2>Our Property Services</h2>
-                <p>Comprehensive solutions for institutional and individual investors</p>
+                <h2>Comprehensive Asset Services</h2>
+                <p>Strategic real estate solutions tailored for Tanzania's unique market dynamics and institutional requirements</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">📍</div>
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
                     <h3>Land Acquisition</h3>
-                    <p>Comprehensive due diligence and land acquisition services for institutional investors seeking strategic property assets.</p>
+                    <p>Strategic land acquisition services with comprehensive due diligence and title verification for institutional investors seeking development opportunities.</p>
+                    <ul class="service-features">
+                        <li>Title deed verification</li>
+                        <li>Land use compliance</li>
+                        <li>Negotiation support</li>
+                        <li>Transfer facilitation</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
                     <h3>Property Valuation</h3>
-                    <p>Professional property valuation and market analysis services aligned with international standards and local market dynamics.</p>
+                    <p>Professional valuation services aligned with international standards and local market dynamics for accurate pricing and investment decisions.</p>
+                    <ul class="service-features">
+                        <li>Market comparison analysis</li>
+                        <li>Income approach valuation</li>
+                        <li>Replacement cost analysis</li>
+                        <li>Investment feasibility</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏢</div>
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
                     <h3>Real Estate Brokerage</h3>
-                    <p>Full-service brokerage for buying, selling, and leasing properties with diplomatic standard sourcing protocols.</p>
+                    <p>Full-service brokerage for buying, selling, and leasing properties with diplomatic standard sourcing protocols and market expertise.</p>
+                    <ul class="service-features">
+                        <li>Buyer representation</li>
+                        <li>Seller marketing</li>
+                        <li>Lease negotiations</li>
+                        <li>Transaction management</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">⛏️</div>
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
                     <h3>Mining Rights Consultation</h3>
-                    <p>Expert guidance on mining rights and mineral exploration opportunities with regulatory compliance assurance.</p>
+                    <p>Expert guidance on mining rights and mineral exploration opportunities with full regulatory compliance and strategic positioning.</p>
+                    <ul class="service-features">
+                        <li>License acquisition</li>
+                        <li>Regulatory compliance</li>
+                        <li>Due diligence reports</li>
+                        <li>Partnership facilitation</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💼</div>
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
                     <h3>Investment Advisory</h3>
-                    <p>Strategic advisory services for property investment decisions backed by market intelligence and risk analysis.</p>
+                    <p>Strategic advisory services backed by market intelligence, risk analysis, and portfolio optimization for maximum returns.</p>
+                    <ul class="service-features">
+                        <li>Portfolio strategy</li>
+                        <li>Risk assessment</li>
+                        <li>Market timing</li>
+                        <li>Exit planning</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✓</div>
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
                     <h3>Legal Compliance</h3>
-                    <p>Complete legal compliance and documentation support ensuring institutional-grade transaction integrity.</p>
+                    <p>Complete legal compliance and documentation support ensuring institutional-grade transaction integrity and risk mitigation.</p>
+                    <ul class="service-features">
+                        <li>Contract review</li>
+                        <li>Due diligence</li>
+                        <li>Regulatory compliance</li>
+                        <li>Dispute resolution</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Section -->
-    <section class="why-choose">
-        <div class="why-choose-container">
-            <h2>Why Choose StratNex Properties?</h2>
-            <div class="why-grid">
-                <div class="why-item">
-                    <h4>Market Knowledge</h4>
-                    <p>Extensive knowledge of Tanzania's property market trends, regulations, and institutional investment landscape.</p>
+    <!-- Market Insights -->
+    <section class="market-insights" id="market-insights">
+        <div class="market-insights-container">
+            <h2>Tanzania Real Estate Market Intelligence</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <span class="insight-number">15%</span>
+                    <div class="insight-label">Annual Price Growth</div>
+                    <p class="insight-description">Dar es Salaam property values showing consistent appreciation over the past 5 years</p>
                 </div>
-                <div class="why-item">
-                    <h4>Professional Network</h4>
-                    <p>Strong relationships with legal professionals, surveyors, government agencies, and institutional partners.</p>
+                <div class="insight-card">
+                    <span class="insight-number">8.5%</span>
+                    <div class="insight-label">Average Rental Yield</div>
+                    <p class="insight-description">Commercial properties delivering superior returns compared to regional averages</p>
                 </div>
-                <div class="why-item">
-                    <h4>Due Diligence</h4>
-                    <p>Thorough due diligence processes to protect your investment interests with institutional-grade verification.</p>
+                <div class="insight-card">
+                    <span class="insight-number">$2.3B</span>
+                    <div class="insight-label">Investment Volume</div>
+                    <p class="insight-description">Total real estate investments in Tanzania's major cities in 2024</p>
                 </div>
-                <div class="why-item">
-                    <h4>End-to-End Service</h4>
-                    <p>Complete service from initial consultation to final transaction completion with dedicated advisory support.</p>
+                <div class="insight-card">
+                    <span class="insight-number">67%</span>
+                    <div class="insight-label">Foreign Investment</div>
+                    <p class="insight-description">Percentage of real estate investments from international buyers and institutions</p>
                 </div>
             </div>
         </div>
@@ -706,20 +1268,20 @@
     <section class="forms-section" id="forms">
         <div class="forms-container">
             <div class="forms-header">
-                <h2>Ready to Invest in Tanzanian Real Estate?</h2>
-                <p>Let's explore property opportunities that match your investment goals</p>
+                <h2>Execute Your Investment Mandate</h2>
+                <p>Connect with our expert advisory team to explore tailored investment opportunities and strategic asset alignment</p>
             </div>
             <div class="forms-grid">
-                <!-- Form A: Asset Inquiry -->
+                <!-- Asset Inquiry Form -->
                 <div class="form-wrapper">
-                    <h3>Asset Inquiry</h3>
+                    <h3><i class="fas fa-search"></i> Asset Inquiry</h3>
                     <form id="assetForm" method="POST" target="hidden_iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse">
                         <div class="form-group">
-                            <label for="intent">Intent</label>
+                            <label for="intent">Investment Intent</label>
                             <select id="intent" name="entry.1937501189" required onchange="updateAssetOptions()">
                                 <option value="">Select Intent</option>
-                                <option value="Rent">Rent</option>
-                                <option value="Invest">Invest</option>
+                                <option value="Rent">Rental Income</option>
+                                <option value="Invest">Capital Appreciation</option>
                             </select>
                         </div>
 
@@ -731,12 +1293,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="location1">Location</label>
-                            <input type="text" id="location1" name="entry.1359829254" placeholder="Enter property location" required>
+                            <label for="location1">Preferred Location</label>
+                            <input type="text" id="location1" name="entry.1359829254" placeholder="e.g., Dar es Salaam, Arusha, Zanzibar" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="budget">Budget</label>
+                            <label for="budget">Budget Range</label>
                             <select id="budget" name="entry.1000552527" required>
                                 <option value="">Select Budget Range</option>
                             </select>
@@ -748,30 +1310,33 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email Address</label>
                             <input type="email" id="email" name="entry.603961529" placeholder="your@email.com" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone1">Phone</label>
+                            <label for="phone1">Phone Number</label>
                             <input type="tel" id="phone1" name="entry.598663992" placeholder="+255 744 400 200" required>
                         </div>
 
-                        <button type="submit" class="form-submit">Submit Inquiry</button>
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Inquiry
+                        </button>
                     </form>
                 </div>
 
-                <!-- Form B: Seller Mandate -->
+                <!-- Seller Mandate Form -->
                 <div class="form-wrapper">
-                    <h3>Seller Mandate</h3>
+                    <h3><i class="fas fa-handshake"></i> Seller Mandate</h3>
                     <form id="sellerForm" method="POST" target="hidden_iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse">
                         <div class="form-group">
-                            <label for="ownerName">Owner Name</label>
+                            <label for="ownerName">Owner Full Name</label>
                             <input type="text" id="ownerName" name="entry.682104819" placeholder="Your full name" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone2">Phone</label>
+                            <label for="phone2">Phone Number</label>
                             <input type="tel" id="phone2" name="entry.1580831710" placeholder="+255 744 400 200" required>
                         </div>
 
@@ -783,22 +1348,25 @@
                                 <option value="Commercial">Commercial</option>
                                 <option value="Industrial">Industrial</option>
                                 <option value="Agricultural">Agricultural</option>
-                                <option value="Mining">Mining</option>
+                                <option value="Mining">Mining Rights</option>
                                 <option value="Mixed Use">Mixed Use</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="location2">Location</label>
+                            <label for="location2">Property Location</label>
                             <input type="text" id="location2" name="entry.1603521976" placeholder="Property location" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Description / Valuation</label>
-                            <textarea id="description" name="entry.911131276" placeholder="Describe your property and estimated valuation" required></textarea>
+                            <label for="description">Property Description & Valuation</label>
+                            <textarea id="description" name="entry.911131276" placeholder="Describe your property and estimated market value" required></textarea>
                         </div>
 
-                        <button type="submit" class="form-submit">Submit Mandate</button>
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-check-circle"></i>
+                            Submit Mandate
+                        </button>
                     </form>
                 </div>
             </div>
@@ -810,20 +1378,30 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>StratNex Properties</h4>
-                <p>Expert real estate services and institutional asset advisory for Tanzania's dynamic property market.</p>
+                <p>Tanzania's premier institutional real estate advisory, delivering exceptional value through market expertise and diplomatic standards.</p>
+                <p><strong>Office:</strong> House No. 1 Makumbusho, Bagamoyo Rd, Dar es Salaam</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="#services">Services</a>
-                <a href="#forms">Get Started</a>
+                <a href="#value-prop">Asset Advisory</a>
+                <a href="#services">Our Services</a>
+                <a href="#market-insights">Market Intelligence</a>
+                <a href="#forms">Mandate</a>
                 <a href="https://stratnexconsulting.com">Main Website</a>
             </div>
             <div class="footer-section">
-                <h4>Contact Info</h4>
-                <p>📍 House No. 1 Makumbusho, Bagamoyo Rd, Dar es Salaam</p>
-                <p>📞 <a href="tel:+255744400200">+255 744 400 200</a></p>
-                <p>✉️ <a href="mailto:info@stratnexproperties.com">info@stratnexproperties.com</a></p>
-                <p>✉️ <a href="mailto:properties@stratnexconsulting.com">properties@stratnexconsulting.com</a></p>
+                <h4>Contact Information</h4>
+                <p><i class="fas fa-phone"></i> +255 744 400 200</p>
+                <p><i class="fas fa-envelope"></i> info@stratnexproperties.com</p>
+                <p><i class="fas fa-envelope"></i> properties@stratnexconsulting.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</p>
+            </div>
+            <div class="footer-section">
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                <p>Saturday: 9:00 AM - 2:00 PM</p>
+                <p>Sunday: By Appointment</p>
+                <p><em>Emergency consultations available 24/7</em></p>
             </div>
         </div>
         <div class="footer-divider"></div>
@@ -832,8 +1410,8 @@
         </div>
     </footer>
 
-    <!-- Hidden iframe for form submission without page reload -->
-    <iframe id="hidden_iframe" name="hidden_iframe"></iframe>
+    <!-- Hidden iframe for form submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/255766040606?text=Hello%20StratNex%20Properties%2C%20I%20am%20interested%20in%20your%20services" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">
@@ -842,100 +1420,165 @@
         </svg>
     </a>
 
-    <!-- Success Overlay -->
+    <!-- Success Modal -->
     <div id="successOverlay" class="success-overlay">
         <div class="success-message">
-            <h2>✓ Mandate Received</h2>
-            <p>Thank you for your inquiry. Our team will review your submission and contact you shortly with tailored opportunities.</p>
+            <h2><i class="fas fa-check-circle"></i> Mandate Received</h2>
+            <p>Thank you for your inquiry. Our expert advisory team will contact you within 24 hours to discuss your investment goals and strategic asset alignment opportunities.</p>
             <button class="success-close" onclick="closeSuccess()">Close</button>
         </div>
     </div>
 
     <script>
-        // Dynamic form logic
-        const rentAssets = ['Residential', 'Commercial', 'Office Space', 'Retail'];
-        const investAssets = ['Land', 'Development Project', 'Commercial Complex', 'Mining Rights'];
-        
-        const rentBudgets = ['Under 50M', '50M - 100M', '100M - 500M', '500M - 1B', 'Above 1B'];
-        const investBudgets = ['Under 100M', '100M - 500M', '500M - 2B', '2B - 5B', 'Above 5B'];
+        // Form data for dynamic options with Diplomatic and Mining categories
+        const assetOptions = {
+            Rent: [
+                'Diplomatic Villa', 'Luxury Apartment', 'Commercial Office', 
+                'Retail Space', 'Industrial Warehouse', 'Agricultural Land', 
+                'Mixed Use Property', 'Embassy Residence'
+            ],
+            Invest: [
+                'Residential Development', 'Commercial Complex', 'Industrial Park',
+                'Agricultural Farm', 'Mining Concessions', 'Hospitality Property', 
+                'Mixed Use Development', 'Diplomatic Compound'
+            ]
+        };
+
+        const budgetOptions = {
+            Rent: [
+                'Below $1,000/month', '$1,000 - $5,000/month', '$5,000 - $15,000/month',
+                '$15,000 - $50,000/month', 'Above $50,000/month'
+            ],
+            Invest: [
+                'Below $100,000', '$100,000 - $500,000', '$500,000 - $1,500,000',
+                '$1,500,000 - $5,000,000', 'Above $5,000,000'
+            ]
+        };
 
         function updateAssetOptions() {
             const intent = document.getElementById('intent').value;
             const assetClassSelect = document.getElementById('assetClass');
             const budgetSelect = document.getElementById('budget');
-
+            
+            // Clear existing options
             assetClassSelect.innerHTML = '<option value="">Select Asset Class</option>';
             budgetSelect.innerHTML = '<option value="">Select Budget Range</option>';
-
-            if (intent === 'Rent') {
-                rentAssets.forEach(asset => {
-                    const option = document.createElement('option');
-                    option.value = asset;
-                    option.textContent = asset;
-                    assetClassSelect.appendChild(option);
+            
+            if (intent && assetOptions[intent]) {
+                // Populate asset class options
+                assetOptions[intent].forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option;
+                    optionElement.textContent = option;
+                    assetClassSelect.appendChild(optionElement);
                 });
-                rentBudgets.forEach(budget => {
-                    const option = document.createElement('option');
-                    option.value = budget;
-                    option.textContent = budget;
-                    budgetSelect.appendChild(option);
-                });
-            } else if (intent === 'Invest') {
-                investAssets.forEach(asset => {
-                    const option = document.createElement('option');
-                    option.value = asset;
-                    option.textContent = asset;
-                    assetClassSelect.appendChild(option);
-                });
-                investBudgets.forEach(budget => {
-                    const option = document.createElement('option');
-                    option.value = budget;
-                    option.textContent = budget;
-                    budgetSelect.appendChild(option);
+                
+                // Populate budget options
+                budgetOptions[intent].forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option;
+                    optionElement.textContent = option;
+                    budgetSelect.appendChild(optionElement);
                 });
             }
         }
 
-        // Form submission handlers
+        // Form submission handling with loading states
         document.getElementById('assetForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            this.submit();
-            setTimeout(showSuccess, 1500);
-            this.reset();
+            const submitButton = this.querySelector('.form-submit');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<span class="loading"></span> Submitting...';
+            submitButton.disabled = true;
+            
+            setTimeout(() => {
+                this.submit();
+                showSuccess();
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                this.reset();
+            }, 1500);
         });
 
         document.getElementById('sellerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            this.submit();
-            setTimeout(showSuccess, 1500);
-            this.reset();
+            const submitButton = this.querySelector('.form-submit');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<span class="loading"></span> Submitting...';
+            submitButton.disabled = true;
+            
+            setTimeout(() => {
+                this.submit();
+                showSuccess();
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                this.reset();
+            }, 1500);
         });
 
         function showSuccess() {
             document.getElementById('successOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
 
         function closeSuccess() {
             document.getElementById('successOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
-        // Scroll animation for service cards
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('revealed');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.service-card').forEach(card => {
-            observer.observe(card);
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.value-card, .service-card, .insight-card');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Logo fallback handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoImg = document.querySelector('.logo img');
+            logoImg.addEventListener('error', function() {
+                this.style.display = 'none';
+                document.querySelector('.logo-text').style.display = 'flex';
+            });
         });
     </script>
 </body>
