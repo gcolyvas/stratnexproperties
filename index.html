@@ -1,1585 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StratNex Properties | Institutional Asset Advisory | Tanzania</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --navy: #142C40;
-            --slate: #A6A8AB;
-            --light-bg: #F8F9FA;
-            --white: #FFFFFF;
-            --accent: #1E5A8E;
-            --accent-light: #2d6da8;
-            --gold: #d4af37;
-            --gold-dark: #b8860b;
-            --text-dark: #1A1A1A;
-            --text-light: #555555;
-            --border-light: rgba(20, 44, 64, 0.1);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text-dark);
-            background-color: var(--white);
-            line-height: 1.7;
-            letter-spacing: 0.01em;
-            overflow-x: hidden;
-        }
-
-        /* Typography System */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--navy);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        h3 {
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-            color: var(--navy);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        h4 {
-            font-size: 1.125rem;
-            color: var(--navy);
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-
-        /* Header - Premium Glassmorphism */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 10px 40px -10px rgba(20, 44, 64, 0.1);
-        }
-
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Logo - Using Logo.png */
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            margin-right: 0.75rem;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
-        }
-
-        .logo-main {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy);
-            letter-spacing: -0.02em;
-        }
-
-        .logo-sub {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Navigation */
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* CTA Button - Premium */
-        .cta-button {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
-            color: var(--white);
-            padding: 0.875rem 1.75rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.875rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(20, 44, 64, 0.2);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(20, 44, 64, 0.3);
-        }
-
-        /* Hero Section - Ken Burns Effect */
-        .hero {
-            margin-top: 80px;
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 50%, var(--accent) 100%);
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-            animation: kenBurns 20s ease-in-out infinite;
-        }
-
-        @keyframes kenBurns {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.05) rotate(1deg); }
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text {
-            color: var(--white);
-        }
-
-        .hero-text h1 {
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .hero-text .description {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--gold);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 1rem;
-            padding: 2rem;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            animation: fadeInUp 1s ease-out 0.8s both;
-        }
-
-        .hero-card h3 {
-            color: var(--white);
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-
-        .hero-card p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Trust Strip */
-        .trust-strip {
-            background: var(--white);
-            padding: 2rem;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .trust-strip-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--navy);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .trust-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 0.75rem;
-        }
-
-        /* Value Proposition Section */
-        .value-prop {
-            padding: 6rem 2rem;
-            background: var(--light-bg);
-        }
-
-        .value-prop-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .value-prop-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--accent);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .value-card.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .value-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent), var(--navy));
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .value-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .value-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .value-highlights {
-            list-style: none;
-        }
-
-        .value-highlights li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .value-highlights li::before {
-            content: '✓';
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 6rem 2rem;
-            background: var(--white);
-        }
-
-        .services-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            border: 1px solid var(--border-light);
-            border-radius: 1rem;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .service-card.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--gold));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--accent), var(--navy));
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-        }
-
-        .service-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .service-features li::before {
-            content: '→';
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Market Insights */
-        .market-insights {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
-            color: var(--white);
-        }
-
-        .market-insights-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .market-insights h2 {
-            color: var(--white);
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .insights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .insight-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.3s ease;
-        }
-
-        .insight-card.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .insight-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .insight-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .insight-label {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1rem;
-        }
-
-        .insight-description {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.5;
-        }
-
-        /* Forms Section - Glassmorphism */
-        .forms-section {
-            padding: 6rem 2rem;
-            background: var(--light-bg);
-        }
-
-        .forms-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .forms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .form-wrapper {
-            background: var(--white);
-            border: 1px solid var(--border-light);
-            border-radius: 1rem;
-            padding: 2.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .form-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--gold));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .form-wrapper:hover::before {
-            transform: scaleX(1);
-        }
-
-        .form-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-wrapper h3 {
-            margin-bottom: 1.5rem;
-            text-align: center;
-            color: var(--navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid var(--border-light);
-            border-radius: 0.5rem;
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            background: var(--white);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(30, 90, 142, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-submit {
-            width: 100%;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
-            color: var(--white);
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(20, 44, 64, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--navy);
-            color: var(--white);
-            padding: 3rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: var(--white);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--white);
-        }
-
-        .footer-divider {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin: 2rem 0;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #25D366 0%, #1FAE56 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: 999;
-            text-decoration: none;
-        }
-
-        .whatsapp-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-        }
-
-        .whatsapp-button svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-        }
-
-        /* Success Modal */
-        .success-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .success-message {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            max-width: 400px;
-            margin: 1rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-light);
-        }
-
-        .success-message h2 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .success-message p {
-            margin-bottom: 1.5rem;
-        }
-
-        .success-close {
-            background: var(--navy);
-            color: var(--white);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .success-close:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        /* Loading Animation */
-        .loading {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--white);
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .services-grid,
-            .value-prop-grid,
-            .insights-grid,
-            .forms-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .trust-strip-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .whatsapp-button {
-                bottom: 1rem;
-                right: 1rem;
-                width: 50px;
-                height: 50px;
-            }
-
-            .whatsapp-button svg {
-                width: 24px;
-                height: 24px;
-            }
-        }
-    </style>
-<base target="_blank">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StratNex Properties | Premium Property in Dar es Salaam</title>
+<meta name="description" content="Find premium properties in Masaki, Oyster Bay and Mikocheni. StratNex connects tenants, landlords and investors with trusted property services in Dar es Salaam, Tanzania.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#222;line-height:1.6}
+
+/* ── NAV ─────────────────────────────── */
+nav{background:#142c40;padding:0 5%;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{color:#fff;font-size:20px;font-weight:700;letter-spacing:.5px;text-decoration:none}
+.nav-logo span{color:#a6a8ab;font-weight:400}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:#a6a8ab;text-decoration:none;font-size:14px;transition:color .15s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:#fff;color:#142c40;padding:8px 20px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:2px;background:#fff;display:block}
+.mobile-menu{display:none;background:#142c40;padding:16px 5%;flex-direction:column;gap:16px}
+.mobile-menu a{color:#a6a8ab;text-decoration:none;font-size:15px}
+.mobile-menu a:last-child{color:#fff;font-weight:600}
+
+/* ── HERO ────────────────────────────── */
+.hero{background:#142c40;padding:72px 5% 80px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(166,168,171,.15);color:#a6a8ab;border:1px solid rgba(166,168,171,.25);border-radius:20px;padding:6px 18px;font-size:13px;margin-bottom:20px;letter-spacing:.3px}
+.hero h1{color:#fff;font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.2;max-width:720px;margin:0 auto 20px}
+.hero h1 span{color:#a6a8ab}
+.hero p{color:#a6a8ab;font-size:16px;max-width:540px;margin:0 auto 36px;line-height:1.7}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#fff;color:#142c40;padding:13px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:opacity .15s}
+.btn-primary:hover{opacity:.9}
+.btn-secondary{background:transparent;color:#fff;padding:13px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);cursor:pointer;transition:border-color .15s}
+.btn-secondary:hover{border-color:#fff}
+
+/* ── TRUST BAR ───────────────────────── */
+.trust-bar{background:#f4f5f6;padding:20px 5%;display:flex;gap:32px;justify-content:center;flex-wrap:wrap;align-items:center;border-bottom:1px solid #e8ecef}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#555}
+.trust-dot{width:8px;height:8px;background:#142c40;border-radius:50%;flex-shrink:0}
+
+/* ── SECTIONS ────────────────────────── */
+section{padding:64px 5%}
+.section-label{font-size:12px;font-weight:600;color:#a6a8ab;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.section-title{font-size:clamp(22px,4vw,34px);font-weight:700;color:#142c40;margin-bottom:14px;line-height:1.25}
+.section-sub{color:#666;font-size:15px;max-width:560px;line-height:1.7;margin-bottom:40px}
+
+/* ── AUDIENCE TABS ───────────────────── */
+.audience-section{background:#fff}
+.tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.tab-btn{padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1.5px solid #d0d2d4;background:#fff;color:#555;transition:all .15s}
+.tab-btn.active{background:#142c40;color:#fff;border-color:#142c40}
+.tab-panel{display:none}
+.tab-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.tab-content h3{font-size:22px;font-weight:700;color:#142c40;margin-bottom:12px}
+.tab-content p{color:#555;font-size:14px;line-height:1.7;margin-bottom:16px}
+.tab-list{list-style:none;margin-bottom:24px}
+.tab-list li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:14px;color:#444;border-bottom:1px solid #f0f0f0}
+.tab-list li:last-child{border:none}
+.tab-list li::before{content:'';width:6px;height:6px;background:#142c40;border-radius:50%;flex-shrink:0;margin-top:6px}
+.tab-visual{background:#f4f5f6;border-radius:12px;padding:28px;border:1px solid #e8ecef}
+.tab-visual-title{font-size:13px;font-weight:600;color:#a6a8ab;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.stat-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e8ecef;font-size:14px}
+.stat-row:last-child{border:none}
+.stat-label{color:#666}
+.stat-val{font-weight:600;color:#142c40}
+
+/* ── AREAS ───────────────────────────── */
+.areas-section{background:#142c40}
+.areas-section .section-title{color:#fff}
+.areas-section .section-sub{color:#a6a8ab}
+.areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.area-card{background:rgba(255,255,255,.06);border:1px solid rgba(166,168,171,.2);border-radius:10px;padding:20px}
+.area-name{color:#fff;font-size:16px;font-weight:600;margin-bottom:6px}
+.area-desc{color:#a6a8ab;font-size:13px;line-height:1.6;margin-bottom:12px}
+.area-price{color:#fff;font-size:13px;font-weight:600;background:rgba(255,255,255,.1);display:inline-block;padding:4px 12px;border-radius:20px}
+
+/* ── HOW IT WORKS ────────────────────── */
+.how-section{background:#f4f5f6}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.step-card{background:#fff;border-radius:10px;padding:24px;border-top:3px solid #142c40}
+.step-num{width:36px;height:36px;background:#142c40;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;margin-bottom:14px}
+.step-card h4{font-size:15px;font-weight:600;color:#142c40;margin-bottom:8px}
+.step-card p{font-size:13px;color:#666;line-height:1.6}
+
+/* ── FORM SECTION ────────────────────── */
+.form-section{background:#fff}
+.form-tabs{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.form-tab-btn{padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid #d0d2d4;background:#fff;color:#555;transition:all .15s}
+.form-tab-btn.active{background:#142c40;color:#fff;border-color:#142c40}
+.form-panel{display:none}
+.form-panel.active{display:block}
+.form-card{background:#f4f5f6;border-radius:12px;padding:32px;border:1px solid #e8ecef;max-width:680px}
+.form-card h3{font-size:19px;font-weight:700;color:#142c40;margin-bottom:6px}
+.form-card .sub{font-size:13px;color:#a6a8ab;margin-bottom:24px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.field-row.single{grid-template-columns:1fr}
+.field-group{margin-bottom:0}
+.field-label{display:block;font-size:12px;font-weight:600;color:#142c40;margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
+.field-req{color:#c0392b}
+input[type=text],input[type=email],input[type=tel],input[type=number],select,textarea{
+  width:100%;padding:11px 14px;border:1.5px solid #d0d2d4;border-radius:8px;
+  font-size:14px;color:#222;background:#fff;appearance:none;-webkit-appearance:none;
+  transition:border-color .15s;outline:none;font-family:inherit}
+input:focus,select:focus,textarea:focus{border-color:#142c40}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a6a8ab' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+textarea{resize:vertical;min-height:90px}
+.submit-btn{width:100%;padding:14px;background:#142c40;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:8px;transition:background .15s;font-family:inherit}
+.submit-btn:hover{background:#1e3f5c}
+.form-note{font-size:11px;color:#a6a8ab;text-align:center;margin-top:10px;line-height:1.6}
+
+/* ── T&C MODAL ───────────────────────── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.overlay.open{display:flex}
+.modal{background:#fff;border-radius:14px;max-width:560px;width:100%;max-height:90vh;display:flex;flex-direction:column}
+.modal-head{background:#142c40;padding:20px 24px;border-radius:14px 14px 0 0;display:flex;justify-content:space-between;align-items:center}
+.modal-head h3{color:#fff;font-size:17px;font-weight:600}
+.modal-close{background:none;border:none;color:#a6a8ab;font-size:22px;cursor:pointer;line-height:1;padding:0}
+.modal-body{padding:24px;overflow-y:auto;font-size:13px;color:#444;line-height:1.7}
+.modal-body h4{color:#142c40;font-size:14px;font-weight:600;margin:16px 0 6px}
+.modal-body h4:first-child{margin-top:0}
+.modal-body p{margin-bottom:10px}
+.modal-body ul{padding-left:16px;margin-bottom:10px}
+.modal-body ul li{margin-bottom:5px}
+.modal-foot{padding:16px 24px;border-top:1px solid #e8ecef;display:flex;gap:10px}
+.modal-accept{flex:1;padding:12px;background:#142c40;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+.modal-decline{padding:12px 20px;background:#fff;color:#555;border:1.5px solid #d0d2d4;border-radius:8px;font-size:14px;cursor:pointer;font-family:inherit}
+
+/* ── SUCCESS ─────────────────────────── */
+.success-card{display:none;background:#e8f5e9;border:1.5px solid #a5d6a7;border-radius:12px;padding:32px;text-align:center;max-width:680px}
+.success-card h3{color:#142c40;font-size:20px;font-weight:700;margin-bottom:10px}
+.success-card p{color:#444;font-size:14px;line-height:1.7;margin-bottom:16px}
+.wa-link{display:inline-block;background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;margin-top:4px}
+
+/* ── TRUST SECTION ───────────────────── */
+.values-section{background:#142c40;text-align:center}
+.values-section .section-title{color:#fff}
+.values-section .section-sub{color:#a6a8ab;margin:0 auto 40px}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:900px;margin:0 auto}
+.value-card{background:rgba(255,255,255,.06);border:1px solid rgba(166,168,171,.15);border-radius:10px;padding:24px}
+.value-card h4{color:#fff;font-size:15px;font-weight:600;margin-bottom:8px}
+.value-card p{color:#a6a8ab;font-size:13px;line-height:1.6}
+
+/* ── FOOTER ──────────────────────────── */
+footer{background:#0e1e2b;padding:32px 5%;text-align:center}
+footer p{color:#a6a8ab;font-size:12px;line-height:1.9}
+footer a{color:#a6a8ab;text-decoration:none}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .tab-panel.active{grid-template-columns:1fr}
+  .tab-visual{display:none}
+  .field-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .trust-bar{flex-direction:column;gap:12px}
+}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="header-content">
-            <a href="#" class="logo">
-                <img src="Logo.png" alt="StratNex Properties" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='flex';">
-                <div class="logo-text" style="display: none;">
-                    <span class="logo-main">StratNex</span>
-                    <span class="logo-sub">Properties</span>
-                </div>
-            </a>
-            <nav class="nav-links">
-                <a href="#value-prop">Asset Advisory</a>
-                <a href="#services">Services</a>
-                <a href="#market-insights">Market Intelligence</a>
-                <a href="#forms">Mandate</a>
-                <button class="cta-button" onclick="document.getElementById('forms').scrollIntoView()">
-                    <i class="fas fa-phone"></i>
-                    Contact
-                </button>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Institutional Asset Advisory</h1>
-                <p class="subtitle">Tanzania's Premier Property Investment Partner</p>
-                <p class="description">
-                    Navigate Tanzania's dynamic real estate market with confidence. From diplomatic-standard property sourcing to institutional-grade due diligence, we deliver exceptional value for investors and property owners through strategic capital alignment and yield optimization.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">$50M+</span>
-                        <span class="stat-label">Assets Under Advisory</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">150+</span>
-                        <span class="stat-label">Properties Transacted</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
-                </div>
-                <button class="cta-button" onclick="document.getElementById('forms').scrollIntoView()">
-                    <i class="fas fa-rocket"></i>
-                    Start Your Investment Journey
-                </button>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-card">
-                    <h3><i class="fas fa-chart-line"></i> Market Advantage</h3>
-                    <p>Access exclusive off-market opportunities and institutional-grade investment analysis tailored for Tanzania's unique property landscape.</p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
-                        <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 0.5rem;">
-                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--gold);">25%</div>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">Avg. ROI</div>
-                        </div>
-                        <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 0.5rem;">
-                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--gold);">12%</div>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">Rental Yield</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">StratNex <span>Properties</span></a>
+  <ul class="nav-links">
+    <li><a href="#tenants">Find Property</a></li>
+    <li><a href="#landlords">List Property</a></li>
+    <li><a href="#investors">Invest</a></li>
+    <li><a href="#areas">Areas</a></li>
+  </ul>
+  <a href="#inquire" class="nav-cta">Submit Inquiry</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#tenants" onclick="toggleMenu()">Find Property</a>
+  <a href="#landlords" onclick="toggleMenu()">List Property</a>
+  <a href="#investors" onclick="toggleMenu()">Invest</a>
+  <a href="#inquire" onclick="toggleMenu()">Submit Inquiry &rarr;</a>
+</div>
 
-    <!-- Trust Strip -->
-    <section class="trust-strip">
-        <div class="trust-strip-content">
-            <div class="trust-item">
-                <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
-                <span>TIC COMPLIANCE INTEGRATED</span>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon"><i class="fas fa-certificate"></i></div>
-                <span>DIPLOMATIC STANDARD</span>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon"><i class="fas fa-lock"></i></div>
-                <span>OFF-MARKET EXCLUSIVITY</span>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon"><i class="fas fa-star"></i></div>
-                <span>AAA ASSET GRADING</span>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Dar es Salaam &bull; Tanzania</div>
+  <h1>Premium Property.<br><span>Honest Service.</span></h1>
+  <p>StratNex connects tenants, landlords and investors with the right properties in Dar es Salaam's most sought-after neighbourhoods. Submit your inquiry — we handle the rest.</p>
+  <div class="hero-btns">
+    <a href="#inquire" class="btn-primary">Submit Your Inquiry</a>
+    <a href="https://wa.me/255744400200?text=Asalamu%20alaykum%2C%20I%20found%20StratNex%20Properties%20and%20want%20to%20enquire" class="btn-secondary">Chat on WhatsApp</a>
+  </div>
+</div>
 
-    <!-- Value Proposition Section -->
-    <section class="value-prop" id="value-prop">
-        <div class="value-prop-container">
-            <div class="section-header">
-                <h2>Strategic Asset Advisory Excellence</h2>
-                <p>Tanzania's most trusted real estate advisory, combining local expertise with international standards for optimal capital alignment</p>
-            </div>
-            <div class="value-prop-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Diplomatic Standard Sourcing</h3>
-                    <p>Exclusive access to premium properties meeting international diplomatic standards, ensuring the highest quality investments for institutional clients.</p>
-                    <ul class="value-highlights">
-                        <li>Embassy-grade property selection</li>
-                        <li>International compliance standards</li>
-                        <li>Discreet off-market opportunities</li>
-                        <li>Yield optimization protocols</li>
-                    </ul>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-search-dollar"></i>
-                    </div>
-                    <h3>Institutional-Grade Due Diligence</h3>
-                    <p>Comprehensive property verification and market analysis backed by professional indemnity and years of expertise in Tanzanian markets.</p>
-                    <ul class="value-highlights">
-                        <li>Complete legal verification</li>
-                        <li>Market intelligence reports</li>
-                        <li>Risk assessment protocols</li>
-                        <li>Capital alignment analysis</li>
-                    </ul>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Market-Leading ROI</h3>
-                    <p>Proven track record of delivering superior returns through strategic property selection and optimal market timing for maximum yield.</p>
-                    <ul class="value-highlights">
-                        <li>25% average annual returns</li>
-                        <li>Strategic market timing</li>
-                        <li>Growth-oriented portfolio</li>
-                        <li>Performance benchmarking</li>
-                    </ul>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>End-to-End Advisory Support</h3>
-                    <p>Complete transaction support from initial consultation to post-sale management, ensuring seamless investment experiences.</p>
-                    <ul class="value-highlights">
-                        <li>Dedicated advisory team</li>
-                        <li>Transaction management</li>
-                        <li>Post-sale support services</li>
-                        <li>Portfolio optimization</li>
-                    </ul>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-globe-africa"></i>
-                    </div>
-                    <h3>Deep Local Expertise</h3>
-                    <p>Unparalleled knowledge of Tanzania's property market, regulations, and cultural nuances for strategic advantage.</p>
-                    <ul class="value-highlights">
-                        <li>15+ years market experience</li>
-                        <li>Strong government relations</li>
-                        <li>Cultural market understanding</li>
-                        <li>Regulatory navigation</li>
-                    </ul>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-shield-check"></i>
-                    </div>
-                    <h3>TIC Compliance Integration</h3>
-                    <p>Full integration with Tanzania Investment Centre requirements for seamless investment processes and incentive optimization.</p>
-                    <ul class="value-highlights">
-                        <li>TIC certification assistance</li>
-                        <li>Regulatory compliance</li>
-                        <li>Investment incentives optimization</li>
-                        <li>Documentation management</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div>Verified properties only</div>
+  <div class="trust-item"><div class="trust-dot"></div>Response within 2 hours</div>
+  <div class="trust-item"><div class="trust-dot"></div>Masaki &bull; Oyster Bay &bull; Mikocheni</div>
+  <div class="trust-item"><div class="trust-dot"></div>Multi-currency payments accepted</div>
+  <div class="trust-item"><div class="trust-dot"></div>TIN: 115-567-683</div>
+</div>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="services-container">
-            <div class="section-header">
-                <h2>Comprehensive Asset Services</h2>
-                <p>Strategic real estate solutions tailored for Tanzania's unique market dynamics and institutional requirements</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <h3>Land Acquisition</h3>
-                    <p>Strategic land acquisition services with comprehensive due diligence and title verification for institutional investors seeking development opportunities.</p>
-                    <ul class="service-features">
-                        <li>Title deed verification</li>
-                        <li>Land use compliance</li>
-                        <li>Negotiation support</li>
-                        <li>Transfer facilitation</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Property Valuation</h3>
-                    <p>Professional valuation services aligned with international standards and local market dynamics for accurate pricing and investment decisions.</p>
-                    <ul class="service-features">
-                        <li>Market comparison analysis</li>
-                        <li>Income approach valuation</li>
-                        <li>Replacement cost analysis</li>
-                        <li>Investment feasibility</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Real Estate Brokerage</h3>
-                    <p>Full-service brokerage for buying, selling, and leasing properties with diplomatic standard sourcing protocols and market expertise.</p>
-                    <ul class="service-features">
-                        <li>Buyer representation</li>
-                        <li>Seller marketing</li>
-                        <li>Lease negotiations</li>
-                        <li>Transaction management</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Mining Rights Consultation</h3>
-                    <p>Expert guidance on mining rights and mineral exploration opportunities with full regulatory compliance and strategic positioning.</p>
-                    <ul class="service-features">
-                        <li>License acquisition</li>
-                        <li>Regulatory compliance</li>
-                        <li>Due diligence reports</li>
-                        <li>Partnership facilitation</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Investment Advisory</h3>
-                    <p>Strategic advisory services backed by market intelligence, risk analysis, and portfolio optimization for maximum returns.</p>
-                    <ul class="service-features">
-                        <li>Portfolio strategy</li>
-                        <li>Risk assessment</li>
-                        <li>Market timing</li>
-                        <li>Exit planning</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3>Legal Compliance</h3>
-                    <p>Complete legal compliance and documentation support ensuring institutional-grade transaction integrity and risk mitigation.</p>
-                    <ul class="service-features">
-                        <li>Contract review</li>
-                        <li>Due diligence</li>
-                        <li>Regulatory compliance</li>
-                        <li>Dispute resolution</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- WHO WE SERVE -->
+<section class="audience-section" id="tenants">
+  <div class="section-label">Who we serve</div>
+  <div class="section-title">One company. Three needs.</div>
+  <div class="section-sub">Whether you are looking for a home, listing a property, or seeking an investment — StratNex handles everything professionally and transparently.</div>
 
-    <!-- Market Insights -->
-    <section class="market-insights" id="market-insights">
-        <div class="market-insights-container">
-            <h2>Tanzania Real Estate Market Intelligence</h2>
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <span class="insight-number">15%</span>
-                    <div class="insight-label">Annual Price Growth</div>
-                    <p class="insight-description">Dar es Salaam property values showing consistent appreciation over the past 5 years</p>
-                </div>
-                <div class="insight-card">
-                    <span class="insight-number">8.5%</span>
-                    <div class="insight-label">Average Rental Yield</div>
-                    <p class="insight-description">Commercial properties delivering superior returns compared to regional averages</p>
-                </div>
-                <div class="insight-card">
-                    <span class="insight-number">$2.3B</span>
-                    <div class="insight-label">Investment Volume</div>
-                    <p class="insight-description">Total real estate investments in Tanzania's major cities in 2024</p>
-                </div>
-                <div class="insight-card">
-                    <span class="insight-number">67%</span>
-                    <div class="insight-label">Foreign Investment</div>
-                    <p class="insight-description">Percentage of real estate investments from international buyers and institutions</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('tenants-tab', this)">Looking to Rent</button>
+    <button class="tab-btn" onclick="switchTab('landlords-tab', this)" id="landlords">List My Property</button>
+    <button class="tab-btn" onclick="switchTab('investors-tab', this)" id="investors">Property Investment</button>
+  </div>
 
-    <!-- Forms Section -->
-    <section class="forms-section" id="forms">
-        <div class="forms-container">
-            <div class="forms-header">
-                <h2>Execute Your Investment Mandate</h2>
-                <p>Connect with our expert advisory team to explore tailored investment opportunities and strategic asset alignment</p>
-            </div>
-            <div class="forms-grid">
-                <!-- Asset Inquiry Form -->
-                <div class="form-wrapper">
-                    <h3><i class="fas fa-search"></i> Asset Inquiry</h3>
-                    <form id="assetForm" method="POST" target="hidden_iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfF-DF7qwMSBmNRFtI-VSluhSd0QM199h1yIHxdRTujjjRV5g/formResponse">
-                        <div class="form-group">
-                            <label for="intent">Investment Intent</label>
-                            <select id="intent" name="entry.1937501189" required onchange="updateAssetOptions()">
-                                <option value="">Select Intent</option>
-                                <option value="Rent">Rental Income</option>
-                                <option value="Invest">Capital Appreciation</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="assetClass">Asset Class</label>
-                            <select id="assetClass" name="entry.317833696" required>
-                                <option value="">Select Asset Class</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="location1">Preferred Location</label>
-                            <input type="text" id="location1" name="entry.1359829254" placeholder="e.g., Dar es Salaam, Arusha, Zanzibar" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="budget">Budget Range</label>
-                            <select id="budget" name="entry.1000552527" required>
-                                <option value="">Select Budget Range</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" name="entry.2098221746" placeholder="Your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="entry.603961529" placeholder="your@email.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone1">Phone Number</label>
-                            <input type="tel" id="phone1" name="entry.598663992" placeholder="+255 744 400 200" required>
-                        </div>
-
-                        <button type="submit" class="form-submit">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit Inquiry
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Seller Mandate Form -->
-                <div class="form-wrapper">
-                    <h3><i class="fas fa-handshake"></i> Seller Mandate</h3>
-                    <form id="sellerForm" method="POST" target="hidden_iframe" action="https://docs.google.com/forms/d/e/1FAIpQLSctDMtVuxQq-XZocBJsREJe050AwgMDuUiv8DvJsWjQg1VEAQ/formResponse">
-                        <div class="form-group">
-                            <label for="ownerName">Owner Full Name</label>
-                            <input type="text" id="ownerName" name="entry.682104819" placeholder="Your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone2">Phone Number</label>
-                            <input type="tel" id="phone2" name="entry.1580831710" placeholder="+255 744 400 200" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="assetType">Asset Type</label>
-                            <select id="assetType" name="entry.233949564" required>
-                                <option value="">Select Asset Type</option>
-                                <option value="Residential">Residential</option>
-                                <option value="Commercial">Commercial</option>
-                                <option value="Industrial">Industrial</option>
-                                <option value="Agricultural">Agricultural</option>
-                                <option value="Mining">Mining Rights</option>
-                                <option value="Mixed Use">Mixed Use</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="location2">Property Location</label>
-                            <input type="text" id="location2" name="entry.1603521976" placeholder="Property location" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="description">Property Description & Valuation</label>
-                            <textarea id="description" name="entry.911131276" placeholder="Describe your property and estimated market value" required></textarea>
-                        </div>
-
-                        <button type="submit" class="form-submit">
-                            <i class="fas fa-check-circle"></i>
-                            Submit Mandate
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>StratNex Properties</h4>
-                <p>Tanzania's premier institutional real estate advisory, delivering exceptional value through market expertise and diplomatic standards.</p>
-                <p><strong>Office:</strong> House No. 1 Makumbusho, Bagamoyo Rd, Dar es Salaam</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="#value-prop">Asset Advisory</a>
-                <a href="#services">Our Services</a>
-                <a href="#market-insights">Market Intelligence</a>
-                <a href="#forms">Mandate</a>
-                <a href="https://stratnexconsulting.com">Main Website</a>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Information</h4>
-                <p><i class="fas fa-phone"></i> +255 744 400 200</p>
-                <p><i class="fas fa-envelope"></i> info@stratnexproperties.com</p>
-                <p><i class="fas fa-envelope"></i> properties@stratnexconsulting.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</p>
-            </div>
-            <div class="footer-section">
-                <h4>Business Hours</h4>
-                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                <p>Saturday: 9:00 AM - 2:00 PM</p>
-                <p>Sunday: By Appointment</p>
-                <p><em>Emergency consultations available 24/7</em></p>
-            </div>
-        </div>
-        <div class="footer-divider"></div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 StratNex Properties. All rights reserved. | A division of StratNex Consulting</p>
-        </div>
-    </footer>
-
-    <!-- Hidden iframe for form submission -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/255766040606?text=Hello%20StratNex%20Properties%2C%20I%20am%20interested%20in%20your%20services" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.783 1.14L.855 2.604l1.898 5.652a9.035 9.035 0 00-1.694 5.597c0 5.017 4.09 9.107 9.107 9.107 2.192 0 4.26-.824 5.824-2.31l5.652 1.898-5.652-1.898c1.486-1.565 2.31-3.632 2.31-5.824 0-5.017-4.09-9.107-9.107-9.107z"/>
-        </svg>
-    </a>
-
-    <!-- Success Modal -->
-    <div id="successOverlay" class="success-overlay">
-        <div class="success-message">
-            <h2><i class="fas fa-check-circle"></i> Mandate Received</h2>
-            <p>Thank you for your inquiry. Our expert advisory team will contact you within 24 hours to discuss your investment goals and strategic asset alignment opportunities.</p>
-            <button class="success-close" onclick="closeSuccess()">Close</button>
-        </div>
+  <div class="tab-panel active" id="tenants-tab">
+    <div class="tab-content">
+      <h3>Find your next home in Dar es Salaam</h3>
+      <p>We work with a curated portfolio of premium residential and commercial properties across Dar es Salaam's best neighbourhoods. You tell us what you need — we do the searching, negotiating, and paperwork.</p>
+      <ul class="tab-list">
+        <li>Premium properties from $1,500/month</li>
+        <li>Masaki, Oyster Bay, Mikocheni and surrounding areas</li>
+        <li>Viewings arranged at your convenience</li>
+        <li>Full lease negotiation and facilitation</li>
+        <li>Pay in TZS, USD, NGN, KES, GHS and more</li>
+        <li>Our fee: 30% of one month's rent — paid at signing</li>
+      </ul>
+      <a href="#inquire" class="btn-primary" style="display:inline-block;text-decoration:none">Find My Property &rarr;</a>
     </div>
+    <div class="tab-visual">
+      <div class="tab-visual-title">Premium rental market — Dar es Salaam</div>
+      <div class="stat-row"><span class="stat-label">1-bed from (Masaki)</span><span class="stat-val">$1,500/month</span></div>
+      <div class="stat-row"><span class="stat-label">2-bed from (Mikocheni)</span><span class="stat-val">$2,000/month</span></div>
+      <div class="stat-row"><span class="stat-label">3-bed from (Oyster Bay)</span><span class="stat-val">$3,500/month</span></div>
+      <div class="stat-row"><span class="stat-label">Office space from</span><span class="stat-val">$2,500/month</span></div>
+      <div class="stat-row"><span class="stat-label">Average response time</span><span class="stat-val">Under 2 hours</span></div>
+      <div class="stat-row"><span class="stat-label">Viewing to lease timeline</span><span class="stat-val">3–7 days</span></div>
+    </div>
+  </div>
 
-    <script>
-        // Form data for dynamic options with Diplomatic and Mining categories
-        const assetOptions = {
-            Rent: [
-                'Diplomatic Villa', 'Luxury Apartment', 'Commercial Office', 
-                'Retail Space', 'Industrial Warehouse', 'Agricultural Land', 
-                'Mixed Use Property', 'Embassy Residence'
-            ],
-            Invest: [
-                'Residential Development', 'Commercial Complex', 'Industrial Park',
-                'Agricultural Farm', 'Mining Concessions', 'Hospitality Property', 
-                'Mixed Use Development', 'Diplomatic Compound'
-            ]
-        };
+  <div class="tab-panel" id="landlords-tab">
+    <div class="tab-content">
+      <h3>List your property with StratNex</h3>
+      <p>We market your property to qualified tenants — local and diaspora — and manage the entire process from viewing to lease signing. No upfront fees. We earn only when you earn.</p>
+      <ul class="tab-list">
+        <li>Zero upfront cost to list your property</li>
+        <li>We source and screen qualified tenants only</li>
+        <li>Professional viewing coordination</li>
+        <li>Lease preparation and facilitation</li>
+        <li>Our commission is paid by the tenant, not you</li>
+        <li>12-month lease: 100% of one month rent commission</li>
+      </ul>
+      <a href="#inquire" class="btn-primary" style="display:inline-block;text-decoration:none">List My Property &rarr;</a>
+    </div>
+    <div class="tab-visual">
+      <div class="tab-visual-title">Landlord commission structure</div>
+      <div class="stat-row"><span class="stat-label">12-month lease</span><span class="stat-val">100% of 1 month</span></div>
+      <div class="stat-row"><span class="stat-label">6-month lease</span><span class="stat-val">50% of 1 month</span></div>
+      <div class="stat-row"><span class="stat-label">3-month lease</span><span class="stat-val">25% of 1 month</span></div>
+      <div class="stat-row"><span class="stat-label">Paid by</span><span class="stat-val">Tenant (not landlord)</span></div>
+      <div class="stat-row"><span class="stat-label">Property protection</span><span class="stat-val">6 months from viewing</span></div>
+      <div class="stat-row"><span class="stat-label">Upfront cost to list</span><span class="stat-val">Zero</span></div>
+    </div>
+  </div>
 
-        const budgetOptions = {
-            Rent: [
-                'Below $1,000/month', '$1,000 - $5,000/month', '$5,000 - $15,000/month',
-                '$15,000 - $50,000/month', 'Above $50,000/month'
-            ],
-            Invest: [
-                'Below $100,000', '$100,000 - $500,000', '$500,000 - $1,500,000',
-                '$1,500,000 - $5,000,000', 'Above $5,000,000'
-            ]
-        };
+  <div class="tab-panel" id="investors-tab">
+    <div class="tab-content">
+      <h3>Property investment advisory in Tanzania</h3>
+      <p>Tanzania's real estate market continues to attract regional and international investors. StratNex provides honest, grounded advisory for residential and commercial property acquisitions in Dar es Salaam.</p>
+      <ul class="tab-list">
+        <li>Residential and commercial property sourcing</li>
+        <li>Market analysis and due diligence support</li>
+        <li>Property acquisition facilitation</li>
+        <li>Agricultural land and farmland advisory</li>
+        <li>TIC compliance guidance for foreign investors</li>
+        <li>Transparent fee structure — no hidden costs</li>
+      </ul>
+      <a href="#inquire" class="btn-primary" style="display:inline-block;text-decoration:none">Discuss My Investment &rarr;</a>
+    </div>
+    <div class="tab-visual">
+      <div class="tab-visual-title">Tanzania market overview 2026</div>
+      <div class="stat-row"><span class="stat-label">Dar es Salaam rental yield</span><span class="stat-val">6–9% annually</span></div>
+      <div class="stat-row"><span class="stat-label">Premium area demand</span><span class="stat-val">High — supply limited</span></div>
+      <div class="stat-row"><span class="stat-label">Diaspora client growth</span><span class="stat-val">Increasing year on year</span></div>
+      <div class="stat-row"><span class="stat-label">TIC foreign ownership</span><span class="stat-val">Permitted with conditions</span></div>
+      <div class="stat-row"><span class="stat-label">Our advisory fee</span><span class="stat-val">Negotiated per mandate</span></div>
+    </div>
+  </div>
+</section>
 
-        function updateAssetOptions() {
-            const intent = document.getElementById('intent').value;
-            const assetClassSelect = document.getElementById('assetClass');
-            const budgetSelect = document.getElementById('budget');
-            
-            // Clear existing options
-            assetClassSelect.innerHTML = '<option value="">Select Asset Class</option>';
-            budgetSelect.innerHTML = '<option value="">Select Budget Range</option>';
-            
-            if (intent && assetOptions[intent]) {
-                // Populate asset class options
-                assetOptions[intent].forEach(option => {
-                    const optionElement = document.createElement('option');
-                    optionElement.value = option;
-                    optionElement.textContent = option;
-                    assetClassSelect.appendChild(optionElement);
-                });
-                
-                // Populate budget options
-                budgetOptions[intent].forEach(option => {
-                    const optionElement = document.createElement('option');
-                    optionElement.value = option;
-                    optionElement.textContent = option;
-                    budgetSelect.appendChild(optionElement);
-                });
-            }
-        }
+<!-- AREAS -->
+<section class="areas-section" id="areas">
+  <div class="section-label" style="color:#a6a8ab">Where we work</div>
+  <div class="section-title">Premium areas in Dar es Salaam</div>
+  <div class="section-sub">We focus on a small number of areas where we know every street, every landlord, and every available property.</div>
+  <div class="areas-grid">
+    <div class="area-card">
+      <div class="area-name">Masaki</div>
+      <div class="area-desc">Dar es Salaam's premier residential address. Embassies, expats, and senior executives. Sea views, tight security, and top-tier properties.</div>
+      <div class="area-price">From $2,500/month</div>
+    </div>
+    <div class="area-card">
+      <div class="area-name">Oyster Bay</div>
+      <div class="area-desc">Beachfront and near-beach living. Popular with diplomats and international organisations. Quiet, prestigious, and close to the ocean.</div>
+      <div class="area-price">From $2,000/month</div>
+    </div>
+    <div class="area-card">
+      <div class="area-name">Mikocheni</div>
+      <div class="area-desc">Dar es Salaam's most sought-after mid-premium neighbourhood. Excellent access, strong amenities, diverse property options.</div>
+      <div class="area-price">From $1,500/month</div>
+    </div>
+    <div class="area-card">
+      <div class="area-name">Other areas</div>
+      <div class="area-desc">Kinondoni, Regent Estate, Ada Estate, Kijitonyama, Mbezi Beach and more — tell us what you need and we will find it.</div>
+      <div class="area-price">Varies by location</div>
+    </div>
+  </div>
+</section>
 
-        // Form submission handling with loading states
-        document.getElementById('assetForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitButton = this.querySelector('.form-submit');
-            const originalText = submitButton.innerHTML;
-            submitButton.innerHTML = '<span class="loading"></span> Submitting...';
-            submitButton.disabled = true;
-            
-            setTimeout(() => {
-                this.submit();
-                showSuccess();
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-                this.reset();
-            }, 1500);
-        });
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-label">The process</div>
+  <div class="section-title">Simple. Honest. Four steps.</div>
+  <div class="section-sub">No complicated process. Submit your inquiry, we contact you, we arrange viewings, you move in. That is it.</div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h4>Submit your inquiry</h4>
+      <p>Fill the form below with your requirements. Takes 3 minutes. Our team reviews every submission personally.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h4>We contact you</h4>
+      <p>A StratNex consultant contacts you on WhatsApp within 2 hours to confirm your requirements and match properties.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h4>Property tour</h4>
+      <p>We arrange viewings at your convenience. You see the property in person before any commitment is made.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <h4>Move in</h4>
+      <p>We handle the lease paperwork. Our service fee is paid only when you sign — not before. No surprises.</p>
+    </div>
+  </div>
+</section>
 
-        document.getElementById('sellerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitButton = this.querySelector('.form-submit');
-            const originalText = submitButton.innerHTML;
-            submitButton.innerHTML = '<span class="loading"></span> Submitting...';
-            submitButton.disabled = true;
-            
-            setTimeout(() => {
-                this.submit();
-                showSuccess();
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-                this.reset();
-            }, 1500);
-        });
+<!-- INQUIRY FORM -->
+<section class="form-section" id="inquire">
+  <div class="section-label">Get started</div>
+  <div class="section-title">Submit your inquiry</div>
+  <div class="section-sub">Tell us what you are looking for. Our team reviews every inquiry and contacts you within 2 hours on WhatsApp.</div>
 
-        function showSuccess() {
-            document.getElementById('successOverlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
+  <div class="form-tabs">
+    <button class="form-tab-btn active" onclick="switchFormTab('form-tenant', this)">Looking to Rent</button>
+    <button class="form-tab-btn" onclick="switchFormTab('form-landlord', this)">List My Property</button>
+    <button class="form-tab-btn" onclick="switchFormTab('form-investor', this)">Investment Inquiry</button>
+  </div>
 
-        function closeSuccess() {
-            document.getElementById('successOverlay').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+  <!-- TENANT FORM -->
+  <div class="form-panel active" id="form-tenant">
+    <div class="form-card" id="fc-tenant">
+      <h3>Find my property</h3>
+      <p class="sub">All fields marked * are required. Our team will confirm your viewing within 2 hours.</p>
+      <form onsubmit="showTC(event,'tenant')">
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Full name <span class="field-req">*</span></label><input type="text" id="t-name" required placeholder="Your full name"></div>
+          <div class="field-group"><label class="field-label">WhatsApp number <span class="field-req">*</span></label><input type="tel" id="t-phone" required placeholder="+255 or +234..."></div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group"><label class="field-label">Email address <span class="field-req">*</span></label><input type="email" id="t-email" required placeholder="your@email.com"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Country <span class="field-req">*</span></label>
+            <select id="t-country" required><option value="" disabled selected>Select</option><option>Tanzania</option><option>Nigeria</option><option>Kenya</option><option>Ghana</option><option>South Africa</option><option>Cameroon</option><option>Uganda</option><option>Other</option></select></div>
+          <div class="field-group"><label class="field-label">Preferred area <span class="field-req">*</span></label>
+            <select id="t-area" required><option value="" disabled selected>Select</option><option>Masaki</option><option>Oyster Bay</option><option>Mikocheni</option><option>Kinondoni</option><option>Open to suggestions</option></select></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Property type <span class="field-req">*</span></label>
+            <select id="t-type" required><option value="" disabled selected>Select</option><option>1 Bedroom</option><option>2 Bedroom</option><option>3 Bedroom</option><option>4+ Bedroom</option><option>Furnished apartment</option><option>Office space</option><option>Commercial</option></select></div>
+          <div class="field-group"><label class="field-label">Budget (USD/month) <span class="field-req">*</span></label>
+            <select id="t-budget" required><option value="" disabled selected>Select</option><option>$1,500 – $2,000</option><option>$2,000 – $3,000</option><option>$3,000 – $5,000</option><option>$5,000+</option><option>Prefer to discuss</option></select></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Move-in date</label>
+            <select id="t-timeline"><option value="" disabled selected>Select</option><option>Within 1 week</option><option>2–4 weeks</option><option>1–2 months</option><option>Just exploring</option></select></div>
+          <div class="field-group"><label class="field-label">Lease term</label>
+            <select id="t-lease"><option value="" disabled selected>Select</option><option>3 months</option><option>6 months</option><option>12 months</option><option>Flexible</option></select></div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group"><label class="field-label">Any specific requirements</label><textarea id="t-notes" placeholder="Parking, generator, ground floor, pet-friendly, etc."></textarea></div>
+        </div>
+        <button type="submit" class="submit-btn">Submit Inquiry — View Terms &amp; Confirm &rarr;</button>
+        <p class="form-note">By submitting, you agree to be contacted by StratNex via WhatsApp and email. We never share your details with third parties.</p>
+      </form>
+    </div>
+    <div class="success-card" id="sc-tenant">
+      <h3>Asalamu Alaykum! Inquiry Received.</h3>
+      <p>Thank you for trusting StratNex. A consultant will contact you on WhatsApp within 2 hours to confirm your requirements and discuss available properties.<br><br>You will also receive a confirmation email shortly.</p>
+      <a href="https://wa.me/255744400200?text=Asalamu%20alaykum%2C%20I%20just%20submitted%20a%20property%20inquiry%20on%20stratnexproperties.com" class="wa-link">Chat with us directly on WhatsApp</a>
+    </div>
+  </div>
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+  <!-- LANDLORD FORM -->
+  <div class="form-panel" id="form-landlord">
+    <div class="form-card" id="fc-landlord">
+      <h3>List my property</h3>
+      <p class="sub">Tell us about your property. No upfront cost — we earn only when your property is rented.</p>
+      <form onsubmit="showTC(event,'landlord')">
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Full name <span class="field-req">*</span></label><input type="text" id="l-name" required placeholder="Your full name"></div>
+          <div class="field-group"><label class="field-label">WhatsApp number <span class="field-req">*</span></label><input type="tel" id="l-phone" required placeholder="+255..."></div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group"><label class="field-label">Email address <span class="field-req">*</span></label><input type="email" id="l-email" required placeholder="your@email.com"></div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group"><label class="field-label">Property address <span class="field-req">*</span></label><input type="text" id="l-address" required placeholder="Street, area, Dar es Salaam"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Property type <span class="field-req">*</span></label>
+            <select id="l-type" required><option value="" disabled selected>Select</option><option>1 Bedroom</option><option>2 Bedroom</option><option>3 Bedroom</option><option>4+ Bedroom</option><option>Office space</option><option>Commercial</option><option>Furnished apartment</option></select></div>
+          <div class="field-group"><label class="field-label">Asking rent (USD/month) <span class="field-req">*</span></label><input type="text" id="l-rent" required placeholder="e.g. $2,000"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Available from</label><input type="text" id="l-available" placeholder="e.g. April 2026 or Immediately"></div>
+          <div class="field-group"><label class="field-label">Furnishing</label>
+            <select id="l-furnish"><option value="" disabled selected>Select</option><option>Fully furnished</option><option>Semi furnished</option><option>Unfurnished</option></select></div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group"><label class="field-label">Additional details</label><textarea id="l-notes" placeholder="Generator, parking, security, utilities included, etc."></textarea></div>
+        </div>
+        <button type="submit" class="submit-btn">Submit Property — View Terms &amp; Confirm &rarr;</button>
+        <p class="form-note">StratNex does not charge landlords upfront. Our commission is collected from the tenant at lease signing.</p>
+      </form>
+    </div>
+    <div class="success-card" id="sc-landlord">
+      <h3>Property Listing Received.</h3>
+      <p>Thank you for listing with StratNex. We will review your property and contact you on WhatsApp within 2 hours to discuss the next steps and arrange a property assessment.<br><br>You will also receive a confirmation email.</p>
+      <a href="https://wa.me/255744400200?text=Asalamu%20alaykum%2C%20I%20just%20listed%20my%20property%20on%20stratnexproperties.com" class="wa-link">Chat with us on WhatsApp</a>
+    </div>
+  </div>
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+  <!-- INVESTOR FORM -->
+  <div class="form-panel" id="form-investor">
+    <div class="form-card" id="fc-investor">
+      <h3>Investment inquiry</h3>
+      <p class="sub">Tell us about your investment goals. We will reach out to discuss your requirements in confidence.</p>
+      <form onsubmit="showTC(event,'investor')">
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Full name <span class="field-req">*</span></label><input type="text" id="i-name" required placeholder="Your full name"></div>
+          <div class="field-group"><label class="field-label">WhatsApp number <span class="field-req">*</span></label><input type="tel" id="i-phone" required placeholder="+255 or international"></div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group"><label class="field-label">Email address <span class="field-req">*</span></label><input type="email" id="i-email" required placeholder="your@email.com"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label">Country of residence <span class="field-req">*</span></label>
+            <select id="i-country" required><option value="" disabled selected>Select</option><option>Tanzania</option><option>Nigeria</option><option>Kenya</option><option>Ghana</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>Other</option></select></div>
+          <div class="field-group"><label class="field-label">Investment type <span class="field-req">*</span></label>
+            <select id="i-type" required><option value="" disabled selected>Select</option><option>Residential property purchase</option><option>Commercial property</option><option>Agricultural land</option><option>Development land</option><option>Portfolio advisory</option></select></div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group"><label class="field-label">Approximate budget (USD)</label>
+            <select id="i-budget"><option value="" disabled selected>Select range</option><option>Under $100K</option><option>$100K – $500K</option><option>$500K – $1M</option><option>$1M – $5M</option><option>Above $5M</option><option>Prefer to discuss</option></select></div>
+        </div>
+        <div class="field-row single">
+          <div class="field-group"><label class="field-label">Tell us about your goals</label><textarea id="i-notes" placeholder="What are you looking to achieve? Rental income, capital growth, development, etc."></textarea></div>
+        </div>
+        <button type="submit" class="submit-btn">Submit Inquiry — View Terms &amp; Confirm &rarr;</button>
+        <p class="form-note">All investment inquiries are handled with full confidentiality. We do not share your information.</p>
+      </form>
+    </div>
+    <div class="success-card" id="sc-investor">
+      <h3>Investment Inquiry Received.</h3>
+      <p>Thank you for reaching out to StratNex. A senior consultant will contact you within 24 hours to discuss your investment objectives in detail.<br><br>You will also receive a confirmation email.</p>
+      <a href="https://wa.me/255744400200?text=Asalamu%20alaykum%2C%20I%20submitted%20an%20investment%20inquiry%20on%20stratnexproperties.com" class="wa-link">Chat with us on WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-        // Scroll reveal animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+<!-- VALUES -->
+<section class="values-section">
+  <div class="section-label" style="color:#a6a8ab">Why choose us</div>
+  <div class="section-title">What we stand for</div>
+  <div class="section-sub">We are a small team. We cannot be everywhere. But where we operate, we operate with full honesty and complete professionalism.</div>
+  <div class="values-grid">
+    <div class="value-card">
+      <h4>Honesty above everything</h4>
+      <p>We tell you what a property actually costs, what our fee actually is, and what is actually possible in the market. No inflated claims.</p>
+    </div>
+    <div class="value-card">
+      <h4>You pay only when you sign</h4>
+      <p>Our 30% service fee is due only when you sign the lease. Not before. No hidden charges at any stage of the process.</p>
+    </div>
+    <div class="value-card">
+      <h4>We know these areas personally</h4>
+      <p>Every property we present has been personally assessed. We do not list properties we have not seen ourselves.</p>
+    </div>
+    <div class="value-card">
+      <h4>Response in 2 hours</h4>
+      <p>Every inquiry submitted through this site receives a personal WhatsApp response within 2 hours during business hours.</p>
+    </div>
+  </div>
+</section>
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, observerOptions);
+<!-- T&C MODAL -->
+<div class="overlay" id="tc-overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Terms &amp; Conditions — Please Read</h3>
+      <button class="modal-close" onclick="closeTC()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <h4>1. Service Fee</h4>
+      <p>StratNex Consulting Company charges a service fee of <strong>30% (thirty percent) of one month's rent</strong> for successful property placement. This fee is due within 48 hours of lease signing. The fee is non-refundable once the lease has been signed.</p>
+      <h4>2. Property Protection Clause</h4>
+      <p>Any property introduced by StratNex is protected for <strong>6 months from the date of the first viewing</strong>. If you rent or purchase a property introduced by StratNex through any other channel within this period — including directly from the landlord or through another agent — the full service fee remains payable to StratNex.</p>
+      <h4>3. Viewing Conditions</h4>
+      <p>Property viewings are arranged only after this agreement is accepted. StratNex will not share property addresses or landlord contact details before the service agreement is confirmed.</p>
+      <h4>4. Payment Methods</h4>
+      <p>Service fees are accepted via GTBank Tanzania (TZS), Grey Business account (USD), and XTransfer accounts in NGN, KES, GHS, ZAR and XAF. Payment details are provided at the time of lease signing.</p>
+      <h4>5. Cancellation</h4>
+      <p>If a viewing is scheduled and you wish to cancel, please provide at least 24 hours notice via WhatsApp. Repeated cancellations without notice may result in removal from our active client list.</p>
+      <h4>6. Confidentiality</h4>
+      <p>StratNex will not share your personal information with any third party without your consent, except as required for the facilitation of the property transaction (i.e. sharing your contact with the landlord to arrange a viewing).</p>
+      <h4>7. No Guarantee of Availability</h4>
+      <p>Property availability changes frequently. Submitting this inquiry does not guarantee that a specific property is available. StratNex will present available options matching your requirements.</p>
+      <h4>Company Details</h4>
+      <p>StratNex Consulting Company &bull; TIN: 115-567-683 &bull; Dar es Salaam, Tanzania &bull; +255 744 400 200 &bull; info@stratnexconsulting.com</p>
+    </div>
+    <div class="modal-foot">
+      <button class="modal-decline" onclick="closeTC()">Decline</button>
+      <button class="modal-accept" onclick="acceptTC()">I Agree — Submit My Inquiry</button>
+    </div>
+  </div>
+</div>
 
-        // Observe elements for animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.value-card, .service-card, .insight-card');
-            animatedElements.forEach(el => {
-                observer.observe(el);
-            });
-        });
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong style="color:#fff">StratNex Properties</strong> — a division of StratNex Consulting Company<br>
+    House No. 1 Makumbusho, Bagamoyo Road, Dar es Salaam, Tanzania &bull; TIN: 115-567-683<br>
+    <a href="tel:+255744400200">+255 744 400 200</a> &bull; <a href="mailto:info@stratnexproperties.com">info@stratnexproperties.com</a> &bull; <a href="https://stratnexconsulting.com">stratnexconsulting.com</a><br>
+    &copy; 2026 StratNex Consulting Company. All rights reserved.
+  </p>
+</footer>
 
-        // Logo fallback handling
-        document.addEventListener('DOMContentLoaded', function() {
-            const logoImg = document.querySelector('.logo img');
-            logoImg.addEventListener('error', function() {
-                this.style.display = 'none';
-                document.querySelector('.logo-text').style.display = 'flex';
-            });
-        });
-    </script>
+<script>
+var currentFormType = '';
+var formData = {};
+
+function toggleMenu(){
+  var m=document.getElementById('mobile-menu');
+  m.style.display=m.style.display==='flex'?'none':'flex';
+}
+
+function switchTab(id, btn){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function switchFormTab(id, btn){
+  document.querySelectorAll('.form-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.form-tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function showTC(e, type){
+  e.preventDefault();
+  currentFormType = type;
+  document.getElementById('tc-overlay').classList.add('open');
+}
+
+function closeTC(){
+  document.getElementById('tc-overlay').classList.remove('open');
+}
+
+function acceptTC(){
+  closeTC();
+  var type = currentFormType;
+  var msg = '';
+
+  if(type==='tenant'){
+    var n=document.getElementById('t-name').value;
+    var ph=document.getElementById('t-phone').value;
+    var em=document.getElementById('t-email').value;
+    var co=document.getElementById('t-country').value;
+    var ar=document.getElementById('t-area').value;
+    var ty=document.getElementById('t-type').value;
+    var bu=document.getElementById('t-budget').value;
+    var tl=document.getElementById('t-timeline').value||'Not specified';
+    var le=document.getElementById('t-lease').value||'Not specified';
+    var no=document.getElementById('t-notes').value||'None';
+    msg='Asalamu alaykum Jamal! New TENANT inquiry from stratnexproperties.com%0A'
+      +'Name: '+encodeURIComponent(n)+'%0A'
+      +'WhatsApp: '+encodeURIComponent(ph)+'%0A'
+      +'Email: '+encodeURIComponent(em)+'%0A'
+      +'Country: '+encodeURIComponent(co)+'%0A'
+      +'Area: '+encodeURIComponent(ar)+'%0A'
+      +'Type: '+encodeURIComponent(ty)+'%0A'
+      +'Budget: '+encodeURIComponent(bu)+'%0A'
+      +'Timeline: '+encodeURIComponent(tl)+'%0A'
+      +'Lease: '+encodeURIComponent(le)+'%0A'
+      +'Notes: '+encodeURIComponent(no)+'%0A'
+      +'Terms agreed: YES';
+    document.getElementById('fc-tenant').style.display='none';
+    document.getElementById('sc-tenant').style.display='block';
+  } else if(type==='landlord'){
+    var n=document.getElementById('l-name').value;
+    var ph=document.getElementById('l-phone').value;
+    var em=document.getElementById('l-email').value;
+    var ad=document.getElementById('l-address').value;
+    var ty=document.getElementById('l-type').value;
+    var re=document.getElementById('l-rent').value;
+    var av=document.getElementById('l-available').value||'Not specified';
+    var no=document.getElementById('l-notes').value||'None';
+    msg='Asalamu alaykum Jamal! New LANDLORD listing from stratnexproperties.com%0A'
+      +'Name: '+encodeURIComponent(n)+'%0A'
+      +'WhatsApp: '+encodeURIComponent(ph)+'%0A'
+      +'Email: '+encodeURIComponent(em)+'%0A'
+      +'Address: '+encodeURIComponent(ad)+'%0A'
+      +'Type: '+encodeURIComponent(ty)+'%0A'
+      +'Rent: '+encodeURIComponent(re)+'%0A'
+      +'Available: '+encodeURIComponent(av)+'%0A'
+      +'Notes: '+encodeURIComponent(no)+'%0A'
+      +'Terms agreed: YES';
+    document.getElementById('fc-landlord').style.display='none';
+    document.getElementById('sc-landlord').style.display='block';
+  } else {
+    var n=document.getElementById('i-name').value;
+    var ph=document.getElementById('i-phone').value;
+    var em=document.getElementById('i-email').value;
+    var co=document.getElementById('i-country').value;
+    var ty=document.getElementById('i-type').value;
+    var bu=document.getElementById('i-budget').value||'Not specified';
+    var no=document.getElementById('i-notes').value||'None';
+    msg='Asalamu alaykum Jamal! New INVESTOR inquiry from stratnexproperties.com%0A'
+      +'Name: '+encodeURIComponent(n)+'%0A'
+      +'WhatsApp: '+encodeURIComponent(ph)+'%0A'
+      +'Email: '+encodeURIComponent(em)+'%0A'
+      +'Country: '+encodeURIComponent(co)+'%0A'
+      +'Type: '+encodeURIComponent(ty)+'%0A'
+      +'Budget: '+encodeURIComponent(bu)+'%0A'
+      +'Goals: '+encodeURIComponent(no)+'%0A'
+      +'Terms agreed: YES';
+    document.getElementById('fc-investor').style.display='none';
+    document.getElementById('sc-investor').style.display='block';
+  }
+
+  setTimeout(function(){
+    window.open('https://wa.me/255744400200?text='+msg,'_blank');
+  },1500);
+}
+</script>
+
 </body>
 </html>
