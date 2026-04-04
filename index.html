@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StratNex Properties | Premium Property in Dar es Salaam</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
 <meta name="description" content="Find premium properties in Masaki, Oyster Bay and Mikocheni. StratNex connects tenants, landlords and investors with trusted property services in Dar es Salaam, Tanzania.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -165,7 +167,7 @@ footer a{color:#a6a8ab;text-decoration:none}
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">StratNex <span>Properties</span></a>
+  <a href="#" class="nav-logo"><img src="/Logo.png" alt="StratNex Properties" style="height:36px;display:block"></a>
   <ul class="nav-links">
     <li><a href="#tenants">Find Property</a></li>
     <li><a href="#landlords">List Property</a></li>
@@ -400,7 +402,7 @@ footer a{color:#a6a8ab;text-decoration:none}
       </form>
     </div>
     <div class="success-card" id="sc-tenant">
-      <h3>Asalamu Alaykum! Inquiry Received.</h3>
+      <h3>Thank you! Inquiry Received.</h3>
       <p>Thank you for trusting StratNex. A consultant will contact you on WhatsApp within 2 hours to confirm your requirements and discuss available properties.<br><br>You will also receive a confirmation email shortly.</p>
       <a href="https://wa.me/255744400200?text=Asalamu%20alaykum%2C%20I%20just%20submitted%20a%20property%20inquiry%20on%20stratnexproperties.com" class="wa-link">Chat with us directly on WhatsApp</a>
     </div>
@@ -532,7 +534,7 @@ footer a{color:#a6a8ab;text-decoration:none}
       <h4>7. No Guarantee of Availability</h4>
       <p>Property availability changes frequently. Submitting this inquiry does not guarantee that a specific property is available. StratNex will present available options matching your requirements.</p>
       <h4>Company Details</h4>
-      <p>StratNex Consulting Company &bull; TIN: 115-567-683 &bull; Dar es Salaam, Tanzania &bull; +255 744 400 200 &bull; info@stratnexconsulting.com</p>
+      <p>StratNex Consulting Company &bull; TIN: 115-567-683 &bull; Dar es Salaam, Tanzania &bull; +255 744 400 200 &bull; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4adaaa2ab84b7b0b6a5b0aaa1bca7abaab7b1a8b0adaaa3eaa7aba9">[email&#160;protected]</a></p>
     </div>
     <div class="modal-foot">
       <button class="modal-decline" onclick="closeTC()">Decline</button>
@@ -546,37 +548,37 @@ footer a{color:#a6a8ab;text-decoration:none}
   <p>
     <strong style="color:#fff">StratNex Properties</strong> — a division of StratNex Consulting Company<br>
     House No. 1 Makumbusho, Bagamoyo Road, Dar es Salaam, Tanzania &bull; TIN: 115-567-683<br>
-    <a href="tel:+255744400200">+255 744 400 200</a> &bull; <a href="mailto:info@stratnexproperties.com">info@stratnexproperties.com</a> &bull; <a href="https://stratnexconsulting.com">stratnexconsulting.com</a><br>
+    <a href="tel:+255744400200">+255 744 400 200</a> &bull; <a href="/cdn-cgi/l/email-protection#70191e161f3003040211041e150800021f001502041915035e131f1d"><span class="__cf_email__" data-cfemail="b5dcdbd3daf5c6c1c7d4c1dbd0cdc5c7dac5d0c7c1dcd0c69bd6dad8">[email&#160;protected]</span></a> &bull; <a href="https://stratnexconsulting.com">stratnexconsulting.com</a><br>
     &copy; 2026 StratNex Consulting Company. All rights reserved.
   </p>
 </footer>
 
+
 <script>
-var currentFormType = '';
-var formData = {};
+var ZAPIER_WEBHOOK = 'YOUR_ZAPIER_WEBHOOK_URL_HERE';
 
 function toggleMenu(){
   var m=document.getElementById('mobile-menu');
   m.style.display=m.style.display==='flex'?'none':'flex';
 }
 
-function switchTab(id, btn){
+function switchTab(id,btn){
   document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
 
-function switchFormTab(id, btn){
+function switchFormTab(id,btn){
   document.querySelectorAll('.form-panel').forEach(function(p){p.classList.remove('active')});
   document.querySelectorAll('.form-tab-btn').forEach(function(b){b.classList.remove('active')});
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
 
-function showTC(e, type){
+function showTC(e,type){
   e.preventDefault();
-  currentFormType = type;
+  window._pendingType=type;
   document.getElementById('tc-overlay').classList.add('open');
 }
 
@@ -586,74 +588,84 @@ function closeTC(){
 
 function acceptTC(){
   closeTC();
-  var type = currentFormType;
-  var msg = '';
+  var type=window._pendingType;
+  var payload={form_type:type,source:'stratnexproperties.com',terms_accepted:'Yes'};
+  var msg='';
 
   if(type==='tenant'){
-    var n=document.getElementById('t-name').value;
-    var ph=document.getElementById('t-phone').value;
-    var em=document.getElementById('t-email').value;
-    var co=document.getElementById('t-country').value;
-    var ar=document.getElementById('t-area').value;
-    var ty=document.getElementById('t-type').value;
-    var bu=document.getElementById('t-budget').value;
-    var tl=document.getElementById('t-timeline').value||'Not specified';
-    var le=document.getElementById('t-lease').value||'Not specified';
-    var no=document.getElementById('t-notes').value||'None';
-    msg='Asalamu alaykum Jamal! New TENANT inquiry from stratnexproperties.com%0A'
-      +'Name: '+encodeURIComponent(n)+'%0A'
-      +'WhatsApp: '+encodeURIComponent(ph)+'%0A'
-      +'Email: '+encodeURIComponent(em)+'%0A'
-      +'Country: '+encodeURIComponent(co)+'%0A'
-      +'Area: '+encodeURIComponent(ar)+'%0A'
-      +'Type: '+encodeURIComponent(ty)+'%0A'
-      +'Budget: '+encodeURIComponent(bu)+'%0A'
-      +'Timeline: '+encodeURIComponent(tl)+'%0A'
-      +'Lease: '+encodeURIComponent(le)+'%0A'
-      +'Notes: '+encodeURIComponent(no)+'%0A'
-      +'Terms agreed: YES';
+    payload.name=document.getElementById('t-name').value;
+    payload.phone=document.getElementById('t-phone').value;
+    payload.email=document.getElementById('t-email').value;
+    payload.country=document.getElementById('t-country').value;
+    payload.area=document.getElementById('t-area').value;
+    payload.property_type=document.getElementById('t-type').value;
+    payload.budget=document.getElementById('t-budget').value;
+    payload.timeline=document.getElementById('t-timeline').value||'';
+    payload.lease=document.getElementById('t-lease').value||'';
+    payload.notes=document.getElementById('t-notes').value||'';
+    payload.lead_type='Tenant';
+    msg='New+TENANT+inquiry+from+stratnexproperties.com%0A'
+      +'Name:+'+encodeURIComponent(payload.name)+'%0A'
+      +'WhatsApp:+'+encodeURIComponent(payload.phone)+'%0A'
+      +'Email:+'+encodeURIComponent(payload.email)+'%0A'
+      +'Country:+'+encodeURIComponent(payload.country)+'%0A'
+      +'Area:+'+encodeURIComponent(payload.area)+'%0A'
+      +'Type:+'+encodeURIComponent(payload.property_type)+'%0A'
+      +'Budget:+'+encodeURIComponent(payload.budget)+'%0A'
+      +'Timeline:+'+encodeURIComponent(payload.timeline||'Not specified')+'%0A'
+      +'Terms+agreed:+YES';
     document.getElementById('fc-tenant').style.display='none';
     document.getElementById('sc-tenant').style.display='block';
   } else if(type==='landlord'){
-    var n=document.getElementById('l-name').value;
-    var ph=document.getElementById('l-phone').value;
-    var em=document.getElementById('l-email').value;
-    var ad=document.getElementById('l-address').value;
-    var ty=document.getElementById('l-type').value;
-    var re=document.getElementById('l-rent').value;
-    var av=document.getElementById('l-available').value||'Not specified';
-    var no=document.getElementById('l-notes').value||'None';
-    msg='Asalamu alaykum Jamal! New LANDLORD listing from stratnexproperties.com%0A'
-      +'Name: '+encodeURIComponent(n)+'%0A'
-      +'WhatsApp: '+encodeURIComponent(ph)+'%0A'
-      +'Email: '+encodeURIComponent(em)+'%0A'
-      +'Address: '+encodeURIComponent(ad)+'%0A'
-      +'Type: '+encodeURIComponent(ty)+'%0A'
-      +'Rent: '+encodeURIComponent(re)+'%0A'
-      +'Available: '+encodeURIComponent(av)+'%0A'
-      +'Notes: '+encodeURIComponent(no)+'%0A'
-      +'Terms agreed: YES';
+    payload.name=document.getElementById('l-name').value;
+    payload.phone=document.getElementById('l-phone').value;
+    payload.email=document.getElementById('l-email').value;
+    payload.address=document.getElementById('l-address').value;
+    payload.property_type=document.getElementById('l-type').value;
+    payload.rent=document.getElementById('l-rent').value;
+    payload.available=document.getElementById('l-available').value||'';
+    payload.furnishing=document.getElementById('l-furnish').value||'';
+    payload.notes=document.getElementById('l-notes').value||'';
+    payload.lead_type='Landlord';
+    msg='New+LANDLORD+listing+from+stratnexproperties.com%0A'
+      +'Name:+'+encodeURIComponent(payload.name)+'%0A'
+      +'WhatsApp:+'+encodeURIComponent(payload.phone)+'%0A'
+      +'Email:+'+encodeURIComponent(payload.email)+'%0A'
+      +'Address:+'+encodeURIComponent(payload.address)+'%0A'
+      +'Type:+'+encodeURIComponent(payload.property_type)+'%0A'
+      +'Rent:+'+encodeURIComponent(payload.rent)+'%0A'
+      +'Available:+'+encodeURIComponent(payload.available||'Not specified')+'%0A'
+      +'Terms+agreed:+YES';
     document.getElementById('fc-landlord').style.display='none';
     document.getElementById('sc-landlord').style.display='block';
   } else {
-    var n=document.getElementById('i-name').value;
-    var ph=document.getElementById('i-phone').value;
-    var em=document.getElementById('i-email').value;
-    var co=document.getElementById('i-country').value;
-    var ty=document.getElementById('i-type').value;
-    var bu=document.getElementById('i-budget').value||'Not specified';
-    var no=document.getElementById('i-notes').value||'None';
-    msg='Asalamu alaykum Jamal! New INVESTOR inquiry from stratnexproperties.com%0A'
-      +'Name: '+encodeURIComponent(n)+'%0A'
-      +'WhatsApp: '+encodeURIComponent(ph)+'%0A'
-      +'Email: '+encodeURIComponent(em)+'%0A'
-      +'Country: '+encodeURIComponent(co)+'%0A'
-      +'Type: '+encodeURIComponent(ty)+'%0A'
-      +'Budget: '+encodeURIComponent(bu)+'%0A'
-      +'Goals: '+encodeURIComponent(no)+'%0A'
-      +'Terms agreed: YES';
+    payload.name=document.getElementById('i-name').value;
+    payload.phone=document.getElementById('i-phone').value;
+    payload.email=document.getElementById('i-email').value;
+    payload.country=document.getElementById('i-country').value;
+    payload.investment_type=document.getElementById('i-type').value;
+    payload.budget=document.getElementById('i-budget').value||'';
+    payload.notes=document.getElementById('i-notes').value||'';
+    payload.lead_type='Investor';
+    msg='New+INVESTOR+inquiry+from+stratnexproperties.com%0A'
+      +'Name:+'+encodeURIComponent(payload.name)+'%0A'
+      +'WhatsApp:+'+encodeURIComponent(payload.phone)+'%0A'
+      +'Email:+'+encodeURIComponent(payload.email)+'%0A'
+      +'Country:+'+encodeURIComponent(payload.country)+'%0A'
+      +'Investment+type:+'+encodeURIComponent(payload.investment_type)+'%0A'
+      +'Budget:+'+encodeURIComponent(payload.budget||'Not specified')+'%0A'
+      +'Terms+agreed:+YES';
     document.getElementById('fc-investor').style.display='none';
     document.getElementById('sc-investor').style.display='block';
+  }
+
+  if(ZAPIER_WEBHOOK !== 'YOUR_ZAPIER_WEBHOOK_URL_HERE'){
+    fetch(ZAPIER_WEBHOOK,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    }).catch(function(){});
   }
 
   setTimeout(function(){
@@ -661,6 +673,5 @@ function acceptTC(){
   },1500);
 }
 </script>
-
 </body>
 </html>
