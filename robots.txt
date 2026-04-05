@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /tmp/
+Disallow: *.php
+Disallow: *.js$
+
 Sitemap: https://stratnexproperties.com/sitemap.xml
