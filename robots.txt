@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stratnexproperties.com/sitemap.xml
