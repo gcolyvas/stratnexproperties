@@ -784,12 +784,10 @@ function acceptTC(type){
   }
 
   if(FORM_ENDPOINT !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'){
-    fetch(FORM_ENDPOINT,{
-      method:'POST',
-      mode:'no-cors',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(payload)
-    }).catch(function(){});
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', FORM_ENDPOINT, true);
+    xhr.setRequestHeader('Content-Type', 'text/plain');
+    xhr.send(JSON.stringify(payload));
   }
 
   setTimeout(function(){
